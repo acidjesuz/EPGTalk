@@ -1,4 +1,4 @@
-I provide free EPG for LEGAL use Only!
+I provide free EPG for LEGAL use Only!!
 
 TV guides are not perfect, and neither am I. Wait a day before reporting an issue.
 
