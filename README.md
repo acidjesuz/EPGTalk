@@ -1,9 +1,9 @@
 ![EPG Logo](TVGuide.png)
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats (Last updated: 2025-12-14 05:56 CST)
+### 📊 EPG Stats (Last updated: 2025-12-14 11:56 CST)
 
-- 🇺🇸🇬🇧🇲🇽 **Combined**: 1213 channels / 32641 programs
+- 🇺🇸🇬🇧🇲🇽 **Combined**: 1213 channels / 32333 programs
 - 🇲🇽 **Latino**: 677 channels / 116279 programs
 - 🇬🇧 **UK**: 740 channels / 133389 programs
 - 🇺🇸 **US**: 698 channels / 116271 programs
