@@ -1,11 +1,11 @@
 ![EPG Logo](TVGuide.png)
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats — Last updated: 2026-05-03 16:22 CDT
+### 📊 EPG Stats — Last updated: 2026-05-03 16:55 CDT
 
 | Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
 |-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,115 | 30,828 | May 03, 17:00 → May 04, 18:00 | 40.1 MB | 0m ago |
+| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,115 | 30,822 | May 03, 17:30 → May 04, 18:30 | 40.1 MB | 0m ago |
 | 🇺🇸 **US Guide** | 695 | 118,441 | May 02, 05:00 → May 09, 01:30 | 14.6 MB | 1d ago |
 | 🇬🇧 **UK Guide** | 537 | 96,469 | May 02, 00:55 → May 09, 02:00 | 11.2 MB | 1d ago |
 | 🇲🇽 **Latino / Mexico** | 628 | 109,454 | May 03, 10:00 → May 10, 11:00 | 11.7 MB | 7h ago |
