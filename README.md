@@ -20,12 +20,16 @@
 
 <br>
 
+> 🇲🇽 **[Versión en Español → README_ES.md](README_ES.md)**
+
 🇺🇸 &nbsp;**US Channels**&nbsp;
-•&nbsp;
+- &nbsp;
 🇬🇧 &nbsp;**UK Channels**&nbsp;
-•&nbsp;
+- &nbsp;
+🇨🇦 &nbsp;**Canada**&nbsp;
+- &nbsp;
 🇲🇽 &nbsp;**Latino / Mexico**&nbsp;
-•&nbsp;
+- &nbsp;
 📡 &nbsp;**110+ US Local Markets**
 
 <br>
