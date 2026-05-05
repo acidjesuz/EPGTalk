@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EPGTalk — Free TV Guide for the community. US, UK, Canada, Mexico and 110+ US Local Markets. Updated every night since 2017.">
+<meta property="og:title" content="EPGTalk — Free Community TV Guide">
+<meta property="og:description" content="Free XMLTV EPG for US, UK, Canada, Mexico & 110+ Local Markets. Updated nightly. Always free. Running since 2017.">
+<meta property="og:image" content="https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/TVGuide.png">
+<meta property="og:url" content="https://acidjesuz.github.io/EPGTalk">
+<title>EPGTalk — Free Community TV Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-deep:   #060918;
+    --bg-mid:    #0d1225;
+    --bg-card:   #111827;
+    --accent:    #00BFFF;
+    --accent2:   #0080cc;
+    --accent-glow: rgba(0,191,255,0.18);
+    --purple:    #7c3aed;
+    --green:     #2ECC71;
+    --text:      #e2e8f0;
+    --muted:     #8899aa;
+    --border:    rgba(0,191,255,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── STARFIELD ── */
+  #stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+  /* ── GRID LINES ── */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(0,191,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,191,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .content { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(6,9,24,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .nav-logo span { color: #fff; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); font-size: 0.9rem; text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-github {
+    background: var(--accent); color: #000 !important;
+    padding: 0.4rem 1rem; border-radius: 6px;
+    font-weight: 700 !important;
+    transition: background 0.2s, transform 0.1s !important;
+  }
+  .nav-github:hover { background: #33cfff !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 7rem 1.5rem 4rem;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,191,255,0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(0,191,255,0.1); border: 1px solid var(--border);
+    border-radius: 100px; padding: 0.35rem 1rem;
+    font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.5rem;
+    animation: fadeDown 0.8s ease both;
+  }
+  .pulse { width: 8px; height: 8px; background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(46,204,113,0.5); }
+    50% { box-shadow: 0 0 0 6px rgba(46,204,113,0); }
+  }
+
+  h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+  h1 .accent { color: var(--accent); }
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--muted);
+    max-width: 600px; margin: 0 auto 0.75rem;
+    font-weight: 300;
+    animation: fadeDown 0.8s 0.2s ease both;
+  }
+  .hero-years {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem; letter-spacing: 3px;
+    color: var(--accent); opacity: 0.7; margin-bottom: 2.5rem;
+    animation: fadeDown 0.8s 0.3s ease both;
+  }
+
+  .flags { font-size: 2rem; letter-spacing: 0.5rem; margin-bottom: 3rem;
+    animation: fadeDown 0.8s 0.35s ease both; }
+
+  .hero-btns {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: center;
+    animation: fadeDown 0.8s 0.4s ease both;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-weight: 600; font-size: 1rem; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer; border: none; font-family: inherit;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--accent); color: #000;
+    box-shadow: 0 4px 24px rgba(0,191,255,0.4);
+  }
+  .btn-primary:hover { box-shadow: 0 6px 32px rgba(0,191,255,0.6); }
+  .btn-secondary {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    animation: fadeDown 0.8s 0.5s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem; font-weight: 900; color: var(--accent);
+    display: block;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION ── */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900; margin-bottom: 1rem;
+  }
+  .section-desc { color: var(--muted); max-width: 560px; margin-bottom: 3rem; }
+
+  /* ── URL CARDS ── */
+  .url-grid { display: grid; gap: 1rem; }
+  .url-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .url-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+  .url-flag { font-size: 2rem; flex-shrink: 0; }
+  .url-info { flex: 1; min-width: 0; }
+  .url-name { font-weight: 600; margin-bottom: 0.2rem; }
+  .url-desc { font-size: 0.82rem; color: var(--muted); }
+  .url-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    background: rgba(0,191,255,0.08);
+    border: 1px solid rgba(0,191,255,0.15);
+    border-radius: 6px;
+    padding: 0.35rem 0.65rem;
+    color: var(--accent);
+    word-break: break-all;
+    margin-top: 0.4rem;
+    display: block;
+  }
+  .copy-btn {
+    flex-shrink: 0;
+    background: rgba(0,191,255,0.1); border: 1px solid var(--border);
+    color: var(--accent); border-radius: 8px;
+    padding: 0.5rem 1rem; cursor: pointer;
+    font-size: 0.82rem; font-weight: 600; font-family: inherit;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .copy-btn:hover { background: rgba(0,191,255,0.2); }
+  .copy-btn.copied { background: rgba(46,204,113,0.2); border-color: var(--green); color: var(--green); }
+
+  /* ── SETUP STEPS ── */
+  .steps { display: grid; gap: 1rem; }
+  .step {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .step:hover { border-color: rgba(0,191,255,0.35); }
+  .step-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem; font-weight: 900;
+    color: var(--accent); opacity: 0.5; flex-shrink: 0;
+    line-height: 1;
+  }
+  .step-title { font-weight: 600; margin-bottom: 0.25rem; }
+  .step-desc { color: var(--muted); font-size: 0.9rem; }
+
+  /* ── APPS ── */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .app-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+    transition: border-color 0.2s, transform 0.15s;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .app-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .app-icon { font-size: 1.75rem; }
+  .app-name { font-weight: 600; font-size: 0.95rem; }
+  .app-platform { font-size: 0.78rem; color: var(--muted); }
+  .app-status { font-size: 0.72rem; color: var(--green); margin-top: 0.2rem; }
+
+  /* ── COVERAGE MAP ── */
+  .coverage-bands {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .coverage-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .coverage-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .coverage-flag { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .coverage-title { font-family: 'Orbitron', monospace; font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
+  .coverage-count { font-size: 2rem; font-weight: 900; color: var(--accent); font-family: 'Orbitron', monospace; }
+  .coverage-label { font-size: 0.78rem; color: var(--muted); }
+  .coverage-days {
+    display: inline-block; margin-top: 0.75rem;
+    background: rgba(0,191,255,0.1); border: 1px solid var(--border);
+    border-radius: 100px; padding: 0.2rem 0.75rem;
+    font-size: 0.75rem; color: var(--accent);
+  }
+
+  /* ── PIPELINE ── */
+  .pipeline {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 0;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2.5rem 2rem;
+  }
+  .pipe-node {
+    text-align: center; padding: 0 1rem;
+  }
+  .pipe-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(0,191,255,0.1); border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin: 0 auto 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .pipe-node:hover .pipe-icon {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .pipe-label { font-size: 0.78rem; color: var(--muted); }
+  .pipe-arrow { color: var(--accent); font-size: 1.5rem; opacity: 0.5; padding: 0 0.5rem; margin-top: -1.5rem; }
+
+  /* ── FAQ ── */
+  .faq-list { display: grid; gap: 0.75rem; }
+  details {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  details[open] { border-color: var(--accent); }
+  summary {
+    padding: 1.1rem 1.5rem; cursor: pointer;
+    font-weight: 600; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; color: var(--accent); font-size: 1.2rem; }
+  details[open] summary::after { content: '−'; }
+  .faq-body { padding: 0 1.5rem 1.25rem; color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+  .faq-body code {
+    background: rgba(0,191,255,0.1); border-radius: 4px;
+    padding: 0.1rem 0.4rem; font-size: 0.85em; color: var(--accent);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center; padding: 6rem 1.5rem;
+    background: linear-gradient(180deg, transparent, rgba(0,191,255,0.04), transparent);
+  }
+  .cta-section h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; margin-bottom: 1rem;
+  }
+  .cta-section p { color: var(--muted); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 3rem 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.85rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  .footer-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem; font-weight: 900; color: var(--accent);
+    margin-bottom: 0.5rem; display: block;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .pipe-arrow { display: none; }
+    .pipeline { gap: 1rem; }
+    .hero-stats { gap: 1.5rem; }
+    .url-card { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="grid-bg"></div>
+
+<div class="content">
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <ul class="nav-links">
+    <li><a href="#urls">URLs</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#apps">Apps</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://github.com/acidjesuz/EPGTalk" target="_blank" class="nav-github">★ GitHub</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      Live & Updated Every Night
+    </div>
+    <h1>📡 EPG<span class="accent">Talk</span></h1>
+    <p class="hero-sub">The community's free TV guide. US · UK · Canada · Mexico · 110+ Local Markets.</p>
+    <p class="hero-years">RUNNING STRONG SINCE 2017 · 9 YEARS · THOUSANDS OF USERS</p>
+    <div class="flags">🇺🇸 🇬🇧 🇨🇦 🇲🇽</div>
+    <div class="hero-btns">
+      <a href="#urls" class="btn btn-primary">🔗 Get My EPG URL</a>
+      <a href="#setup" class="btn btn-secondary">⚡ Quick Setup Guide</a>
+      <a href="https://github.com/acidjesuz/EPGTalk" target="_blank" class="btn btn-secondary">★ Star on GitHub</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" id="stat-channels">1,115+</span>
+        <span class="stat-label">Channels</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">7</span>
+        <span class="stat-label">Days of Listings</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">110+</span>
+        <span class="stat-label">US Local Markets</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num accent" style="color:var(--green)">FREE</span>
+        <span class="stat-label">Always & Forever</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- URLS -->
+<section id="urls">
+  <div class="container">
+    <div class="section-label">Step 1</div>
+    <h2 class="section-title">🔗 Your EPG URLs</h2>
+    <p class="section-desc">Copy any URL below and paste it into your IPTV app's EPG/TV Guide settings. First time? Start with <strong>Combined</strong>.</p>
+    <div class="url-grid">
+      <div class="url-card">
+        <div class="url-flag">🇺🇸🇬🇧🇨🇦🇲🇽</div>
+        <div class="url-info">
+          <div class="url-name">Combined Guide</div>
+          <div class="url-desc">Everything in one file · US + UK + Canada + Mexico · 1,000+ channels · 24hr coverage</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml.gz</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml.gz')">Copy</button>
+      </div>
+      <div class="url-card">
+        <div class="url-flag">🇺🇸</div>
+        <div class="url-info">
+          <div class="url-name">US Guide</div>
+          <div class="url-desc">Full US national lineup · 695+ channels · 7-day coverage</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_guide.xml.gz</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_guide.xml.gz')">Copy</button>
+      </div>
+      <div class="url-card">
+        <div class="url-flag">🇬🇧</div>
+        <div class="url-info">
+          <div class="url-name">UK Guide</div>
+          <div class="url-desc">Full UK national lineup · 537+ channels · 7-day coverage</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/UK_guide.xml.gz</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/UK_guide.xml.gz')">Copy</button>
+      </div>
+      <div class="url-card">
+        <div class="url-flag">🇲🇽</div>
+        <div class="url-info">
+          <div class="url-name">Latino / Mexico Guide</div>
+          <div class="url-desc">Spanish-language channels · 628+ channels · 7-day coverage</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/Latino_guide.xml.gz</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/Latino_guide.xml.gz')">Copy</button>
+      </div>
+      <div class="url-card">
+        <div class="url-flag">📡</div>
+        <div class="url-info">
+          <div class="url-name">US Local Markets</div>
+          <div class="url-desc">110+ local US markets · ABC, NBC, CBS, FOX, PBS affiliates · 72hr rolling guide</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz')">Copy</button>
+      </div>
+      <div class="url-card" style="border-style:dashed; opacity:0.7;">
+        <div class="url-flag">📄</div>
+        <div class="url-info">
+          <div class="url-name">Combined (Uncompressed)</div>
+          <div class="url-desc">Only use this if your app doesn't support <code>.gz</code> — same data, bigger file</div>
+          <code class="url-code">https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml</code>
+        </div>
+        <button class="copy-btn" onclick="copyUrl(this, 'https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml')">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SETUP -->
+<section id="setup">
+  <div class="container">
+    <div class="section-label">Step 2</div>
+    <h2 class="section-title">⚡ Quick Setup — 60 Seconds</h2>
+    <p class="section-desc">Works with TiviMate, Kodi, Perfect Player, GSE IPTV, OTT Navigator, IPTV Smarters, Sparkle TV, Channels DVR, and any XMLTV-compatible app.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Open your IPTV app → Settings</div>
+          <div class="step-desc">Look for "TV Guide", "EPG", or "Electronic Program Guide" in the settings menu.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Tap "Add Source" or "Import Guide"</div>
+          <div class="step-desc">This option lets you point your app at an external EPG data source.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Paste your URL from above</div>
+          <div class="step-desc">New to this? Use the <strong>Combined</strong> URL — it works everywhere and includes everything.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Save → Restart or Refresh</div>
+          <div class="step-desc">Give the app a few minutes to download the guide. The Combined file is ~40 MB.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-title">🎉 Enjoy full TV listings!</div>
+          <div class="step-desc">Set it once and forget it — your app will auto-refresh from the same URL every night.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COVERAGE -->
+<section id="coverage">
+  <div class="container">
+    <div class="section-label">What's Included</div>
+    <h2 class="section-title">🌎 Coverage</h2>
+    <p class="section-desc">Four separate guides, all updated automatically every single night.</p>
+    <div class="coverage-bands">
+      <div class="coverage-card">
+        <div class="coverage-flag">🇺🇸</div>
+        <div class="coverage-title">US National</div>
+        <div class="coverage-count">695+</div>
+        <div class="coverage-label">channels</div>
+        <div>ESPN, CNN, TNT, FOX, NBC, ABC, CBS and hundreds more</div>
+        <span class="coverage-days">📅 7 days</span>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-flag">🇬🇧</div>
+        <div class="coverage-title">UK National</div>
+        <div class="coverage-count">537+</div>
+        <div class="coverage-label">channels</div>
+        <div>BBC, ITV, Channel 4, Sky Sports, BT Sport and more</div>
+        <span class="coverage-days">📅 7 days</span>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-flag">🇨🇦</div>
+        <div class="coverage-title">Canada</div>
+        <div class="coverage-count">Premium</div>
+        <div class="coverage-label">sports & more</div>
+        <div>Canadian sports, premium channels and specialty networks</div>
+        <span class="coverage-days">📅 7 days</span>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-flag">🇲🇽</div>
+        <div class="coverage-title">Latino / Mexico</div>
+        <div class="coverage-count">628+</div>
+        <div class="coverage-label">channels</div>
+        <div>Univision, Telemundo, TUDN, Azteca, Liga MX and more</div>
+        <span class="coverage-days">📅 7 days</span>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-flag">📡</div>
+        <div class="coverage-title">US Local Markets</div>
+        <div class="coverage-count">110+</div>
+        <div class="coverage-label">markets</div>
+        <div>ABC, NBC, CBS, FOX, PBS affiliates across all major US cities</div>
+        <span class="coverage-days">⏱ 72 hours rolling</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PIPELINE -->
+<section>
+  <div class="container">
+    <div class="section-label">Under the Hood</div>
+    <h2 class="section-title">⚙️ How It Works</h2>
+    <p class="section-desc">Every single night, a fully automated pipeline runs without fail.</p>
+    <div class="pipeline">
+      <div class="pipe-node">
+        <div class="pipe-icon">🇺🇸</div>
+        <div class="pipe-label">US Data</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">🇬🇧</div>
+        <div class="pipe-label">UK Data</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">🇲🇽</div>
+        <div class="pipe-label">MX Data</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">🇨🇦</div>
+        <div class="pipe-label">CA Data</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">🔀</div>
+        <div class="pipe-label">Merge All</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">📦</div>
+        <div class="pipe-label">Compress .gz</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">🚀</div>
+        <div class="pipe-label">Push to GitHub</div>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">
+        <div class="pipe-icon">📺</div>
+        <div class="pipe-label">You Enjoy TV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- APPS -->
+<section id="apps">
+  <div class="container">
+    <div class="section-label">Compatibility</div>
+    <h2 class="section-title">🏆 Compatible Apps</h2>
+    <p class="section-desc">If your app accepts an XMLTV EPG URL — it works with EPGTalk. That's 99% of all IPTV apps.</p>
+    <div class="apps-grid">
+      <div class="app-card"><div class="app-icon">📱</div><div><div class="app-name">TiviMate</div><div class="app-platform">Android / Android TV</div><div class="app-status">✅ Most Recommended</div></div></div>
+      <div class="app-card"><div class="app-icon">🎬</div><div><div class="app-name">Kodi</div><div class="app-platform">Win / Mac / Linux / Android / iOS</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">▶️</div><div><div class="app-name">Perfect Player</div><div class="app-platform">Android</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">🧭</div><div><div class="app-name">OTT Navigator</div><div class="app-platform">Android / Android TV</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">📡</div><div><div class="app-name">GSE IPTV</div><div class="app-platform">iOS / Android</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">⚡</div><div><div class="app-name">IPTV Smarters</div><div class="app-platform">All Platforms</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">✨</div><div><div class="app-name">Sparkle TV</div><div class="app-platform">iOS / Apple TV</div><div class="app-status">✅ Fully Compatible</div></div></div>
+      <div class="app-card"><div class="app-icon">📹</div><div><div class="app-name">Channels DVR</div><div class="app-platform">All Platforms</div><div class="app-status">✅ Fully Compatible</div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Help</div>
+    <h2 class="section-title">❓ FAQ</h2>
+    <p class="section-desc">Quick answers to the most common questions.</p>
+    <div class="faq-list">
+      <details>
+        <summary>My guide shows no data — what do I do?</summary>
+        <div class="faq-body">Make sure you're using the <strong>raw</strong> GitHub URL starting with <code>raw.githubusercontent.com</code> — NOT the regular GitHub page URL. After adding the source, fully close and restart your app. Give it a few minutes to download — the Combined guide is 40+ MB.</div>
+      </details>
+      <details>
+        <summary>A channel is missing or showing wrong info</summary>
+        <div class="faq-body">Wait <strong>24 hours</strong> — the guide refreshes every night and most issues fix themselves. If a channel is still broken after 2 days, drop a post in the IPTVTalk thread.</div>
+      </details>
+      <details>
+        <summary>How often is the guide updated?</summary>
+        <div class="faq-body">Every single night, fully automated. The pipeline kicks off overnight and by 9:30 PM CT the next evening, fresh data is live on GitHub. Set it once, forget it forever.</div>
+      </details>
+      <details>
+        <summary>Should I use .xml or .xml.gz?</summary>
+        <div class="faq-body">Always <code>.xml.gz</code> — it's the exact same data but compressed, up to <strong>10x smaller</strong>. Faster to download, lighter on your device. Only use <code>.xml</code> if your specific app explicitly doesn't support gzip.</div>
+      </details>
+      <details>
+        <summary>What's the difference between US Guide and US Local?</summary>
+        <div class="faq-body"><strong>US Guide</strong> = national cable/satellite channels (ESPN, CNN, TNT, etc.)<br><strong>US Local</strong> = local broadcast affiliates (ABC, NBC, CBS, FOX, PBS) across 110+ individual US markets. Use both for maximum coverage.</div>
+      </details>
+      <details>
+        <summary>Can I use this outside the US / UK / Mexico?</summary>
+        <div class="faq-body">100% yes — hosted on GitHub's global CDN, accessible from anywhere in the world with no restrictions.</div>
+      </details>
+      <details>
+        <summary>Is this legal?</summary>
+        <div class="faq-body">EPGTalk provides TV scheduling data — think of it as a digital TV listings guide. It's for <strong>legal IPTV use only</strong>. Always make sure your IPTV service itself is legitimate and properly licensed.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Built for the Community.<br>Free. Forever.</h2>
+    <p>9 years. One person. Thousands of users. Millions of TV listings pushed to your screen every single night.</p>
+    <div class="hero-btns">
+      <a href="#urls" class="btn btn-primary">🔗 Get Your EPG URL</a>
+      <a href="https://github.com/acidjesuz/EPGTalk" target="_blank" class="btn btn-secondary">★ Star on GitHub</a>
+      <a href="https://iptvtalk.net/threads/epg-for-us-and-uk-channels.33526/" target="_blank" class="btn btn-secondary">💬 Join the Community</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">📡 EPGTalk</span>
+  <p>Running strong since <strong>2017</strong> · Crafted with ☕ and ❤️ by <strong>aCiDjEsUs-PwA</strong></p>
+  <p style="margin-top:0.5rem">
+    <a href="https://github.com/acidjesuz/EPGTalk">GitHub</a> ·
+    <a href="https://iptvtalk.net/threads/epg-for-us-and-uk-channels.33526/">IPTVTalk Forum</a> ·
+    <a href="https://github.com/acidjesuz/EPGTalk/blob/master/STATUS.md">Status Page</a> ·
+    <a href="https://github.com/acidjesuz/EPGTalk/blob/master/README_ES.md">🇲🇽 Español</a>
+  </p>
+  <p style="margin-top:1rem; font-size:0.75rem; opacity:0.5">"On a mote of dust suspended in a sunbeam..."</p>
+</footer>
+
+</div><!-- /content -->
+
+<script>
+// ── STARFIELD ──
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+let stars = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+function initStars() {
+  stars = [];
+  for (let i = 0; i < 180; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.2 + 0.2,
+      o: Math.random() * 0.6 + 0.2,
+      speed: Math.random() * 0.3 + 0.05,
+      twinkle: Math.random() * Math.PI * 2
+    });
+  }
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(s => {
+    s.twinkle += 0.02;
+    const opacity = s.o + Math.sin(s.twinkle) * 0.2;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(180,210,255,${Math.max(0, opacity)})`;
+    ctx.fill();
+    s.y += s.speed;
+    if (s.y > canvas.height) { s.y = 0; s.x = Math.random() * canvas.width; }
+  });
+  requestAnimationFrame(drawStars);
+}
+
+resize();
+initStars();
+drawStars();
+window.addEventListener('resize', () => { resize(); initStars(); });
+
+// ── COPY BUTTON ──
+function copyUrl(btn, url) {
+  navigator.clipboard.writeText(url).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
