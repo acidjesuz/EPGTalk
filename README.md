@@ -1,66 +1,158 @@
-![EPG Logo](TVGuide.png)
+![EPGTalk Banner](TVGuide.png)
+
+<div align="center">
+
+# 📡 EPGTalk
+
+### Free · Automated · Community-Driven TV Guide
+
+*Covering thousands of channels across the US, UK & Mexico — updated every single night*
+
+[![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=FFD700&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/stargazers)
+[![Forks](https://img.shields.io/github/forks/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=4A90D9&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/network/members)
+[![Last Commit](https://img.shields.io/github/last-commit/acidjesuz/EPGTalk?style=for-the-badge&logo=git&color=2ECC71&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/commits/master)
+[![License](https://img.shields.io/badge/Use-LEGAL%20ONLY-red?style=for-the-badge&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk)
+
+---
+
+🇺🇸 &nbsp; **US Channels** &nbsp;|&nbsp; 🇬🇧 &nbsp; **UK Channels** &nbsp;|&nbsp; 🇲🇽 &nbsp; **Latino / Mexico** &nbsp;|&nbsp; 📡 &nbsp; **US Local**
+
+---
+
+</div>
+
+> ⚠️ **I provide free EPG for LEGAL use Only!!!**
+>
+> TV guides are not perfect, and neither am I. Please wait **24 hours** before reporting an issue — most problems fix themselves on the next daily update.
+
+---
+
+## 🌎 About EPGTalk
+
+EPGTalk has been serving the IPTV community since **2017** — that's **9 years** of free, reliable TV guide data built and maintained by one person out of love for the community.
+
+Whether you're watching **sports in Chicago**, **soaps in London**, or **telenovelas in Mexico City** — this guide has you covered with up to **7 days of listings**, refreshed automatically every night.
+
+| 🔄 Daily Updates | 📅 7-Day Listings | 📦 Compressed & Fast | 🆓 Always Free |
+|:-:|:-:|:-:|:-:|
+| Auto-refreshed every night | Plan your whole week | `.gz` format, loads instantly | No accounts, no ads, ever |
+
+---
+
+## 🔗 Your EPG URLs
+
+Paste the URL for your region directly into your IPTV app:
+
+| Guide | Channels | Format | URL |
+|-------|----------|--------|-----|
+| 🇺🇸🇬🇧🇲🇽 **Combined** | US + UK + Mexico | `.xml.gz` | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml.gz` |
+| 🇺🇸 **US Guide** | US national | `.xml.gz` | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_guide.xml.gz` |
+| 🇬🇧 **UK Guide** | UK national | `.xml.gz` | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/UK_guide.xml.gz` |
+| 🇲🇽 **Latino / Mexico** | Spanish-language | `.xml.gz` | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/Latino_guide.xml.gz` |
+| 📡 **US Local** | Local US markets | `.xml.gz` | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz` |
+
+> 💡 **Not sure which to pick?** Start with **Combined** — it includes everything and works with every app.
+>
+> 📝 **App doesn't support `.gz`?** Use the uncompressed version instead:
+> `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml`
+
+---
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats — Last updated: 2026-05-04 17:56 CDT
-
-| Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
-|-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,115 | 31,664 | May 04, 18:30 → May 05, 18:00 | 40.9 MB | 05:56 PM |
-| 🇺🇸 **US Guide** | 695 | 118,497 | May 04, 05:00 → May 11, 02:00 | 14.5 MB | 12:25 AM |
-| 🇬🇧 **UK Guide** | 537 | 96,151 | May 04, 01:00 → May 11, 02:00 | 11.2 MB | 12:33 AM |
-| 🇲🇽 **Latino / Mexico** | 628 | 108,968 | May 04, 01:30 → May 11, 02:30 | 11.6 MB | 12:39 AM |
-| 🇺🇸 **US Local** | 0 | 0 | — | 183.0 B | Jun 16 |
+### 📊 EPG Stats — Last updated: pending first run
 <!-- EPG-STATS-END -->
 
-I provide free EPG for LEGAL use Only!!!
+---
 
-TV guides are not perfect, and neither am I. Wait a day before reporting an issue.
+## ⚡ Quick Setup
 
+> Works with **TiviMate**, **Kodi**, **Perfect Player**, **GSE IPTV**, **OTT Navigator**, and any app that accepts an XMLTV source.
 
+**1️⃣** Open your IPTV app → **Settings** → **TV Guide / EPG**
 
-Key Features:
+**2️⃣** Select **Add Source** or **EPG URL**
 
-Multi-Country Coverage: Enjoy a unified EPG experience for US, UK, and Mexico channels, all in one place.
+**3️⃣** Paste the URL from the table above
 
-Real-Time Updates: Our EPG is constantly updated to reflect the latest programming schedules, ensuring you stay in the know.
+**4️⃣** **Save** → Restart or Refresh your app
 
-User-Friendly Format: Navigate through channels and schedules effortlessly with a clean and intuitive interface.
+**5️⃣** Done — enjoy full listings! 🎉
 
-Open Source: Contribute to the project and tailor the EPG to your preferences. Feel free to suggest improvements, report issues, or add support for additional channels.
+---
 
+## ❓ FAQ
 
-Choose Your Region: Select your preferred EPG file for US, UK, or Mexico channels or the Combined one.
+<details>
+<summary><strong>📭 My guide shows no data — what do I do?</strong></summary>
 
-Integration: Easily integrate the EPG data into your favorite TV viewing application or platform.
+Make sure you copied the **raw** URL (starts with `raw.githubusercontent.com`) — not the regular GitHub page URL. After adding the source, fully restart your app and wait a few minutes for it to download.
 
+</details>
 
+<details>
+<summary><strong>📺 A channel is missing or showing wrong info</strong></summary>
 
-How to Use:
+Wait **24 hours** first — the guide refreshes every night and most issues resolve on the next update cycle. If a channel is still broken after 2 days, post in the IPTVTalk thread.
 
-Open your TV viewing application or platform.
+</details>
 
-Access Settings: Navigate to the settings menu. You can usually find it by clicking on the gear icon or accessing the app's settings through the menu.
+<details>
+<summary><strong>🔄 How often is the guide updated?</strong></summary>
 
-Select "TV Guide" or "EPG": Look for an option related to TV Guide or Electronic Program Guide (EPG) within the settings menu.
+Every single day, automatically. The pipeline runs overnight and pushes fresh data to this repo. You don't need to do anything — just set it once and forget it.
 
-Choose "Add Source" or "Import Guide" Option: Within the TV Guide or EPG settings, there should be an option to add a new source or import a guide. Click on this option.
+</details>
 
-Enter the following URL: https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/guide.xml for Combined EPG. Or choose otherwise if you wish to use other EPG in this repo.
+<details>
+<summary><strong>📦 Should I use .xml or .xml.gz?</strong></summary>
 
-Verify and Save: Confirm that the TV guide has been successfully added.
-Save your changes.
+Always use `.xml.gz` if your app supports it — it's the same data but compressed, so it downloads up to **10x faster**. Only fall back to `.xml` if your app specifically doesn't support gzip.
 
-Refresh or Restart: Depending on the application/platform, you may need to refresh the page or restart the application to apply the changes.
+</details>
 
+<details>
+<summary><strong>🌍 Can I use this outside the US/UK/Mexico?</strong></summary>
 
-Enjoy Updated TV Listings: Once the TV guide file is successfully added, you should see updated TV listings within [Your TV Viewing Application/Platform].
+Absolutely — the guide data itself is accessible from anywhere in the world. As long as your IPTV app can reach GitHub's servers, it will work.
 
-Note:
+</details>
 
-Make sure the TV guide file is compatible with the application/platform you are using.
-If any issues arise, refer to the application/platform's documentation or community support for troubleshooting.
+<details>
+<summary><strong>🔓 Is this legal to use?</strong></summary>
 
+The EPG guide data is for **legal IPTV use only**. This project provides TV scheduling information — what you do with it is your responsibility. Always make sure your IPTV service is legitimate.
 
-Now you should be all set to enjoy an enhanced TV viewing experience with the updated TV guide!
+</details>
 
-aCiDjEsUs-PwA
+---
+
+## 💬 Community & Support
+
+This project lives on the **IPTVTalk Forum** — the best place for questions, channel requests, and updates:
+
+🔗 **[EPG for US and UK Channels — IPTVTalk Forum](https://iptvtalk.net/threads/epg-for-us-and-uk-channels.33526/)**
+
+Drop in, say hi, and let me know if the guide is helping you. The community feedback is what keeps this project going after all these years. 🙏
+
+---
+
+## ⭐ Support the Project
+
+EPGTalk is completely free and always will be. If it's making your TV experience better:
+
+- ⭐ **Star this repo** — takes 2 seconds, helps more people find it
+- 📢 **Share it** — tell your IPTV community
+- 🐛 **Report issues** — helps make the guide better for everyone
+- ☕ **Be patient** — one person, a lot of coffee, and a deep love for the community
+
+---
+
+<div align="center">
+
+*Running strong since **2017** · Built with ☕ by **aCiDjEsUs-PwA***
+
+*"On a mote of dust suspended in a sunbeam..."*
+
+![Made with love](https://img.shields.io/badge/Made%20with-❤️%20for%20the%20community-red?style=for-the-badge&labelColor=1a1a2e)
+
+</div>
