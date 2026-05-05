@@ -22,15 +22,7 @@
 
 > 🇲🇽 **[Versión en Español → README_ES.md](README_ES.md)**
 
-🇺🇸 &nbsp;**US Channels**&nbsp;
-- &nbsp;
-🇬🇧 &nbsp;**UK Channels**&nbsp;
-- &nbsp;
-🇨🇦 &nbsp;**Canada**&nbsp;
-- &nbsp;
-🇲🇽 &nbsp;**Latino / Mexico**&nbsp;
-- &nbsp;
-📡 &nbsp;**110+ US Local Markets**
+🇺🇸 &nbsp;**US Channels**&nbsp; &bull; &nbsp;🇬🇧 &nbsp;**UK Channels**&nbsp; &bull; &nbsp;🇨🇦 &nbsp;**Canada**&nbsp; &bull; &nbsp;🇲🇽 &nbsp;**Latino / Mexico**&nbsp; &bull; &nbsp;📡 &nbsp;**110+ US Local Markets**
 
 <br>
 
