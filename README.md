@@ -8,10 +8,10 @@
 
 <br>
 
-[![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=FFD700&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/stargazers)
+[![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&logoColor=white&label=Stars&color=FFD700&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/stargazers)
 [![Forks](https://img.shields.io/github/forks/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=00BFFF&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/acidjesuz/EPGTalk?style=for-the-badge&logo=git&color=2ECC71&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/commits/master)
-[![Repo Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Facidjesuz%2FEPGTalk&count_bg=%2300BFFF&title_bg=%230d0221&icon=github&icon_color=%23FFFFFF&title=Repo+Views&edge_flat=false)](https://github.com/acidjesuz/EPGTalk)
+[![Repo Views](https://komarev.com/ghpvc/?username=acidjesuz&label=Repo+Views&color=00BFFF&style=for-the-badge)](https://github.com/acidjesuz/EPGTalk)
 
 [![LEGAL USE](https://img.shields.io/badge/LEGAL%20USE-ONLY-red?style=for-the-badge&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk)
 [![Since 2017](https://img.shields.io/badge/Running%20Since-2017-9b59b6?style=for-the-badge&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk)
