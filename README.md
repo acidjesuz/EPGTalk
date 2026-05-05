@@ -9,7 +9,7 @@
 [![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=FFD700&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/stargazers)
 [![Forks](https://img.shields.io/github/forks/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=4A90D9&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/acidjesuz/EPGTalk?style=for-the-badge&logo=git&color=2ECC71&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk/commits/master)
-[![Legal Use Only](https://img.shields.io/badge/Use-LEGAL%20ONLY-red?style=for-the-badge&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk)
+[![Legal Use Only](https://img.shields.io/badge/LEGAL%20USE-ONLY-red?style=for-the-badge&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk)
 [![Since 2017](https://img.shields.io/badge/Running%20Since-2017-purple?style=for-the-badge&labelColor=1a1a2e)](https://github.com/acidjesuz/EPGTalk)
 
 ---
