@@ -8,7 +8,7 @@
 
 <br>
 
-[![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&logoColor=white&label=Stars&color=FFD700&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/stargazers)
+[![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&logoColor=white)](https://github.com/acidjesuz/EPGTalk/stargazers)
 [![Forks](https://img.shields.io/github/forks/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=00BFFF&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/acidjesuz/EPGTalk?style=for-the-badge&logo=git&color=2ECC71&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/commits/master)
 [![Repo Views](https://komarev.com/ghpvc/?username=acidjesuz&label=Repo+Views&color=00BFFF&style=for-the-badge)](https://github.com/acidjesuz/EPGTalk)
