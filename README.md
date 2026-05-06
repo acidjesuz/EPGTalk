@@ -111,7 +111,7 @@ Whether you're watching **Sunday Night Football**, **Premier League**, **EastEnd
 
 | Feature | 🇺🇸🇬🇧🇲🇽 Combined | 🇺🇸 US | 🇬🇧 UK | 🇲🇽 Mexico | 📡 US Local |
 |---------|:-:|:-:|:-:|:-:|:-:|
-| **Channels** | 1000+ | 600+ | 500+ | 600+ | 1500+ |
+| **Channels** | 1000+ | 600+ | 500+ | 600+ | 110+ |
 | **Coverage** | 24 hrs | 7 days | 7 days | 7 days | 72 hrs |
 | **US National** | ✅ | ✅ | — | — | — |
 | **UK National** | ✅ | — | ✅ | — | — |
