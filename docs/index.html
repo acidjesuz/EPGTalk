@@ -382,6 +382,62 @@
     margin: 0;
   }
 
+  /* ── LIVE STATS SECTION ── */
+  .live-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .live-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .live-stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .live-stat-card:hover { border-color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
+  .live-stat-card:hover::before { opacity: 1; }
+  .live-stat-flag { font-size: 2.5rem; flex-shrink: 0; }
+  .live-stat-body { flex: 1; min-width: 0; }
+  .live-stat-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.6rem; }
+  .live-stat-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+  .live-stat-item { text-align: center; }
+  .live-stat-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem; font-weight: 900;
+    color: var(--accent); display: block;
+  }
+  .live-stat-lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .live-stat-coverage { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; }
+  .live-stat-badge {
+    display: inline-block; margin-top: 0.5rem;
+    background: rgba(0,191,255,0.1); border: 1px solid var(--border);
+    border-radius: 100px; padding: 0.15rem 0.6rem;
+    font-size: 0.72rem; color: var(--accent);
+  }
+  .live-stat-updated {
+    font-size: 0.75rem; color: var(--muted);
+    text-align: center; margin-top: 1.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+  .live-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  .stats-loading {
+    text-align: center; padding: 3rem;
+    color: var(--muted); font-family: 'Orbitron', monospace;
+    font-size: 0.8rem; letter-spacing: 2px;
+  }
+  .stats-error { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
     .nav-links { display: none; }
@@ -403,6 +459,7 @@
 <nav>
   <a href="#" class="nav-logo">📡 EPG<span>Talk</span></a>
   <ul class="nav-links">
+    <li><a href="#live-stats">Stats</a></li>
     <li><a href="#urls">URLs</a></li>
     <li><a href="#setup">Setup</a></li>
     <li><a href="#coverage">Coverage</a></li>
@@ -446,6 +503,24 @@
         <span class="stat-num accent" style="color:var(--green)">FREE</span>
         <span class="stat-label">Always & Forever</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LIVE STATS -->
+<section id="live-stats">
+  <div class="container">
+    <div class="section-label">Live Data</div>
+    <h2 class="section-title">📊 Live Guide Stats</h2>
+    <p class="section-desc">Real stats pulled directly from GitHub — updated every time this page loads.</p>
+    <div id="stats-container">
+      <div class="stats-loading">⏳ LOADING LIVE STATS...</div>
+    </div>
+    <div class="live-stat-updated" id="stats-updated" style="display:none">
+      <span class="live-dot"></span>
+      <span id="stats-updated-text"></span>
     </div>
   </div>
 </section>
@@ -808,7 +883,109 @@ initStars();
 drawStars();
 window.addEventListener('resize', () => { resize(); initStars(); });
 
-// ── COPY BUTTON ──
+// ── LIVE STATS ──
+const GUIDE_CONFIG = [
+  { key: 'Combined',        flag: '🇺🇸🇬🇧🇨🇦🇲🇽', name: 'Combined Guide',      badge: '24hr coverage' },
+  { key: 'US Guide',        flag: '🇺🇸',          name: 'US National',          badge: '7-day coverage' },
+  { key: 'UK Guide',        flag: '🇬🇧',          name: 'UK National',          badge: '7-day coverage' },
+  { key: 'Latino / Mexico', flag: '🇲🇽',          name: 'Latino / Mexico',      badge: '7-day coverage' },
+  { key: 'US Local',        flag: '📡',           name: 'US Local Markets',     badge: '72hr rolling' },
+];
+
+async function loadLiveStats() {
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/README.md');
+    if (!res.ok) throw new Error('fetch failed');
+    const text = await res.text();
+
+    const startMarker = '<!-- EPG-STATS-START -->';
+    const endMarker   = '<!-- EPG-STATS-END -->';
+    const start = text.indexOf(startMarker);
+    const end   = text.indexOf(endMarker);
+    if (start === -1 || end === -1) throw new Error('markers not found');
+
+    const block = text.slice(start + startMarker.length, end);
+    const lines = block.split('\n').filter(l => l.trim().startsWith('|') && !l.includes('---'));
+
+    // Parse header line to find column indexes
+    const headerLine = lines[0];
+    const headers = headerLine.split('|').map(h => h.trim()).filter(Boolean);
+    // Expected: Guide, Channels, Programs, Coverage, Size, Updated
+
+    const rows = lines.slice(1).map(line => {
+      const cols = line.split('|').map(c => c.trim()).filter(Boolean);
+      return {
+        label:    cols[0] || '',
+        channels: cols[1] || '—',
+        programs: cols[2] || '—',
+        coverage: cols[3] || '—',
+        size:     cols[4] || '—',
+        updated:  cols[5] || '—',
+      };
+    }).filter(r => r.label);
+
+    // Extract last updated time
+    const tsMatch = block.match(/Last updated:\s*([^\n]+)/);
+    const lastUpdated = tsMatch ? tsMatch[1].trim() : '';
+
+    // Render cards
+    const container = document.getElementById('stats-container');
+    container.innerHTML = '';
+    const grid = document.createElement('div');
+    grid.className = 'live-stats-grid';
+
+    rows.forEach(row => {
+      // Match row to config for flag and display name
+      const cfg = GUIDE_CONFIG.find(c => row.label.includes(c.key)) || { flag: '📺', name: row.label, badge: '' };
+
+      const card = document.createElement('div');
+      card.className = 'live-stat-card';
+      card.innerHTML = `
+        <div class="live-stat-flag">${cfg.flag}</div>
+        <div class="live-stat-body">
+          <div class="live-stat-name">${cfg.name}</div>
+          <div class="live-stat-row">
+            <div class="live-stat-item">
+              <span class="live-stat-num">${row.channels}</span>
+              <span class="live-stat-lbl">Channels</span>
+            </div>
+            <div class="live-stat-item">
+              <span class="live-stat-num">${row.programs}</span>
+              <span class="live-stat-lbl">Programs</span>
+            </div>
+            <div class="live-stat-item">
+              <span class="live-stat-num">${row.size}</span>
+              <span class="live-stat-lbl">File Size</span>
+            </div>
+          </div>
+          <div class="live-stat-coverage">🗓 ${row.coverage}</div>
+          <div>
+            <span class="live-stat-badge">🕒 ${row.updated}</span>
+            <span class="live-stat-badge" style="margin-left:0.3rem">${cfg.badge}</span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    container.appendChild(grid);
+
+    if (lastUpdated) {
+      const updEl = document.getElementById('stats-updated');
+      document.getElementById('stats-updated-text').textContent = `Stats last updated: ${lastUpdated}`;
+      updEl.style.display = 'flex';
+    }
+
+  } catch (err) {
+    document.getElementById('stats-container').innerHTML = `
+      <div class="stats-error">
+        📡 Live stats temporarily unavailable — check back shortly or visit 
+        <a href="https://github.com/acidjesuz/EPGTalk/blob/master/STATUS.md" target="_blank" style="color:var(--accent)">STATUS.md</a>
+      </div>`;
+  }
+}
+
+loadLiveStats();
 function copyUrl(btn, url) {
   navigator.clipboard.writeText(url).then(() => {
     const orig = btn.textContent;
