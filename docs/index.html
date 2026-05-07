@@ -385,56 +385,108 @@
   /* ── LIVE STATS SECTION ── */
   .live-stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
     margin-top: 1rem;
   }
   .live-stat-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.5rem;
-    display: flex; align-items: center; gap: 1.25rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    position: relative; overflow: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.15s;
+    display: flex; flex-direction: column;
   }
-  .live-stat-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
+  .live-stat-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 32px var(--accent-glow);
+    transform: translateY(-3px);
   }
-  .live-stat-card:hover { border-color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
-  .live-stat-card:hover::before { opacity: 1; }
-  .live-stat-flag { font-size: 2.5rem; flex-shrink: 0; }
-  .live-stat-body { flex: 1; min-width: 0; }
-  .live-stat-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.6rem; }
-  .live-stat-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
-  .live-stat-item { text-align: center; }
+  .live-stat-card-header {
+    background: linear-gradient(135deg, rgba(0,191,255,0.08), rgba(0,191,255,0.02));
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .live-stat-flag { font-size: 1.75rem; line-height: 1; flex-shrink: 0; }
+  .live-stat-name {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 1px; color: var(--text);
+  }
+  .live-stat-card-body {
+    padding: 1.25rem 1.5rem;
+    flex: 1;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .live-stat-metrics {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .live-stat-metric {
+    background: rgba(0,191,255,0.05);
+    border: 1px solid rgba(0,191,255,0.1);
+    border-radius: 10px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+  }
   .live-stat-num {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem; font-weight: 900;
+    font-size: 1rem; font-weight: 900;
     color: var(--accent); display: block;
+    white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .live-stat-lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-  .live-stat-coverage { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; }
+  .live-stat-lbl {
+    font-size: 0.65rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.8px;
+    margin-top: 0.2rem; display: block;
+  }
+  .live-stat-coverage {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.8rem; color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px; padding: 0.5rem 0.75rem;
+  }
+  .live-stat-card-footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
   .live-stat-badge {
-    display: inline-block; margin-top: 0.5rem;
-    background: rgba(0,191,255,0.1); border: 1px solid var(--border);
-    border-radius: 100px; padding: 0.15rem 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: rgba(0,191,255,0.08); border: 1px solid rgba(0,191,255,0.15);
+    border-radius: 100px; padding: 0.2rem 0.65rem;
     font-size: 0.72rem; color: var(--accent);
+    white-space: nowrap;
+  }
+  .live-stat-badge.green {
+    background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.25);
+    color: var(--green);
   }
   .live-stat-updated {
     font-size: 0.75rem; color: var(--muted);
     text-align: center; margin-top: 1.5rem;
     display: flex; align-items: center; justify-content: center; gap: 0.5rem;
   }
-  .live-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+  .live-dot {
+    width: 7px; height: 7px; background: var(--green);
+    border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0;
+  }
   .stats-loading {
-    text-align: center; padding: 3rem;
+    text-align: center; padding: 4rem 2rem;
     color: var(--muted); font-family: 'Orbitron', monospace;
-    font-size: 0.8rem; letter-spacing: 2px;
+    font-size: 0.8rem; letter-spacing: 3px;
+  }
+  .stats-loading::after {
+    content: ''; display: block; width: 40px; height: 2px;
+    background: var(--accent); margin: 1rem auto 0;
+    animation: loadbar 1.5s ease-in-out infinite;
+  }
+  @keyframes loadbar {
+    0%, 100% { width: 20px; opacity: 0.3; }
+    50% { width: 60px; opacity: 1; }
   }
   .stats-error { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
 
@@ -935,34 +987,35 @@ async function loadLiveStats() {
     grid.className = 'live-stats-grid';
 
     rows.forEach(row => {
-      // Match row to config for flag and display name
       const cfg = GUIDE_CONFIG.find(c => row.label.includes(c.key)) || { flag: '📺', name: row.label, badge: '' };
 
       const card = document.createElement('div');
       card.className = 'live-stat-card';
       card.innerHTML = `
-        <div class="live-stat-flag">${cfg.flag}</div>
-        <div class="live-stat-body">
-          <div class="live-stat-name">${cfg.name}</div>
-          <div class="live-stat-row">
-            <div class="live-stat-item">
+        <div class="live-stat-card-header">
+          <span class="live-stat-flag">${cfg.flag}</span>
+          <span class="live-stat-name">${cfg.name}</span>
+        </div>
+        <div class="live-stat-card-body">
+          <div class="live-stat-metrics">
+            <div class="live-stat-metric">
               <span class="live-stat-num">${row.channels}</span>
               <span class="live-stat-lbl">Channels</span>
             </div>
-            <div class="live-stat-item">
+            <div class="live-stat-metric">
               <span class="live-stat-num">${row.programs}</span>
               <span class="live-stat-lbl">Programs</span>
             </div>
-            <div class="live-stat-item">
+            <div class="live-stat-metric">
               <span class="live-stat-num">${row.size}</span>
               <span class="live-stat-lbl">File Size</span>
             </div>
           </div>
           <div class="live-stat-coverage">🗓 ${row.coverage}</div>
-          <div>
-            <span class="live-stat-badge">🕒 ${row.updated}</span>
-            <span class="live-stat-badge" style="margin-left:0.3rem">${cfg.badge}</span>
-          </div>
+        </div>
+        <div class="live-stat-card-footer">
+          <span class="live-stat-badge green">🕒 ${row.updated}</span>
+          <span class="live-stat-badge">${cfg.badge}</span>
         </div>
       `;
       grid.appendChild(card);
