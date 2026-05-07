@@ -2,6 +2,8 @@
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,30:1a1a2e,70:16213e,100:0f3460&height=250&section=header&text=📡%20EPGTalk&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=40&stroke=00BFFF&strokeWidth=3&desc=La%20Guía%20de%20TV%20Gratis%20de%20la%20Comunidad%20—%20EE.UU.%20%7C%20UK%20%7C%20México%20%7C%20Mercados%20Locales&descAlignY=62&descSize=18&descColor=a8d8ff)
 
+![EPGTalk Banner](TVGuide.png)
+
 [![Stars](https://img.shields.io/github/stars/acidjesuz/EPGTalk?style=for-the-badge&logo=github&logoColor=white)](https://github.com/acidjesuz/EPGTalk/stargazers)
 [![Forks](https://img.shields.io/github/forks/acidjesuz/EPGTalk?style=for-the-badge&logo=github&color=00BFFF&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/acidjesuz/EPGTalk?style=for-the-badge&logo=git&color=2ECC71&labelColor=0d0221)](https://github.com/acidjesuz/EPGTalk/commits/master)
@@ -19,7 +21,7 @@
 •&nbsp;
 🇲🇽 &nbsp;**Latino / México**&nbsp;
 •&nbsp;
-📡 &nbsp;**110+ Mercados Locales EE.UU.**
+📡 &nbsp;**140+ Mercados Locales EE.UU.**
 
 <br>
 
@@ -39,7 +41,7 @@
 
 | | | | |
 |:-:|:-:|:-:|:-:|
-| [🔗 **Obtener URL**](#-tus-urls-epg) | [⚡ **Configuración**](#-configuración-rápida--60-segundos) | [📊 **Estadísticas**](#-estadísticas-en-vivo) | [📡 **Mercados Locales**](README.md#-us-local-coverage--110-markets) |
+| [🔗 **Obtener URL**](#-tus-urls-epg) | [⚡ **Configuración**](#-configuración-rápida--60-segundos) | [📊 **Estadísticas**](#-estadísticas-en-vivo) | [📡 **Mercados Locales**](README.md#-us-local-coverage--140-markets) |
 | [🏆 **Apps Compatibles**](#-apps-compatibles) | [❓ **Preguntas**](#-preguntas-frecuentes) | [💬 **Comunidad**](#-comunidad--soporte) | [📋 **Estado**](STATUS.md) |
 
 ---
@@ -77,7 +79,7 @@ Ya sea que estés viendo **fútbol americano**, **Premier League**, **EastEnders
 
 <div align="center">
 
-| 🔄 Actualizaciones Diarias | 📅 7 Días de Programación | 📦 Comprimido y Rápido | 🆓 Siempre Gratis | 📡 110+ Mercados Locales |
+| 🔄 Actualizaciones Diarias | 📅 7 Días de Programación | 📦 Comprimido y Rápido | 🆓 Siempre Gratis | 📡 140+ Mercados Locales |
 |:-:|:-:|:-:|:-:|:-:|
 | Cada noche sin falta | Planifica toda la semana | `.gz` carga al instante | Sin cuentas, jamás | Cobertura local completa EE.UU. |
 
@@ -95,7 +97,7 @@ Ya sea que estés viendo **fútbol americano**, **Premier League**, **EastEnders
 | 🇺🇸 **Guía EE.UU.** | Canales nacionales EE.UU. | 7 días | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_guide.xml.gz` |
 | 🇬🇧 **Guía UK** | Canales nacionales UK | 7 días | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/UK_guide.xml.gz` |
 | 🇲🇽 **Latino / México** | Canales en español | 7 días | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/Latino_guide.xml.gz` |
-| 📡 **EE.UU. Local** | 110+ mercados locales | 72 horas | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz` |
+| 📡 **EE.UU. Local** | 140+ mercados locales | 72 horas | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz` |
 
 > 💡 **¿Primera vez?** Empieza con la **Combinada** — todo en una sola URL, funciona con todas las apps.
 >
@@ -134,6 +136,57 @@ Ya sea que estés viendo **fútbol americano**, **Premier League**, **EastEnders
 | **Channels DVR** | Todas las plataformas | ✅ Totalmente Compatible |
 
 > 💡 **¿Tu app no está en la lista?** Si acepta una **URL EPG XMLTV** — funciona con EPGTalk. Eso es el 99% de las apps IPTV.
+
+---
+
+## 📡 Cobertura Local EE.UU. — 140+ Mercados
+
+<details>
+<summary><strong>🗺️ Haz clic para ver todos los mercados cubiertos</strong></summary>
+
+<br>
+
+| | | | |
+|---|---|---|---|
+| 📡 Abilene TX | 📡 Albany NY | 📡 Albuquerque NM | 📡 Altoona PA |
+| 📡 Ames IA | 📡 Anchorage AK | 📡 Annapolis MD | 📡 Atlanta GA |
+| 📡 Augusta GA | 📡 Austin TX | 📡 Baltimore MD | 📡 Bangor ME |
+| 📡 Baton Rouge LA | 📡 Beaumont TX | 📡 Boise ID | 📡 Boston MA |
+| 📡 Buffalo NY | 📡 Cape Girardeau MO | 📡 Cedar Rapids IA | 📡 Charleston SC |
+| 📡 Charlotte NC | 📡 Chattanooga TN | 📡 Chicago IL | 📡 Cincinnati OH |
+| 📡 Cleveland OH | 📡 Colorado Springs CO | 📡 Columbia SC | 📡 Columbus OH |
+| 📡 Corpus Christi TX | 📡 Dallas TX | 📡 Dayton OH | 📡 Denver CO |
+| 📡 Detroit MI | 📡 Dothan AL | 📡 Duluth MN | 📡 El Paso TX |
+| 📡 Fairbanks AK | 📡 Flint MI | 📡 Fort Myers FL | 📡 Fort Smith AR |
+| 📡 Fort Worth TX | 📡 Fresno CA | 📡 Grand Junction CO | 📡 Grand Rapids MI |
+| 📡 Green Bay WI | 📡 Greensboro NC | 📡 Greenville SC | 📡 Hamtramck MI |
+| 📡 Hardeeville SC | 📡 Harrisburg PA | 📡 Harrisonburg VA | 📡 Hartford CT |
+| 📡 Hawaii HI | 📡 Houston TX | 📡 Huntsville AL | 📡 Indianapolis IN |
+| 📡 Jacksonville FL | 📡 Jackson MS | 📡 Jefferson City MO | 📡 Johnson City TN |
+| 📡 Kansas City MO | 📡 Kirksville MO | 📡 Knoxville TN | 📡 Lansing MI |
+| 📡 Laredo TX | 📡 Las Vegas NV | 📡 Lincoln NE | 📡 Little Rock AR |
+| 📡 Longview TX | 📡 Los Angeles CA | 📡 Louisville KY | 📡 Lubbock TX |
+| 📡 Macon GA | 📡 Madison WI | 📡 Memphis TN | 📡 Mesa AZ |
+| 📡 Miami FL | 📡 Milwaukee WI | 📡 Minneapolis MN | 📡 Mobile AL |
+| 📡 Monroe LA | 📡 Nashville TN | 📡 New Bern NC | 📡 New Haven CT |
+| 📡 New Orleans LA | 📡 New York NY | 📡 Norfolk VA | 📡 Oklahoma City OK |
+| 📡 Omaha NE | 📡 Orange Park FL | 📡 Orlando FL | 📡 Ottumwa IA |
+| 📡 Panama City FL | 📡 Philadelphia PA | 📡 Phoenix AZ | 📡 Pittsburgh PA |
+| 📡 Portland OR | 📡 Providence RI | 📡 Pueblo CO | 📡 Raleigh-Durham NC |
+| 📡 Reno NV | 📡 Rhode Island RI | 📡 Richmond VA | 📡 Roanoke VA |
+| 📡 Sacramento CA | 📡 Salinas CA | 📡 Salt Lake City UT | 📡 San Antonio TX |
+| 📡 San Diego CA | 📡 San Francisco CA | 📡 San Juan PR | 📡 San Luis Obispo CA |
+| 📡 Savannah GA | 📡 Seattle WA | 📡 Sedalia MO | 📡 Shreveport LA |
+| 📡 Sioux Falls SD | 📡 South Bend IN | 📡 Spokane WA | 📡 Springfield MO |
+| 📡 St. Louis MO | 📡 St. Paul MN | 📡 St. Petersburg FL | 📡 Sweetwater TX |
+| 📡 Syracuse NY | 📡 Tallahassee FL | 📡 Tampa FL | 📡 Toledo OH |
+| 📡 Topeka KS | 📡 Tucson AZ | 📡 Tulsa OK | 📡 Tyler TX |
+| 📡 Waco TX | 📡 Washington DC | 📡 West Palm Beach FL | 📡 Wichita KS |
+| 📡 Wichita Falls TX | 📡 Wilmington NC | 📡 Youngstown OH | |
+
+> **¿No ves tu ciudad?** La guía cubre afiliadas locales (ABC, NBC, CBS, FOX, PBS, CW y más) para cada mercado listado. Tu área puede estar cubierta por un mercado cercano. ¡Publica una solicitud en el hilo de IPTVTalk!
+
+</details>
 
 ---
 
@@ -178,7 +231,7 @@ Siempre `.xml.gz` — son exactamente los mismos datos pero comprimidos, hasta *
 <summary><strong>📡 ¿Cuál es la diferencia entre Guía EE.UU. y EE.UU. Local?</strong></summary>
 
 **Guía EE.UU.** = canales nacionales de cable/satélite (ESPN, CNN, TNT, etc.)
-**EE.UU. Local** = afiliadas locales de transmisión (ABC, NBC, CBS, FOX, PBS) en **110+ mercados individuales**. Son cosas diferentes — usa ambas para cobertura máxima.
+**EE.UU. Local** = afiliadas locales de transmisión (ABC, NBC, CBS, FOX, PBS) en **140+ mercados individuales**. Son cosas diferentes — usa ambas para cobertura máxima.
 
 </details>
 

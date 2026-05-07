@@ -4,7 +4,7 @@
 
 ![EPGTalk Banner](TVGuide.png)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=20&duration=2500&pause=1000&color=00BFFF&center=true&vCenter=true&multiline=false&width=700&lines=Your+TV+Guide.+Updated+Every+Night.+Always+Free.;📺+US+%7C+UK+%7C+Mexico+%7C+110%2B+US+Local+Markets;🔄+Set+It+Once.+Forget+It+Forever.;⭐+Trusted+by+Thousands+of+IPTV+Users;🚀+Serving+the+Community+Since+2017)](https://github.com/acidjesuz/EPGTalk)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=20&duration=2500&pause=1000&color=00BFFF&center=true&vCenter=true&multiline=false&width=700&lines=Your+TV+Guide.+Updated+Every+Night.+Always+Free.;📺+US+%7C+UK+%7C+Mexico+%7C+140%2B+US+Local+Markets;🔄+Set+It+Once.+Forget+It+Forever.;⭐+Trusted+by+Thousands+of+IPTV+Users;🚀+Serving+the+Community+Since+2017)](https://github.com/acidjesuz/EPGTalk)
 
 <br>
 
@@ -22,7 +22,7 @@
 
 > 🇲🇽 **[Versión en Español → README_ES.md](README_ES.md)**
 
-🇺🇸 &nbsp;**US Channels**&nbsp; &bull; &nbsp;🇬🇧 &nbsp;**UK Channels**&nbsp; &bull; &nbsp;🇨🇦 &nbsp;**Canada**&nbsp; &bull; &nbsp;🇲🇽 &nbsp;**Latino / Mexico**&nbsp; &bull; &nbsp;📡 &nbsp;**110+ US Local Markets**
+🇺🇸 &nbsp;**US Channels**&nbsp; &bull; &nbsp;🇬🇧 &nbsp;**UK Channels**&nbsp; &bull; &nbsp;🇨🇦 &nbsp;**Canada**&nbsp; &bull; &nbsp;🇲🇽 &nbsp;**Latino / Mexico**&nbsp; &bull; &nbsp;📡 &nbsp;**140+ US Local Markets**
 
 <br>
 
@@ -42,7 +42,7 @@
 
 | | | | |
 |:-:|:-:|:-:|:-:|
-| [🔗 **Grab Your URL**](#-your-epg-urls) | [⚡ **Quick Setup**](#-quick-setup--60-seconds-flat) | [📊 **Live Stats**](#-live-guide-stats) | [📡 **US Local Markets**](#-us-local-coverage--110-markets) |
+| [🔗 **Grab Your URL**](#-your-epg-urls) | [⚡ **Quick Setup**](#-quick-setup--60-seconds-flat) | [📊 **Live Stats**](#-live-guide-stats) | [📡 **US Local Markets**](#-us-local-coverage--140-markets) |
 | [🏆 **Compatible Apps**](#-compatible-apps) | [❓ **FAQ**](#-faq) | [💬 **Community**](#-community--support) | [📋 **Status Page**](STATUS.md) |
 
 ---
@@ -53,11 +53,11 @@
 > &nbsp;&nbsp;&nbsp;📋 **[→ View Full Live Status Page](STATUS.md)**
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats — Last updated: 2026-05-07 05:56 CDT
+### 📊 EPG Stats — Last updated: 2026-05-07 07:02 CDT
 
 | Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
 |-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,110 | 31,485 | May 07, 06:30 → May 08, 07:00 | 40.7 MB | 05:56 AM |
+| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,110 | 31,404 | May 07, 08:00 → May 08, 07:00 | 40.5 MB | 07:02 AM |
 | 🇺🇸 **US Guide** | 695 | 118,131 | May 06, 05:00 → May 13, 01:30 | 14.6 MB | May 06 |
 | 🇬🇧 **UK Guide** | 537 | 96,234 | May 06, 00:30 → May 13, 02:00 | 11.2 MB | May 06 |
 | 🇲🇽 **Latino / Mexico** | 628 | 108,710 | May 06, 01:30 → May 13, 02:30 | 11.8 MB | May 06 |
@@ -80,7 +80,7 @@ Whether you're watching **Sunday Night Football**, **Premier League**, **EastEnd
 
 <div align="center">
 
-| 🔄 Daily Updates | 📅 7-Day Listings | 📦 Compressed & Fast | 🆓 Always Free | 📡 110+ Local Markets |
+| 🔄 Daily Updates | 📅 7-Day Listings | 📦 Compressed & Fast | 🆓 Always Free | 📡 140+ Local Markets |
 |:-:|:-:|:-:|:-:|:-:|
 | Every single night | Plan your whole week | `.gz` loads instantly | No accounts, ever | Full US local coverage |
 
@@ -98,7 +98,7 @@ Whether you're watching **Sunday Night Football**, **Premier League**, **EastEnd
 | 🇺🇸 **US Guide** | Full US national lineup | 7 days | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_guide.xml.gz` |
 | 🇬🇧 **UK Guide** | Full UK national lineup | 7 days | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/UK_guide.xml.gz` |
 | 🇲🇽 **Latino / Mexico** | Spanish-language channels | 7 days | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/Latino_guide.xml.gz` |
-| 📡 **US Local** | 110+ local US markets | 72 hours | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz` |
+| 📡 **US Local** | 140+ local US markets | 72 hours | `https://raw.githubusercontent.com/acidjesuz/EPGTalk/master/US_local_guide.xml.gz` |
 
 > 💡 **First time?** Start with **Combined** — everything in one URL, works with every app.
 >
@@ -111,7 +111,7 @@ Whether you're watching **Sunday Night Football**, **Premier League**, **EastEnd
 
 | Feature | 🇺🇸🇬🇧🇲🇽 Combined | 🇺🇸 US | 🇬🇧 UK | 🇲🇽 Mexico | 📡 US Local |
 |---------|:-:|:-:|:-:|:-:|:-:|
-| **Channels** | 1000+ | 600+ | 500+ | 600+ | 110+ |
+| **Channels** | 1000+ | 600+ | 500+ | 600+ | 140+ |
 | **Coverage** | 24 hrs | 7 days | 7 days | 7 days | 72 hrs |
 | **US National** | ✅ | ✅ | — | — | — |
 | **UK National** | ✅ | — | ✅ | — | — |
@@ -173,7 +173,7 @@ Every night a fully automated pipeline kicks off:
 
 ---
 
-## 📡 US Local Coverage — 110+ Markets
+## 📡 US Local Coverage — 140+ Markets
 
 <details>
 <summary><strong>🗺️ Click to see all covered US markets</strong></summary>
@@ -184,32 +184,39 @@ Every night a fully automated pipeline kicks off:
 |---|---|---|---|
 | 📡 Abilene TX | 📡 Albany NY | 📡 Albuquerque NM | 📡 Altoona PA |
 | 📡 Ames IA | 📡 Anchorage AK | 📡 Annapolis MD | 📡 Atlanta GA |
-| 📡 Augusta GA | 📡 Austin TX | 📡 Bangor ME | 📡 Baton Rouge LA |
-| 📡 Beaumont TX | 📡 Boise ID | 📡 Boston MA | 📡 Buffalo NY |
-| 📡 Cape Girardeau MO | 📡 Cedar Rapids IA | 📡 Charleston SC | 📡 Charlotte NC |
+| 📡 Augusta GA | 📡 Austin TX | 📡 Baltimore MD | 📡 Bangor ME |
+| 📡 Baton Rouge LA | 📡 Beaumont TX | 📡 Boise ID | 📡 Boston MA |
+| 📡 Buffalo NY | 📡 Cape Girardeau MO | 📡 Cedar Rapids IA | 📡 Charleston SC |
+| 📡 Charlotte NC | 📡 Chattanooga TN | 📡 Chicago IL | 📡 Cincinnati OH |
 | 📡 Cleveland OH | 📡 Colorado Springs CO | 📡 Columbia SC | 📡 Columbus OH |
-| 📡 Dallas TX | 📡 Denver CO | 📡 Dothan AL | 📡 Duluth MN |
-| 📡 Fairbanks AK | 📡 Flint MI | 📡 Fort Smith AR | 📡 Fort Worth TX |
-| 📡 Fresno CA | 📡 Grand Junction CO | 📡 Grand Rapids MI | 📡 Green Bay WI |
-| 📡 Greensboro NC | 📡 Hamtramck MI | 📡 Hardeeville SC | 📡 Harrisburg PA |
-| 📡 Harrisonburg VA | 📡 Hartford CT | 📡 Hawaii HI | 📡 Houston TX |
-| 📡 Huntsville AL | 📡 Indianapolis IN | 📡 Jacksonville FL | 📡 Jackson MS |
-| 📡 Jefferson City MO | 📡 Johnson City TN | 📡 Kansas City MO | 📡 Kirksville MO |
-| 📡 Knoxville TN | 📡 Lansing MI | 📡 Laredo TX | 📡 Las Vegas NV |
-| 📡 Lincoln NE | 📡 Little Rock AR | 📡 Longview TX | 📡 Los Angeles CA |
-| 📡 Lubbock TX | 📡 Macon GA | 📡 Memphis TN | 📡 Mesa AZ |
-| 📡 Miami FL | 📡 Minneapolis MN | 📡 Mobile AL | 📡 Monroe LA |
-| 📡 Nashville TN | 📡 New Bern NC | 📡 New Haven CT | 📡 Norfolk VA |
-| 📡 Orange Park FL | 📡 Ottumwa IA | 📡 Philadelphia PA | 📡 Phoenix AZ |
-| 📡 Pittsburgh PA | 📡 Portland OR | 📡 Providence RI | 📡 Pueblo CO |
-| 📡 Raleigh-Durham NC | 📡 Reno NV | 📡 Rhode Island RI | 📡 Roanoke VA |
+| 📡 Corpus Christi TX | 📡 Dallas TX | 📡 Dayton OH | 📡 Denver CO |
+| 📡 Detroit MI | 📡 Dothan AL | 📡 Duluth MN | 📡 El Paso TX |
+| 📡 Fairbanks AK | 📡 Flint MI | 📡 Fort Myers FL | 📡 Fort Smith AR |
+| 📡 Fort Worth TX | 📡 Fresno CA | 📡 Grand Junction CO | 📡 Grand Rapids MI |
+| 📡 Green Bay WI | 📡 Greensboro NC | 📡 Greenville SC | 📡 Hamtramck MI |
+| 📡 Hardeeville SC | 📡 Harrisburg PA | 📡 Harrisonburg VA | 📡 Hartford CT |
+| 📡 Hawaii HI | 📡 Houston TX | 📡 Huntsville AL | 📡 Indianapolis IN |
+| 📡 Jacksonville FL | 📡 Jackson MS | 📡 Jefferson City MO | 📡 Johnson City TN |
+| 📡 Kansas City MO | 📡 Kirksville MO | 📡 Knoxville TN | 📡 Lansing MI |
+| 📡 Laredo TX | 📡 Las Vegas NV | 📡 Lincoln NE | 📡 Little Rock AR |
+| 📡 Longview TX | 📡 Los Angeles CA | 📡 Louisville KY | 📡 Lubbock TX |
+| 📡 Macon GA | 📡 Madison WI | 📡 Memphis TN | 📡 Mesa AZ |
+| 📡 Miami FL | 📡 Milwaukee WI | 📡 Minneapolis MN | 📡 Mobile AL |
+| 📡 Monroe LA | 📡 Nashville TN | 📡 New Bern NC | 📡 New Haven CT |
+| 📡 New Orleans LA | 📡 New York NY | 📡 Norfolk VA | 📡 Oklahoma City OK |
+| 📡 Omaha NE | 📡 Orange Park FL | 📡 Orlando FL | 📡 Ottumwa IA |
+| 📡 Panama City FL | 📡 Philadelphia PA | 📡 Phoenix AZ | 📡 Pittsburgh PA |
+| 📡 Portland OR | 📡 Providence RI | 📡 Pueblo CO | 📡 Raleigh-Durham NC |
+| 📡 Reno NV | 📡 Rhode Island RI | 📡 Richmond VA | 📡 Roanoke VA |
 | 📡 Sacramento CA | 📡 Salinas CA | 📡 Salt Lake City UT | 📡 San Antonio TX |
 | 📡 San Diego CA | 📡 San Francisco CA | 📡 San Juan PR | 📡 San Luis Obispo CA |
-| 📡 Seattle WA | 📡 Sedalia MO | 📡 Sioux Falls SD | 📡 South Bend IN |
-| 📡 Spokane WA | 📡 Springfield MO | 📡 St. Louis MO | 📡 St. Paul MN |
-| 📡 St. Petersburg FL | 📡 Tampa FL | 📡 Toledo OH | 📡 Topeka KS |
-| 📡 Tucson AZ | 📡 Tulsa OK | 📡 Waco TX | 📡 West Palm Beach FL |
-| 📡 Youngstown OH | | | |
+| 📡 Savannah GA | 📡 Seattle WA | 📡 Sedalia MO | 📡 Shreveport LA |
+| 📡 Sioux Falls SD | 📡 South Bend IN | 📡 Spokane WA | 📡 Springfield MO |
+| 📡 St. Louis MO | 📡 St. Paul MN | 📡 St. Petersburg FL | 📡 Sweetwater TX |
+| 📡 Syracuse NY | 📡 Tallahassee FL | 📡 Tampa FL | 📡 Toledo OH |
+| 📡 Topeka KS | 📡 Tucson AZ | 📡 Tulsa OK | 📡 Tyler TX |
+| 📡 Waco TX | 📡 Washington DC | 📡 West Palm Beach FL | 📡 Wichita KS |
+| 📡 Wichita Falls TX | 📡 Wilmington NC | 📡 Youngstown OH | |
 
 > **Don't see your city?** The guide covers local affiliates (ABC, NBC, CBS, FOX, PBS, CW and more) for each market listed. Your area may be covered by a nearby market. Post a request on the IPTVTalk thread!
 
@@ -238,7 +245,7 @@ Every night a fully automated pipeline kicks off:
 
 | Date | Update |
 |------|--------|
-| 📡 **May 2026** | US Local fully restored — 110+ markets, 72hr rolling guide, 4-chunk automated pipeline |
+| 📡 **May 2026** | US Local fully restored — 140+ markets, 72hr rolling guide, 4-chunk automated pipeline |
 | 🇲🇽 **2024** | Latino / Mexico guide expanded with additional channels and providers |
 | 🔄 **2023** | Full pipeline rebuild — nightly auto-push, live stats, STATUS page, email alerts |
 | 📊 **2022** | Live stats added to README — real-time channel & program counts per guide |
@@ -302,7 +309,7 @@ Always `.xml.gz` — it's the exact same data but compressed, up to **10x smalle
 <summary><strong>📡 What's the difference between US Guide and US Local?</strong></summary>
 
 **US Guide** = national cable/satellite channels (ESPN, CNN, TNT, etc.)
-**US Local** = local broadcast affiliates (ABC, NBC, CBS, FOX, PBS) across **110+ individual US markets**. Two different things — use both for maximum coverage.
+**US Local** = local broadcast affiliates (ABC, NBC, CBS, FOX, PBS) across **140+ individual US markets**. Two different things — use both for maximum coverage.
 
 </details>
 
