@@ -1,10 +1,10 @@
 # 📡 EPG Guide Status
 
-> **Last updated:** Tuesday, May 26 2026  12:39 AM CDT
+> **Last updated:** Tuesday, May 26 2026  05:57 AM CDT
 
 | Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
 |-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 Combined | 1,107 | 30,982 | May 26, 00:30 → May 26, 23:30 | 39.9 MB | May 25 |
+| 🇺🇸🇬🇧🇲🇽 Combined | 1,107 | 31,262 | May 26, 06:30 → May 27, 07:30 | 40.2 MB | 05:56 AM |
 | 🇺🇸 US Guide | 695 | 116,700 | May 26, 05:00 → Jun 02, 02:15 | 14.4 MB | 12:25 AM |
 | 🇬🇧 UK Guide | 537 | 96,196 | May 26, 01:10 → Jun 02, 02:00 | 11.2 MB | 12:33 AM |
 | 🇲🇽 Latino / Mexico | 611 | 105,015 | May 26, 01:30 → Jun 02, 02:30 | 11.2 MB | 12:38 AM |
