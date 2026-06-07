@@ -52,11 +52,11 @@
 > &nbsp;&nbsp;&nbsp;📋 **[→ Ver Página de Estado Completa](STATUS.md)**
 
 <!-- EPG-STATS-START -->
-### 📊 Estadísticas EPG — Última actualización: 2026-06-07 05:56 CDT
+### 📊 Estadísticas EPG — Última actualización: 2026-06-07 11:57 CDT
 
 | Guía | 📺 Canales | 📄 Programas | 🗓 Cobertura | 📦 Tamaño | 🕒 Actualizado |
 |------|-----------|-------------|------------|---------|--------------|
-| 🇺🇸🇬🇧🇲🇽 **Combinada** | 1,107 | 30,347 | Jun 07, 06:30 → Jun 08, 07:30 | 39.1 MB | 05:56 AM |
+| 🇺🇸🇬🇧🇲🇽 **Combinada** | 1,107 | 30,088 | Jun 07, 12:30 → Jun 08, 13:50 | 38.8 MB | 11:57 AM |
 | 🇺🇸 **Guía EE.UU.** | 695 | 116,663 | Jun 06, 05:00 → Jun 13, 00:45 | 14.5 MB | Jun 06 |
 | 🇬🇧 **Guía UK** | 536 | 96,580 | Jun 06, 00:50 → Jun 13, 02:00 | 11.3 MB | Jun 06 |
 | 🇲🇽 **Latino / México** | 611 | 105,553 | Jun 06, 01:30 → Jun 13, 02:30 | 11.4 MB | Jun 06 |
