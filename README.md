@@ -53,11 +53,11 @@
 > &nbsp;&nbsp;&nbsp;📋 **[→ View Full Live Status Page](STATUS.md)**
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats — Last updated: 2026-06-16 11:56 CDT
+### 📊 EPG Stats — Last updated: 2026-06-16 17:56 CDT
 
 | Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
 |-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,106 | 30,837 | Jun 16, 12:30 → Jun 17, 13:30 | 39.7 MB | 11:56 AM |
+| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,104 | 30,625 | Jun 16, 18:30 → Jun 17, 18:00 | 39.6 MB | 05:56 PM |
 | 🇺🇸 **US Guide** | 694 | 116,659 | Jun 16, 05:00 → Jun 23, 01:45 | 14.4 MB | 12:25 AM |
 | 🇬🇧 **UK Guide** | 536 | 96,350 | Jun 16, 01:10 → Jun 23, 02:00 | 11.0 MB | 12:33 AM |
 | 🇲🇽 **Latino / Mexico** | 610 | 104,330 | Jun 16, 01:30 → Jun 23, 02:30 | 11.2 MB | 12:38 AM |
