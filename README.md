@@ -53,15 +53,15 @@
 > &nbsp;&nbsp;&nbsp;📋 **[→ View Full Live Status Page](STATUS.md)**
 
 <!-- EPG-STATS-START -->
-### 📊 EPG Stats — Last updated: 2026-07-20 23:57 CDT
+### 📊 EPG Stats — Last updated: 2026-07-21 05:57 CDT
 
 | Guide | 📺 Channels | 📄 Programs | 🗓 Coverage | 📦 Size | 🕒 Updated |
 |-------|-------------|-------------|------------|---------|------------|
-| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,101 | 30,683 | Jul 21, 00:30 → Jul 22, 01:30 | 39.6 MB | 11:57 PM |
-| 🇺🇸 **US Guide** | 694 | 116,506 | Jul 20, 05:00 → Jul 27, 02:00 | 14.5 MB | 12:26 AM |
-| 🇬🇧 **UK Guide** | 529 | 95,486 | Jul 20, 01:00 → Jul 27, 02:00 | 10.8 MB | 12:33 AM |
-| 🇲🇽 **Latino / Mexico** | 607 | 104,329 | Jul 20, 01:30 → Jul 27, 02:30 | 10.9 MB | 12:39 AM |
-| 🇺🇸 **US Local** | 291 | 31,010 | Jul 21, 01:00 → Jul 23, 10:00 | 2.3 MB | 09:30 PM |
+| 🇺🇸🇬🇧🇲🇽 **Combined** | 1,101 | 31,103 | Jul 21, 06:30 → Jul 22, 07:30 | 40.2 MB | 05:57 AM |
+| 🇺🇸 **US Guide** | 694 | 116,506 | Jul 20, 05:00 → Jul 27, 02:00 | 14.5 MB | Jul 20 |
+| 🇬🇧 **UK Guide** | 529 | 95,486 | Jul 20, 01:00 → Jul 27, 02:00 | 10.8 MB | Jul 20 |
+| 🇲🇽 **Latino / Mexico** | 607 | 104,329 | Jul 20, 01:30 → Jul 27, 02:30 | 10.9 MB | Jul 20 |
+| 🇺🇸 **US Local** | 291 | 31,010 | Jul 21, 01:00 → Jul 23, 10:00 | 2.3 MB | Jul 20 |
 <!-- EPG-STATS-END -->
 
 ---
