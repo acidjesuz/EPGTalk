@@ -52,15 +52,15 @@
 > &nbsp;&nbsp;&nbsp;📋 **[→ Ver Página de Estado Completa](STATUS.md)**
 
 <!-- EPG-STATS-START -->
-### 📊 Estadísticas EPG — Última actualización: 2026-09-09 23:56 CDT
+### 📊 Estadísticas EPG — Última actualización: 2026-09-10 00:37 CDT
 
 | Guía | 📺 Canales | 📄 Programas | 🗓 Cobertura | 📦 Tamaño | 🕒 Actualizado |
 |------|-----------|-------------|------------|---------|--------------|
-| 🇺🇸🇬🇧🇲🇽 **Combinada** | 1,100 | 30,515 | Sep 09, 22:30 → Sep 11, 05:50 | 39.5 MB | 11:56 PM |
-| 🇺🇸 **Guía EE.UU.** | 693 | 119,095 | Sep 07, 23:00 → Sep 15, 05:51 | 14.5 MB | Sep 08 |
-| 🇬🇧 **Guía UK** | 529 | 94,986 | Sep 08, 00:00 → Sep 15, 02:30 | 10.9 MB | Sep 08 |
-| 🇲🇽 **Latino / México** | 607 | 104,571 | Sep 08, 00:00 → Sep 15, 02:35 | 10.8 MB | Sep 08 |
-| 🇺🇸 **EE.UU. Local** | 291 | 30,318 | Sep 09, 05:00 → Sep 13, 05:36 | 2.5 MB | 09:30 PM |
+| 🇺🇸🇬🇧🇲🇽 **Combinada** | 1,100 | 30,515 | Sep 09, 22:30 → Sep 11, 05:50 | 39.5 MB | Sep 09 |
+| 🇺🇸 **Guía EE.UU.** | 693 | 119,151 | Sep 09, 22:30 → Sep 17, 05:44 | 14.6 MB | 12:24 AM |
+| 🇬🇧 **Guía UK** | 529 | 94,559 | Sep 10, 00:00 → Sep 17, 02:30 | 10.9 MB | 12:32 AM |
+| 🇲🇽 **Latino / México** | 607 | 104,982 | Sep 10, 00:00 → Sep 17, 02:35 | 10.9 MB | 12:37 AM |
+| 🇺🇸 **EE.UU. Local** | 291 | 30,318 | Sep 09, 05:00 → Sep 13, 05:36 | 2.5 MB | Sep 09 |
 <!-- EPG-STATS-END -->
 
 ---
