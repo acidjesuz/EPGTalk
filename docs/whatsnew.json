@@ -1,0 +1,130 @@
+{
+  "releases": [
+    {
+      "id": "2026-10-04",
+      "date": "Oct 4, 2026",
+      "en": {
+        "title": "Free TV, captions & older devices",
+        "items": [
+          {
+            "text": "🆓 NEW Free TV guide — 1,100+ free channels (Pluto TV, Samsung TV Plus, Plex, Tubi) with a ▶ Watch free button",
+            "link": "tvguide.html#freetv"
+          },
+          {
+            "text": "📡 \"Free with antenna\" badges on games you can watch free on ABC, CBS, FOX, NBC, Univision & more",
+            "link": "antenna.html"
+          },
+          {
+            "text": "📡 New guide: get free TV forever with a one-time antenna — step by step",
+            "link": "antenna.html"
+          },
+          {
+            "text": "CC badges + a CC filter in the TV Guide for shows with closed captions",
+            "link": "tvguide.html"
+          },
+          {
+            "text": "📱 Works on older phones, TV boxes and iPhones (iOS 12 and up)"
+          }
+        ]
+      },
+      "es": {
+        "title": "TV gratis, subtítulos y equipos viejos",
+        "items": [
+          {
+            "text": "🆓 NUEVA guía TV Gratis — más de 1,100 canales gratis (Pluto TV, Samsung TV Plus, Plex, Tubi) con botón ▶ Ver gratis",
+            "link": "tvguide.html#freetv"
+          },
+          {
+            "text": "📡 Etiqueta \"Gratis con antena\" en partidos que se ven gratis en ABC, CBS, FOX, NBC, Univision y más",
+            "link": "antenna.html"
+          },
+          {
+            "text": "📡 Nueva guía: TV gratis para siempre con una antena que pagas una vez — paso a paso",
+            "link": "antenna.html"
+          },
+          {
+            "text": "Etiquetas CC + filtro CC en la Guía de TV para programas con subtítulos",
+            "link": "tvguide.html"
+          },
+          {
+            "text": "📱 Funciona en teléfonos, cajas de TV y iPhones más viejos (iOS 12 en adelante)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2026-10-03",
+      "date": "Oct 3, 2026",
+      "en": {
+        "title": "Big sports & setup update",
+        "items": [
+          {
+            "text": "🏆 Big Events — playoff brackets, series, countdowns and standings that switch on by themselves",
+            "link": "events.html"
+          },
+          {
+            "text": "📖 Player Setup — step-by-step for TiviMate, Smarters, Kodi, Plex, Jellyfin, Emby and Channels DVR",
+            "link": "setup.html"
+          },
+          {
+            "text": "📺 Tap a channel on a game to jump straight to it in the TV Guide",
+            "link": "live.html"
+          },
+          {
+            "text": "🎾 New sports: ATP & WTA tennis, IndyCar, LPGA, LIV, DP World Tour and PFL — plus full UFC/PFL fight cards"
+          },
+          {
+            "text": "🪶 Lite guides (US, UK, Latino): next 2 days, about 4× smaller — made for Firestick",
+            "link": "setup.html"
+          },
+          {
+            "text": "🔢 Missing season/episode numbers filled in from TVmaze — great for DVR recordings"
+          },
+          {
+            "text": "🤓 Public JSON for Home Assistant, Kodi skins and your own apps",
+            "link": "api.html"
+          },
+          {
+            "text": "📺 TV Mode — a big-screen, remote-friendly view for your TV",
+            "link": "tv.html"
+          }
+        ]
+      },
+      "es": {
+        "title": "Gran actualización de deportes y configuración",
+        "items": [
+          {
+            "text": "🏆 Grandes Eventos — llaves de playoffs, series, cuentas regresivas y tablas que se activan solas",
+            "link": "events.html"
+          },
+          {
+            "text": "📖 Configura tu app — paso a paso para TiviMate, Smarters, Kodi, Plex, Jellyfin, Emby y Channels DVR",
+            "link": "setup.html"
+          },
+          {
+            "text": "📺 Toca el canal de un partido para ir directo a él en la Guía de TV",
+            "link": "live.html"
+          },
+          {
+            "text": "🎾 Nuevos deportes: tenis ATP y WTA, IndyCar, LPGA, LIV, DP World Tour y PFL — y carteleras completas de UFC/PFL"
+          },
+          {
+            "text": "🪶 Guías Lite (EE. UU., Reino Unido, Latino): próximos 2 días, unas 4× más pequeñas — hechas para Firestick",
+            "link": "setup.html"
+          },
+          {
+            "text": "🔢 Números de temporada/episodio que faltaban, completados con TVmaze — ideal para grabaciones DVR"
+          },
+          {
+            "text": "🤓 JSON público para Home Assistant, skins de Kodi y tus propias apps",
+            "link": "api.html"
+          },
+          {
+            "text": "📺 Modo TV — una vista grande, fácil de usar con el control remoto",
+            "link": "tv.html"
+          }
+        ]
+      }
+    }
+  ]
+}

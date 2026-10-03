@@ -1,0 +1,102 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kansas State Wildcats (NCAAF)
+X-WR-CALDESC:Kansas State Wildcats schedule from EPGTalk. Updates automatic
+ ally.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856792@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T160000Z
+DTEND:20260919T193000Z
+SUMMARY:🏈 Tulane Green Wave at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nTV: ESPN2\nFinal: Tulane 20 - Kansas St 31\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856814@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T230000Z
+DTEND:20260927T023000Z
+SUMMARY:🏈 Kansas State Wildcats at Cincinnati Bearcats
+LOCATION:Nippert Stadium\, Cincinnati\, OH
+DESCRIPTION:NCAAF\nTV: ESPN2\nFinal: Kansas St 26 - Cincinnati 31\nFrom EPG
+ Talk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856825@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T193000Z
+DTEND:20261010T230000Z
+SUMMARY:🏈 Houston Cougars at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nTV: FOX\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856830@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Kansas Jayhawks at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856839@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Kansas State Wildcats at Arizona State Sun Devils
+LOCATION:Mountain America Stadium\, Tempe\, AZ
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856846@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Kansas State Wildcats at Colorado Buffaloes
+LOCATION:Folsom Field\, Boulder\, CO
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856854@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Oklahoma State Cowboys at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856862@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Kansas State Wildcats at TCU Horned Frogs
+LOCATION:Amon G. Carter Stadium\, Fort Worth\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856865@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Arizona Wildcats at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856878@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Kansas State Wildcats at Iowa State Cyclones
+LOCATION:Jack Trice Stadium\, Ames\, IA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

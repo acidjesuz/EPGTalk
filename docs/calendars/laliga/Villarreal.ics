@@ -1,0 +1,289 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Villarreal (LaLiga)
+X-WR-CALDESC:Villarreal schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-laliga-401882848@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T190000Z
+DTEND:20261010T210000Z
+SUMMARY:⚽ Real Madrid vs Villarreal
+LOCATION:Santiago Bernabéu\, Madrid\, Spain
+DESCRIPTION:LaLiga\nTV: ESPN Deportes\, ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882837@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261017T141500Z
+DTEND:20261017T161500Z
+SUMMARY:⚽ Villarreal vs Elche
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882827@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261024T163000Z
+DTEND:20261024T183000Z
+SUMMARY:⚽ Valencia vs Villarreal
+LOCATION:Mestalla Stadium\, Manises\, Spain
+DESCRIPTION:LaLiga\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882817@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:⚽ Villarreal vs Espanyol
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882807@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:⚽ Villarreal vs Getafe
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882804@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:⚽ Barcelona vs Villarreal
+LOCATION:Spotify Camp Nou\, Barcelona\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882795@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:⚽ Celta Vigo vs Villarreal
+LOCATION:Balaidos\, Vigo\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882777@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:⚽ Villarreal vs Real Sociedad
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882767@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:⚽ Villarreal vs Rayo Vallecano
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882760@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:⚽ Osasuna vs Villarreal
+LOCATION:El Sadar\, Pamplona\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882747@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:⚽ Villarreal vs Sevilla
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882745@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+SUMMARY:⚽ Athletic Club vs Villarreal
+LOCATION:San Mamés\, Bilbao\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882727@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270117
+DTEND;VALUE=DATE:20270118
+SUMMARY:⚽ Villarreal vs Alavés
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882722@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:⚽ Espanyol vs Villarreal
+LOCATION:RCDE Stadium\, Barcelona\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882707@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:⚽ Villarreal vs Racing Santander
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882699@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:⚽ Getafe vs Villarreal
+LOCATION:Estadio Coliseum\, Getafe\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882687@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270214
+DTEND;VALUE=DATE:20270215
+SUMMARY:⚽ Villarreal vs Barcelona
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882677@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270221
+DTEND;VALUE=DATE:20270222
+SUMMARY:⚽ Villarreal vs Valencia
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882675@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270228
+DTEND;VALUE=DATE:20270301
+SUMMARY:⚽ Real Betis vs Villarreal
+LOCATION:Estadio La Cartuja\, Sevilla\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882657@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270307
+DTEND;VALUE=DATE:20270308
+SUMMARY:⚽ Villarreal vs Real Madrid
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882653@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270314
+DTEND;VALUE=DATE:20270315
+SUMMARY:⚽ Elche vs Villarreal
+LOCATION:Estadio Martínez Valero\, Elche\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882637@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270321
+DTEND;VALUE=DATE:20270322
+SUMMARY:⚽ Villarreal vs Málaga
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882634@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270404
+DTEND;VALUE=DATE:20270405
+SUMMARY:⚽ Deportivo vs Villarreal
+LOCATION:Riazor\, La Coruña\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882617@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270411
+DTEND;VALUE=DATE:20270412
+SUMMARY:⚽ Villarreal vs Athletic Club
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882609@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:⚽ Levante vs Villarreal
+LOCATION:Estadi Ciutat de València\, Manises\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882597@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270421
+DTEND;VALUE=DATE:20270422
+SUMMARY:⚽ Villarreal vs Atlético Madrid
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882588@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270502
+DTEND;VALUE=DATE:20270503
+SUMMARY:⚽ Rayo Vallecano vs Villarreal
+LOCATION:Estadio de Vallecas\, Madrid\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882577@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270509
+DTEND;VALUE=DATE:20270510
+SUMMARY:⚽ Villarreal vs Celta Vigo
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882567@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270516
+DTEND;VALUE=DATE:20270517
+SUMMARY:⚽ Sevilla vs Villarreal
+LOCATION:Ramón Sánchez Pizjuán Stadium\, Sevilla\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882557@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270523
+DTEND;VALUE=DATE:20270524
+SUMMARY:⚽ Villarreal vs Osasuna
+LOCATION:Estadio de la Cerámica\, Villarreal\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-laliga-401882547@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270530
+DTEND;VALUE=DATE:20270531
+SUMMARY:⚽ Real Sociedad vs Villarreal
+LOCATION:Reale Arena\, San Sebastian\, Spain
+DESCRIPTION:LaLiga\nStart time to be announced\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

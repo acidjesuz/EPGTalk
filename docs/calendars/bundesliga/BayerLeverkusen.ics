@@ -1,0 +1,280 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bayer Leverkusen (Bundesliga)
+X-WR-CALDESC:Bayer Leverkusen schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884776@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T133000Z
+DTEND:20261010T153000Z
+SUMMARY:⚽ Mainz vs Bayer Leverkusen
+LOCATION:MEWA ARENA\, Mainz\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884771@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261018T133000Z
+DTEND:20261018T153000Z
+SUMMARY:⚽ Bayer Leverkusen vs SC Freiburg
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884760@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261025T143000Z
+DTEND:20261025T163000Z
+SUMMARY:⚽ TSG Hoffenheim vs Bayer Leverkusen
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884753@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:⚽ Bayer Leverkusen vs VfB Stuttgart
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884738@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261108T143000Z
+DTEND:20261108T163000Z
+SUMMARY:⚽ FC Cologne vs Bayer Leverkusen
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884735@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:⚽ Bayer Leverkusen vs SC Paderborn 07
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884727@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261129T183000Z
+DTEND:20261129T203000Z
+SUMMARY:⚽ Borussia Dortmund vs Bayer Leverkusen
+LOCATION:Signal Iduna Park\, Aue\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884716@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ Bayer Leverkusen vs Borussia Mönchengladbach
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884702@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ Werder Bremen vs Bayer Leverkusen
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884698@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ Bayer Leverkusen vs Eintracht Frankfurt
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884686@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ Hamburg SV vs Bayer Leverkusen
+LOCATION:Volksparkstadion\, Hamburg Norderstedt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884682@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ Bayern Munich vs Bayer Leverkusen
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884670@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ Bayer Leverkusen vs Schalke 04
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884662@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ Bayer Leverkusen vs SV Elversberg
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884649@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ 1. FC Union Berlin vs Bayer Leverkusen
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884644@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ Bayer Leverkusen vs FC Augsburg
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884636@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ RB Leipzig vs Bayer Leverkusen
+LOCATION:Red Bull Arena\, Leipzig\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884626@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ Bayer Leverkusen vs Mainz
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884615@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ SC Freiburg vs Bayer Leverkusen
+LOCATION:Europa-Park Stadion\, Freiburg im Breisgau\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884609@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ Bayer Leverkusen vs TSG Hoffenheim
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884599@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ VfB Stuttgart vs Bayer Leverkusen
+LOCATION:MHPArena\, Stuttgart\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884591@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ Bayer Leverkusen vs FC Cologne
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884575@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ SC Paderborn 07 vs Bayer Leverkusen
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884572@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ Bayer Leverkusen vs Borussia Dortmund
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884561@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ Borussia Mönchengladbach vs Bayer Leverkusen
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884554@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ Bayer Leverkusen vs Werder Bremen
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884544@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ Eintracht Frankfurt vs Bayer Leverkusen
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884536@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ Bayer Leverkusen vs Hamburg SV
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884526@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ Bayer Leverkusen vs Bayern Munich
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884493@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ Schalke 04 vs Bayer Leverkusen
+LOCATION:Veltins Arena\, Gelsenkirchen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

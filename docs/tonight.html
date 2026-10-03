@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" type="image/png" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Tonight's Picks</title>
+<meta name="description" content="What's worth watching tonight: the big games, premieres, new episodes and movies — picked automatically from the EPGTalk guides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e; --purple:#7c3aed;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 1200px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+  .tab { font: inherit; font-size: 0.92rem; color: var(--text); background: rgba(0,191,255,0.05); border: 1px solid var(--border);
+         border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+  .tab[aria-pressed="true"] { background: rgba(0,191,255,0.2); border-color: var(--accent); color: #fff; }
+  .copy { margin-left: auto; font: inherit; font-size: 0.88rem; color: var(--bg-deep); background: var(--accent); border: 0;
+          border-radius: 8px; padding: 8px 12px; font-weight: 700; cursor: pointer; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1rem; margin: 28px 0 12px; display: flex; gap: 8px; align-items: center; }
+  h2 .n { color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .card { display: flex; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; }
+  .card.game { border-left: 3px solid var(--green); } .card.premiere { border-left: 3px solid var(--amber); }
+  .card.new { border-left: 3px solid var(--accent); } .card.movie { border-left: 3px solid var(--purple); }
+  .card img, .card .ph { width: 72px; height: 104px; object-fit: cover; border-radius: 8px; flex: none; background: rgba(0,191,255,0.06); }
+  .card .info { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+  .when { color: var(--accent); font-size: 0.8rem; font-weight: 700; }
+  .when.now { color: var(--red); }
+  .ti { font-weight: 700; margin: 2px 0; line-height: 1.25; }
+  .sb { color: var(--muted); font-size: 0.82rem; margin-bottom: 2px; }
+  .ch { color: var(--green); font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ds { color: var(--muted); font-size: 0.8rem; line-height: 1.35; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; overflow: hidden; }
+  .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+  .acts button, .acts a { font: inherit; font-size: 0.76rem; color: var(--text); background: transparent; text-decoration: none;
+          border: 1px solid var(--border); border-radius: 7px; padding: 4px 8px; cursor: pointer; }
+  .more { margin-top: 10px; font: inherit; font-size: 0.88rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+  .empty { color: var(--muted); padding: 18px; background: var(--bg-card); border-radius: 12px; text-align: center; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--accent); }
+  @media (max-width: 520px) { .copy { margin-left: 0; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="now.html" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" class="on" data-i="tonight">Tonight</a>
+    <a href="playlist.html" data-i="checker">Playlist Checker</a>
+    <a href="calendars/" data-i="calendars">Team Calendars</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Tonight's <span>Picks</span></h1>
+  <p class="sub" id="sub"></p>
+  <div class="bar">
+    <button class="tab" id="t0" type="button" aria-pressed="true" data-i="tonightTab">Tonight</button>
+    <button class="tab" id="t1" type="button" aria-pressed="false" data-i="tomorrowTab">Tomorrow night</button>
+    <button class="copy" id="copy" type="button" data-i="copyPost">📋 Copy as forum post</button>
+  </div>
+  <div id="out"><div class="empty" data-i="loading">Loading tonight's picks…</div></div>
+</main>
+<footer data-i="footerhtml"></footer>
+<script src="watch.js"></script>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', setupNav: 'Setup', tonight: 'Tonight', checker: 'Playlist Checker', calendars: 'Team Calendars',
+        h1html: "Tonight's <span>Picks</span>", sub: 'Picked automatically from the EPGTalk guides · your time zone ({tz}) · 5 PM – midnight',
+        tonightTab: 'Tonight', tomorrowTab: 'Tomorrow night', copyPost: '📋 Copy as forum post', copied: 'Copied ✓', loading: "Loading tonight's picks…",
+        game: '🏆 Big games', premiere: '🎬 Premieres', new: '🆕 New episodes', movie: '🍿 Movies', none: 'Nothing picked for this evening yet.',
+        onNow: 'On now', on: 'on', addCal: '📅 Add', find: '🔎 Find in TV Guide', more: 'Show all {n}', fail: "Sorry — tonight's picks could not be loaded.",
+        postTitle: '📺 Tonight on EPGTalk — {d}', postTimes: 'Times in {tz}', postFooter: 'Full guide, live scores and team calendars:',
+        footerhtml: 'Picks update with every guide refresh. Want everything? Browse the full <a href="tvguide.html">TV Guide</a> or <a href="live.html">Live Sports</a>.' },
+  es: { home: 'Inicio', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', setupNav: 'Configurar', tonight: 'Esta noche', checker: 'Revisar Lista', calendars: 'Calendarios',
+        h1html: 'Lo mejor de <span>esta noche</span>', sub: 'Elegido automáticamente de las guías de EPGTalk · tu zona horaria ({tz}) · 17:00 – medianoche',
+        tonightTab: 'Esta noche', tomorrowTab: 'Mañana en la noche', copyPost: '📋 Copiar para el foro', copied: 'Copiado ✓', loading: 'Cargando lo mejor de esta noche…',
+        game: '🏆 Partidos destacados', premiere: '🎬 Estrenos', new: '🆕 Episodios nuevos', movie: '🍿 Películas', none: 'Aún no hay nada elegido para esta noche.',
+        onNow: 'Ahora', on: 'en', addCal: '📅 Agregar', find: '🔎 Buscar en la Guía', more: 'Ver los {n}', fail: 'Lo sentimos — no se pudo cargar lo mejor de esta noche.',
+        postTitle: '📺 Esta noche en EPGTalk — {d}', postTimes: 'Horarios en {tz}', postFooter: 'Guía completa, marcadores en vivo y calendarios de equipos:',
+        footerhtml: 'Se actualiza con cada actualización de las guías. ¿Quieres todo? Mira la <a href="tvguide.html">Guía de TV</a> completa o <a href="live.html">Deportes en Vivo</a>.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : ''));
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+const $ = id => document.getElementById(id);
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + tr('h1html').replace(/<[^>]+>/g, '');
+const LOC = LANG === 'es' ? 'es' : undefined;
+const fmtT = new Intl.DateTimeFormat(LOC, { hour: 'numeric', minute: '2-digit' });
+const fmtD = new Intl.DateTimeFormat(LOC, { weekday: 'long', month: 'long', day: 'numeric' });
+const tzName = Intl.DateTimeFormat().resolvedOptions().timeZone.replace('_', ' ');
+const tzShort = (new Intl.DateTimeFormat(LOC, { timeZoneName: 'short' }).formatToParts(new Date()).find(p => p.type === 'timeZoneName') || {}).value || tzName;
+$('sub').textContent = tr('sub', { tz: tzName });
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+const ORDER = ['game', 'premiere', 'new', 'movie'];
+const LIMIT = { game: 12, premiere: 12, new: 12, movie: 12 };
+let PICKS = [], day = 0;
+const expanded = {};
+
+function windowFor(d) {                    // the visitor's evening: 17:00 → 24:00 local
+  const base = new Date(); base.setHours(0, 0, 0, 0); base.setDate(base.getDate() + d);
+  const a = new Date(base); a.setHours(17); const b = new Date(base); b.setDate(b.getDate() + 1);
+  return [a.getTime() / 60000, b.getTime() / 60000, base];
+}
+function picksFor(d) {
+  const [a, b] = windowFor(d), now = Date.now() / 60000;
+  // starts during the evening (and hasn't ended), or is on right now once the evening has begun
+  return PICKS.filter(p => p.e > now && ((p.s >= a - 30 && p.s < b) || (d === 0 && now >= a && p.s <= now)));
+}
+function where(p) { return p.tv || p.ch.join(', '); }
+
+function icsDate(m) { return new Date(m * 60000).toISOString().replace(/[-:]/g, '').replace(/\.\d+/, ''); }
+function icsEsc(s) { return (s || '').replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n'); }
+function addCal(p) {
+  const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//EPGTalk//Tonight//EN', 'BEGIN:VEVENT', 'UID:pick-' + p.s + '-' + encodeURIComponent(p.t).slice(0, 40) + '@epgtalk',
+    'DTSTAMP:' + icsDate(Date.now() / 60000), 'DTSTART:' + icsDate(p.s), 'DTEND:' + icsDate(p.e),
+    'SUMMARY:' + icsEsc('📺 ' + p.t + (p.sub ? ' — ' + p.sub : '')), 'LOCATION:' + icsEsc(where(p)),
+    'DESCRIPTION:' + icsEsc((p.d ? p.d + '\n\n' : '') + where(p) + ' · EPGTalk'),
+    'BEGIN:VALARM', 'TRIGGER:-PT15M', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEsc(p.t), 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'];
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/calendar' }));
+  a.download = p.t.replace(/[^\w\- ]+/g, '').trim().slice(0, 60).replace(/\s+/g, '-') + '.ics';
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+}
+
+function card(p) {
+  const now = Date.now() / 60000, live = p.s <= now;
+  const c = el('div', 'card ' + p.k);
+  if (p.p) { const im = el('img'); im.src = p.p; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.replaceWith(el('div', 'ph')); c.appendChild(im); }
+  else c.appendChild(el('div', 'ph'));
+  const i = el('div', 'info');
+  i.appendChild(el('div', 'when' + (live ? ' now' : ''), live ? '● ' + tr('onNow') + ' · ' + fmtT.format(new Date(p.e * 60000)) : fmtT.format(new Date(p.s * 60000))));
+  i.appendChild(el('div', 'ti', p.t));
+  const sb = [p.sub, p.ep, p.k === 'movie' ? p.y : ''].filter(Boolean).join(' · ');
+  if (sb) i.appendChild(el('div', 'sb', sb));
+  if (where(p)) { const w = el('div', 'ch', '📺 ' + where(p)); if (p.k === 'game' && window.EPGWatch && EPGWatch.free(where(p).split(/,\s*/))) w.appendChild(EPGWatch.freeBadge()); i.appendChild(w); }
+  if (p.d) i.appendChild(el('div', 'ds', p.d));
+  const acts = el('div', 'acts');
+  const b1 = el('button', null, tr('addCal')); b1.type = 'button'; b1.onclick = () => addCal(p);
+  const a2 = el('a', null, tr('find')); a2.href = 'tvguide.html?show=' + encodeURIComponent(p.t.replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim().split(' ').slice(0, 5).join(' '));
+  acts.append(b1, a2); i.appendChild(acts);
+  c.appendChild(i);
+  return c;
+}
+
+function render() {
+  const out = $('out'); out.replaceChildren();
+  const list = picksFor(day);
+  for (const k of ORDER) {
+    const items = list.filter(p => p.k === k).sort((a, b) => a.s - b.s);
+    if (!items.length) continue;
+    const h = el('h2', null, tr(k)); h.appendChild(el('span', 'n', '(' + items.length + ')')); out.appendChild(h);
+    const grid = el('div', 'grid');
+    const n = expanded[day + k] ? items.length : LIMIT[k];
+    items.slice(0, n).forEach(p => grid.appendChild(card(p)));
+    out.appendChild(grid);
+    if (items.length > n) { const m = el('button', 'more', tr('more', { n: items.length })); m.type = 'button'; m.onclick = () => { expanded[day + k] = true; render(); }; out.appendChild(m); }
+  }
+  if (!out.children.length) out.appendChild(el('div', 'empty', tr('none')));
+  $('t0').setAttribute('aria-pressed', day === 0 ? 'true' : 'false');
+  $('t1').setAttribute('aria-pressed', day === 1 ? 'true' : 'false');
+}
+
+function forumPost() {
+  const [, , base] = windowFor(day), list = picksFor(day);
+  const L = ['[SIZE=5][B]' + tr('postTitle', { d: fmtD.format(base) }) + '[/B][/SIZE]', '[I]' + tr('postTimes', { tz: tzShort }) + '[/I]', ''];
+  const max = { game: 10, premiere: 8, new: 10, movie: 6 };
+  for (const k of ORDER) {
+    const items = list.filter(p => p.k === k).sort((a, b) => a.s - b.s).slice(0, max[k]);
+    if (!items.length) continue;
+    L.push('[B]' + tr(k) + '[/B]', '[LIST]');
+    for (const p of items) {
+      const w = where(p);
+      L.push('[*][B]' + fmtT.format(new Date(p.s * 60000)) + '[/B] — ' + p.t + (p.sub && p.k !== 'game' ? ' — ' + p.sub : '') + (w ? ' (' + w + ')' : ''));
+    }
+    L.push('[/LIST]', '');
+  }
+  L.push(tr('postFooter'), '[CODE]epgtalk.com[/CODE]');
+  return L.join('\n').replace(/https?:\/\/\S+/g, '');          // never include clickable links
+}
+
+$('t0').onclick = () => { day = 0; render(); };
+$('t1').onclick = () => { day = 1; render(); };
+$('copy').onclick = async () => {
+  const txt = forumPost();
+  try { await navigator.clipboard.writeText(txt); $('copy').textContent = tr('copied'); }
+  catch (e) { prompt('', txt); }
+  setTimeout(() => $('copy').textContent = tr('copyPost'), 2000);
+};
+fetch('tvguide/picks.json', { cache: 'no-cache' }).then(r => r.json()).then(j => {
+  PICKS = j.picks || [];
+  if (!picksFor(0).length && new Date().getHours() >= 23) day = 1;
+  render();
+}).catch(() => { $('out').replaceChildren(el('div', 'empty', tr('fail'))); });
+setInterval(render, 5 * 60000);
+})();
+</script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

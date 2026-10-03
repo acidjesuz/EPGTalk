@@ -1,0 +1,118 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Tennessee Volunteers (NCAAF)
+X-WR-CALDESC:Tennessee Volunteers schedule from EPGTalk. Updates automatica
+ lly.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856681@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260912T230000Z
+DTEND:20260913T023000Z
+SUMMARY:🏈 Tennessee Volunteers at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Tennessee 45 - Georgia Tech 24\nFrom EP
+ GTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856692@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T234500Z
+DTEND:20260920T031500Z
+SUMMARY:🏈 Kennesaw State Owls at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF\nTV: SECN+\nFinal: Kennesaw St 9 - Tennessee 42\nFrom EPG
+ Talk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856704@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T160000Z
+DTEND:20260926T193000Z
+SUMMARY:🏈 Texas Longhorns at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF\nTV: ABC\nFinal: Texas 20 - Tennessee 17\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856710@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261003T193000Z
+DTEND:20261003T230000Z
+SUMMARY:🏈 Auburn Tigers at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF\nTV: ESPN\, ERADM\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856713@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T201500Z
+DTEND:20261010T234500Z
+SUMMARY:🏈 Tennessee Volunteers at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF\nTV: SEC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856723@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Alabama Crimson Tide at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856731@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Tennessee Volunteers at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856745@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Kentucky Wildcats at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856888@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Tennessee Volunteers at Texas A&M Aggies
+LOCATION:Kyle Field\, College Station\, TX
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856754@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 LSU Tigers at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856765@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Tennessee Volunteers at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oklahoma State Cowboys (NCAAF)
+X-WR-CALDESC:Oklahoma State Cowboys schedule from EPGTalk. Updates automati
+ cally.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856803@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T230000Z
+DTEND:20260920T023000Z
+SUMMARY:🏈 Murray State Racers at Oklahoma State Cowboys
+LOCATION:Boone Pickens Stadium\, Stillwater\, OK
+DESCRIPTION:NCAAF\nTV: ESPN+\nFinal: Murray St 0 - Oklahoma St 59\nFrom EPG
+ Talk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856881@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T230000Z
+DTEND:20260927T023000Z
+SUMMARY:🏈 Oklahoma State Cowboys at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nTV: FS1\nFinal: Oklahoma St 41 - West Virginia 24\nFrom 
+ EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856824@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T160000Z
+DTEND:20261010T193000Z
+SUMMARY:🏈 UCF Knights at Oklahoma State Cowboys
+LOCATION:Boone Pickens Stadium\, Stillwater\, OK
+DESCRIPTION:NCAAF\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856831@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Oklahoma State Cowboys at Houston Cougars
+LOCATION:TDECU Stadium\, Houston\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856836@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Colorado Buffaloes at Oklahoma State Cowboys
+LOCATION:Boone Pickens Stadium\, Stillwater\, OK
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856847@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Oklahoma State Cowboys at Iowa State Cyclones
+LOCATION:Jack Trice Stadium\, Ames\, IA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856854@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Oklahoma State Cowboys at Kansas State Wildcats
+LOCATION:Bill Snyder Family Stadium\, Manhattan\, KS
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856863@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Texas Tech Red Raiders at Oklahoma State Cowboys
+LOCATION:Boone Pickens Stadium\, Stillwater\, OK
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856870@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Oklahoma State Cowboys at Arizona State Sun Devils
+LOCATION:Mountain America Stadium\, Tempe\, AZ
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856877@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Kansas Jayhawks at Oklahoma State Cowboys
+LOCATION:Boone Pickens Stadium\, Stillwater\, OK
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

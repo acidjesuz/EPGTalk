@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" type="image/png" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Playlist Checker</title>
+<meta name="description" content="Check which channels in your IPTV playlist have a guide in EPGTalk. Runs in your browser — your playlist is never uploaded.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 8px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 8px; line-height: 1.5; }
+  .privacy { display: inline-block; font-size: 0.85rem; color: var(--green); background: rgba(46,204,113,0.08);
+             border: 1px solid rgba(46,204,113,0.25); border-radius: 8px; padding: 6px 10px; margin: 6px 0 18px; }
+  textarea { width: 100%; min-height: 150px; padding: 12px 14px; font: inherit; font-size: 0.9rem; color: var(--text);
+             background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; outline: none; resize: vertical; }
+  textarea:focus { border-color: var(--accent); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0 24px; }
+  .btn { font: inherit; font-size: 0.92rem; color: var(--text); background: var(--bg-card); border: 1px solid var(--border);
+         border-radius: 8px; padding: 9px 14px; cursor: pointer; }
+  .btn.main { background: var(--accent); color: var(--bg-deep); border-color: var(--accent); font-weight: 700; }
+  .btn:hover { border-color: var(--accent); }
+  .file { position: relative; overflow: hidden; }
+  .file input { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; cursor: pointer; }
+  .progress { color: var(--muted); font-size: 0.9rem; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; cursor: pointer; text-align: left; font: inherit; color: var(--text); }
+  .stat b { display: block; font-family: 'Orbitron', monospace; font-size: 1.4rem; }
+  .stat small { color: var(--muted); }
+  .stat[aria-pressed="true"] { border-color: var(--accent); background: rgba(0,191,255,0.1); }
+  .stat.ok b { color: var(--green); } .stat.close b { color: var(--amber); } .stat.miss b { color: var(--red); }
+  .tools { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tools input { flex: 1; min-width: 200px; padding: 9px 12px; font: inherit; color: var(--text); background: var(--bg-card);
+                 border: 1px solid var(--border); border-radius: 8px; outline: none; }
+  ul.res { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  ul.res li { display: grid; grid-template-columns: 26px minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: center;
+              padding: 10px 14px; background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.04); }
+  ul.res li:first-child { border-top: 0; }
+  ul.res li:nth-child(even) { background: #0f1522; }
+  .ic { font-size: 1.05rem; text-align: center; }
+  .pn { min-width: 0; overflow-wrap: anywhere; }
+  .pn small { display: block; color: var(--muted); font-size: 0.76rem; }
+  .gm { min-width: 0; overflow-wrap: anywhere; font-size: 0.88rem; }
+  .gm .lbl { color: var(--muted); font-size: 0.76rem; display: block; }
+  .tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+  .tag { font-size: 0.7rem; padding: 1px 7px; border-radius: 6px; background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.25); }
+  .more { text-align: center; margin-top: 14px; }
+  .help { margin-top: 28px; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+  .help b { color: var(--text); }
+  @media (max-width: 640px) { ul.res li { grid-template-columns: 26px minmax(0, 1fr); } .gm { grid-column: 2; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="now.html" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="playlist.html" class="on" data-i="checker">Playlist Checker</a>
+    <a href="calendars/" data-i="calendars">Team Calendars</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Playlist <span>Checker</span></h1>
+  <p class="sub" data-i="sub">Find out which channels in your IPTV playlist have a guide in EPGTalk — and which name to look for when one doesn't match.</p>
+  <div class="privacy" data-i="privacy">🔒 Runs entirely in your browser. Your playlist is never uploaded, saved or shared — and stream links are ignored.</div>
+  <textarea id="txt" spellcheck="false"></textarea>
+  <div class="row">
+    <button class="btn main" id="go" type="button" data-i="check">Check my channels</button>
+    <label class="btn file"><span data-i="load">📂 Load .m3u file</span><input id="file" type="file" accept=".m3u,.m3u8,.txt,audio/x-mpegurl,application/x-mpegurl,text/plain"></label>
+    <span class="progress" id="prog"></span>
+  </div>
+  <section id="out" hidden>
+    <div class="stats" id="stats"></div>
+    <div class="tools">
+      <input id="q" type="search" autocomplete="off">
+      <button class="btn" id="copy" type="button" data-i="copyMissing">Copy missing list</button>
+    </div>
+    <ul class="res" id="list"></ul>
+    <div class="more"><button class="btn" id="more" type="button" hidden data-i="more">Show more</button></div>
+  </section>
+  <div class="help" data-i="helphtml"></div>
+</main>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', setupNav: 'Setup', tonight: 'Tonight', checker: 'Playlist Checker', calendars: 'Team Calendars',
+        h1html: 'Playlist <span>Checker</span>',
+        sub: "Find out which channels in your IPTV playlist have a guide in EPGTalk — and which name to look for when one doesn't match.",
+        privacy: '🔒 Runs entirely in your browser. Your playlist is never uploaded, saved or shared — and stream links are ignored.',
+        placeholder: 'Paste your channel names here (one per line) — or paste your whole .m3u playlist, or load the file below.',
+        check: 'Check my channels', load: '📂 Load .m3u file', loadingData: 'Loading EPGTalk channel list…', reading: 'Reading {f}…',
+        checking: 'Checking {d} of {n}…', empty: 'Paste some channel names or load a playlist first.',
+        total: 'channels checked', ok: 'have a guide', close: 'close match', miss: 'no guide found', search: 'Filter results…',
+        copyMissing: 'Copy missing list', copied: 'Copied ✓', more: 'Show more', inGuide: 'In EPGTalk as', didYouMean: 'Did you mean', noMatch: 'No match in EPGTalk',
+        failData: 'Sorry — the EPGTalk channel list could not be loaded.',
+        helphtml: '<b>Tips:</b> ✅ means a channel in your playlist has the same name as one in the guide — most apps link them automatically. 🟡 means the guide has a channel with a very similar name: in your app, map your channel to that name (or rename it). ❌ means none of the EPGTalk guides seem to carry it. Use the <a href="channels.html" style="color:var(--accent)">Channel Finder</a> to search the guides yourself. Missing a channel you would like in the guide? Email <a href="mailto:support@epgtalk.com" style="color:var(--accent)">support@epgtalk.com</a>.' },
+  es: { home: 'Inicio', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', setupNav: 'Configurar', tonight: 'Esta noche', checker: 'Revisar Lista', calendars: 'Calendarios',
+        h1html: 'Revisar <span>Lista</span>',
+        sub: 'Descubre qué canales de tu lista IPTV tienen guía en EPGTalk — y qué nombre buscar cuando uno no coincide.',
+        privacy: '🔒 Funciona solo en tu navegador. Tu lista nunca se sube, guarda ni comparte — y los enlaces de streaming se ignoran.',
+        placeholder: 'Pega aquí los nombres de tus canales (uno por línea) — o pega toda tu lista .m3u, o carga el archivo abajo.',
+        check: 'Revisar mis canales', load: '📂 Cargar archivo .m3u', loadingData: 'Cargando la lista de canales de EPGTalk…', reading: 'Leyendo {f}…',
+        checking: 'Revisando {d} de {n}…', empty: 'Primero pega nombres de canales o carga una lista.',
+        total: 'canales revisados', ok: 'tienen guía', close: 'parecido', miss: 'sin guía', search: 'Filtrar resultados…',
+        copyMissing: 'Copiar lista sin guía', copied: 'Copiado ✓', more: 'Mostrar más', inGuide: 'En EPGTalk como', didYouMean: '¿Quisiste decir', noMatch: 'Sin coincidencia en EPGTalk',
+        failData: 'Lo sentimos — no se pudo cargar la lista de canales de EPGTalk.',
+        helphtml: '<b>Consejos:</b> ✅ significa que el canal de tu lista tiene el mismo nombre que uno de la guía — la mayoría de las apps los enlazan solas. 🟡 significa que la guía tiene un canal con un nombre muy parecido: en tu app, asigna tu canal a ese nombre (o cámbiale el nombre). ❌ significa que ninguna guía de EPGTalk parece tenerlo. Usa el <a href="channels.html" style="color:var(--accent)">Buscador de Canales</a> para buscar tú mismo. ¿Falta un canal que te gustaría en la guía? Escribe a <a href="mailto:support@epgtalk.com" style="color:var(--accent)">support@epgtalk.com</a>.' },
+};
+const GUIDE_LBL = { en: { combined: 'Combined', us: 'US', uk: 'UK', latino: 'Latino / Mexico', uslocal: 'US Local', sports: 'Sports', freetv: 'Free TV' },
+                    es: { combined: 'Combinada', us: 'EE.UU.', uk: 'Reino Unido', latino: 'Latino / México', uslocal: 'EE.UU. Local', sports: 'Deportes', freetv: 'TV Gratis' } };
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : ''));
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+const $ = id => document.getElementById(id);
+$('txt').placeholder = tr('placeholder'); $('q').placeholder = tr('search');
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + tr('checker');
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+
+// ── name normalising & similarity ───────────────────────────────────────────
+const NOISE = /\b(fhd|uhd|hd|sd|hq|lq|4k|8k|hevc|h265|h264|1080p?|720p?|2160p?|50fps|60fps|backup|alt|raw|vip|plus\+)\b/g;
+function norm(s) {
+  s = (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  s = s.replace(/&amp;/g, '&').replace(/&/g, ' and ').replace(/\+/g, ' plus ');
+  s = s.replace(/\[[^\]]*\]|\([^)]*\)|\{[^}]*\}/g, ' ');
+  s = s.replace(/^\s*[a-z]{2,4}\s*(\:|\||\-|»|•)\s*/, '');          // "US: ", "UK | ", "NFL - "
+  s = s.replace(NOISE, ' ').replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
+  return s;
+}
+const compact = s => s.replace(/ /g, '');
+// words that don't identify a channel on their own
+const FILLER = new Set(['tv', 'television', 'channel', 'network', 'east', 'west', 'us', 'usa', 'uk', 'the', 'and', 'of', 'en', 'el', 'la', 'hd']);
+const sig = n => n.split(' ').filter(w => w && !FILLER.has(w));
+function bigrams(s) { const m = new Map(); for (let i = 0; i < s.length - 1; i++) { const b = s.substr(i, 2); m.set(b, (m.get(b) || 0) + 1); } return m; }
+function dice(a, b) {
+  if (a === b) return 1; if (a.length < 2 || b.length < 2) return 0;
+  const A = bigrams(a), B = bigrams(b); let inter = 0;
+  for (const [k, n] of A) { const m = B.get(k); if (m) inter += Math.min(n, m); }
+  return 2 * inter / (a.length - 1 + b.length - 1);
+}
+
+// ── EPGTalk channel names (from the TV guide data) ──────────────────────────
+let DB = null;
+async function loadDB() {
+  if (DB) return DB;
+  $('prog').textContent = tr('loadingData');
+  const idx = await (await fetch('tvguide/index.json', { cache: 'no-cache' })).json();
+  const byNorm = new Map(), byToken = new Map(), entries = [];
+  await Promise.all(idx.guides.map(async g => {
+    const chans = await (await fetch(`tvguide/${g.key}/channels.json`, { cache: 'no-cache' })).json();
+    for (const c of chans) {
+      const n = norm(c[0]); if (!n) continue;
+      let e = byNorm.get(n);
+      if (!e) { e = { name: c[0], n, c: compact(n), guides: new Set() }; byNorm.set(n, e); entries.push(e); }
+      e.guides.add(g.key);
+    }
+  }));
+  const byCompact = new Map();
+  for (const e of entries) {
+    byCompact.set(e.c, e);
+    for (const tok of new Set(e.n.split(' '))) {
+      if (tok.length < 3 && !/\d/.test(tok)) continue;
+      if (!byToken.has(tok)) byToken.set(tok, []);
+      byToken.get(tok).push(e);
+    }
+  }
+  DB = { byNorm, byCompact, byToken, entries };
+  return DB;
+}
+
+function match(name) {
+  const n = norm(name); if (!n) return null;
+  const exact = DB.byNorm.get(n) || DB.byCompact.get(compact(n));
+  if (exact) return { kind: 'ok', e: exact };
+  const toks = n.split(' ').filter(tok => tok.length >= 3 || /\d/.test(tok));
+  const cand = new Set();
+  for (const tok of toks) for (const e of (DB.byToken.get(tok) || [])) cand.add(e);
+  let best = null, bs = 0; const cn = compact(n);
+  const need = sig(n);
+  for (const e of cand) {
+    const have = new Set(sig(e.n));
+    if (need.length && !need.every(w => have.has(w))) continue;      // must contain every meaningful word
+    const sc = dice(cn, e.c); if (sc > bs) { bs = sc; best = e; }
+  }
+  if (best && bs >= 0.6) return { kind: 'close', e: best, score: bs };
+  return { kind: 'miss' };
+}
+
+// ── playlist parsing (names only; URLs are skipped) ─────────────────────────
+function parse(text) {
+  const out = [], seen = new Set();
+  const lines = text.split(/\r?\n/);
+  const isM3U = lines.some(l => l.startsWith('#EXTINF'));
+  for (const raw of lines) {
+    const l = raw.trim(); if (!l) continue;
+    let name = null, group = '';
+    if (isM3U) {
+      if (!l.startsWith('#EXTINF')) continue;
+      const comma = l.search(/,(?=[^"]*$)/);                       // comma after the last attribute
+      name = comma >= 0 ? l.slice(comma + 1).trim() : '';
+      const tn = l.match(/tvg-name="([^"]*)"/); if (!name && tn) name = tn[1];
+      const gm = l.match(/group-title="([^"]*)"/); if (gm) group = gm[1];
+    } else {
+      if (/^(https?|rtmp|rtsp|udp):\/\//i.test(l) || l.startsWith('#')) continue;
+      name = l;
+    }
+    if (!name || /^(https?|rtmp|rtsp|udp):\/\//i.test(name)) continue;
+    const key = name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key); out.push({ name, group });
+  }
+  return out;
+}
+
+// ── run ─────────────────────────────────────────────────────────────────────
+let RES = [], view = 'all', shown = 300;
+async function run(text) {
+  const items = parse(text);
+  if (!items.length) { $('prog').textContent = tr('empty'); return; }
+  try { await loadDB(); } catch (e) { $('prog').textContent = tr('failData'); return; }
+  RES = [];
+  for (let i = 0; i < items.length; i += 400) {                    // chunks keep the page responsive
+    for (const it of items.slice(i, i + 400)) RES.push(Object.assign({}, it, match(it.name) || { kind: 'miss' }));
+    $('prog').textContent = tr('checking', { d: Math.min(i + 400, items.length).toLocaleString(), n: items.length.toLocaleString() });
+    await new Promise(r => setTimeout(r, 0));
+  }
+  $('prog').textContent = '';
+  view = 'all'; shown = 300; $('out').hidden = false; draw();
+}
+
+function draw() {
+  const cnt = { all: RES.length, ok: 0, close: 0, miss: 0 };
+  for (const r of RES) cnt[r.kind]++;
+  const stats = $('stats'); stats.replaceChildren();
+  for (const [k, cls, lbl] of [['all', '', 'total'], ['ok', 'ok', 'ok'], ['close', 'close', 'close'], ['miss', 'miss', 'miss']]) {
+    const b = el('button', 'stat ' + cls); b.type = 'button'; b.setAttribute('aria-pressed', view === k ? 'true' : 'false');
+    b.appendChild(el('b', null, cnt[k].toLocaleString())); b.appendChild(el('small', null, tr(lbl)));
+    b.onclick = () => { view = k; shown = 300; draw(); }; stats.appendChild(b);
+  }
+  const q = norm($('q').value);
+  const rows = RES.filter(r => (view === 'all' || r.kind === view) && (!q || norm(r.name + ' ' + (r.e ? r.e.name : '') + ' ' + r.group).includes(q)));
+  const list = $('list'); list.replaceChildren();
+  for (const r of rows.slice(0, shown)) {
+    const li = el('li');
+    li.appendChild(el('div', 'ic', r.kind === 'ok' ? '✅' : r.kind === 'close' ? '🟡' : '❌'));
+    const pn = el('div', 'pn', r.name); if (r.group) pn.appendChild(el('small', null, r.group)); li.appendChild(pn);
+    const gm = el('div', 'gm');
+    if (r.e) {
+      gm.appendChild(el('span', 'lbl', r.kind === 'ok' ? tr('inGuide') : tr('didYouMean') + (LANG === 'es' ? '?' : '…')));
+      gm.appendChild(document.createTextNode(r.e.name + (r.kind === 'close' && LANG === 'en' ? '?' : '')));
+      const tags = el('div', 'tags');
+      for (const g of r.e.guides) tags.appendChild(el('span', 'tag', GUIDE_LBL[LANG][g] || g));
+      gm.appendChild(tags);
+    } else gm.appendChild(el('span', 'lbl', tr('noMatch')));
+    li.appendChild(gm); list.appendChild(li);
+  }
+  $('more').hidden = rows.length <= shown;
+}
+
+$('go').onclick = () => run($('txt').value);
+$('file').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  $('prog').textContent = tr('reading', { f: f.name });
+  const rd = new FileReader();
+  rd.onload = () => run(String(rd.result));
+  rd.readAsText(f);
+  e.target.value = '';
+};
+let qT; $('q').addEventListener('input', () => { clearTimeout(qT); qT = setTimeout(() => { shown = 300; draw(); }, 150); });
+$('more').onclick = () => { shown += 300; draw(); };
+$('copy').onclick = async () => {
+  const txt = RES.filter(r => r.kind === 'miss').map(r => r.name).join('\n');
+  try { await navigator.clipboard.writeText(txt); $('copy').textContent = tr('copied'); } catch (e) {}
+  setTimeout(() => $('copy').textContent = tr('copyMissing'), 2000);
+};
+})();
+</script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

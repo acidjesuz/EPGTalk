@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" type="image/png" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>EPGTalk — Free TV, No Subscription</title>
+<meta name="description" content="Watch TV without a subscription: 1,100+ free streaming channels (Pluto TV, Samsung TV Plus, Plex, Tubi) with our guide, plus ABC, CBS, FOX, NBC, PBS, Univision, Telemundo and more — free, forever, in HD. How to check your area, pick an antenna and scan for channels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 900px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; line-height: 1.6; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 8px; }
+  h1 span { color: var(--green); }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1.05rem; margin: 34px 0 12px; }
+  a { color: var(--accent); }
+  .hero { background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(0,191,255,0.06)); border: 1px solid rgba(46,204,113,0.3);
+          border-radius: 16px; padding: 18px 20px; font-size: 1.08rem; }
+  .hero b { color: #fff; }
+  .nets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .nets span { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 4px 10px; font-weight: 700; font-size: 0.9rem; }
+  ol.steps { padding-left: 0; list-style: none; counter-reset: s; margin: 0; }
+  ol.steps > li { counter-increment: s; position: relative; background: var(--bg-card); border-radius: 12px; padding: 14px 16px 14px 58px; margin-bottom: 10px; }
+  ol.steps > li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 30px; height: 30px; border-radius: 50%;
+                          background: rgba(46,204,113,0.18); color: var(--green); font-weight: 900; display: grid; place-items: center; }
+  ol.steps b { color: #fff; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .card { background: var(--bg-card); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.93rem; }
+  .card b { display: block; margin-bottom: 4px; color: #fff; }
+  .note { margin-top: 12px; padding: 10px 14px; border-left: 3px solid var(--amber); background: rgba(245,179,1,0.06); border-radius: 0 10px 10px 0; font-size: 0.92rem; }
+  details { background: var(--bg-card); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; }
+  summary { cursor: pointer; font-weight: 700; }
+  .svc { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 12px 0; }
+  .svc a { display: block; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 12px 14px; text-decoration: none; color: var(--text); }
+  .svc a b { display: block; color: #fff; font-size: 1.02rem; }
+  .svc a small { color: var(--muted); }
+  .big { display: inline-block; margin-top: 8px; background: var(--green); color: #060918 !important; font-weight: 700; border-radius: 10px; padding: 9px 16px; text-decoration: none; }
+  .part { font-family: 'Orbitron', monospace; color: var(--accent); font-size: 0.8rem; letter-spacing: 0.1em; margin: 36px 0 4px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main id="main"></main>
+<footer data-i="foot">Prices are rough guides and change — you never need an expensive antenna. EPGTalk sells nothing and isn't paid by anyone.</footer>
+<script>
+(() => {
+const C = {
+  en: {
+    home: 'Home', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', setupNav: 'Setup',
+    foot: "Prices are rough guides and change — you never need an expensive antenna. EPGTalk sells nothing and isn't paid by anyone.",
+    title: 'EPGTalk — Free TV, No Subscription',
+    html: `
+
+<h1>🆓 Free TV — <span>no subscription</span></h1>
+<p>Two ways to watch real TV for $0 a month. Both are legal and free.</p>
+<div class="part">PART 1 · FREE STREAMING APPS</div>
+<h2>📱 1,100+ free channels on your phone, TV or Firestick</h2>
+<div class="hero">These apps are <b>free and legal</b> — paid for by ads, like regular TV. No subscription, no credit card. Install the app (or open the website), pick a channel, watch.
+<div class="svc">
+  <a href="https://pluto.tv/live-tv" target="_blank" rel="noopener"><b>Pluto TV</b><small>News, movies, classic shows · phone, Firestick, Roku, smart TVs, web</small></a>
+  <a href="https://www.samsungtvplus.com/" target="_blank" rel="noopener"><b>Samsung TV Plus</b><small>Built into Samsung TVs · also phones and web</small></a>
+  <a href="https://watch.plex.tv/live-tv" target="_blank" rel="noopener"><b>Plex</b><small>Free live TV — no Plex server needed · phone, TV, web</small></a>
+  <a href="https://tubitv.com/live" target="_blank" rel="noopener"><b>Tubi</b><small>Live news & sports channels plus free movies · phone, TV, web</small></a>
+</div>
+<a class="big" href="tvguide.html#freetv">📺 See what's on now — Free TV guide</a>
+</div>
+<p>In our <b>Free TV</b> guide every channel has a <b>▶ Watch free</b> button that opens the service's own free player. Using an IPTV app? The Free TV guide address is on the <a href="setup.html">Player Setup</a> page.</p>
+<div class="part">PART 2 · FREE WITH AN ANTENNA</div>
+<h2>📡 Your local channels free, forever</h2>
+
+<div class="hero">A <b>one-time</b> antenna — usually <b>$20–40</b> — brings in your local stations <b>free, forever</b>, in HD. No subscription, no internet, no monthly bill.
+  <div class="nets"><span>ABC</span><span>CBS</span><span>FOX</span><span>NBC</span><span>PBS</span><span>The CW</span><span>Univision</span><span>UniMás</span><span>Telemundo</span><span>ION</span><span>+ dozens of extra free channels</span></div>
+</div>
+
+<h2>🏈 What you get for free</h2>
+<div class="grid">
+  <div class="card"><b>Big games</b>Lots of NFL Sunday games (CBS, FOX), Sunday Night Football (NBC), the Super Bowl, college football and many playoff games air on these networks.</div>
+  <div class="card"><b>⚽ Soccer in Spanish</b>Liga MX, the national teams and more on Univision, UniMás and Telemundo.</div>
+  <div class="card"><b>📰 Local news & weather</b>Your own city's news — and emergency alerts even when the internet is down.</div>
+  <div class="card"><b>🧒 Kids & learning</b>PBS Kids and plenty of family shows, ad-free on PBS.</div>
+</div>
+<p>Look for the <span style="background:#2ECC71;color:#060918;border-radius:5px;padding:0 6px;font-weight:700;font-size:.8rem">📡 Free with antenna</span> badge on <a href="live.html">Live Sports</a>, <a href="events.html">Big Events</a> and <a href="tonight.html">Tonight</a>. Which game your local station shows can depend on your area.</p>
+
+<h2>🛠️ How to set it up — 15 minutes</h2>
+<ol class="steps">
+  <li><b>Check which channels reach your home.</b> The FCC's free map shows every station near your address and how strong it is:<br>
+    <a href="https://www.fcc.gov/media/engineering/dtvmaps" target="_blank" rel="noopener">fcc.gov/media/engineering/dtvmaps</a> → type your address → look at the colours (green = strong).</li>
+  <li><b>Pick the antenna.</b> Mostly green on the map (within ~25 miles)? A simple <b>indoor flat antenna</b> (about $15–30) is enough. Yellow/red or far from town? An <b>attic or outdoor antenna</b> (about $40–100).
+    <br><small>Ignore "4K", "1000-mile" or "HDTV special" labels — every antenna receives the same HD signal; distance claims are marketing.</small></li>
+  <li><b>Plug it in.</b> Screw the cable into the TV's <b>ANT IN</b> / <b>RF</b> / <b>Cable</b> socket. Put the antenna <b>high up and near a window</b>, facing the towers if the map shows a direction.</li>
+  <li><b>Scan for channels.</b> On the TV: <b>Settings → Channels → Channel scan</b> (may be called <i>Auto-program</i> or <i>Auto-tune</i>) and choose <b>Antenna / Air</b>. Wait a few minutes — done!</li>
+  <li><b>Re-scan every few months</b> or if a channel disappears — stations sometimes move frequencies.</li>
+</ol>
+<div class="note">📺 <b>Very old TV</b> (tube TV, before 2007)? It needs a small <b>digital converter box</b> (about $30) between the antenna and the TV. Any TV sold in the US since 2007 already has the tuner built in.</div>
+
+<h2>📖 The guide for your antenna channels</h2>
+<p>EPGTalk's <b>US Local</b> guide covers ABC, NBC, CBS, FOX and PBS stations in <b>140+ markets</b>. If you watch your antenna through an app (see below), add it like any other EPGTalk guide — the <a href="setup.html">Player Setup</a> page has the steps. Or just browse it in the <a href="tvguide.html#uslocal">TV Guide</a>.</p>
+
+<h2>❓ Questions</h2>
+<details><summary>Is it really free? Is it legal?</summary><p>Yes. Local broadcast TV is free to watch over the air in the US — that's the law. You pay once for the antenna, nothing after.</p></details>
+<details><summary>Does it work in an apartment?</summary><p>Usually yes — put the antenna on a window facing the towers. Higher floors are better. Try a few spots before giving up.</p></details>
+<details><summary>Can I watch antenna TV on my phone, Firestick or several TVs?</summary><p>Optional: a <b>network tuner</b> (for example HDHomeRun or Tablo) connects the antenna to your home Wi-Fi so any device can watch. It's an extra purchase — the antenna on its own is all you need for one TV.</p></details>
+<details><summary>I'm in the UK or Mexico</summary><p><b>UK:</b> Freeview is the free aerial service (BBC, ITV, Channel 4, Channel 5 and more). Note: in the UK you still need a <b>TV Licence</b> to watch live TV.<br><b>Mexico:</b> <b>TV Digital Abierta (TDT)</b> is free with an antenna — Las Estrellas, Azteca Uno, Canal 5, Imagen and more.</p></details>
+` },
+  es: {
+    home: 'Inicio', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', setupNav: 'Configurar',
+    foot: 'Los precios son aproximados y cambian — nunca necesitas una antena cara. EPGTalk no vende nada y nadie le paga.',
+    title: 'EPGTalk — TV gratis, sin suscripción',
+    html: `
+
+<h1>🆓 TV gratis — <span>sin suscripción</span></h1>
+<p>Dos formas de ver TV de verdad por $0 al mes. Las dos son legales y gratis.</p>
+<div class="part">PARTE 1 · APPS DE STREAMING GRATIS</div>
+<h2>📱 Más de 1,100 canales gratis en tu teléfono, TV o Firestick</h2>
+<div class="hero">Estas apps son <b>gratis y legales</b> — se pagan con comerciales, como la TV normal. Sin suscripción ni tarjeta. Instala la app (o abre su página), elige un canal y listo.
+<div class="svc">
+  <a href="https://pluto.tv/live-tv" target="_blank" rel="noopener"><b>Pluto TV</b><small>Noticias, películas, series clásicas · teléfono, Firestick, Roku, smart TV, web</small></a>
+  <a href="https://www.samsungtvplus.com/" target="_blank" rel="noopener"><b>Samsung TV Plus</b><small>Incluido en TVs Samsung · también teléfono y web</small></a>
+  <a href="https://watch.plex.tv/live-tv" target="_blank" rel="noopener"><b>Plex</b><small>TV en vivo gratis — no necesitas servidor Plex · teléfono, TV, web</small></a>
+  <a href="https://tubitv.com/live" target="_blank" rel="noopener"><b>Tubi</b><small>Canales de noticias y deportes en vivo y películas gratis · teléfono, TV, web</small></a>
+</div>
+<a class="big" href="tvguide.html#freetv">📺 Mira qué hay ahora — guía de TV Gratis</a>
+</div>
+<p>En nuestra guía <b>TV Gratis</b> cada canal tiene un botón <b>▶ Ver gratis</b> que abre el reproductor gratuito del servicio. ¿Usas una app IPTV? La dirección de la guía TV Gratis está en <a href="setup.html">Configura tu app</a>.</p>
+<div class="part">PARTE 2 · GRATIS CON ANTENA</div>
+<h2>📡 Tus canales locales gratis, para siempre</h2>
+
+<div class="hero">Una antena que pagas <b>una sola vez</b> — normalmente <b>$20–40 dólares</b> — te da tus canales locales <b>gratis, para siempre</b>, en HD. Sin suscripción, sin internet, sin mensualidad.
+  <div class="nets"><span>ABC</span><span>CBS</span><span>FOX</span><span>NBC</span><span>PBS</span><span>The CW</span><span>Univision</span><span>UniMás</span><span>Telemundo</span><span>ION</span><span>+ decenas de canales gratis extra</span></div>
+</div>
+
+<h2>🏈 Lo que ves gratis</h2>
+<div class="grid">
+  <div class="card"><b>Grandes partidos</b>Muchos partidos de la NFL del domingo (CBS, FOX), Sunday Night Football (NBC), el Super Bowl, fútbol americano colegial y muchos partidos de playoffs.</div>
+  <div class="card"><b>⚽ Fútbol en español</b>Liga MX, las selecciones y más en Univision, UniMás y Telemundo.</div>
+  <div class="card"><b>📰 Noticias y clima locales</b>Las noticias de tu ciudad — y alertas de emergencia aunque no haya internet.</div>
+  <div class="card"><b>🧒 Niños y aprendizaje</b>PBS Kids y muchos programas familiares, sin comerciales en PBS.</div>
+</div>
+<p>Busca la etiqueta <span style="background:#2ECC71;color:#060918;border-radius:5px;padding:0 6px;font-weight:700;font-size:.8rem">📡 Gratis con antena</span> en <a href="live.html">Deportes en Vivo</a>, <a href="events.html">Grandes Eventos</a> y <a href="tonight.html">Esta noche</a>. Qué partido pasa tu canal local puede depender de tu zona.</p>
+
+<h2>🛠️ Cómo instalarla — 15 minutos</h2>
+<ol class="steps">
+  <li><b>Revisa qué canales llegan a tu casa.</b> El mapa gratuito de la FCC muestra cada estación cerca de tu dirección y qué tan fuerte llega:<br>
+    <a href="https://www.fcc.gov/media/engineering/dtvmaps" target="_blank" rel="noopener">fcc.gov/media/engineering/dtvmaps</a> → escribe tu dirección → mira los colores (verde = fuerte).</li>
+  <li><b>Elige la antena.</b> ¿Casi todo verde (a menos de ~40 km)? Basta una <b>antena plana de interior</b> (unos $15–30). ¿Amarillo/rojo o lejos de la ciudad? Una antena de <b>ático o exterior</b> (unos $40–100).
+    <br><small>Ignora etiquetas como "4K", "1000 millas" o "especial HDTV" — todas las antenas reciben la misma señal HD; lo de la distancia es publicidad.</small></li>
+  <li><b>Conéctala.</b> Atornilla el cable en la entrada <b>ANT IN</b> / <b>RF</b> / <b>Cable</b> de la TV. Pon la antena <b>alta y cerca de una ventana</b>, apuntando a las torres si el mapa muestra la dirección.</li>
+  <li><b>Busca los canales.</b> En la TV: <b>Ajustes → Canales → Búsqueda de canales</b> (puede llamarse <i>Programación automática</i> o <i>Auto-sintonía</i>) y elige <b>Antena / Aire</b>. Espera unos minutos — ¡listo!</li>
+  <li><b>Vuelve a buscar cada pocos meses</b> o si desaparece un canal — las estaciones a veces cambian de frecuencia.</li>
+</ol>
+<div class="note">📺 ¿<b>TV muy vieja</b> (de bulbo, anterior a 2007)? Necesita una pequeña <b>caja convertidora digital</b> (unos $30) entre la antena y la TV. Toda TV vendida en EE. UU. desde 2007 ya trae el sintonizador.</div>
+
+<h2>📖 La guía de tus canales de antena</h2>
+<p>La guía <b>Locales EE. UU.</b> de EPGTalk cubre estaciones de ABC, NBC, CBS, FOX y PBS en <b>más de 140 mercados</b>. Si ves tu antena con una app (ver abajo), agrégala como cualquier guía de EPGTalk — los pasos están en <a href="setup.html">Configura tu app</a>. O mírala en la <a href="tvguide.html#uslocal">Guía de TV</a>.</p>
+
+<h2>❓ Preguntas</h2>
+<details><summary>¿De verdad es gratis? ¿Es legal?</summary><p>Sí. La TV local por aire es gratuita en EE. UU. — así lo marca la ley. Pagas una vez la antena y nada más.</p></details>
+<details><summary>¿Funciona en un departamento?</summary><p>Normalmente sí — pon la antena en una ventana que mire hacia las torres. Los pisos altos son mejores. Prueba varios lugares antes de rendirte.</p></details>
+<details><summary>¿Puedo ver la TV de antena en el teléfono, Firestick o varias TVs?</summary><p>Opcional: un <b>sintonizador de red</b> (por ejemplo HDHomeRun o Tablo) conecta la antena a tu Wi-Fi para que cualquier aparato la vea. Es una compra extra — la antena sola es todo lo que necesitas para una TV.</p></details>
+<details><summary>Estoy en México o en el Reino Unido</summary><p><b>México:</b> la <b>TV Digital Abierta (TDT)</b> es gratis con antena — Las Estrellas, Azteca Uno, Canal 5, Imagen y más.<br><b>Reino Unido:</b> Freeview es el servicio gratuito por antena (BBC, ITV, Channel 4, Channel 5 y más). Ojo: en el Reino Unido necesitas una <b>TV Licence</b> para ver TV en vivo.</p></details>
+` },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!C[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const L = C[LANG];
+document.documentElement.lang = LANG;
+document.title = L.title;
+document.getElementById('main').innerHTML = L.html;
+for (const e of document.querySelectorAll('[data-i]')) if (L[e.dataset.i]) e.textContent = L[e.dataset.i];
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+})();
+</script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

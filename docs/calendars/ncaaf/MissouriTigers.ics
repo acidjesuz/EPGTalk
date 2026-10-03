@@ -1,0 +1,108 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Missouri Tigers (NCAAF)
+X-WR-CALDESC:Missouri Tigers schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856689@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T230000Z
+DTEND:20260920T023000Z
+SUMMARY:🏈 Troy Trojans at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF\nTV: SECN+\nFinal: Troy 17 - Missouri 27\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856703@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T234500Z
+DTEND:20260927T031500Z
+SUMMARY:🏈 Missouri Tigers at Mississippi State Bulldogs
+LOCATION:Davis Wade Stadium\, Starkville\, MS
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: Missouri 24 - Mississippi St 31\
+ nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856708@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261003T193000Z
+DTEND:20261003T230000Z
+SUMMARY:🏈 Florida Gators at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856716@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:🏈 Texas A&M Aggies at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856721@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Missouri Tigers at Ole Miss Rebels
+LOCATION:Vaught-Hemingway Stadium\, Oxford\, MS
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856733@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Missouri Tigers at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856743@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Texas Longhorns at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856883@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Missouri Tigers at Georgia Bulldogs
+LOCATION:Sanford Stadium\, Athens\, GA
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856751@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Kentucky Wildcats at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856763@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Oklahoma Sooners at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

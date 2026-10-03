@@ -1,0 +1,102 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Indiana Hoosiers (NCAAF)
+X-WR-CALDESC:Indiana Hoosiers schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858449@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T200000Z
+DTEND:20260919T233000Z
+SUMMARY:🏈 Western Kentucky Hilltoppers at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nTV: Peacock\nFinal: Western KY 0 - Indiana 38\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858461@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T000000Z
+DTEND:20260926T033000Z
+SUMMARY:🏈 Northwestern Wildcats at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nTV: FOX\nFinal: Northwestern 23 - Indiana 29\nFrom EPGTa
+ lk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858477@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261004T000000Z
+DTEND:20261004T033000Z
+SUMMARY:🏈 Indiana Hoosiers at Rutgers Scarlet Knights
+LOCATION:SHI Stadium\, Piscataway\, NJ
+DESCRIPTION:NCAAF\nTV: BTN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858481@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T160000Z
+DTEND:20261010T193000Z
+SUMMARY:🏈 Indiana Hoosiers at Nebraska Cornhuskers
+LOCATION:Memorial Stadium (Lincoln\, NE)\, Lincoln\, NE
+DESCRIPTION:NCAAF\nTV: FOX\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858488@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Ohio State Buckeyes at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858496@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Indiana Hoosiers at Michigan Wolverines
+LOCATION:Michigan Stadium\, Ann Arbor\, MI
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858501@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Minnesota Golden Gophers at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858518@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 USC Trojans at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858535@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Indiana Hoosiers at Washington Huskies
+LOCATION:Husky Stadium\, Seattle\, WA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858538@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Purdue Boilermakers at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,103 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Virginia Cavaliers (NCAAF)
+X-WR-CALDESC:Virginia Cavaliers schedule from EPGTalk. Updates automaticall
+ y.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856802@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T233000Z
+DTEND:20260920T030000Z
+SUMMARY:🏈 West Virginia Mountaineers at Virginia Cavaliers
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+DESCRIPTION:NCAAF · Duke’s Mayo Classic\nTV: ACC Network\nFinal: West Vi
+ rginia 38 - Virginia 27\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858239@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260926T220000Z
+DTEND:20260927T013000Z
+SUMMARY:🏈 Delaware Blue Hens at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Delaware 3 - Virginia 42\nFrom E
+ PGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858253@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261003T193000Z
+DTEND:20261003T230000Z
+SUMMARY:🏈 Virginia Cavaliers at Florida State Seminoles
+LOCATION:Doak Campbell Stadium\, Tallahassee\, FL
+DESCRIPTION:NCAAF\nTV: ESPN2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858258@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T233000Z
+DTEND:20261011T030000Z
+SUMMARY:🏈 Syracuse Orange at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858268@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Virginia Cavaliers at SMU Mustangs
+LOCATION:Gerald J. Ford Stadium\, Dallas\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858271@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261023T230000Z
+DTEND:20261024T023000Z
+SUMMARY:🏈 Duke Blue Devils at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nTV: ESPN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858284@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Virginia Cavaliers at Wake Forest Demon Deacons
+LOCATION:Allegacy Federal Credit Union Stadium\, Winston-Salem\, NC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858295@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 California Golden Bears at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858305@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 North Carolina Tar Heels at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858317@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Virginia Cavaliers at Virginia Tech Hokies
+LOCATION:Lane Stadium\, Blacksburg\, VA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

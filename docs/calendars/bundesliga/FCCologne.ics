@@ -1,0 +1,280 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FC Cologne (Bundesliga)
+X-WR-CALDESC:FC Cologne schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884774@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261011T133000Z
+DTEND:20261011T153000Z
+SUMMARY:⚽ FC Cologne vs Borussia Mönchengladbach
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884770@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261016T183000Z
+DTEND:20261016T203000Z
+SUMMARY:⚽ Eintracht Frankfurt vs FC Cologne
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884756@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:⚽ FC Cologne vs Schalke 04
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884750@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261101T143000Z
+DTEND:20261101T163000Z
+SUMMARY:⚽ 1. FC Union Berlin vs FC Cologne
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884738@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261108T143000Z
+DTEND:20261108T163000Z
+SUMMARY:⚽ FC Cologne vs Bayer Leverkusen
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884736@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261120T193000Z
+DTEND:20261120T213000Z
+SUMMARY:⚽ Bayern Munich vs FC Cologne
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884721@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:⚽ FC Cologne vs SV Elversberg
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884713@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ FC Augsburg vs FC Cologne
+LOCATION:WWK Arena\, Augsburg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884703@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ FC Cologne vs RB Leipzig
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884695@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ Mainz vs FC Cologne
+LOCATION:MEWA ARENA\, Mainz\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884685@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ FC Cologne vs SC Freiburg
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884676@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ FC Cologne vs Borussia Dortmund
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884665@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ SC Paderborn 07 vs FC Cologne
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884663@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ TSG Hoffenheim vs FC Cologne
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884648@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ FC Cologne vs VfB Stuttgart
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884640@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ Werder Bremen vs FC Cologne
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884630@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ FC Cologne vs Hamburg SV
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884624@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ Borussia Mönchengladbach vs FC Cologne
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884612@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ FC Cologne vs Eintracht Frankfurt
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884603@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ Schalke 04 vs FC Cologne
+LOCATION:Veltins Arena\, Gelsenkirchen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884594@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ FC Cologne vs 1. FC Union Berlin
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884591@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ Bayer Leverkusen vs FC Cologne
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884576@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ FC Cologne vs Bayern Munich
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884566@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ SV Elversberg vs FC Cologne
+LOCATION:URSAPHARM-Arena an der Kaiserlinde\, Spiesen-Elversberg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884559@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ FC Cologne vs FC Augsburg
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884555@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ RB Leipzig vs FC Cologne
+LOCATION:Red Bull Arena\, Leipzig\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884541@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ FC Cologne vs Mainz
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884535@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ SC Freiburg vs FC Cologne
+LOCATION:Europa-Park Stadion\, Freiburg im Breisgau\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884529@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ Borussia Dortmund vs FC Cologne
+LOCATION:Signal Iduna Park\, Aue\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884494@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ FC Cologne vs SC Paderborn 07
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,116 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Arkansas Razorbacks (NCAAF)
+X-WR-CALDESC:Arkansas Razorbacks schedule from EPGTalk. Updates automatical
+ ly.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856670@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260913T023000Z
+DTEND:20260913T060000Z
+SUMMARY:🏈 Arkansas Razorbacks at Utah Utes
+LOCATION:Rice-Eccles Stadium\, Salt Lake City\, UT
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Arkansas 10 - Utah 43\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856686@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260919T160000Z
+DTEND:20260919T193000Z
+SUMMARY:🏈 Georgia Bulldogs at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF\nTV: ABC\nFinal: Georgia 45 - Arkansas 17\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856697@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20260927T000000Z
+DTEND:20260927T033000Z
+SUMMARY:🏈 Tulsa Golden Hurricane at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF\nTV: SECN+\nFinal: Tulsa 6 - Arkansas 34\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856711@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261003T230000Z
+DTEND:20261004T023000Z
+SUMMARY:🏈 Arkansas Razorbacks at Texas A&M Aggies
+LOCATION:Kyle Field\, College Station\, TX
+DESCRIPTION:NCAAF\nTV: ESPN2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856713@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART:20261010T201500Z
+DTEND:20261010T234500Z
+SUMMARY:🏈 Tennessee Volunteers at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF\nTV: SEC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856726@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Arkansas Razorbacks at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856733@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Missouri Tigers at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856738@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Arkansas Razorbacks at Auburn Tigers
+LOCATION:Jordan-Hare Stadium\, Auburn\, AL
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856882@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 South Carolina Gamecocks at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856755@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Arkansas Razorbacks at Texas Longhorns
+LOCATION:DKR-Texas Memorial Stadium\, Austin\, TX
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856758@epgtalk
+DTSTAMP:20261003T175651Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 LSU Tigers at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

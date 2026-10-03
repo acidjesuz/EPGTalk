@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" type="image/png" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Live Sports</title>
+<meta name="description" content="Every live game right now — scores, clock and TV channel across NFL, NBA, MLB, NHL, MLS, college, soccer, UFC, F1 and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  main { max-width: 1200px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; display: flex; align-items: center; gap: 12px; }
+  h1 span { color: var(--accent); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px var(--red); animation: pulse 1.6s infinite; flex: none; }
+  @keyframes pulse { 50% { opacity: 0.35; } }
+  .sub { color: var(--muted); margin: 0 0 18px; font-size: 0.92rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+  .chip { font: inherit; font-size: 0.85rem; color: var(--text); background: rgba(0,191,255,0.05); border: 1px solid var(--border);
+          border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .chip small { color: var(--muted); margin-left: 4px; }
+  .chip[aria-pressed="true"] { background: rgba(0,191,255,0.2); border-color: var(--accent); color: #fff; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1rem; margin: 28px 0 12px; display: flex; align-items: center; gap: 8px; }
+  h2 .n { color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 12px 14px; }
+  .card.live { border-color: rgba(255,77,94,0.5); box-shadow: 0 0 0 1px rgba(255,77,94,0.15) inset; }
+  .card.fav { border-color: rgba(245,179,1,0.7); box-shadow: 0 0 0 1px rgba(245,179,1,0.2) inset; }
+  .tm .star { flex: none; background: none; border: 0; color: var(--muted); font-size: 0.95rem; cursor: pointer; padding: 2px; line-height: 1; }
+  .tm .star.on { color: #f5b301; }
+  .top { display: flex; justify-content: space-between; gap: 8px; font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
+  .top .lg { color: var(--accent); font-weight: 700; }
+  .top .st { text-align: right; }
+  .card.live .top .st { color: var(--red); font-weight: 700; }
+  .tm { display: flex; align-items: center; gap: 10px; padding: 4px 0; }
+  .tm img, .tm .ph { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .tm .ph { border-radius: 6px; background: rgba(0,191,255,0.08); }
+  .tm .nm { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+  .tm .nm small { color: var(--muted); font-weight: 400; margin-left: 6px; font-size: 0.75rem; }
+  .tm .sc { font-weight: 700; font-size: 1.15rem; min-width: 2ch; text-align: right; font-variant-numeric: tabular-nums; }
+  .tm.win .nm, .tm.win .sc { color: #fff; }
+  .card.final .tm:not(.win) { opacity: 0.6; }
+  .ev { font-weight: 700; margin: 2px 0 6px; }
+  .lb { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .tv { margin-top: 8px; font-size: 0.78rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tv b { color: var(--green); font-weight: 500; }
+  .tv a { color: var(--green); font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; }
+  .top .tn { color: var(--muted); }
+  .sets { letter-spacing: 0.12em; }
+  details.card-more { margin-top: 8px; font-size: 0.82rem; }
+  details.card-more summary { cursor: pointer; color: var(--accent); }
+  details.card-more ol { margin: 6px 0 0; padding-left: 20px; line-height: 1.6; color: var(--text); }
+  details.card-more .w { color: var(--green); font-weight: 700; }
+  details.card-more small { color: var(--muted); }
+  .empty { color: var(--muted); padding: 18px; background: var(--bg-card); border-radius: 12px; text-align: center; }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="now.html" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" class="on" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="playlist.html" data-i="checker">Playlist Checker</a>
+    <a href="calendars/" data-i="calendars">Team Calendars</a>
+    <a href="channels.html" data-i="channels">Channels</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1><span class="dot" aria-hidden="true"></span><span data-i="h1html">Live <span>Sports</span></span></h1>
+  <p class="sub" id="sub" data-i="loadingTxt">Loading today's games…</p>
+  <div class="chips" id="chips" role="group" aria-label="League"></div>
+  <div id="out"></div>
+</main>
+<script src="watch.js"></script>
+<footer data-i="footerhtml">Scores refresh automatically every minute. Times are in your time zone.
+  See what's on later in the <a href="tvguide.html#sports">Sports TV Guide</a> · add your team to your phone with <a href="calendars/">Team Calendars</a>.</footer>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', tonight: 'Tonight', checker: 'Playlist Checker', calendars: 'Team Calendars', channels: 'Channels', events: 'Big Events', setupNav: 'Setup',
+        fightCard: 'Full fight card ({n})', tba: 'Time TBA', watchHint: 'Tap a channel to see it in the TV Guide',
+        h1html: 'Live <span>Sports</span>', loadingTxt: "Loading today's games…", all: 'All',
+        updated: 'Updated {t} · refreshes every minute', liveNow: '🔴 Live now', later: '⏰ Later today', final: '✅ Final',
+        noLive: 'No games in progress right now.', noLater: 'No more games scheduled today.', liveWord: 'Live', finalWord: 'Final',
+        myTeams: '⭐ My teams', starAdd: 'Add to my teams', starDel: 'Remove from my teams', noFav: 'Tap ☆ next to a team to follow it — its games will show here and at the top.',
+        footerhtml: 'Scores refresh automatically every minute. Times are in your time zone. See what\'s on later in the <a href="tvguide.html#sports">Sports TV Guide</a> · add your team to your phone with <a href="calendars/">Team Calendars</a>.' },
+  es: { home: 'Inicio', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', tonight: 'Esta noche', checker: 'Revisar Lista', calendars: 'Calendarios', channels: 'Canales', events: 'Grandes Eventos', setupNav: 'Configurar',
+        fightCard: 'Cartelera completa ({n})', tba: 'Hora por confirmar', watchHint: 'Toca un canal para verlo en la Guía de TV',
+        h1html: 'Deportes en <span>Vivo</span>', loadingTxt: 'Cargando los partidos de hoy…', all: 'Todo',
+        updated: 'Actualizado {t} · se actualiza cada minuto', liveNow: '🔴 En vivo ahora', later: '⏰ Más tarde hoy', final: '✅ Finalizados',
+        noLive: 'No hay partidos en curso en este momento.', noLater: 'No hay más partidos programados hoy.', liveWord: 'En vivo', finalWord: 'Final',
+        myTeams: '⭐ Mis equipos', starAdd: 'Agregar a mis equipos', starDel: 'Quitar de mis equipos', noFav: 'Toca ☆ junto a un equipo para seguirlo — sus partidos aparecerán aquí y arriba.',
+        footerhtml: 'Los marcadores se actualizan cada minuto. Los horarios están en tu zona horaria. Mira lo que viene en la <a href="tvguide.html#sports">Guía de Deportes</a> · agrega tu equipo a tu teléfono con los <a href="calendars/">Calendarios de Equipos</a>.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : ''));
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + tr('live');
+const API = 'https://site.api.espn.com/apis/site/v2/sports/';
+const LANGQ = LANG === 'es' ? 'lang=es&region=us' : '';
+// [key, ESPN path, label, kind]  kind: team | soccer | event | golf
+const LEAGUES = [
+  ['nfl', 'football/nfl', 'NFL', 'team'], ['nba', 'basketball/nba', 'NBA', 'team'], ['wnba', 'basketball/wnba', 'WNBA', 'team'],
+  ['mlb', 'baseball/mlb', 'MLB', 'team'], ['nhl', 'hockey/nhl', 'NHL', 'team'],
+  ['ncaaf', 'football/college-football', 'NCAAF', 'team'], ['ncaam', 'basketball/mens-college-basketball', 'NCAAM', 'team'],
+  ['mls', 'soccer/usa.1', 'MLS', 'soccer'], ['epl', 'soccer/eng.1', 'Premier League', 'soccer'],
+  ['laliga', 'soccer/esp.1', 'LaLiga', 'soccer'], ['ligamx', 'soccer/mex.1', 'Liga MX', 'soccer'],
+  ['bundesliga', 'soccer/ger.1', 'Bundesliga', 'soccer'], ['seriea', 'soccer/ita.1', 'Serie A', 'soccer'],
+  ['ligue1', 'soccer/fra.1', 'Ligue 1', 'soccer'], ['ucl', 'soccer/uefa.champions', 'Champions League', 'soccer'],
+  ['uel', 'soccer/uefa.europa', 'Europa League', 'soccer'], ['concacaf', 'soccer/concacaf.champions', 'CONCACAF', 'soccer'],
+  ['intl', 'soccer/fifa.friendly', 'Intl Friendly', 'soccer'], ['wcq', 'soccer/fifa.worldq.concacaf', 'WC Qualifying', 'soccer'],
+  ['nations', 'soccer/uefa.nations', 'Nations League', 'soccer'],
+  ['ufc', 'mma/ufc', 'UFC', 'event'], ['f1', 'racing/f1', 'Formula 1', 'event'],
+  ['nascar', 'racing/nascar-premier', 'NASCAR', 'event'], ['indycar', 'racing/irl', 'IndyCar', 'event'],
+  ['pfl', 'mma/pfl', 'PFL', 'event'],
+  ['atp', 'tennis/atp', 'ATP', 'tennis'], ['wta', 'tennis/wta', 'WTA', 'tennis'],
+  ['pga', 'golf/pga', 'PGA Tour', 'golf'], ['lpga', 'golf/lpga', 'LPGA', 'golf'], ['liv', 'golf/liv', 'LIV Golf', 'golf'],
+  ['dpwt', 'golf/eur', 'DP World Tour', 'golf'],
+];
+// tennis: every match becomes its own card (the feed nests matches inside tournaments)
+function tennisMatches(lg, events) {
+  const want = lg[0] === 'wta' ? "Women's" : "Men's", out = [];
+  for (const ev of events) for (const g of (ev.groupings || [])) {
+    const draw = ((g.grouping || {}).displayName) || '';
+    if (!draw.startsWith(want)) continue;
+    for (const c of (g.competitions || [])) {
+      const cs = (c.competitors || []).map(x => Object.assign({}, x, {
+        athlete: x.athlete || { displayName: ((x.roster || {}).displayName) || 'TBD', id: x.id },
+        score: (x.linescores || []).map(l => l.value).join(' ') }));
+      out.push({ id: c.id, date: c.date, name: ev.shortName || ev.name, _tn: ev.shortName || ev.name, _rd: ((c.round || {}).displayName) || '',
+                 _draw: draw, competitions: [Object.assign({}, c, { competitors: cs })] });
+    }
+  }
+  return out;
+}
+const data = {};            // key -> {events, checked}
+let FAVT = new Set();       // followed teams: "league:teamId"
+try { FAVT = new Set(JSON.parse(localStorage.getItem('epgtalk-fav-teams') || '[]')); } catch (e) {}
+function saveFav() { try { localStorage.setItem('epgtalk-fav-teams', JSON.stringify([...FAVT])); } catch (e) {} }
+function favKey(lg, c) { const t = (c && (c.team || c.athlete)) || {}; return t.id ? lg[0] + ':' + t.id : null; }
+function isFav(lg, ev) { return ((ev.competitions || [{}])[0].competitors || []).some(c => FAVT.has(favKey(lg, c))); }
+let league = null;
+const fmtT = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { hour: 'numeric', minute: '2-digit' });
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+
+function ymd(d) { return d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0'); }
+function isToday(iso) { const d = new Date(iso), n = new Date(); return d.toDateString() === n.toDateString(); }
+
+async function load(lg) {
+  try {
+    const today = ymd(new Date());
+    const params = [];
+    if (lg[3] !== 'event' && lg[3] !== 'golf' && lg[3] !== 'tennis') params.push('dates=' + today, 'limit=300');
+    if (lg[0] === 'ncaaf') params.push('groups=80');
+    if (LANGQ) params.push(LANGQ);
+    const u = API + lg[1] + '/scoreboard' + (params.length ? '?' + params.join('&') : '');
+    const r = await fetch(u, { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    data[lg[0]] = { events: lg[3] === 'tennis' ? tennisMatches(lg, j.events || []) : (j.events || []), checked: Date.now() };
+  } catch (e) {
+    if (!data[lg[0]]) data[lg[0]] = { events: [], checked: Date.now() };
+  }
+}
+
+function state(ev) { const c = (ev.competitions || [{}])[0]; return ((c.status || ev.status || {}).type || {}); }
+function nets(ev) {
+  const out = [];
+  for (const c of [(ev.competitions || [{}])[0]]) {
+    for (const b of (c.broadcasts || [])) for (const n of (b.names || [])) if (n && !out.includes(n)) out.push(n);
+    for (const g of (c.geoBroadcasts || [])) { const n = (g.media || {}).shortName; if (n && !out.includes(n)) out.push(n); }
+  }
+  return out.slice(0, 4);
+}
+
+function teamRow(c, final, winner, showScore, lg) {
+  const t = c.team || c.athlete || {};
+  const row = el('div', 'tm' + (final && winner ? ' win' : ''));
+  const logo = t.logo || (t.logos && t.logos[0] && t.logos[0].href) || (t.flag && t.flag.href);
+  if (logo) { const im = el('img'); im.src = logo; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.replaceWith(el('div', 'ph')); row.appendChild(im); }
+  else row.appendChild(el('div', 'ph'));
+  const nm = el('div', 'nm', t.shortDisplayName || t.displayName || t.name || '?');
+  const rec = (c.records || [])[0];
+  if (rec && rec.summary) nm.appendChild(el('small', null, rec.summary));
+  row.appendChild(nm);
+  const sc = typeof c.score === 'object' ? (c.score || {}).displayValue : c.score;
+  row.appendChild(el('div', 'sc', showScore && sc != null && sc !== '' ? sc : ''));
+  const k = lg && favKey(lg, c);
+  if (k) {
+    const on = FAVT.has(k);
+    const b = el('button', 'star' + (on ? ' on' : ''), on ? '★' : '☆'); b.type = 'button';
+    b.title = on ? tr('starDel') : tr('starAdd'); b.setAttribute('aria-label', b.title + ': ' + (t.displayName || ''));
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.onclick = () => { if (FAVT.has(k)) FAVT.delete(k); else FAVT.add(k); saveFav(); render(); };
+    row.appendChild(b);
+  }
+  return row;
+}
+
+function card(lg, ev) {
+  const st = state(ev), comp = (ev.competitions || [{}])[0];
+  const live = st.state === 'in', final = st.state === 'post';
+  const box = el('div', 'card' + (live ? ' live' : final ? ' final' : '') + (isFav(lg, ev) ? ' fav' : ''));
+  const top = el('div', 'top');
+  const lgs = el('span', 'lg', lg[2]);
+  if (ev._tn) lgs.appendChild(el('span', 'tn', ' · ' + ev._tn + (ev._rd ? ' · ' + ev._rd : '')));
+  top.appendChild(lgs);
+  top.appendChild(el('span', 'st', live ? (st.shortDetail || tr('liveWord')) : final ? (st.shortDetail || tr('finalWord'))
+    : comp.timeValid === false ? tr('tba') : fmtT.format(new Date(comp.date || ev.date))));
+  box.appendChild(top);
+  if (lg[3] === 'tennis') {
+    for (const c of (comp.competitors || [])) { const r = teamRow(c, final, c.winner, live || final, lg); r.querySelector('.sc').classList.add('sets'); box.appendChild(r); }
+  } else if (lg[3] === 'team' || lg[3] === 'soccer') {
+    const cs = comp.competitors || [];
+    const home = cs.find(c => c.homeAway === 'home') || cs[0], away = cs.find(c => c.homeAway === 'away') || cs[1];
+    const order = lg[3] === 'soccer' ? [home, away] : [away, home];
+    for (const c of order) if (c) box.appendChild(teamRow(c, final, c.winner, live || final, lg));
+  } else if (lg[3] === 'golf') {
+    box.appendChild(el('div', 'ev', ev.name || ev.shortName));
+    const lead = (comp.competitors || []).slice().sort((a, b) => (a.order || 999) - (b.order || 999)).slice(0, 3);
+    const lb = el('div', 'lb');
+    lead.forEach((c, i) => { const n = ((c.athlete || {}).displayName) || '?'; const s = typeof c.score === 'object' ? (c.score || {}).displayValue : c.score; lb.appendChild(el('div', null, (i + 1) + '. ' + n + (s ? '  ' + s : ''))); });
+    if (lead.length) box.appendChild(lb);
+  } else {
+    box.appendChild(el('div', 'ev', ev.name || ev.shortName));
+    const cur = (ev.competitions || []).find(c => ((c.status || {}).type || {}).state === 'in');
+    if (cur) {
+      const ty = (cur.type || {}).abbreviation || (cur.type || {}).text;
+      const names = (cur.competitors || []).slice(0, 2).map(c => ((c.athlete || c.team || {}).displayName)).filter(Boolean);
+      box.appendChild(el('div', 'lb', (ty ? ty + ' · ' : '') + names.join(' vs ')));
+    }
+    const bouts = (ev.competitions || []).filter(c => (c.competitors || []).length === 2);
+    if (bouts.length > 1 && /^(ufc|pfl)$/.test(lg[0])) {            // full fight card, main event first
+      const d = el('details', 'card-more'); d.appendChild(el('summary', null, tr('fightCard', { n: bouts.length })));
+      const ol = el('ol');
+      bouts.slice().reverse().forEach(c => {
+        const li = el('li');
+        (c.competitors || []).forEach((x, i) => {
+          if (i) li.append(' vs ');
+          const n = ((x.athlete || {}).displayName) || '?';
+          li.appendChild(x.winner ? el('span', 'w', n + ' ✓') : document.createTextNode(n));
+        });
+        const ty = ((c.type || {}).abbreviation) || '';
+        const wc = ((c.note || '') || (((c.status || {}).type || {}).state === 'post' ? ((c.status || {}).type || {}).shortDetail : '')) || '';
+        if (ty || wc) li.appendChild(el('small', null, '  ' + [ty, wc].filter(Boolean).join(' · ')));
+        ol.appendChild(li);
+      });
+      d.appendChild(ol); box.appendChild(d);
+    }
+  }
+  const n = nets(ev);
+  if (n.length) box.appendChild(window.EPGWatch ? EPGWatch.line(n, new Date(comp.date || ev.date).getTime()) : el('div', 'tv', '📺 ' + n.join(', ')));
+  return box;
+}
+
+function render() {
+  const groups = { live: [], later: [], final: [] }, counts = {};
+  for (const lg of LEAGUES) {
+    const d = data[lg[0]]; if (!d) continue;
+    for (const ev of d.events) {
+      const st = state(ev), comp = (ev.competitions || [{}])[0];
+      const when = comp.date || ev.date;
+      let g = null;
+      if (st.state === 'in') g = 'live';
+      else if (st.state === 'pre' && isToday(when)) g = 'later';
+      else if (st.state === 'post' && isToday(when)) g = 'final';
+      if (!g) continue;
+      counts[lg[0]] = (counts[lg[0]] || 0) + 1;
+      const fav = isFav(lg, ev);
+      if (fav) counts.__fav = (counts.__fav || 0) + 1;
+      if (league === '__fav' ? !fav : (league && league !== lg[0])) continue;
+      groups[g].push([new Date(when).getTime(), lg, ev]);
+    }
+  }
+  const chips = $('chips'); chips.replaceChildren();
+  const mk = (label, key, n) => { const b = el('button', 'chip', label); b.type = 'button'; b.setAttribute('aria-pressed', league === key ? 'true' : 'false');
+    if (n != null) b.appendChild(el('small', null, n)); b.onclick = () => { league = key; render(); }; chips.appendChild(b); };
+  mk(tr('all'), null, Object.entries(counts).reduce((a, [k, n]) => a + (k === '__fav' ? 0 : n), 0));
+  mk(tr('myTeams'), '__fav', counts.__fav || 0);
+  for (const lg of LEAGUES) if (counts[lg[0]]) mk(lg[2], lg[0], counts[lg[0]]);
+  const out = $('out'); out.replaceChildren();
+  const sec = (title, list, emptyText) => {
+    const h = el('h2', null, title); h.appendChild(el('span', 'n', list.length ? '(' + list.length + ')' : '')); out.appendChild(h);
+    if (!list.length) { out.appendChild(el('div', 'empty', league === '__fav' && !FAVT.size ? tr('noFav') : emptyText)); return; }
+    const grid = el('div', 'grid');
+    list.sort((a, b) => (isFav(b[1], b[2]) - isFav(a[1], a[2])) || (a[0] - b[0]))      // followed teams first
+        .forEach(([, lg, ev]) => grid.appendChild(card(lg, ev)));
+    out.appendChild(grid);
+  };
+  sec(tr('liveNow'), groups.live, tr('noLive'));
+  sec(tr('later'), groups.later, tr('noLater'));
+  if (groups.final.length) sec(tr('final'), groups.final.reverse(), '');
+  $('sub').textContent = tr('updated', { t: fmtT.format(new Date()) });
+}
+
+async function refresh(first) {
+  const now = Date.now();
+  const due = LEAGUES.filter(lg => {
+    const d = data[lg[0]];
+    if (first || !d) return true;
+    const active = d.events.some(ev => { const s = state(ev).state; return s === 'in' || (s === 'pre' && isToday((ev.competitions || [{}])[0].date || ev.date)); });
+    return active ? now - d.checked > 50000 : now - d.checked > 600000;   // active leagues every minute, others every 10 min
+  });
+  await Promise.all(due.map(load));
+  render();
+}
+refresh(true);
+if (window.EPGWatch) EPGWatch.load().then(render);
+setInterval(() => { if (!document.hidden) refresh(false); }, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(false); });
+})();
+</script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>
