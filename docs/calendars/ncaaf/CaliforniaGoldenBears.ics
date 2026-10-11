@@ -1,0 +1,93 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:California Golden Bears (NCAAF)
+X-WR-CALDESC:California Golden Bears schedule from EPGTalk. Updates automat
+ ically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858234@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T023000Z
+DTEND:20260926T060000Z
+SUMMARY:🏈 Clemson Tigers at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Clemson 24 - California 10\nFrom EPGTal
+ k
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858247@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T193000Z
+DTEND:20261003T230000Z
+SUMMARY:🏈 California Golden Bears at UNLV Rebels
+LOCATION:Allegiant Stadium\, Las Vegas\, NV
+DESCRIPTION:NCAAF\nTV: CBSSN\nFinal: California 31 - UNLV 39\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858259@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T193000Z
+DTEND:20261010T230000Z
+SUMMARY:🏈 Virginia Tech Hokies at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858269@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Wake Forest Demon Deacons at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858270@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 California Golden Bears at SMU Mustangs
+LOCATION:Gerald J. Ford Stadium\, Dallas\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858277@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 California Golden Bears at NC State Wolfpack
+LOCATION:Carter-Finley Stadium\, Raleigh\, NC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858295@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 California Golden Bears at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858308@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Stanford Cardinal at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858315@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Pittsburgh Panthers at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

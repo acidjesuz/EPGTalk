@@ -1,0 +1,99 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:South Carolina Gamecocks (NCAAF)
+X-WR-CALDESC:South Carolina Gamecocks schedule from EPGTalk. Updates automa
+ tically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856696@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T231000Z
+DTEND:20260927T024000Z
+SUMMARY:🏈 South Carolina Gamecocks at Alabama Crimson Tide
+LOCATION:Bryant-Denny Stadium\, Tuscaloosa\, AL
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: South Carolina 18 - Alabama 49\nFrom EP
+ GTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856709@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T201500Z
+DTEND:20261003T234500Z
+SUMMARY:🏈 Kentucky Wildcats at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: Kentucky 35 - South Carolina 34\
+ nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856714@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T164500Z
+DTEND:20261010T201500Z
+SUMMARY:🏈 South Carolina Gamecocks at Florida Gators
+LOCATION:Ben Hill Griffin Stadium\, Gainesville\, FL
+DESCRIPTION:NCAAF\nTV: SEC Network\, ERADM\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856731@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Tennessee Volunteers at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856736@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 South Carolina Gamecocks at Oklahoma Sooners
+LOCATION:Memorial Stadium (Norman\, OK)\, Norman\, OK
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856744@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Texas A&M Aggies at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF · AFTERNOON: 3:30 - 4:30pm ET start\nStart time to be an
+ nounced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856882@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 South Carolina Gamecocks at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856753@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Georgia Bulldogs at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856764@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 South Carolina Gamecocks at Clemson Tigers
+LOCATION:Memorial Stadium (Clemson\, SC)\, Clemson\, SC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

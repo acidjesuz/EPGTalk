@@ -1,0 +1,113 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Northwestern Wildcats (NCAAF)
+X-WR-CALDESC:Northwestern Wildcats schedule from EPGTalk. Updates automatic
+ ally.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856796@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260919T233000Z
+DTEND:20260920T030000Z
+SUMMARY:🏈 Colorado Buffaloes at Northwestern Wildcats
+LOCATION:Northwestern Medicine Field at Martin Stadium\, Evanston\, IL
+DESCRIPTION:NCAAF\nTV: Fox\nFinal: Colorado 7 - Northwestern 41\nFrom EPGTa
+ lk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858461@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T000000Z
+DTEND:20260926T033000Z
+SUMMARY:🏈 Northwestern Wildcats at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nTV: Fox\nFinal: Northwestern 23 - Indiana 29\nFrom EPGTa
+ lk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858476@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T000000Z
+DTEND:20261003T033000Z
+SUMMARY:🏈 Penn State Nittany Lions at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nTV: Fox\nFinal: Penn State 13 - Northwestern 34\nFrom EP
+ GTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858482@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T163000Z
+DTEND:20261010T200000Z
+SUMMARY:🏈 Ball State Cardinals at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nTV: BTN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858491@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T160000Z
+DTEND:20261017T193000Z
+SUMMARY:🏈 Northwestern Wildcats at Michigan State Spartans
+LOCATION:Spartan Stadium\, East Lansing\, MI
+DESCRIPTION:NCAAF\nTV: Peacock\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858498@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Rutgers Scarlet Knights at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858505@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Northwestern Wildcats at Oregon Ducks
+LOCATION:Autzen Stadium\, Eugene\, OR
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858513@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Iowa Hawkeyes at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858522@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Northwestern Wildcats at Ohio State Buckeyes
+LOCATION:Ohio Stadium\, Columbus\, OH
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858530@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Northwestern Wildcats at Minnesota Golden Gophers
+LOCATION:Huntington Bank Stadium\, Minneapolis\, MN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858537@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Illinois Fighting Illini at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

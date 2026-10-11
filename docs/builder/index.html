@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="../compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="../icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<title>EPGTalk — Guide Builder</title>
+<meta name="description" content="EPGTalk Guide Builder: make your own TV guide (XMLTV) for TiviMate, IPTV Smarters, Kodi, Plex and more. Pick your TV provider and channels, press Build. Free for Windows and Linux.">
+<link rel="canonical" href="https://epgtalk.com/builder/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Guide Builder">
+<meta property="og:description" content="Make your own TV guide for your IPTV app. Free for Windows and Linux.">
+<meta property="og:url" content="https://epgtalk.com/builder/">
+<meta property="og:image" content="https://epgtalk.com/builder/shot-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.55; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 1000px; margin: 0 auto; padding: 32px 16px 64px; padding: 32px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.6rem; font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 0 0 10px; }
+  h1 span, h2 span { color: var(--accent); }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1.1rem; margin: 40px 0 14px; }
+  .sub { color: var(--muted); margin: 0 0 14px; max-width: 680px; font-size: 1.05rem; }
+  .badge { display: inline-block; font-size: 0.85rem; color: var(--green); background: rgba(46,204,113,0.08);
+           border: 1px solid rgba(46,204,113,0.25); border-radius: 8px; padding: 5px 11px; margin: 0 0 18px; }
+  .dl { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-block; font: inherit; font-size: 0.92rem; color: var(--text); background: var(--bg-card); text-decoration: none;
+         border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+  .btn:hover { border-color: var(--accent); }
+  .btn.main { background: var(--accent); color: var(--bg-deep); border-color: var(--accent); font-weight: 700; font-size: 1.05rem; padding: 13px 22px; }
+  .small { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 28px 0 0; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--border); }
+  .shots figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 6px; text-align: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .card b { display: block; margin-bottom: 4px; }
+  .card span { color: var(--muted); font-size: 0.92rem; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .step { background: var(--bg-mid); border-radius: 12px; padding: 14px 16px; }
+  .step i { font-style: normal; font-family: 'Orbitron', monospace; font-weight: 900; color: var(--accent); margin-right: 8px; }
+  code { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; font-size: 0.88rem; word-break: break-all; }
+  details { border-top: 1px solid var(--border); padding: 12px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--border); }
+  summary { cursor: pointer; font-weight: 500; }
+  details p { color: var(--muted); margin: 8px 0 0; }
+  a { color: var(--accent); }
+  footer { text-align: center; color: var(--muted); font-size: 0.88rem; padding: 26px 16px 40px; border-top: 1px solid var(--border); }
+  footer p { margin: 0.45rem 0 0; }
+  #whatsnew, #nas { scroll-margin-top: 80px; }
+  .nasbox { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+  .nasbox ol { margin: 0; padding-left: 1.3rem; } .nasbox li { margin: 0 0 12px; } .nasbox li::marker { color: var(--accent); font-weight: 700; }
+  .code { position: relative; margin: 8px 0 4px; }
+  .code pre { margin: 0; background: var(--bg-mid); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; overflow-x: auto;
+              font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+  .code button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 0.78rem; font-weight: 700; border: 0; border-radius: 8px;
+                 padding: 4px 10px; background: var(--accent); color: var(--bg-deep); cursor: pointer; }
+  .nasbox .other { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  .rel { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }
+  .rel.latest { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .rel h3 { margin: 0 0 6px; font-family: 'Orbitron', monospace; font-size: 1.02rem; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .rel h3 small { font-family: 'DM Sans', sans-serif; font-weight: 400; color: var(--muted); font-size: 0.88rem; }
+  .rel .tag { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 700; background: var(--accent); color: var(--bg-deep); border-radius: 999px; padding: 2px 9px; }
+  .rel ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+  .rel li { margin: 3px 0; }
+  details.older { border: 0; padding: 0; }
+  details.older > summary { color: var(--accent); margin: 4px 0 12px; }
+  footer strong { color: var(--text, inherit); }
+  .foot-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--accent); letter-spacing: 0.5px; }
+  .foot-coffee { color: #ff5e5b; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="../index.html" data-i="home">Home</a>
+    <a href="../tvguide.html" data-i="tvguideNav">TV Guide</a>
+    <a href="../setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Guide <span>Builder</span></h1>
+  <p class="sub" data-i="sub">Make your own TV guide for your IPTV app. Pick your TV provider and channels, press Build — TiviMate, IPTV Smarters, Kodi, Plex, Jellyfin and more get full listings with logos.</p>
+  <div class="badge" id="badge">✓ Free · no account needed</div>
+  <div class="dl">
+    <a class="btn main" id="dlMain" href="https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Setup.exe">⬇ Download for Windows</a>
+    <a class="btn" id="dlLinux" href="https://github.com/acidjesuz/EPGTalk/tree/builder-downloads">🐧 Linux (.deb)</a>
+    <a class="btn" id="dlPortable" href="https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Windows-portable.zip" data-i="portable">Windows, no install</a>
+    <a class="btn" href="#nas" data-i="nasBtn">🖥️ NAS / Docker</a>
+    <a class="btn" id="dlMc2xml" href="https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/mc2xml-EPGTalk-edition.zip" data-i="mc2xml">mc2xml for servers</a>
+  </div>
+  <p class="small" id="dlNote" data-i="dlNote">For Windows 10/11 and Ubuntu / Debian / Mint.</p>
+
+  <div class="shots">
+    <figure><img src="shot-home.jpg" width="1000" height="750" loading="lazy" alt="EPGTalk Guide Builder — Home"><figcaption data-i="capHome">Home: your guide at a glance, with what's on now</figcaption></figure>
+    <figure><img src="shot-guide.jpg" width="1000" height="750" loading="lazy" alt="EPGTalk Guide Builder — TV guide"><figcaption data-i="capGuide">TV guide: browse and search your listings</figcaption></figure>
+  </div>
+
+  <h2 data-i="whatHtml">What it <span>does</span></h2>
+  <div class="grid">
+    <div class="card"><b data-i="f1t">📡 Your providers</b><span data-i="f1">Cable, satellite or antenna — found by your zip code. Tick your channels by their logos. Add the free EPGTalk guides too, and keep just your teams or a few Pluto channels.</span></div>
+    <div class="card"><b data-i="f2t">📺 A real TV guide</b><span data-i="f2">Browse hour by hour, click a show for details, or search for it.</span></div>
+    <div class="card"><b data-i="f3t">🔧 Fixes your playlist</b><span data-i="f3">Matches the channels in your .m3u to the guide. Your playlist stays on your computer.</span></div>
+    <div class="card"><b data-i="f4t">📲 Straight to your TV box</b><span data-i="f4">One address to type into TiviMate or your app — it keeps sharing in the background.</span></div>
+    <div class="card"><b data-i="f5t">🕓 Always up to date</b><span data-i="f5">A fresh guide every morning, and the app updates itself with one click.</span></div>
+    <div class="card"><b data-i="f6t">🌙 English · Español</b><span data-i="f6">Light or dark look, and large text for easy reading.</span></div>
+  </div>
+
+  <h2 data-i="howHtml">How it <span>works</span></h2>
+  <div class="steps">
+    <div class="step"><i>1</i><span data-i="s1">Install it and type your zip code</span></div>
+    <div class="step"><i>2</i><span data-i="s2">Pick your provider and channels</span></div>
+    <div class="step"><i>3</i><span data-i="s3">Type the address it shows into your TV box</span></div>
+  </div>
+  <p class="small" data-i="wizard">The first time you open it, a short setup wizard walks you through all three.</p>
+  <p class="small" data-i="setupHtml">📖 Step by step for TiviMate, Plex, Jellyfin, Emby, Channels DVR, Kodi and xTeVe / Threadfin: <a href="../setup.html?guide=builder">Player Setup →</a></p>
+
+  <h2 id="nas" data-i="nasHtml">On your <span>NAS</span></h2>
+  <p class="small" data-i="nasSub">The same Guide Builder as a Docker container: it updates your guide 24/7 with no computer left on, and you manage it from any browser — even your phone. Synology, QNAP, Unraid, TrueNAS, Raspberry Pi…</p>
+  <div class="nasbox">
+    <ol>
+      <li data-i="n1html">On a Synology: open <b>Container Manager → Project → Create</b>. Name it <code>epgtalk-builder</code>, pick a folder, choose <b>Create docker-compose.yml</b> and paste this:</li>
+    </ol>
+    <div class="code"><pre id="nasCompose">services:
+  epgtalk-builder:
+    image: ghcr.io/acidjesuz/epgtalk-builder:latest
+    container_name: epgtalk-builder
+    ports:
+      - "8765:8765"
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - ./config:/config
+    restart: unless-stopped</pre><button type="button" data-copy="nasCompose" data-i="copy">Copy</button></div>
+    <ol start="2">
+      <li data-i="n2html">Change <code>America/New_York</code> to your time zone (like <code>America/Chicago</code> or <code>America/Los_Angeles</code>), then <b>Next → Done</b>.</li>
+      <li data-i="n3html">Open <b>http://YOUR-NAS-IP:8765</b> in any browser. Pick your provider and channels — or restore the backup from your desktop app (Settings → Back up) and everything comes over.</li>
+      <li data-i="n4html">Type <b>http://YOUR-NAS-IP:8765/guide.xml.gz</b> into TiviMate (or <b>…/guide.xml</b> into Plex, Jellyfin, Emby). Done — it updates every day by itself.</li>
+    </ol>
+    <p class="other" data-i="nasOther">Anything else with Docker:</p>
+    <div class="code"><pre id="nasRun">docker run -d --name epgtalk-builder --restart unless-stopped -p 8765:8765 \
+  -e TZ=America/New_York -v /path/to/epgtalk:/config ghcr.io/acidjesuz/epgtalk-builder:latest</pre><button type="button" data-copy="nasRun" data-i="copy">Copy</button></div>
+    <p class="other" data-i="nasUpdHtml">Updating: in Container Manager → <b>Image</b>, click <b>Update</b> when it shows one. With Docker: <code>docker compose pull &amp;&amp; docker compose up -d</code>.</p>
+  </div>
+
+  <h2 id="whatsnew" data-i="newHtml">What's <span>new</span></h2>
+  <div id="relLatest"></div>
+  <details class="older"><summary data-i="older">Earlier versions</summary><div id="relOlder"></div></details>
+
+  <h2 data-i="qHtml">Questions</h2>
+  <details><summary data-i="q1">Windows says “Windows protected your PC”</summary><p data-i="a1html">Click <b>More info</b> → <b>Run anyway</b>. It appears because the program is free and not signed with a paid certificate.</p></details>
+  <details><summary data-i="q2">How do I install it on Linux?</summary><p data-i="a2html">Double-click the <code>.deb</code> file, or in a terminal: <code id="aptCmd">sudo apt install ./epgtalk-builder_all.deb</code></p></details>
+  <details><summary data-i="q3">Is it really free?</summary><p data-i="a3">Yes. No account, no ads — made for the community.</p></details>
+  <details><summary data-i="q4">Do I need to keep my computer on?</summary><p data-i="a4">Your TV box loads the guide from your computer, so it needs to be on (the app can run in the background and start with your computer). You can also simply use the free ready-made guides on EPGTalk.com — no computer needed.</p></details>
+  <details><summary data-i="q5">I already use mc2xml</summary><p data-i="a5">Import your .dat / .chl / .ren files in the app — or use “mc2xml for servers”: a drop-in replacement, so your scripts keep working.</p></details>
+  <details><summary data-i="q6">Need help?</summary><p data-i="a6html">Write to <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> — a screenshot helps.</p></details>
+</main>
+<footer>
+  <span class="foot-logo">📡 EPGTalk Guide Builder</span>
+  <p data-i="footHtml">Free for the community · Crafted with ☕ and ❤️ by <strong>aCiDjEsUs</strong>, a Hamtramck kid · Running strong since 2017</p>
+  <p data-i="footLinksHtml"><a href="../index.html">EPGTalk.com</a> · <a href="https://github.com/acidjesuz/EPGTalk">GitHub</a> · <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> · <a href="https://ko-fi.com/acidjesuz" target="_blank" class="foot-coffee">☕ Buy Me a Coffee</a></p>
+</footer>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', tvguideNav: 'TV Guide', setupNav: 'Setup', h1html: 'Guide <span>Builder</span>',
+        sub: 'Make your own TV guide for your IPTV app. Pick your TV provider and channels, press Build — TiviMate, IPTV Smarters, Kodi, Plex, Jellyfin and more get full listings with logos.',
+        badge: '✓ Free · no account needed · version {v}', badge0: '✓ Free · no account needed',
+        dlWin: '⬇ Download for Windows', dlLin: '⬇ Download for Linux (.deb)', winSmall: '🪟 Windows installer', linSmall: '🐧 Linux (.deb)',
+        portable: 'Windows, no install', mc2xml: 'mc2xml for servers',
+        dlNote: 'For Windows 10/11 and Ubuntu / Debian / Mint.', dlNoteWin: 'Windows 10/11 · {mb} — also for Ubuntu / Debian / Mint.',
+        dlNoteLin: 'Ubuntu / Debian / Mint — also for Windows 10/11.',
+        dlNoteMob: 'Install it on a Windows or Linux computer — your TV box or phone then loads the guide from it.',
+        dlNoteMac: 'Mac: the app isn’t available yet — “mc2xml for servers” runs on a Mac with Python.',
+        capHome: "Home: your guide at a glance, with what's on now", capGuide: 'TV guide: browse and search your listings',
+        whatHtml: 'What it <span>does</span>', howHtml: 'How it <span>works</span>', qHtml: 'Questions',
+        f1t: '📡 Your providers', f1: 'Cable, satellite or antenna — found by your zip code. Tick your channels by their logos. Add the free EPGTalk guides too, and keep just your teams or a few Pluto channels.',
+        f2t: '📺 A real TV guide', f2: 'Browse hour by hour, click a show for details, or search for it.',
+        f3t: '🔧 Fixes your playlist', f3: 'Matches the channels in your .m3u to the guide. Your playlist stays on your computer.',
+        f4t: '📲 Straight to your TV box', f4: 'One address to type into TiviMate or your app — it keeps sharing in the background.',
+        f5t: '🕓 Always up to date', f5: 'A fresh guide every morning, and the app updates itself with one click.',
+        f6t: '🌙 English · Español', f6: 'Light or dark look, and large text for easy reading.',
+        s1: 'Install it and type your zip code', s2: 'Pick your provider and channels', s3: 'Type the address it shows into your TV box',
+        wizard: 'The first time you open it, a short setup wizard walks you through all three.',
+        q1: 'Windows says “Windows protected your PC”', a1html: 'Click <b>More info</b> → <b>Run anyway</b>. It appears because the program is free and not signed with a paid certificate.',
+        q2: 'How do I install it on Linux?', a2html: 'Double-click the <code>.deb</code> file, or in a terminal: <code id="aptCmd">{cmd}</code>',
+        q3: 'Is it really free?', a3: 'Yes. No account, no ads — made for the community.',
+        q4: 'Do I need to keep my computer on?', a4: 'Your TV box loads the guide from your computer, so it needs to be on (the app can run in the background and start with your computer). You can also simply use the free ready-made guides on EPGTalk.com — no computer needed.',
+        q5: 'I already use mc2xml', a5: 'Import your .dat / .chl / .ren files in the app — or use “mc2xml for servers”: a drop-in replacement, so your scripts keep working.',
+        q6: 'Need help?', a6html: 'Write to <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> — a screenshot helps.',
+        nasBtn: '🖥️ NAS / Docker', nasHtml: 'On your <span>NAS</span>', copy: 'Copy', copied: 'Copied ✓',
+        nasSub: 'The same Guide Builder as a Docker container: it updates your guide 24/7 with no computer left on, and you manage it from any browser — even your phone. Synology, QNAP, Unraid, TrueNAS, Raspberry Pi…',
+        n1html: 'On a Synology: open <b>Container Manager → Project → Create</b>. Name it <code>epgtalk-builder</code>, pick a folder, choose <b>Create docker-compose.yml</b> and paste this:',
+        n2html: 'Change <code>America/New_York</code> to your time zone (like <code>America/Chicago</code> or <code>America/Los_Angeles</code>), then <b>Next → Done</b>.',
+        n3html: 'Open <b>http://YOUR-NAS-IP:8765</b> in any browser. Pick your provider and channels — or restore the backup from your desktop app (Settings → Back up) and everything comes over.',
+        n4html: 'Type <b>http://YOUR-NAS-IP:8765/guide.xml.gz</b> into TiviMate (or <b>…/guide.xml</b> into Plex, Jellyfin, Emby). Done — it updates every day by itself.',
+        nasOther: 'Anything else with Docker:',
+        nasUpdHtml: 'Updating: in Container Manager → <b>Image</b>, click <b>Update</b> when it shows one. With Docker: <code>docker compose pull &amp;&amp; docker compose up -d</code>.',
+        setupHtml: '📖 Step by step for TiviMate, Plex, Jellyfin, Emby, Channels DVR, Kodi and xTeVe / Threadfin: <a href="../setup.html?guide=builder">Player Setup →</a>',
+        newHtml: 'What\'s <span>new</span>', older: 'Earlier versions', latest: 'Latest',
+        footHtml: 'Free for the community · Crafted with ☕ and ❤️ by <strong>aCiDjEsUs</strong>, a Hamtramck kid · Running strong since 2017',
+        footLinksHtml: '<a href="../index.html">EPGTalk.com</a> · <a href="https://github.com/acidjesuz/EPGTalk">GitHub</a> · <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> · <a href="https://ko-fi.com/acidjesuz" target="_blank" class="foot-coffee">☕ Buy Me a Coffee</a>', title: 'Guide Builder' },
+  es: { home: 'Inicio', tvguideNav: 'Guía de TV', setupNav: 'Configurar', h1html: 'Guide <span>Builder</span>',
+        sub: 'Crea tu propia guía de TV para tu app IPTV. Elige tu proveedor y tus canales, presiona Crear — TiviMate, IPTV Smarters, Kodi, Plex, Jellyfin y más reciben la programación completa con logos.',
+        badge: '✓ Gratis · sin cuenta · versión {v}', badge0: '✓ Gratis · sin cuenta',
+        dlWin: '⬇ Descargar para Windows', dlLin: '⬇ Descargar para Linux (.deb)', winSmall: '🪟 Instalador de Windows', linSmall: '🐧 Linux (.deb)',
+        portable: 'Windows, sin instalar', mc2xml: 'mc2xml para servidores',
+        dlNote: 'Para Windows 10/11 y Ubuntu / Debian / Mint.', dlNoteWin: 'Windows 10/11 · {mb} — también para Ubuntu / Debian / Mint.',
+        dlNoteLin: 'Ubuntu / Debian / Mint — también para Windows 10/11.',
+        dlNoteMob: 'Instálala en una computadora con Windows o Linux — tu TV box o tu teléfono cargan la guía desde ahí.',
+        dlNoteMac: 'Mac: la app aún no está disponible — “mc2xml para servidores” funciona en Mac con Python.',
+        capHome: 'Inicio: tu guía de un vistazo, con lo que hay ahora', capGuide: 'Guía de TV: explora y busca tu programación',
+        whatHtml: 'Qué <span>hace</span>', howHtml: 'Cómo <span>funciona</span>', qHtml: 'Preguntas',
+        f1t: '📡 Tus proveedores', f1: 'Cable, satélite o antena — encontrados con tu código postal. Marca tus canales por sus logos. Agrega también las guías gratis de EPGTalk y quédate solo con tus equipos o unos canales de Pluto.',
+        f2t: '📺 Una guía de TV de verdad', f2: 'Explora hora por hora, haz clic en un programa para ver detalles, o búscalo.',
+        f3t: '🔧 Corrige tu lista', f3: 'Une los canales de tu .m3u con la guía. Tu lista se queda en tu computadora.',
+        f4t: '📲 Directo a tu TV box', f4: 'Una dirección para escribir en TiviMate o tu app — sigue compartiendo en segundo plano.',
+        f5t: '🕓 Siempre al día', f5: 'Una guía nueva cada mañana, y la app se actualiza sola con un clic.',
+        f6t: '🌙 English · Español', f6: 'Apariencia clara u oscura, y texto grande para leer fácil.',
+        s1: 'Instálala y escribe tu código postal', s2: 'Elige tu proveedor y tus canales', s3: 'Escribe en tu TV box la dirección que te muestra',
+        wizard: 'La primera vez que la abres, un asistente corto te guía en los tres pasos.',
+        q1: 'Windows dice “Windows protegió su PC”', a1html: 'Haz clic en <b>Más información</b> → <b>Ejecutar de todas formas</b>. Aparece porque el programa es gratis y no está firmado con un certificado pago.',
+        q2: '¿Cómo la instalo en Linux?', a2html: 'Haz doble clic en el archivo <code>.deb</code>, o en una terminal: <code id="aptCmd">{cmd}</code>',
+        q3: '¿De verdad es gratis?', a3: 'Sí. Sin cuenta, sin anuncios — hecha para la comunidad.',
+        q4: '¿Tengo que dejar mi computadora encendida?', a4: 'Tu TV box carga la guía desde tu computadora, así que debe estar encendida (la app puede funcionar en segundo plano e iniciarse con la computadora). También puedes usar las guías listas y gratis de EPGTalk.com — sin computadora.',
+        q5: 'Ya uso mc2xml', a5: 'Importa tus archivos .dat / .chl / .ren en la app — o usa “mc2xml para servidores”: un reemplazo directo, así tus scripts siguen funcionando.',
+        q6: '¿Necesitas ayuda?', a6html: 'Escribe a <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> — una captura de pantalla ayuda.',
+        nasBtn: '🖥️ NAS / Docker', nasHtml: 'En tu <span>NAS</span>', copy: 'Copiar', copied: 'Copiado ✓',
+        nasSub: 'La misma Guide Builder como contenedor Docker: actualiza tu guía 24/7 sin dejar una computadora encendida, y la manejas desde cualquier navegador, hasta tu teléfono. Synology, QNAP, Unraid, TrueNAS, Raspberry Pi…',
+        n1html: 'En un Synology: abre <b>Container Manager → Proyecto → Crear</b>. Ponle de nombre <code>epgtalk-builder</code>, elige una carpeta, escoge <b>Crear docker-compose.yml</b> y pega esto:',
+        n2html: 'Cambia <code>America/New_York</code> por tu zona horaria (como <code>America/Chicago</code> o <code>America/Mexico_City</code>), luego <b>Siguiente → Listo</b>.',
+        n3html: 'Abre <b>http://IP-DE-TU-NAS:8765</b> en cualquier navegador. Elige tu proveedor y canales, o restaura el respaldo de tu app de escritorio (Ajustes → Respaldar) y todo pasa de una vez.',
+        n4html: 'Escribe <b>http://IP-DE-TU-NAS:8765/guide.xml.gz</b> en TiviMate (o <b>…/guide.xml</b> en Plex, Jellyfin, Emby). Listo: se actualiza sola todos los días.',
+        nasOther: 'Cualquier otro equipo con Docker:',
+        nasUpdHtml: 'Para actualizar: en Container Manager → <b>Imagen</b>, pulsa <b>Actualizar</b> cuando aparezca. Con Docker: <code>docker compose pull &amp;&amp; docker compose up -d</code>.',
+        setupHtml: '📖 Paso a paso para TiviMate, Plex, Jellyfin, Emby, Channels DVR, Kodi y xTeVe / Threadfin: <a href="../setup.html?guide=builder">Configura tu app →</a>',
+        newHtml: '<span>Novedades</span>', older: 'Versiones anteriores', latest: 'Actual',
+        footHtml: 'Gratis para la comunidad · Hecho con ☕ y ❤️ por <strong>aCiDjEsUs</strong>, un chico de Hamtramck · Desde 2017',
+        footLinksHtml: '<a href="../index.html">EPGTalk.com</a> · <a href="https://github.com/acidjesuz/EPGTalk">GitHub</a> · <a href="mailto:support@epgtalk.com">support@epgtalk.com</a> · <a href="https://ko-fi.com/acidjesuz" target="_blank" class="foot-coffee">☕ Invítame un café</a>', title: 'Guide Builder' } };
+// Version history, newest first. A release adds one entry at the top.
+const RELEASES = [
+  { v: '1.4.0', t: 'Just the channels you want', te: 'Solo los canales que quieres',
+    en: ['New: pick channels from the EPGTalk guides — keep just your teams from Sports, or a few Pluto channels from Free TV',
+         'Filters by league, service or network, and search looks at every name a channel has (“detroit” finds the Tigers)',
+         'Shows how much smaller your guide gets — like 16 KB instead of 2.6 MB — with your own names, numbers and time shifts',
+         'Works for any extra XMLTV guide you added too, and in the NAS version (2.1.0)',
+         'The app looks for updates sooner after you open it, and while it runs in the background'],
+    es: ['Nuevo: elige canales de las guías de EPGTalk; quédate solo con tus equipos de Deportes, o unos canales de Pluto de TV gratis',
+         'Filtros por liga, servicio o cadena, y la búsqueda mira todos los nombres de cada canal (“detroit” encuentra a los Tigers)',
+         'Muestra cuánto más chica queda tu guía (unos 16 KB en vez de 2.6 MB) con tus propios nombres, números y horarios',
+         'Funciona también con cualquier guía XMLTV extra que agregaste, y en la versión NAS (2.1.0)',
+         'La app busca actualizaciones antes al abrirla, y también mientras funciona en segundo plano'] },
+  { v: '1.3.4', t: 'Steadier guides', te: 'Guías más firmes',
+    en: ['If a provider can’t be reached during an update, your guide keeps its last good listings instead of losing those channels',
+         'Fixed: an update never adds a Schedules Direct lineup to your account on its own any more (it could bring back one you removed)',
+         'The address for your TV box is right even with a VPN on',
+         '“Changes not built yet” stays on if you change something while a guide is building',
+         'NAS version 2.0.2: help if you forget the password, and a warning for a misspelled time zone'],
+    es: ['Si no se puede llegar a un proveedor durante una actualización, tu guía mantiene su última programación buena en vez de perder esos canales',
+         'Arreglado: una actualización ya nunca agrega por su cuenta una programación a tu cuenta de Schedules Direct (podía regresar una que quitaste)',
+         'La dirección para tu TV box es correcta aunque tengas una VPN',
+         '“Cambios sin aplicar” se mantiene si cambias algo mientras se crea la guía',
+         'Versión NAS 2.0.2: ayuda si olvidas la contraseña, y un aviso si la zona horaria está mal escrita'] },
+  { v: '1.3.3', t: 'Your names stick', te: 'Tus nombres se quedan',
+    en: ['Fixed: renamed channels now always keep their name — some channels on satellite lineups lost it (NAS version 2.0.1 too)',
+         'The channel window shows how many changes aren’t saved yet, and asks before closing without saving',
+         'Clearer when a Schedules Direct lineup is no longer on your account: pick one of yours, or remove the provider',
+         'A tip explains which apps show your channel names'],
+    es: ['Arreglado: los canales renombrados siempre guardan su nombre; algunos canales de satélite lo perdían (también la versión NAS 2.0.1)',
+         'La ventana de canales muestra cuántos cambios faltan por guardar, y pregunta antes de cerrar sin guardar',
+         'Más claro cuando una programación de Schedules Direct ya no está en tu cuenta: elige una tuya o quita el proveedor',
+         'Un consejo explica qué apps muestran los nombres de tus canales'] },
+  { v: '1.3.2', t: 'Move to your NAS', te: 'Pásala a tu NAS',
+    en: ['New: “Move to my NAS” sends your whole setup to the Guide Builder on your NAS in one click — then this computer can be off',
+         'Step-by-step setup for Plex, Jellyfin, Emby, Channels DVR, Kodi and xTeVe / Threadfin, right from the app',
+         'The built-in guide explains running it 24/7 on a NAS or Raspberry Pi'],
+    es: ['Nuevo: “Pasar a mi NAS” envía toda tu configuración a Guide Builder en tu NAS con un clic, y esta computadora puede estar apagada',
+         'Paso a paso para Plex, Jellyfin, Emby, Channels DVR, Kodi y xTeVe / Threadfin, desde la app',
+         'La guía incluida explica cómo usarla 24/7 en un NAS o Raspberry Pi'] },
+  { v: '2.0.0', t: 'On your NAS', te: 'En tu NAS',
+    en: ['New: run the Guide Builder 24/7 on a NAS or home server (Docker) — no computer left on',
+         'Manage it from any browser, even your phone: providers, channels, TV guide and your playlist',
+         'An optional password — TV boxes still load the guide without one',
+         'Move over in one step with a backup from the desktop app',
+         'The desktop app stays: pick whichever fits you'],
+    es: ['Nuevo: usa Guide Builder 24/7 en un NAS o servidor de casa (Docker), sin dejar una computadora encendida',
+         'Manéjala desde cualquier navegador, hasta tu teléfono: proveedores, canales, guía de TV y tu lista',
+         'Contraseña opcional: los TV box cargan la guía sin ella',
+         'Pásate en un paso con un respaldo de la app de escritorio',
+         'La app de escritorio sigue: elige la que te quede mejor'] },
+  { v: '1.3.1', t: 'Smoother switching', te: 'Cambios más suaves',
+    en: ['Switching between light and dark, or English and Spanish, stays in the same window — no more extra windows',
+         'Only one icon next to the clock',
+         'The side menu gets wider with bigger text, so nothing is cut off'],
+    es: ['Cambiar entre claro y oscuro, o entre inglés y español, se queda en la misma ventana — sin ventanas de más',
+         'Un solo ícono junto al reloj',
+         'El menú lateral se ensancha con texto grande, así nada queda cortado'] },
+  { v: '1.3.0', t: 'TV guide and background sharing', te: 'Guía de TV y compartir en segundo plano',
+    en: ['New TV guide: browse hour by hour, click a show for details, or search for it',
+         'Keeps sharing your guide in the background, with an icon next to the clock',
+         'Can start with your computer',
+         'Opening it again brings back the window that is already open',
+         'One-click updates'],
+    es: ['Nueva guía de TV: recórrela hora por hora, haz clic en un programa para ver detalles, o búscalo',
+         'Sigue compartiendo tu guía en segundo plano, con un ícono junto al reloj',
+         'Puede iniciarse con tu computadora',
+         'Si la abres otra vez, vuelve la ventana que ya estaba abierta',
+         'Actualizaciones con un clic'] },
+  { v: '1.2.0', t: 'New looks and your playlist', te: 'Nuevos estilos y tu lista',
+    en: ['New looks: Midnight dark and a cleaner light look',
+         'A short setup wizard the first time you open it',
+         '“Your playlist”: matches the channels in your .m3u to the guide',
+         'Set your own channel numbers, and shift a channel’s times',
+         'Add more guides by web address',
+         'Starts much faster with big guides'],
+    es: ['Nuevos estilos: Medianoche oscuro y un claro más limpio',
+         'Un asistente corto la primera vez que la abres',
+         '“Tu lista”: une los canales de tu .m3u con la guía',
+         'Pon tus propios números de canal y ajusta los horarios de un canal',
+         'Agrega más guías por dirección web',
+         'Arranca mucho más rápido con guías grandes'] },
+  { v: '1.1.0', t: 'Smoother on Windows and Linux', te: 'Más fluida en Windows y Linux',
+    en: ['Windows: the window opens centered and fits your screen',
+         'Channel list: Save and Cancel are always visible',
+         'Faster switching between pages on Linux',
+         'Ticking channels one by one works after “Untick all”, and the whole tick box is clickable'],
+    es: ['Windows: la ventana abre centrada y cabe en tu pantalla',
+         'Lista de canales: Guardar y Cancelar siempre se ven',
+         'Cambio de páginas más rápido en Linux',
+         'Marcar canales uno por uno funciona después de “Desmarcar todo”, y toda la casilla responde'] }
+];
+function releases() {
+  const esc = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const card = (r, i) => '<div class="rel' + (i ? '' : ' latest') + '"><h3>' + r.v + ' <small>' + esc(LANG === 'es' ? r.te : r.t) + '</small>' +
+    (i ? '' : '<span class="tag">' + esc(tr('latest')) + '</span>') + '</h3><ul>' +
+    (LANG === 'es' ? r.es : r.en).map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>';
+  $('relLatest').innerHTML = card(RELEASES[0], 0);
+  $('relOlder').innerHTML = RELEASES.slice(1).map((r, i) => card(r, i + 1)).join('');
+}
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : ''));
+document.documentElement.lang = LANG;
+const $ = id => document.getElementById(id);
+let deb = 'epgtalk-builder_all.deb';
+function copyBlocks() {
+  for (const b of document.querySelectorAll('[data-copy]')) {
+    b.onclick = () => {
+      const txt = document.getElementById(b.dataset.copy).textContent;
+      const done = () => { b.textContent = tr('copied'); setTimeout(() => { b.textContent = tr('copy'); }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, () => {}); else done();
+    };
+  }
+}
+function texts() {
+  releases();
+  copyBlocks();
+  for (const e of document.querySelectorAll('[data-i]')) {
+    const k = e.getAttribute('data-i');
+    if (/html$/i.test(k)) e.innerHTML = tr(k, { cmd: 'sudo apt install ./' + deb }); else e.textContent = tr(k);
+  }
+}
+texts();
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + tr('title');
+
+// Pick the right download for this computer
+const ua = navigator.userAgent || '';
+const mobile = /Android|iPhone|iPad|iPod|Mobile|CrKey|AFT|BRAVIA|SMART-TV|Tizen|Web0S/i.test(ua);
+const os = /Windows/i.test(ua) ? 'win' : (/Linux|X11|CrOS/i.test(ua) && !mobile) ? 'linux' : /Macintosh|Mac OS X/i.test(ua) && !mobile ? 'mac' : mobile ? 'mobile' : 'win';
+const main = $('dlMain'), lin = $('dlLinux');
+let winUrl = main.href, linUrl = lin.href, winMb = '';
+function layout() {
+  if (os === 'linux') {
+    main.textContent = tr('dlLin'); main.href = linUrl;
+    lin.textContent = tr('winSmall'); lin.href = winUrl;
+    $('dlNote').textContent = tr('dlNoteLin');
+  } else {
+    main.textContent = tr('dlWin'); main.href = winUrl;
+    lin.textContent = tr('linSmall'); lin.href = linUrl;
+    $('dlNote').textContent = os === 'mobile' ? tr('dlNoteMob') : os === 'mac' ? tr('dlNoteMac') : (winMb ? tr('dlNoteWin', { mb: winMb }) : tr('dlNote'));
+  }
+}
+layout();
+// The version and links come from the same file the app checks for updates
+fetch('version.json', { cache: 'no-cache' }).then(r => r.json()).then(v => {
+  if (v.version) $('badge').textContent = tr('badge', { v: v.version });
+  if (v.windows && v.windows.url) winUrl = v.windows.url;
+  if (v.linux && v.linux.url) { linUrl = v.linux.url; deb = linUrl.split('/').pop(); texts(); }
+  if (v.windows_mb) winMb = v.windows_mb + ' MB';
+  layout();
+}).catch(() => {});
+})();
+</script>
+<script src="../nav.js" data-base="../"></script>
+<script src="../app.js" data-base="../"></script>
+</body>
+</html>

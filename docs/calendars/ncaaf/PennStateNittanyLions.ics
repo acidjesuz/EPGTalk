@@ -1,0 +1,94 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Penn State Nittany Lions (NCAAF)
+X-WR-CALDESC:Penn State Nittany Lions schedule from EPGTalk. Updates automa
+ tically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858466@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T210000Z
+DTEND:20260927T003000Z
+SUMMARY:🏈 Wisconsin Badgers at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nTV: Peacock\, ERADM\nFinal: Wisconsin 24 - Penn State 20
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858476@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T000000Z
+DTEND:20261003T033000Z
+SUMMARY:🏈 Penn State Nittany Lions at Northwestern Wildcats
+LOCATION:Ryan Field\, Evanston\, IL
+DESCRIPTION:NCAAF\nTV: Fox\nFinal: Penn State 13 - Northwestern 34\nFrom EP
+ GTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858485@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T233000Z
+DTEND:20261011T030000Z
+SUMMARY:🏈 USC Trojans at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nTV: NBC\, ERADM\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858490@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:🏈 Penn State Nittany Lions at Michigan Wolverines
+LOCATION:Michigan Stadium\, Ann Arbor\, MI
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858506@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Purdue Boilermakers at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858516@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Penn State Nittany Lions at Washington Huskies
+LOCATION:Husky Stadium\, Seattle\, WA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858524@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Minnesota Golden Gophers at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858532@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Rutgers Scarlet Knights at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858539@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Penn State Nittany Lions at Maryland Terrapins
+LOCATION:SECU Stadium\, College Park\, MD
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

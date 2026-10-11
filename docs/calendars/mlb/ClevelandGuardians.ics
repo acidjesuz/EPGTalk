@@ -1,0 +1,60 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cleveland Guardians (MLB)
+X-WR-CALDESC:Cleveland Guardians schedule from EPGTalk. Updates automatical
+ ly.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-mlb-401907990@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T170000Z
+DTEND:20261003T200000Z
+SUMMARY:⚾ Chicago White Sox at Cleveland Guardians
+LOCATION:Progressive Field\, Cleveland\, Ohio
+DESCRIPTION:MLB · ALDS - Game 1\nTV: TBS\, truTV\, ERADM\nFinal: White Sox
+  3 - Guardians 0\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401907991@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261005T210000Z
+DTEND:20261006T000000Z
+SUMMARY:⚾ Chicago White Sox at Cleveland Guardians
+LOCATION:Progressive Field\, Cleveland\, Ohio
+DESCRIPTION:MLB · ALDS - Game 2\nTV: TBS\, truTV\, ERADM\nFinal: White Sox
+  4 - Guardians 3\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401907992@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261007T200000Z
+DTEND:20261007T230000Z
+SUMMARY:⚾ Cleveland Guardians at Chicago White Sox
+LOCATION:Rate Field\, Chicago\, Illinois
+DESCRIPTION:MLB · ALDS - Game 3\nTV: TBS\, truTV\, ERADM\nFinal: Guardians
+  9 - White Sox 3\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401907993@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261009T000000Z
+DTEND:20261009T030000Z
+SUMMARY:⚾ Cleveland Guardians at Chicago White Sox
+LOCATION:Rate Field\, Chicago\, Illinois
+DESCRIPTION:MLB · ALDS - Game 4\nTV: TBS\, truTV\, ERADM\nFinal: Guardians
+  9 - White Sox 5\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401907994@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261011T000000Z
+DTEND:20261011T030000Z
+SUMMARY:⚾ Chicago White Sox at Cleveland Guardians
+LOCATION:Progressive Field\, Cleveland\, Ohio
+DESCRIPTION:MLB · ALDS - Game 5\nTV: TBS\, truTV\, ERADM\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

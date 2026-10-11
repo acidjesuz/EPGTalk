@@ -1,0 +1,96 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Louisville Cardinals (NCAAF)
+X-WR-CALDESC:Louisville Cardinals schedule from EPGTalk. Updates automatica
+ lly.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858243@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T160000Z
+DTEND:20260926T193000Z
+SUMMARY:🏈 Wake Forest Demon Deacons at Louisville Cardinals
+LOCATION:L&N Federal Credit Union Stadium\, Louisville\, KY
+DESCRIPTION:NCAAF\nTV: ESPN\, Disney+\nFinal: Wake Forest 30 - Louisville 2
+ 7\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858248@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T193000Z
+DTEND:20261003T230000Z
+SUMMARY:🏈 Louisville Cardinals at NC State Wolfpack
+LOCATION:Carter-Finley Stadium\, Raleigh\, NC
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Louisville 28 - NC State 31\nFro
+ m EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858254@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261009T230000Z
+DTEND:20261010T023000Z
+SUMMARY:🏈 Florida State Seminoles at Louisville Cardinals
+LOCATION:L&N Federal Credit Union Stadium\, Louisville\, KY
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Florida St 20 - Louisville 44\nFrom EPG
+ Talk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858265@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T233000Z
+DTEND:20261018T030000Z
+SUMMARY:🏈 Louisville Cardinals at Syracuse Orange
+LOCATION:JMA Wireless Dome\, Syracuse\, NY
+DESCRIPTION:NCAAF\nTV: ACC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858283@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Stanford Cardinal at Louisville Cardinals
+LOCATION:L&N Federal Credit Union Stadium\, Louisville\, KY
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858287@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Louisville Cardinals at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858298@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Louisville Cardinals at North Carolina Tar Heels
+LOCATION:Kenan Stadium\, Chapel Hill\, NC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858306@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Pittsburgh Panthers at Louisville Cardinals
+LOCATION:L&N Federal Credit Union Stadium\, Louisville\, KY
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856761@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Louisville Cardinals at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

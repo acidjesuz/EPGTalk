@@ -1,0 +1,272 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:1. FC Union Berlin (Bundesliga)
+X-WR-CALDESC:1. FC Union Berlin schedule from EPGTalk. Updates automaticall
+ y.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884769@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:⚽ 1. FC Union Berlin vs Borussia Dortmund
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884758@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:⚽ FC Augsburg vs 1. FC Union Berlin
+LOCATION:WWK Arena\, Augsburg\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884750@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261101T143000Z
+DTEND:20261101T163000Z
+SUMMARY:⚽ 1. FC Union Berlin vs FC Cologne
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884741@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261108T163000Z
+DTEND:20261108T183000Z
+SUMMARY:⚽ SC Freiburg vs 1. FC Union Berlin
+LOCATION:Europa-Park Stadion\, Freiburg im Breisgau\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884732@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:⚽ 1. FC Union Berlin vs RB Leipzig
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884723@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:⚽ Mainz vs 1. FC Union Berlin
+LOCATION:MEWA ARENA\, Mainz\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884712@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ 1. FC Union Berlin vs Hamburg SV
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884708@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ VfB Stuttgart vs 1. FC Union Berlin
+LOCATION:MHPArena\, Stuttgart\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884694@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ 1. FC Union Berlin vs TSG Hoffenheim
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884684@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ Werder Bremen vs 1. FC Union Berlin
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884677@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ 1. FC Union Berlin vs SC Paderborn 07
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884668@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ Borussia Mönchengladbach vs 1. FC Union Berlin
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884661@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ Eintracht Frankfurt vs 1. FC Union Berlin
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884649@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ 1. FC Union Berlin vs Bayer Leverkusen
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884639@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ Schalke 04 vs 1. FC Union Berlin
+LOCATION:Veltins Arena\, Gelsenkirchen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884631@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ 1. FC Union Berlin vs Bayern Munich
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884620@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ SV Elversberg vs 1. FC Union Berlin
+LOCATION:URSAPHARM-Arena an der Kaiserlinde\, Spiesen-Elversberg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884619@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ Borussia Dortmund vs 1. FC Union Berlin
+LOCATION:Signal Iduna Park\, Aue\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884607@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ 1. FC Union Berlin vs FC Augsburg
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884594@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ FC Cologne vs 1. FC Union Berlin
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884588@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ 1. FC Union Berlin vs SC Freiburg
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884582@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ RB Leipzig vs 1. FC Union Berlin
+LOCATION:Red Bull Arena\, Leipzig\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884569@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ 1. FC Union Berlin vs Mainz
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884560@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ Hamburg SV vs 1. FC Union Berlin
+LOCATION:Volksparkstadion\, Hamburg Norderstedt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884550@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ 1. FC Union Berlin vs VfB Stuttgart
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884545@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ TSG Hoffenheim vs 1. FC Union Berlin
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884532@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ 1. FC Union Berlin vs Werder Bremen
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884501@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ SC Paderborn 07 vs 1. FC Union Berlin
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884495@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ 1. FC Union Berlin vs Borussia Mönchengladbach
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

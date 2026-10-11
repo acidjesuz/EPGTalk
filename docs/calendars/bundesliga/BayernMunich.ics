@@ -1,0 +1,280 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Bayern Munich (Bundesliga)
+X-WR-CALDESC:Bayern Munich schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884772@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T163000Z
+DTEND:20261017T183000Z
+SUMMARY:⚽ Bayern Munich vs RB Leipzig
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884759@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261025T163000Z
+DTEND:20261025T183000Z
+SUMMARY:⚽ SC Freiburg vs Bayern Munich
+LOCATION:Europa-Park Stadion\, Freiburg im Breisgau\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884754@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261031T173000Z
+DTEND:20261031T193000Z
+SUMMARY:⚽ Bayern Munich vs Borussia Dortmund
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884740@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:⚽ Mainz vs Bayern Munich
+LOCATION:MEWA ARENA\, Mainz\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884736@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261120T193000Z
+DTEND:20261120T213000Z
+SUMMARY:⚽ Bayern Munich vs FC Cologne
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884722@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:⚽ Hamburg SV vs Bayern Munich
+LOCATION:Volksparkstadion\, Hamburg Norderstedt\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884718@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ Bayern Munich vs SC Paderborn 07
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884707@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ TSG Hoffenheim vs Bayern Munich
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884700@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ Bayern Munich vs Werder Bremen
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884687@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ Borussia Mönchengladbach vs Bayern Munich
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884682@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ Bayern Munich vs Bayer Leverkusen
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884669@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ Eintracht Frankfurt vs Bayern Munich
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884664@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ VfB Stuttgart vs Bayern Munich
+LOCATION:MHPArena\, Stuttgart\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884655@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ Bayern Munich vs Schalke 04
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884646@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ Bayern Munich vs SV Elversberg
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884631@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ 1. FC Union Berlin vs Bayern Munich
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884628@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ Bayern Munich vs FC Augsburg
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884618@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ RB Leipzig vs Bayern Munich
+LOCATION:Red Bull Arena\, Leipzig\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884610@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ Bayern Munich vs SC Freiburg
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884601@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ Borussia Dortmund vs Bayern Munich
+LOCATION:Signal Iduna Park\, Aue\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884592@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ Bayern Munich vs Mainz
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884576@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ FC Cologne vs Bayern Munich
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884574@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ Bayern Munich vs Hamburg SV
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884557@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ SC Paderborn 07 vs Bayern Munich
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884556@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ Bayern Munich vs TSG Hoffenheim
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884540@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ Werder Bremen vs Bayern Munich
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884538@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ Bayern Munich vs Borussia Mönchengladbach
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884526@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ Bayer Leverkusen vs Bayern Munich
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884500@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ Bayern Munich vs Eintracht Frankfurt
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nTV: ESPN+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401915411@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261013T190000Z
+DTEND:20261013T210000Z
+SUMMARY:⚽ Viking FK vs Bayern Munich
+LOCATION:Viking Stadion\, Stavanger\, Norway
+DESCRIPTION:Bundesliga\nTV: Paramount+\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,281 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Borussia Mönchengladbach (Bundesliga)
+X-WR-CALDESC:Borussia Mönchengladbach schedule from EPGTalk. Updates autom
+ atically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884774@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261011T133000Z
+DTEND:20261011T153000Z
+SUMMARY:⚽ FC Cologne vs Borussia Mönchengladbach
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nTV: Fandango\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884768@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261018T153000Z
+DTEND:20261018T173000Z
+SUMMARY:⚽ Borussia Mönchengladbach vs TSG Hoffenheim
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884761@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261023T183000Z
+DTEND:20261023T203000Z
+SUMMARY:⚽ VfB Stuttgart vs Borussia Mönchengladbach
+LOCATION:MHPArena\, Stuttgart\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884749@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:⚽ Borussia Mönchengladbach vs SC Paderborn 07
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884739@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261106T193000Z
+DTEND:20261106T213000Z
+SUMMARY:⚽ Hamburg SV vs Borussia Mönchengladbach
+LOCATION:Volksparkstadion\, Hamburg Norderstedt\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884731@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:⚽ Borussia Mönchengladbach vs Borussia Dortmund
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884720@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261127T193000Z
+DTEND:20261127T213000Z
+SUMMARY:⚽ Werder Bremen vs Borussia Mönchengladbach
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884716@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ Bayer Leverkusen vs Borussia Mönchengladbach
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884705@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ Borussia Mönchengladbach vs Eintracht Frankfurt
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884693@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ Schalke 04 vs Borussia Mönchengladbach
+LOCATION:Veltins Arena\, Gelsenkirchen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884687@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ Borussia Mönchengladbach vs Bayern Munich
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884679@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ FC Augsburg vs Borussia Mönchengladbach
+LOCATION:WWK Arena\, Augsburg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884668@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ Borussia Mönchengladbach vs 1. FC Union Berlin
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884660@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ Borussia Mönchengladbach vs RB Leipzig
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884647@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ SV Elversberg vs Borussia Mönchengladbach
+LOCATION:URSAPHARM-Arena an der Kaiserlinde\, Spiesen-Elversberg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884642@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ Borussia Mönchengladbach vs SC Freiburg
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884632@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ Mainz vs Borussia Mönchengladbach
+LOCATION:MEWA ARENA\, Mainz\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884624@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ Borussia Mönchengladbach vs FC Cologne
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884616@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ TSG Hoffenheim vs Borussia Mönchengladbach
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884606@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ Borussia Mönchengladbach vs VfB Stuttgart
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884593@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ SC Paderborn 07 vs Borussia Mönchengladbach
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884587@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ Borussia Mönchengladbach vs Hamburg SV
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884583@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ Borussia Dortmund vs Borussia Mönchengladbach
+LOCATION:Signal Iduna Park\, Aue\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884568@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ Borussia Mönchengladbach vs Werder Bremen
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884561@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ Borussia Mönchengladbach vs Bayer Leverkusen
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884552@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ Eintracht Frankfurt vs Borussia Mönchengladbach
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884543@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ Borussia Mönchengladbach vs Schalke 04
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884538@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ Bayern Munich vs Borussia Mönchengladbach
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884524@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ Borussia Mönchengladbach vs FC Augsburg
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884495@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ 1. FC Union Berlin vs Borussia Mönchengladbach
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

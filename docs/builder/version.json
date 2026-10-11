@@ -1,0 +1,22 @@
+{
+ "version": "1.4.0",
+ "notes": "New: pick just the channels you want from the EPGTalk guides — your own teams from Sports, a few Pluto channels from Free TV — for a much smaller guide. Filters by league or service, with your own names and numbers.",
+ "notes_es": "Nuevo: elige solo los canales que quieres de las guías de EPGTalk (tus equipos de Deportes, unos canales de Pluto de TV gratis) para una guía mucho más chica. Filtros por liga o servicio, con tus propios nombres y números.",
+ "page": "https://epgtalk.com/builder/#whatsnew",
+ "windows": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Setup.exe"
+ },
+ "win_setup": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Setup.exe",
+  "sha256": "e0e23a432d14af89e83c381e98869e435b969f6d0ec96b1268b46f007ef2c792"
+ },
+ "linux": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/epgtalk-builder_1.4.0_all.deb",
+  "sha256": "420ee10bb3a892b70b57d856f46712fc6db5f1d16b43fd572944a165634248b5"
+ },
+ "windows_mb": 23,
+ "nas": {
+  "version": "2.1.0",
+  "image": "ghcr.io/acidjesuz/epgtalk-builder"
+ }
+}

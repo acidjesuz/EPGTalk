@@ -1,0 +1,271 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SC Paderborn 07 (Bundesliga)
+X-WR-CALDESC:SC Paderborn 07 schedule from EPGTalk. Updates automatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-bundesliga-401884766@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T133000Z
+DTEND:20261017T153000Z
+SUMMARY:⚽ Werder Bremen vs SC Paderborn 07
+LOCATION:Weserstadion\, Bremen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884755@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261024T133000Z
+DTEND:20261024T153000Z
+SUMMARY:⚽ SC Paderborn 07 vs Hamburg SV
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884749@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261031T143000Z
+DTEND:20261031T163000Z
+SUMMARY:⚽ Borussia Mönchengladbach vs SC Paderborn 07
+LOCATION:BORUSSIA-PARK\, Mönchengladbach\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884737@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261107T143000Z
+DTEND:20261107T163000Z
+SUMMARY:⚽ SC Paderborn 07 vs Eintracht Frankfurt
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884735@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261121T143000Z
+DTEND:20261121T163000Z
+SUMMARY:⚽ Bayer Leverkusen vs SC Paderborn 07
+LOCATION:BayArena\, Leverkusen\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884719@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261128T143000Z
+DTEND:20261128T163000Z
+SUMMARY:⚽ SC Paderborn 07 vs Schalke 04
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884718@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:⚽ Bayern Munich vs SC Paderborn 07
+LOCATION:Allianz Arena\, München\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884701@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:⚽ SC Paderborn 07 vs SV Elversberg
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884696@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:⚽ FC Augsburg vs SC Paderborn 07
+LOCATION:WWK Arena\, Augsburg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884683@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:⚽ SC Paderborn 07 vs RB Leipzig
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884677@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270113
+DTEND;VALUE=DATE:20270114
+SUMMARY:⚽ 1. FC Union Berlin vs SC Paderborn 07
+LOCATION:Stadion An der Alten Försterei\, Berlin\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884665@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:⚽ SC Paderborn 07 vs FC Cologne
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884656@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:⚽ SC Paderborn 07 vs Mainz
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884652@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:⚽ SC Freiburg vs SC Paderborn 07
+LOCATION:Europa-Park Stadion\, Freiburg im Breisgau\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884638@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:⚽ SC Paderborn 07 vs Borussia Dortmund
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884635@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270214
+SUMMARY:⚽ TSG Hoffenheim vs SC Paderborn 07
+LOCATION:PreZero Arena\, Sinsheim\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884627@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:⚽ VfB Stuttgart vs SC Paderborn 07
+LOCATION:MHPArena\, Stuttgart\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884611@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:⚽ SC Paderborn 07 vs Werder Bremen
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884605@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+SUMMARY:⚽ Hamburg SV vs SC Paderborn 07
+LOCATION:Volksparkstadion\, Hamburg Norderstedt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884593@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:⚽ SC Paderborn 07 vs Borussia Mönchengladbach
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884590@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270313
+DTEND;VALUE=DATE:20270314
+SUMMARY:⚽ Eintracht Frankfurt vs SC Paderborn 07
+LOCATION:Deutsche Bank Park\, Frankfurt\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884575@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:⚽ SC Paderborn 07 vs Bayer Leverkusen
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884567@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270404
+SUMMARY:⚽ Schalke 04 vs SC Paderborn 07
+LOCATION:Veltins Arena\, Gelsenkirchen\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884557@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270411
+SUMMARY:⚽ SC Paderborn 07 vs Bayern Munich
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884548@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270417
+DTEND;VALUE=DATE:20270418
+SUMMARY:⚽ SV Elversberg vs SC Paderborn 07
+LOCATION:URSAPHARM-Arena an der Kaiserlinde\, Spiesen-Elversberg\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884539@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270425
+SUMMARY:⚽ SC Paderborn 07 vs FC Augsburg
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884537@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:⚽ RB Leipzig vs SC Paderborn 07
+LOCATION:Red Bull Arena\, Leipzig\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884501@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270516
+SUMMARY:⚽ SC Paderborn 07 vs 1. FC Union Berlin
+LOCATION:Home Deluxe Arena\, Paderborn\, Germany
+DESCRIPTION:Bundesliga\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-bundesliga-401884494@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20270522T133000Z
+DTEND:20270522T153000Z
+SUMMARY:⚽ FC Cologne vs SC Paderborn 07
+LOCATION:RheinEnergieStadion\, Cologne\, Germany
+DESCRIPTION:Bundesliga\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

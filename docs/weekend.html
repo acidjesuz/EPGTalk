@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>EPGTalk — This Weekend</title>
+<meta name="description" content="This weekend on TV: every NFL game, NASCAR, ranked college football, playoffs, top soccer, UFC, F1, golf and the weekend's premieres — with channels and reminders.">
+<link rel="canonical" href="https://epgtalk.com/weekend.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — This Weekend">
+<meta property="og:description" content="This weekend on TV: every NFL game, NASCAR, ranked college football, playoffs, top soccer, UFC, F1, golf and the weekend's premieres — with channels and reminders.">
+<meta property="og:url" content="https://epgtalk.com/weekend.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e; --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 3; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 1000px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.6rem; font-size: clamp(1.6rem, 5vw, 2.3rem); margin: 0; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 6px 0 18px; }
+  .feat { background: linear-gradient(135deg, rgba(255,77,94,0.14), rgba(245,179,1,0.10)); border: 1px solid rgba(245,179,1,0.35); border-radius: 16px; padding: 16px 18px; margin-bottom: 8px; }
+  .feat h2 { margin: 0 0 8px; font-family: 'Orbitron', monospace; font-size: 1.1rem; color: var(--amber); }
+  h2.day { font-family: 'Orbitron', monospace; font-size: 1.1rem; margin: 30px 0 10px; color: var(--accent); }
+  .blk { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 12px 16px; margin-bottom: 10px; }
+  .blk h3 { margin: 0 0 4px; font-size: 1rem; color: var(--green); }
+  .it { display: flex; flex-wrap: wrap; gap: 2px 12px; align-items: baseline; padding: 7px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+  .blk h3 + .it { border-top: 0; }
+  .it .t { color: var(--accent); font-weight: 700; min-width: 92px; }
+  .it .w { color: #fff; font-weight: 600; }
+  .it .n { color: var(--muted); font-style: italic; font-size: 0.85rem; }
+  .it .tv { flex-basis: 100%; margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .it .tv b { color: var(--green); font-weight: 600; }
+  .it .tv a { color: var(--green); font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; }
+  .it button { font: inherit; font-size: 0.75rem; color: var(--text); background: transparent; border: 1px solid var(--border); border-radius: 7px; padding: 2px 8px; cursor: pointer; }
+  .it.past { opacity: 0.45; }
+  .moreg { color: var(--muted); font-size: 0.82rem; padding-top: 6px; }
+  .moreg a { color: var(--accent); }
+  .empty { color: var(--muted); text-align: center; padding: 22px; background: var(--bg-card); border-radius: 14px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; line-height: 1.6; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 id="h1"></h1>
+  <p class="sub" id="sub"></p>
+  <div id="out"><div class="empty">…</div></div>
+</main>
+<footer id="foot"></footer>
+<script src="watch.js"></script>
+<script src="ask.js"></script>
+<script>
+(() => {
+const T = {
+  en: { h1: 'This <span>Weekend</span>', sub: 'The big games, races and premieres — {r}. Times in your time zone.', feat: '🏁 NASCAR Weekend', round: 'Round {n}',
+        tba: 'Time TBA', remind: '📅 Remind me', more: '…and {n} more in the <a href="tvguide.html#sports">Sports guide</a>', prem: '🎬 Weekend Premieres',
+        none: 'Nothing listed yet — check back soon.', fail: 'Sorry — the weekend preview could not be loaded.',
+        foot: 'Picked automatically: every NFL game, NASCAR, ranked college football, playoffs, national NBA/NHL games, top soccer, UFC, F1 and golf.<br>Updated a few times a day · Want it on your phone? Follow your team on <a href="live.html">Live Sports</a> for Game Day alerts.' },
+  es: { h1: 'Este <span>fin de semana</span>', sub: 'Los grandes partidos, carreras y estrenos — {r}. Horarios en tu zona horaria.', feat: '🏁 Fin de semana NASCAR', round: 'Ronda {n}',
+        tba: 'Hora por confirmar', remind: '📅 Recordarme', more: '…y {n} más en la <a href="tvguide.html#sports">guía de Deportes</a>', prem: '🎬 Estrenos del fin de semana',
+        none: 'Aún no hay nada — vuelve pronto.', fail: 'Lo sentimos — no se pudo cargar el fin de semana.',
+        foot: 'Elegido automáticamente: todos los partidos de la NFL, NASCAR, fútbol americano colegial, playoffs, NBA/NHL nacionales, el mejor fútbol, UFC, F1 y golf.<br>Se actualiza varias veces al día · ¿Lo quieres en tu teléfono? Sigue a tu equipo en <a href="live.html">Deportes en Vivo</a> para avisos de día de partido.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k]).replace(/\{(\w+)\}/g, (_, n) => (v && v[n] != null ? v[n] : ''));
+document.documentElement.lang = LANG;
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+$('h1').innerHTML = tr('h1'); $('foot').innerHTML = tr('foot');
+document.title = 'EPGTalk — ' + (LANG === 'es' ? 'Este fin de semana' : 'This Weekend');
+const loc = LANG === 'es' ? 'es' : undefined;
+const fT = new Intl.DateTimeFormat(loc, { hour: 'numeric', minute: '2-digit' });
+const fDay = new Intl.DateTimeFormat(loc, { weekday: 'long', month: 'long', day: 'numeric' });
+const fShort = new Intl.DateTimeFormat(loc, { weekday: 'short', month: 'short', day: 'numeric' });
+
+function item(it, showDay) {
+  const r = el('div', 'it');
+  const now = Date.now() / 1000;
+  if (it.start + 4 * 3600 < now) r.classList.add('past');
+  const ms = it.start * 1000;
+  const when = it.round ? tr('round', { n: it.round }) : it.valid === false ? tr('tba') : (showDay ? fShort.format(new Date(ms)) + ' ' : '') + fT.format(new Date(ms));
+  r.appendChild(el('span', 't', when));
+  r.appendChild(el('span', 'w', it.what));
+  if (it.note) r.appendChild(el('span', 'n', it.note));
+  if (!it.round && it.start > now) { const b = el('button', null, tr('remind')); b.type = 'button'; b.onclick = () => EPGAsk.ics(it.what, ms, ms + 3 * 3600000, (it.tv || []).join(', ')); r.appendChild(b); }
+  if (it.tv && it.tv.length) r.appendChild(EPGWatch.line(it.tv, ms));
+  return r;
+}
+
+Promise.all([fetch('weekend.json', { cache: 'no-cache' }).then(r => r.json()), EPGWatch.load()]).then(([d]) => {
+  const out = $('out'); out.replaceChildren();
+  if (!d.days || !d.days.length) { out.appendChild(el('div', 'empty', tr('none'))); return; }
+  const first = new Date(d.days[0].date + 'T12:00:00'), last = new Date(d.days[d.days.length - 1].date + 'T12:00:00');
+  $('sub').textContent = tr('sub', { r: fShort.format(first) + ' – ' + fShort.format(last) });
+  // featured: every NASCAR race this weekend
+  const nas = [];
+  for (const day of d.days) for (const b of day.blocks) if (/^nascar/.test(b.key)) for (const it of b.items) nas.push(Object.assign({}, it, { what: it.what }));
+  if (nas.length) {
+    const f = el('div', 'feat'); f.appendChild(el('h2', null, tr('feat')));
+    nas.sort((a, b) => a.start - b.start).forEach(it => f.appendChild(item(it, true)));
+    out.appendChild(f);
+  }
+  let any = false;
+  for (const day of d.days) {
+    const blocks = day.blocks.filter(b => !/^nascar/.test(b.key));
+    if (!blocks.length) continue;
+    any = true;
+    out.appendChild(el('h2', 'day', fDay.format(new Date(day.date + 'T12:00:00'))));
+    for (const b of blocks) {
+      const box = el('div', 'blk'); box.appendChild(el('h3', null, b.emoji + ' ' + b.label));
+      b.items.forEach(it => box.appendChild(item(it, false)));
+      if (b.more) { const m = el('div', 'moreg'); m.innerHTML = tr('more', { n: b.more }); box.appendChild(m); }
+      out.appendChild(box);
+    }
+  }
+  if (d.premieres && d.premieres.length) {
+    any = true;
+    out.appendChild(el('h2', 'day', tr('prem')));
+    const box = el('div', 'blk');
+    d.premieres.forEach(p => box.appendChild(item({ start: p.start, what: p.title + (p.sub ? ' — ' + p.sub : ''), note: p.ep, tv: p.channel ? [p.channel] : [] }, true)));
+    out.appendChild(box);
+  }
+  if (!any && !nas.length) out.appendChild(el('div', 'empty', tr('none')));
+}).catch(() => { $('out').replaceChildren(el('div', 'empty', tr('fail'))); });
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

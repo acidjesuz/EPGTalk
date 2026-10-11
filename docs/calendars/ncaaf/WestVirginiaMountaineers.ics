@@ -1,0 +1,104 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:West Virginia Mountaineers (NCAAF)
+X-WR-CALDESC:West Virginia Mountaineers schedule from EPGTalk. Updates auto
+ matically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856802@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260919T233000Z
+DTEND:20260920T030000Z
+SUMMARY:🏈 West Virginia Mountaineers at Virginia Cavaliers
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+DESCRIPTION:NCAAF · Duke’s Mayo Classic\nTV: ACC Network\nFinal: West Vi
+ rginia 38 - Virginia 27\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856881@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T230000Z
+DTEND:20260927T023000Z
+SUMMARY:🏈 Oklahoma State Cowboys at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nTV: FS1\nFinal: Oklahoma St 41 - West Virginia 24\nFrom 
+ EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856822@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T160000Z
+DTEND:20261003T193000Z
+SUMMARY:🏈 West Virginia Mountaineers at Iowa State Cyclones
+LOCATION:Jack Trice Stadium\, Ames\, IA
+DESCRIPTION:NCAAF\nTV: TNT\nFinal: West Virginia 42 - Iowa State 45\nFrom E
+ PGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856823@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T160000Z
+DTEND:20261010T193000Z
+SUMMARY:🏈 Arizona Wildcats at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nTV: TNT\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856829@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T160000Z
+DTEND:20261017T193000Z
+SUMMARY:🏈 Cincinnati Bearcats at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nTV: TNT\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856841@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 West Virginia Mountaineers at TCU Horned Frogs
+LOCATION:Amon G. Carter Stadium\, Fort Worth\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856856@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 West Virginia Mountaineers at Texas Tech Red Raiders
+LOCATION:Galaxy Stadium\, Lubbock\, TX
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856861@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Kansas Jayhawks at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856868@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Houston Cougars at West Virginia Mountaineers
+LOCATION:Milan Puskar Stadium\, Morgantown\, WV
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856880@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261128T020000Z
+DTEND:20261128T053000Z
+SUMMARY:🏈 West Virginia Mountaineers at Utah Utes
+LOCATION:Rice-Eccles Stadium\, Salt Lake City\, UT
+DESCRIPTION:NCAAF\nTV: Fox\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

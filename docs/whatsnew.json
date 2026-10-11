@@ -1,0 +1,380 @@
+{
+ "releases": [
+  {
+   "id": "2026-10-10-builder140",
+   "date": "Oct 10, 2026",
+   "en": {
+    "title": "🧰 Guide Builder 1.4 — just the channels you want",
+    "items": [
+     {
+      "text": "🏆 Pick channels from the EPGTalk guides: just your teams from Sports, or a few Pluto channels from Free TV",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "📉 A much smaller guide that loads fast on a Firestick — like 16 KB instead of 2.6 MB — on desktop and NAS",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   },
+   "es": {
+    "title": "🧰 Guide Builder 1.4 — solo los canales que quieres",
+    "items": [
+     {
+      "text": "🏆 Elige canales de las guías de EPGTalk: solo tus equipos de Deportes, o unos canales de Pluto de TV gratis",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "📉 Una guía mucho más chica que carga rápido en un Firestick (unos 16 KB en vez de 2.6 MB), en escritorio y NAS",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-10-builder134",
+   "date": "Oct 10, 2026",
+   "en": {
+    "title": "🧰 Guide Builder 1.3.4 — steadier guides",
+    "items": [
+     {
+      "text": "🛡️ If a provider can’t be reached during an update, your guide keeps its last good listings instead of losing those channels",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "🔧 Updates never add a Schedules Direct lineup to your account on their own, and the TV address is right even with a VPN",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   },
+   "es": {
+    "title": "🧰 Guide Builder 1.3.4 — guías más firmes",
+    "items": [
+     {
+      "text": "🛡️ Si no se puede llegar a un proveedor durante una actualización, tu guía mantiene su última programación buena en vez de perder esos canales",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "🔧 Las actualizaciones ya no agregan programaciones a tu cuenta de Schedules Direct por su cuenta, y la dirección para la TV es correcta con VPN",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-10-builder133",
+   "date": "Oct 10, 2026",
+   "en": {
+    "title": "🧰 Guide Builder 1.3.3 — Move to your NAS, and your names stick",
+    "items": [
+     {
+      "text": "🖥️ “Move to my NAS” sends your whole setup to the NAS version in one click — then your computer can be off",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "✏️ Fixed: renamed channels always keep their name, and the app asks before you close without saving",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   },
+   "es": {
+    "title": "🧰 Guide Builder 1.3.3 — Pásala a tu NAS, y tus nombres se quedan",
+    "items": [
+     {
+      "text": "🖥️ “Pasar a mi NAS” envía toda tu configuración a la versión NAS con un clic, y tu computadora puede estar apagada",
+      "link": "builder/#whatsnew"
+     },
+     {
+      "text": "✏️ Arreglado: los canales renombrados siempre guardan su nombre, y la app pregunta antes de cerrar sin guardar",
+      "link": "builder/#whatsnew"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-08-nas",
+   "date": "Oct 8, 2026",
+   "en": {
+    "title": "🖥️ Guide Builder 2.0 — on your NAS",
+    "items": [
+     {
+      "text": "🖥️ Run the Guide Builder 24/7 on your NAS or home server (Docker: Synology, QNAP, Unraid…) — no computer left on",
+      "link": "builder/#nas"
+     },
+     {
+      "text": "📱 Manage it from any browser, even your phone — and move over with one backup from the desktop app",
+      "link": "builder/#nas"
+     }
+    ]
+   },
+   "es": {
+    "title": "🖥️ Guide Builder 2.0 — en tu NAS",
+    "items": [
+     {
+      "text": "🖥️ Usa Guide Builder 24/7 en tu NAS o servidor de casa (Docker: Synology, QNAP, Unraid…), sin dejar una computadora encendida",
+      "link": "builder/#nas"
+     },
+     {
+      "text": "📱 Manéjala desde cualquier navegador, hasta tu teléfono, y pásate con un solo respaldo de la app de escritorio",
+      "link": "builder/#nas"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-07b",
+   "date": "Oct 7, 2026",
+   "en": {
+    "title": "🧰 Guide Builder app — make your own guide",
+    "items": [
+     {
+      "text": "🧰 New free app for Windows and Linux: pick your TV provider and channels, press Build, and your TV box gets its own guide with logos",
+      "link": "builder/"
+     },
+     {
+      "text": "📺 Built-in TV guide with search, a playlist fixer, and it keeps sharing in the background",
+      "link": "builder/"
+     }
+    ]
+   },
+   "es": {
+    "title": "🧰 App Guide Builder — crea tu propia guía",
+    "items": [
+     {
+      "text": "🧰 Nueva app gratis para Windows y Linux: elige tu proveedor y tus canales, presiona Crear, y tu TV box recibe su propia guía con logos",
+      "link": "builder/"
+     },
+     {
+      "text": "📺 Guía de TV incluida con búsqueda, corrector de listas, y sigue compartiendo en segundo plano",
+      "link": "builder/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-03d",
+   "date": "Oct 3, 2026",
+   "en": {
+    "title": "🦁 Game Day, 🎃 Halloween & 🏁 NASCAR",
+    "items": [
+     {
+      "text": "🦁 Game Day banner — follow your team (or NASCAR!) and every page shows when they play today, the channel, then the live score",
+      "link": "live.html"
+     },
+     {
+      "text": "🎃 Halloween on TV — every horror movie, family fright & spooky special this week (Christmas movies next!)",
+      "link": "season.html"
+     },
+     {
+      "text": "📅 This Weekend — the big games, races and premieres on one page",
+      "link": "weekend.html"
+     },
+     {
+      "text": "🏁 More NASCAR: O'Reilly Auto Parts Series and Truck Series added to the Sports guide & Live Sports",
+      "link": "live.html"
+     },
+     {
+      "text": "☆ Follow teams right from Ask EPGTalk",
+      "link": "ask.html"
+     }
+    ]
+   },
+   "es": {
+    "title": "🦁 Día de partido, 🎃 Halloween y 🏁 NASCAR",
+    "items": [
+     {
+      "text": "🦁 Aviso de día de partido — sigue a tu equipo (¡o NASCAR!) y cada página te dice cuándo juega hoy, el canal y luego el marcador en vivo",
+      "link": "live.html"
+     },
+     {
+      "text": "🎃 Halloween en la TV — todas las películas de terror, sustos familiares y especiales de la semana (¡luego llegan las navideñas!)",
+      "link": "season.html"
+     },
+     {
+      "text": "📅 Este fin de semana — los grandes partidos, carreras y estrenos en una página",
+      "link": "weekend.html"
+     },
+     {
+      "text": "🏁 Más NASCAR: O'Reilly Auto Parts Series y Truck Series en la guía de Deportes y Deportes en Vivo",
+      "link": "live.html"
+     },
+     {
+      "text": "☆ Sigue equipos directamente desde Pregúntale a EPGTalk",
+      "link": "ask.html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-03c",
+   "date": "Oct 3, 2026",
+   "en": {
+    "title": "🔎 Ask EPGTalk",
+    "items": [
+     {
+      "text": "🔎 Ask EPGTalk — type (or say) a team, show or movie and get when & where it's on",
+      "link": "ask.html"
+     },
+     {
+      "text": "🏈 Teams show their next game, the channel, \"free with antenna\" and a 📅 reminder",
+      "link": "ask.html?q=Lions"
+     },
+     {
+      "text": "📺 Searches every guide at once — including Free TV, with ▶ Watch free",
+      "link": "ask.html?q=Bluey"
+     },
+     {
+      "text": "🛋️ Also in TV Mode: use your remote's keyboard or mic",
+      "link": "tv.html"
+     }
+    ]
+   },
+   "es": {
+    "title": "🔎 Pregúntale a EPGTalk",
+    "items": [
+     {
+      "text": "🔎 Pregúntale a EPGTalk — escribe (o di) un equipo, programa o película y te dice cuándo y dónde",
+      "link": "ask.html"
+     },
+     {
+      "text": "🏈 Los equipos muestran su próximo partido, el canal, \"gratis con antena\" y un 📅 recordatorio",
+      "link": "ask.html?q=Am%C3%A9rica"
+     },
+     {
+      "text": "📺 Busca en todas las guías a la vez — incluida TV Gratis, con ▶ Ver gratis",
+      "link": "ask.html?q=Bluey"
+     },
+     {
+      "text": "🛋️ También en Modo TV: usa el teclado o el micrófono del control",
+      "link": "tv.html"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-03b",
+   "date": "Oct 3, 2026",
+   "en": {
+    "title": "Free TV, captions & older devices",
+    "items": [
+     {
+      "text": "🆓 NEW Free TV guide — 1,100+ free channels (Pluto TV, Samsung TV Plus, Plex, Tubi) with a ▶ Watch free button",
+      "link": "tvguide.html#freetv"
+     },
+     {
+      "text": "📡 \"Free with antenna\" badges on games you can watch free on ABC, CBS, FOX, NBC, Univision & more",
+      "link": "antenna.html"
+     },
+     {
+      "text": "📡 New guide: get free TV forever with a one-time antenna — step by step",
+      "link": "antenna.html"
+     },
+     {
+      "text": "CC badges + a CC filter in the TV Guide for shows with closed captions",
+      "link": "tvguide.html"
+     },
+     {
+      "text": "📱 Works on older phones, TV boxes and iPhones (iOS 12 and up)"
+     }
+    ]
+   },
+   "es": {
+    "title": "TV gratis, subtítulos y equipos viejos",
+    "items": [
+     {
+      "text": "🆓 NUEVA guía TV Gratis — más de 1,100 canales gratis (Pluto TV, Samsung TV Plus, Plex, Tubi) con botón ▶ Ver gratis",
+      "link": "tvguide.html#freetv"
+     },
+     {
+      "text": "📡 Etiqueta \"Gratis con antena\" en partidos que se ven gratis en ABC, CBS, FOX, NBC, Univision y más",
+      "link": "antenna.html"
+     },
+     {
+      "text": "📡 Nueva guía: TV gratis para siempre con una antena que pagas una vez — paso a paso",
+      "link": "antenna.html"
+     },
+     {
+      "text": "Etiquetas CC + filtro CC en la Guía de TV para programas con subtítulos",
+      "link": "tvguide.html"
+     },
+     {
+      "text": "📱 Funciona en teléfonos, cajas de TV y iPhones más viejos (iOS 12 en adelante)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-03",
+   "date": "Oct 3, 2026",
+   "en": {
+    "title": "Big sports & setup update",
+    "items": [
+     {
+      "text": "🏆 Big Events — playoff brackets, series, countdowns and standings that switch on by themselves",
+      "link": "events.html"
+     },
+     {
+      "text": "📖 Player Setup — step-by-step for TiviMate, Smarters, Kodi, Plex, Jellyfin, Emby and Channels DVR",
+      "link": "setup.html"
+     },
+     {
+      "text": "📺 Tap a channel on a game to jump straight to it in the TV Guide",
+      "link": "live.html"
+     },
+     {
+      "text": "🎾 New sports: ATP & WTA tennis, IndyCar, LPGA, LIV, DP World Tour and PFL — plus full UFC/PFL fight cards"
+     },
+     {
+      "text": "🪶 Lite guides (US, UK, Latino): next 2 days, about 4× smaller — made for Firestick",
+      "link": "setup.html"
+     },
+     {
+      "text": "🔢 Missing season/episode numbers filled in from TVmaze — great for DVR recordings"
+     },
+     {
+      "text": "🤓 Public JSON for Home Assistant, Kodi skins and your own apps",
+      "link": "api.html"
+     },
+     {
+      "text": "📺 TV Mode — a big-screen, remote-friendly view for your TV",
+      "link": "tv.html"
+     }
+    ]
+   },
+   "es": {
+    "title": "Gran actualización de deportes y configuración",
+    "items": [
+     {
+      "text": "🏆 Grandes Eventos — llaves de playoffs, series, cuentas regresivas y tablas que se activan solas",
+      "link": "events.html"
+     },
+     {
+      "text": "📖 Configura tu app — paso a paso para TiviMate, Smarters, Kodi, Plex, Jellyfin, Emby y Channels DVR",
+      "link": "setup.html"
+     },
+     {
+      "text": "📺 Toca el canal de un partido para ir directo a él en la Guía de TV",
+      "link": "live.html"
+     },
+     {
+      "text": "🎾 Nuevos deportes: tenis ATP y WTA, IndyCar, LPGA, LIV, DP World Tour y PFL — y carteleras completas de UFC/PFL"
+     },
+     {
+      "text": "🪶 Guías Lite (EE. UU., Reino Unido, Latino): próximos 2 días, unas 4× más pequeñas — hechas para Firestick",
+      "link": "setup.html"
+     },
+     {
+      "text": "🔢 Números de temporada/episodio que faltaban, completados con TVmaze — ideal para grabaciones DVR"
+     },
+     {
+      "text": "🤓 JSON público para Home Assistant, skins de Kodi y tus propias apps",
+      "link": "api.html"
+     },
+     {
+      "text": "📺 Modo TV — una vista grande, fácil de usar con el control remoto",
+      "link": "tv.html"
+     }
+    ]
+   }
+  }
+ ]
+}

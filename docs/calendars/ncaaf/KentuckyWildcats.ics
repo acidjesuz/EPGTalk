@@ -1,0 +1,99 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Kentucky Wildcats (NCAAF)
+X-WR-CALDESC:Kentucky Wildcats schedule from EPGTalk. Updates automatically
+ .
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401864576@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T164500Z
+DTEND:20260926T201500Z
+SUMMARY:🏈 South Alabama Jaguars at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: South Alabama 21 - Kentucky 45\n
+ From EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856709@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T201500Z
+DTEND:20261003T234500Z
+SUMMARY:🏈 Kentucky Wildcats at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: Kentucky 35 - South Carolina 34\
+ nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856715@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T230000Z
+DTEND:20261011T023000Z
+SUMMARY:🏈 LSU Tigers at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF\nTV: ESPN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856722@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T233000Z
+DTEND:20261018T030000Z
+SUMMARY:🏈 Kentucky Wildcats at Oklahoma Sooners
+LOCATION:Memorial Stadium (Norman\, OK)\, Norman\, OK
+DESCRIPTION:NCAAF\nTV: SEC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856729@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Vanderbilt Commodores at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856745@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Kentucky Wildcats at Tennessee Volunteers
+LOCATION:Neyland Stadium\, Knoxville\, TN
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856884@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Florida Gators at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856751@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Kentucky Wildcats at Missouri Tigers
+LOCATION:Memorial Stadium\, Columbia\, MO
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856761@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Louisville Cardinals at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

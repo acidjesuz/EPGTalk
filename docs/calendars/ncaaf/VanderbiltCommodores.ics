@@ -1,0 +1,99 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Vanderbilt Commodores (NCAAF)
+X-WR-CALDESC:Vanderbilt Commodores schedule from EPGTalk. Updates automatic
+ ally.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856698@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T201500Z
+DTEND:20260926T234500Z
+SUMMARY:🏈 Vanderbilt Commodores at Auburn Tigers
+LOCATION:Jordan-Hare Stadium\, Auburn\, AL
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: Vanderbilt 15 - Auburn 21\nFrom 
+ EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856705@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T164500Z
+DTEND:20261003T201500Z
+SUMMARY:🏈 Vanderbilt Commodores at Georgia Bulldogs
+LOCATION:Sanford Stadium\, Athens\, GA
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: Vanderbilt 14 - Georgia 38\nFrom
+  EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856718@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261010T193000Z
+DTEND:20261010T230000Z
+SUMMARY:🏈 Ole Miss Rebels at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF\nTV: ESPN\, Disney+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856726@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T230000Z
+DTEND:20261018T023000Z
+SUMMARY:🏈 Arkansas Razorbacks at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF\nTV: ESPN2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856729@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Vanderbilt Commodores at Kentucky Wildcats
+LOCATION:Kroger Field\, Lexington\, KY
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856742@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Vanderbilt Commodores at Mississippi State Bulldogs
+LOCATION:Davis Wade Stadium\, Starkville\, MS
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856889@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Alabama Crimson Tide at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856748@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Vanderbilt Commodores at Florida Gators
+LOCATION:Ben Hill Griffin Stadium\, Gainesville\, FL
+DESCRIPTION:NCAAF · EARLY: Noon - 1pm ET start\nStart time to be announced
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856765@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Tennessee Volunteers at Vanderbilt Commodores
+LOCATION:FirstBank Stadium\, Nashville\, TN
+DESCRIPTION:NCAAF · NIGHT: 6 - 8pm ET start\nStart time to be announced\nF
+ rom EPGTalk
+END:VEVENT
+END:VCALENDAR

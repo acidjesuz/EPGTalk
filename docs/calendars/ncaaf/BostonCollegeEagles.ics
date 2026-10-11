@@ -1,0 +1,93 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Boston College Eagles (NCAAF)
+X-WR-CALDESC:Boston College Eagles schedule from EPGTalk. Updates automatic
+ ally.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858242@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20260926T160000Z
+DTEND:20260926T193000Z
+SUMMARY:🏈 Virginia Tech Hokies at Boston College Eagles
+LOCATION:Alumni Stadium (Chestnut Hill\, MA)\, Chestnut Hill\, MA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Virginia Tech 21 - Boston Colleg
+ e 14\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858246@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261003T160000Z
+DTEND:20261003T193000Z
+SUMMARY:🏈 Boston College Eagles at SMU Mustangs
+LOCATION:Gerald J. Ford Stadium\, Dallas\, TX
+DESCRIPTION:NCAAF\nTV: CW\nFinal: Boston College 16 - SMU 25\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858267@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261017T160000Z
+DTEND:20261017T193000Z
+SUMMARY:🏈 Pittsburgh Panthers at Boston College Eagles
+LOCATION:Alumni Stadium (Chestnut Hill\, MA)\, Chestnut Hill\, MA
+DESCRIPTION:NCAAF\nTV: ESPN2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858273@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:🏈 Boston College Eagles at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858279@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Boston College Eagles at Duke Blue Devils
+LOCATION:Wallace Wade Stadium\, Durham\, NC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858289@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Florida State Seminoles at Boston College Eagles
+LOCATION:Alumni Stadium (Chestnut Hill\, MA)\, Chestnut Hill\, MA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858294@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART:20261114T203000Z
+DTEND:20261115T000000Z
+SUMMARY:🏈 Boston College Eagles at Notre Dame Fighting Irish
+LOCATION:Notre Dame Stadium\, Notre Dame\, IN
+DESCRIPTION:NCAAF\nTV: NBC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858309@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Syracuse Orange at Boston College Eagles
+LOCATION:Alumni Stadium (Chestnut Hill\, MA)\, Chestnut Hill\, MA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858311@epgtalk
+DTSTAMP:20261010T224024Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Boston College Eagles at Miami Hurricanes
+LOCATION:Hard Rock Stadium\, Miami Gardens\, FL
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

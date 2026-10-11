@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1b1530">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<title>One day at a time</title>
+<meta name="description" content="You're not alone. Free, confidential help lines — any time.">
+<link rel="canonical" href="https://epgtalk.com/onedayatatime.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="One day at a time">
+<meta property="og:description" content="You're not alone. Free, confidential help lines — any time.">
+<meta property="og:url" content="https://epgtalk.com/onedayatatime.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #f3ece4; --soft: #c9bfd6; --warm: #ffb36b; --rose: #ff8fa3; --card: rgba(255,255,255,0.06); --line: rgba(255,255,255,0.12); }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); font-family: 'DM Sans', sans-serif; min-height: 100vh;
+         background: #1b1530; background: linear-gradient(180deg, #141029 0%, #2a1d45 45%, #5b3555 78%, #9a5a4a 100%); background-attachment: fixed; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); }
+  .nav-logo { font-weight: 700; color: var(--ink); text-decoration: none; opacity: 0.85; }
+  .nav-links { display: flex; gap: 12px; align-items: center; }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 760px; margin: 0 auto; padding: 18px 18px 60px; }
+  .dove { font-size: 3.4rem; text-align: center; margin: 10px 0 0; filter: drop-shadow(0 0 18px rgba(255,179,107,0.45)); }
+  h1 { font-family: 'Lora', serif; font-weight: 600; text-align: center; font-size: 2.2rem; font-size: clamp(2.2rem, 7vw, 3.2rem); margin: 6px 0 24px; letter-spacing: 0.01em; }
+  .note { font-family: 'Lora', serif; font-size: 1.15rem; line-height: 1.75; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
+  .note p { margin: 0 0 14px; } .note p:last-child { margin: 0; }
+  .note .sig { text-align: right; font-style: italic; color: var(--warm); }
+  .note.steps { font-size: 1.05rem; line-height: 1.6; padding: 18px 22px; }
+  .note.steps p { margin: 0 0 12px; }
+  .counter { text-align: center; margin: 22px 0 6px; }
+  .counter b { display: block; font-family: 'Lora', serif; font-size: 2rem; color: var(--warm); }
+  .counter span { color: var(--soft); }
+  .bday { text-align: center; font-size: 1.15rem; font-weight: 700; color: #fff; background: linear-gradient(90deg, rgba(255,143,163,0.35), rgba(255,179,107,0.35));
+          border-radius: 14px; padding: 12px; margin: 14px 0; }
+  h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 1.35rem; margin: 34px 0 6px; }
+  .lead { color: var(--soft); margin: 0 0 14px; }
+  .grp { margin: 16px 0 6px; font-weight: 700; color: var(--warm); }
+  .line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin-bottom: 8px; }
+  .line .who { flex: 1 1 260px; }
+  .line .who b { display: block; }
+  .line .who small { color: var(--soft); }
+  .call { flex: none; font-weight: 700; font-size: 1.05rem; color: #1b1530; background: var(--warm); border-radius: 999px; padding: 8px 16px; text-decoration: none; white-space: nowrap; }
+  .call.alt { background: transparent; color: var(--warm); border: 1px solid var(--warm); }
+  .meet { display: flex; flex-wrap: wrap; gap: 8px; }
+  .meet a { color: var(--ink); text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; }
+  .sos { margin-top: 26px; text-align: center; background: rgba(255,77,94,0.15); border: 1px solid rgba(255,77,94,0.45); border-radius: 14px; padding: 12px 16px; }
+  .sos a { color: #fff; font-weight: 700; }
+  .end { text-align: center; font-family: 'Lora', serif; font-size: 1.3rem; margin: 34px 0 0; }
+  footer { text-align: center; color: var(--soft); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--warm); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPGTalk</a>
+  <div class="nav-links">
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+(() => {
+const SOBER = new Date(2010, 9, 9);          // October 9, 2010
+const now = new Date();
+let years = now.getFullYear() - 2010;
+if (now.getMonth() < 9 || (now.getMonth() === 9 && now.getDate() < 9)) years--;
+const days = Math.floor((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - SOBER) / 86400000);
+const bday = now.getMonth() === 9 && now.getDate() === 9;
+const C = {
+  en: {
+    title: 'One day at a time',
+    html: `
+<div class="dove">🕊️</div>
+<h1>One day at a time</h1>
+${bday ? `<div class="bday">🎉 Today is my sobriety birthday — ${years} years! Thank you for being here. 💙</div>` : ''}
+<div class="note">
+  <p>Hi — I'm the Hamtramck kid behind EPGTalk.</p>
+  <p>On <b>October 9, 2010</b>, I chose a different life. It wasn't easy. I've been through a lot — the bad and the good — and today I'm proud of the person I've become.</p>
+  <p>Sobriety gave me a life I couldn't have imagined back then. Everything you see on EPGTalk — every guide, every page, every late night fixing a channel — was built sober, one day at a time.</p>
+  <p>If you're struggling right now — with alcohol, drugs, or just with life — please hear this: <b>you are not alone</b>, it's never too late, and reaching out for help is one of the bravest things you'll ever do.</p>
+  <p>You don't have to have it all figured out. You don't have to fix everything today. You only have to get through today — and you don't have to do it alone.</p>
+  <p class="sig">— one day at a time 💙</p>
+</div>
+<div class="counter"><b>${years} years · ${days.toLocaleString('en-US')} days</b><span>sober, one day at a time</span></div>
+
+<h2>Someone will answer — any time, free</h2>
+<p class="lead">Confidential. No judgement. You don't have to know what to say.</p>
+
+<div class="grp">🇺🇸 United States</div>
+<div class="line"><div class="who"><b>SAMHSA National Helpline</b><small>Drugs & alcohol · 24/7 · English & Spanish · for you or your family</small></div><a class="call" href="tel:18006624357">📞 1-800-662-4357</a></div>
+<div class="line"><div class="who"><b>988 Suicide & Crisis Lifeline</b><small>Call or text · 24/7 · press 2 for Spanish</small></div><a class="call" href="tel:988">📞 988</a><a class="call alt" href="sms:988">💬 Text 988</a></div>
+<div class="line"><div class="who"><b>Crisis Text Line</b><small>Text with a trained counselor · 24/7</small></div><a class="call" href="sms:741741?&body=HOME">💬 Text HOME to 741741</a></div>
+
+<div class="grp">🇨🇦 Canada</div>
+<div class="line"><div class="who"><b>988 Suicide Crisis Helpline</b><small>Call or text · 24/7 · English & French</small></div><a class="call" href="tel:988">📞 988</a><a class="call alt" href="sms:988">💬 Text 988</a></div>
+
+<div class="grp">🇬🇧 United Kingdom</div>
+<div class="line"><div class="who"><b>Samaritans</b><small>Someone to talk to · free · 24/7</small></div><a class="call" href="tel:116123">📞 116 123</a></div>
+<div class="line"><div class="who"><b>FRANK</b><small>Drugs & alcohol · 24/7</small></div><a class="call" href="tel:03001236600">📞 0300 123 6600</a></div>
+<div class="line"><div class="who"><b>Drinkline</b><small>Alcohol · weekdays 9am–8pm, weekends 11am–4pm</small></div><a class="call" href="tel:03001231110">📞 0300 123 1110</a></div>
+
+<div class="grp">🇲🇽 México</div>
+<div class="line"><div class="who"><b>Línea de la Vida</b><small>Adicciones, crisis y salud mental · gratis · 24/7</small></div><a class="call" href="tel:8009112000">📞 800 911 2000</a></div>
+
+<h2>Small steps that help</h2>
+<div class="note steps">
+  <p>🕊️ <b>Just today.</b> Not forever — just the next 24 hours. Sometimes just the next hour.</p>
+  <p>📞 <b>Tell one person.</b> A friend, a family member, a helpline, a stranger at a meeting. Saying it out loud takes away some of its power.</p>
+  <p>🤝 <b>Go to one meeting.</b> In person or online. You don't have to talk — you can just listen.</p>
+  <p>🍲 <b>Take care of the basics.</b> Eat something. Drink water. Sleep. It sounds small, but it isn't.</p>
+  <p>💙 <b>If you slip, pick up the phone.</b> A slip isn't the end of your story. Coming back is what counts.</p>
+</div>
+
+<h2>For families & friends</h2>
+<div class="note steps">
+  <p>Loving someone who is struggling is exhausting and lonely. You can't fix it for them — but you don't have to carry it alone either. Al-Anon and Nar-Anon are free groups for exactly that, and the helplines above are there for families too.</p>
+</div>
+
+<h2>Meetings & support</h2>
+<p class="lead">In person or online, almost any time of day — free.</p>
+<div class="meet">
+  <a href="https://www.aa.org/find-aa" target="_blank" rel="noopener">Alcoholics Anonymous</a>
+  <a href="https://www.na.org/meetingsearch/" target="_blank" rel="noopener">Narcotics Anonymous</a>
+  <a href="https://smartrecovery.org/" target="_blank" rel="noopener">SMART Recovery</a>
+  <a href="https://al-anon.org/" target="_blank" rel="noopener">Al-Anon (for families)</a>
+  <a href="https://www.nar-anon.org/" target="_blank" rel="noopener">Nar-Anon (for families)</a>
+</div>
+
+<div class="sos">🚨 In danger right now? Call <a href="tel:911">911</a> <small>(US, Canada &amp; Mexico)</small> · <a href="tel:999">999</a> <small>(UK)</small></div>
+<p class="end">It gets better. Keep coming back. 💙</p>` ,
+    foot: '<a href="index.html">EPGTalk</a> · made with ❤️ by a Hamtramck kid' },
+  es: {
+    title: 'Un día a la vez',
+    html: `
+<div class="dove">🕊️</div>
+<h1>Un día a la vez</h1>
+${bday ? `<div class="bday">🎉 Hoy cumplo ${years} años de sobriedad. ¡Gracias por estar aquí! 💙</div>` : ''}
+<div class="note">
+  <p>Hola — soy el chico de Hamtramck detrás de EPGTalk.</p>
+  <p>El <b>9 de octubre de 2010</b> elegí una vida diferente. No fue fácil. He pasado por mucho — lo malo y lo bueno — y hoy estoy orgulloso de la persona en la que me he convertido.</p>
+  <p>La sobriedad me dio una vida que en aquel entonces no podía imaginar. Todo lo que ves en EPGTalk — cada guía, cada página, cada desvelo arreglando un canal — lo hice sobrio, un día a la vez.</p>
+  <p>Si estás pasando por un momento difícil — con el alcohol, las drogas o simplemente con la vida — escucha esto: <b>no estás solo</b>, nunca es tarde, y pedir ayuda es una de las cosas más valientes que harás.</p>
+  <p>No tienes que tenerlo todo resuelto. No tienes que arreglarlo todo hoy. Solo tienes que pasar el día de hoy — y no tienes que hacerlo solo.</p>
+  <p class="sig">— un día a la vez 💙</p>
+</div>
+<div class="counter"><b>${years} años · ${days.toLocaleString('es')} días</b><span>sobrio, un día a la vez</span></div>
+
+<h2>Alguien va a contestar — a cualquier hora, gratis</h2>
+<p class="lead">Confidencial. Sin juicios. No necesitas saber qué decir.</p>
+
+<div class="grp">🇲🇽 México</div>
+<div class="line"><div class="who"><b>Línea de la Vida</b><small>Adicciones, crisis y salud mental · gratis · 24/7</small></div><a class="call" href="tel:8009112000">📞 800 911 2000</a></div>
+
+<div class="grp">🇺🇸 Estados Unidos</div>
+<div class="line"><div class="who"><b>Línea Nacional de SAMHSA</b><small>Drogas y alcohol · 24/7 · en español · para ti o tu familia</small></div><a class="call" href="tel:18006624357">📞 1-800-662-4357</a></div>
+<div class="line"><div class="who"><b>988 Línea de Prevención del Suicidio y Crisis</b><small>Llama o escribe · 24/7 · marca 2 para español</small></div><a class="call" href="tel:988">📞 988</a><a class="call alt" href="sms:988">💬 Texto 988</a></div>
+
+<div class="grp">🇨🇦 Canadá</div>
+<div class="line"><div class="who"><b>988 Suicide Crisis Helpline</b><small>Llama o escribe · 24/7 · inglés y francés</small></div><a class="call" href="tel:988">📞 988</a></div>
+
+<div class="grp">🇬🇧 Reino Unido</div>
+<div class="line"><div class="who"><b>Samaritans</b><small>Alguien con quien hablar · gratis · 24/7</small></div><a class="call" href="tel:116123">📞 116 123</a></div>
+<div class="line"><div class="who"><b>FRANK</b><small>Drogas y alcohol · 24/7</small></div><a class="call" href="tel:03001236600">📞 0300 123 6600</a></div>
+
+<h2>Pasos pequeños que ayudan</h2>
+<div class="note steps">
+  <p>🕊️ <b>Solo por hoy.</b> No para siempre — solo las próximas 24 horas. A veces solo la próxima hora.</p>
+  <p>📞 <b>Díselo a una persona.</b> Un amigo, un familiar, una línea de ayuda, alguien en una reunión. Decirlo en voz alta le quita fuerza.</p>
+  <p>🤝 <b>Ve a una reunión.</b> En persona o en línea. No tienes que hablar — puedes solo escuchar.</p>
+  <p>🍲 <b>Cuida lo básico.</b> Come algo. Toma agua. Duerme. Parece poco, pero no lo es.</p>
+  <p>💙 <b>Si recaes, llama.</b> Una recaída no es el final de tu historia. Volver es lo que cuenta.</p>
+</div>
+
+<h2>Para familias y amigos</h2>
+<div class="note steps">
+  <p>Querer a alguien que está luchando es agotador y solitario. No puedes arreglarlo por esa persona — pero tampoco tienes que cargarlo solo. Al-Anon es un grupo gratuito justo para eso, y las líneas de ayuda de arriba también atienden a las familias.</p>
+</div>
+
+<h2>Reuniones y apoyo</h2>
+<p class="lead">En persona o en línea, casi a cualquier hora — gratis.</p>
+<div class="meet">
+  <a href="https://www.aa.org/es" target="_blank" rel="noopener">Alcohólicos Anónimos</a>
+  <a href="https://www.na.org/meetingsearch/" target="_blank" rel="noopener">Narcóticos Anónimos</a>
+  <a href="https://smartrecovery.org/" target="_blank" rel="noopener">SMART Recovery</a>
+  <a href="https://al-anon.org/es/" target="_blank" rel="noopener">Al-Anon (para familias)</a>
+</div>
+
+<div class="sos">🚨 ¿Estás en peligro ahora mismo? Llama al <a href="tel:911">911</a> <small>(México, EE. UU. y Canadá)</small> · <a href="tel:999">999</a> <small>(Reino Unido)</small></div>
+<p class="end">Se pone mejor. Sigue viniendo. 💙</p>`,
+    foot: '<a href="index.html">EPGTalk</a> · hecho con ❤️ por un chico de Hamtramck' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!C[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const L = C[LANG];
+document.documentElement.lang = LANG;
+document.title = L.title;
+document.getElementById('main').innerHTML = L.html;
+document.getElementById('foot').innerHTML = L.foot;
+const lb = document.getElementById('lang');
+lb.textContent = LANG === 'es' ? 'English' : 'Español';
+lb.onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+})();
+</script>
+</body>
+</html>
