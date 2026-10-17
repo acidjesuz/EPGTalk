@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Player Setup</title>
+<meta name="description" content="Step-by-step EPG setup for TiviMate, IPTV Smarters, Kodi, Plex, Jellyfin, Emby and Channels DVR — with the right EPGTalk guide address for your device.">
+<link rel="canonical" href="https://epgtalk.com/setup.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Player Setup">
+<meta property="og:description" content="Step-by-step EPG setup for TiviMate, IPTV Smarters, Kodi, Plex, Jellyfin, Emby and Channels DVR — with the right EPGTalk guide address for your device.">
+<meta property="og:url" content="https://epgtalk.com/setup.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 24px; line-height: 1.5; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1rem; margin: 30px 0 12px; display: flex; gap: 10px; align-items: center; }
+  h2 .num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(0,191,255,0.15);
+            color: var(--accent); font-size: 0.85rem; flex: none; }
+  .guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .g { text-align: left; font: inherit; color: var(--text); background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+       border-radius: 12px; padding: 12px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+  .g b { font-size: 0.98rem; }
+  .g small { color: var(--muted); font-size: 0.8rem; line-height: 1.4; }
+  .g .lite { align-self: flex-start; font-size: 0.7rem; font-weight: 700; color: var(--bg-deep); background: var(--green); border-radius: 5px; padding: 1px 6px; }
+  .g.mine { border-color: rgba(245,179,1,0.35); }
+  .g small a { color: var(--accent); }
+  .url .ex { font-size: 0.8rem; color: var(--muted); }
+  .note.mine { border-left-color: var(--accent); background: rgba(0,191,255,0.06); }
+  .g[aria-pressed="true"] { border-color: var(--accent); background: rgba(0,191,255,0.1); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tab { font: inherit; font-size: 0.92rem; color: var(--text); background: rgba(0,191,255,0.05); border: 1px solid var(--border);
+         border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+  .tab[aria-pressed="true"] { background: rgba(0,191,255,0.2); border-color: var(--accent); color: #fff; }
+  .panel { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 18px 20px; margin-top: 14px; }
+  .panel h3 { margin: 0 0 4px; font-size: 1.15rem; }
+  .panel .where { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; }
+  ol.steps { margin: 0; padding-left: 22px; line-height: 1.65; }
+  ol.steps li { margin-bottom: 8px; }
+  ol.steps b { color: #fff; }
+  .url { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 6px 0 2px; }
+  .url code { font-size: 0.86rem; background: rgba(0,191,255,0.08); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px;
+              color: var(--accent); word-break: break-all; }
+  .copy { font: inherit; font-size: 0.82rem; color: var(--bg-deep); background: var(--accent); border: 0; border-radius: 8px; padding: 6px 12px;
+          font-weight: 700; cursor: pointer; }
+  .note { margin-top: 14px; padding: 10px 14px; border-left: 3px solid var(--amber); background: rgba(245,179,1,0.06); border-radius: 0 10px 10px 0;
+          font-size: 0.9rem; line-height: 1.5; }
+  .tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .ng { background: var(--bg-card); border: 1px solid rgba(245,179,1,0.35); border-radius: 14px; padding: 18px 20px; line-height: 1.6; }
+  .ng .lead { margin: 0 0 14px; font-size: 1.02rem; }
+  .ng .case { border-top: 1px solid rgba(255,255,255,0.07); padding: 12px 0 4px; }
+  .ng .case b.h { display: block; color: #fff; font-size: 1.02rem; margin-bottom: 4px; }
+  .ng ol { margin: 6px 0 6px; padding-left: 22px; }
+  .ng li { margin-bottom: 4px; }
+  .ng code { background: rgba(0,191,255,0.08); border-radius: 5px; padding: 1px 6px; color: var(--accent); }
+  .ng a { color: var(--accent); }
+  .ng .cta { margin-top: 12px; padding: 12px 14px; background: rgba(0,191,255,0.07); border-radius: 10px; }
+  #no-guide { scroll-margin-top: 80px; }
+  .tip { background: var(--bg-card); border-radius: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.05); line-height: 1.5; font-size: 0.92rem; }
+  .tip b { display: block; margin-bottom: 4px; color: #fff; }
+  .tip a, .note a, ol.steps a { color: var(--accent); }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="ask.html" data-i="askNav">🔎 Ask</a>
+    <a href="setup.html" class="on" data-i="setupNav">Setup</a>
+    <a href="now.html" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="channels.html" data-i="channels">Channels</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Player <span>Setup</span></h1>
+  <p class="sub" data-i="intro">Two choices and you're done: pick a guide, pick your app, follow the steps. The address in the steps changes to match the guide you pick.</p>
+
+  <h2><span class="num">1</span><span data-i="step1">Pick your guide</span></h2>
+  <div class="guides" id="guides" role="group" aria-label="Guide"></div>
+
+  <h2><span class="num">2</span><span data-i="step2">Pick your app</span></h2>
+  <div class="tabs" id="tabs" role="group" aria-label="App"></div>
+  <div class="panel" id="panel" aria-live="polite"></div>
+
+  <h2><span class="num">💡</span><span data-i="tipsH">Good to know</span></h2>
+  <div class="tips" id="tips"></div>
+
+  <h2 id="no-guide"><span class="num">🔎</span><span data-i="ngH">Channels show no guide?</span></h2>
+  <div class="ng" id="ng"></div>
+</main>
+<footer data-i="footerhtml">Still stuck? Tap <b>Report a problem</b> on any channel in the <a href="tvguide.html">TV Guide</a>, or email <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.</footer>
+<script>
+(() => {
+const BASE = 'https://epgtalk.com/';
+// [file, lite?]  — labels and descriptions are in T below (g_<key>, gd_<key>)
+const GUIDES = [
+  ['guide.xml.gz', 0, 'combined'], ['US_lite.xml.gz', 1, 'uslite'], ['US_guide.xml.gz', 0, 'us'],
+  ['UK_lite.xml.gz', 1, 'uklite'], ['UK_guide.xml.gz', 0, 'uk'], ['Latino_lite.xml.gz', 1, 'latinolite'],
+  ['Latino_guide.xml.gz', 0, 'latino'], ['US_local_guide.xml.gz', 0, 'uslocal'], ['Sports_guide.xml.gz', 0, 'sports'], ['FreeTV_guide.xml.gz', 0, 'freetv'],
+  ['guide.xml', 0, 'plain'], ['builder', 0, 'builder'],
+];
+const APPS = ['tivimate', 'smarters', 'kodi', 'plex', 'jellyfin', 'emby', 'channels', 'xteve', 'other'];
+const T = {
+  en: { home: 'Home', askNav: '🔎 Ask', setupNav: 'Setup', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', tonight: 'Tonight', channels: 'Channels',
+    h1html: 'Player <span>Setup</span>', intro: "Two choices and you're done: pick a guide, pick your app, follow the steps. The address in the steps changes to match the guide you pick.",
+    ngH: 'Channels show no guide?',
+    ng: `<p class="lead">The guide says it updated, but your channels are empty? It's almost always one of these three — here's how to tell which.</p>
+<div class="case"><b class="h">1. The channels aren't matched to the guide <small>(most common)</small></b>
+Your app has the guide data — it just doesn't know which guide channel belongs to which of <i>your</i> channels. Apps only match automatically when the channel's ID (<code>tvg-id</code>) or <b>exact</b> name is the same in your playlist and the guide — and IPTV service names like <code>US| ESPN HD</code> rarely match a guide's <code>ESPN US</code>. You see this when <b>none</b> (or almost none) of your channels show listings.
+<ol>
+<li><b>TiviMate (Premium):</b> long-press the channel → <b>Edit</b> → <b>EPG</b> → pick your EPG source → search for the channel (e.g. <i>ESPN</i>) and select it. It fills in right away and stays matched.</li>
+<li><b>Kodi:</b> the playlist's <code>tvg-id</code> must match the guide's channel id — or use "EPG channel" mapping in PVR IPTV Simple Client.</li>
+<li><b>Plex / Jellyfin / Emby / Channels DVR:</b> open the guide/channel <b>mapping</b> screen and pick the right guide channel for each one.</li>
+</ol>
+Not sure what the channel is called in the guide? Look it up in the <a href="channels.html">Channel Finder</a> — it shows the exact names in every EPGTalk guide.</div>
+<div class="case"><b class="h">2. Wrong date, time or time zone</b>
+If your device's clock or time zone is off, the guide can look empty or shifted by hours. Set date & time to <b>automatic</b> in your device settings, and in TiviMate check <b>Settings → EPG → EPG time shift</b> is <b>0</b>.</div>
+<div class="case"><b class="h">3. The EPG source isn't connected to your playlist</b>
+In TiviMate: <b>Settings → EPG</b> — make sure the EPGTalk source is <b>enabled for that playlist</b>, then tap <b>Update EPG</b>. If you only see your IPTV service's own guide, it may simply be down for a while — adding a second, independent guide like EPGTalk is a good backup.</div>
+<div class="cta">📡 <b>Free guide to match against:</b> EPGTalk has 4,000+ channels (US, UK, Canada, Mexico, 140+ local markets, every sports team) — no signup, no payment. Pick a guide address at the top of this page.</div>`,
+    step1: 'Pick your guide', step2: 'Pick your app', tipsH: 'Good to know', copy: 'Copy', copied: 'Copied ✓', liteTag: 'LITE',
+    g_combined: '🌎 Combined', gd_combined: 'US + UK + Canada + Mexico + sports teams · next 48 h · updated every 6 h. Best first choice.',
+    g_uslite: '🇺🇸 US Lite', gd_uslite: 'All US channels · next 2 days · about 4× smaller. For Firestick and older boxes.',
+    g_us: '🇺🇸 US (7 days)', gd_us: 'All US channels · full week · big file. For PCs, Shield, Plex/Jellyfin servers.',
+    g_uklite: '🇬🇧 UK Lite', gd_uklite: 'All UK channels · next 2 days · small and fast.',
+    g_uk: '🇬🇧 UK (7 days)', gd_uk: 'All UK channels · full week · big file.',
+    g_latinolite: '🇲🇽 Latino Lite', gd_latinolite: 'Spanish-language channels · next 2 days · small and fast.',
+    g_latino: '🇲🇽 Latino (7 days)', gd_latino: 'Spanish-language channels · full week · big file.',
+    g_uslocal: '📡 US Local', gd_uslocal: '140+ local markets (ABC, NBC, CBS, FOX, PBS) · 72 h rolling.',
+    g_sports: '🏆 Sports', gd_sports: 'A channel for every team + UFC, F1, NASCAR, golf, tennis · 7 days.',
+    g_freetv: '🆓 Free TV', gd_freetv: '1,100+ free channels from Pluto TV, Samsung TV Plus, Plex & Tubi · 3 days. For their free apps.',
+    g_plain: '📄 Combined (not zipped)', gd_plain: 'Same as Combined, for apps that cannot read .gz files.',
+    g_builder: '🧰 Your own (Guide Builder)', gd_builder: 'The guide you make with the free <a href="builder/">Guide Builder</a> app — just your channels, with your names and numbers.',
+    bUrl: 'http://192.168.1.20:8765/guide.xml.gz', bEx: '← example. Yours is in the app: <b>Use it on your TV → Copy the address</b>',
+    bNote: '🧰 <b>Your own guide:</b> your computer needs to be on with the Guide Builder running (it can run in the background and start with your computer). For <b>Plex, Jellyfin and Emby</b>, use the same address ending in <b>guide.xml</b> (without .gz) — the app shares both.',
+    where: 'Where: {w}', paste: 'Paste this address:',
+    a_tivimate: 'TiviMate', w_tivimate: 'Android TV, Google TV, Firestick, Shield',
+    s_tivimate: [
+      'Open TiviMate and go to <b>Settings</b> (the gear) → <b>EPG</b>.',
+      'Choose <b>EPG sources</b> → <b>Add EPG source</b>.',
+      'Enter the address: {url}',
+      'Tap <b>Next</b>, give it a name (for example <i>EPGTalk</i>) and tap <b>Done</b>.',
+      'Back in <b>Settings → EPG</b>, set the update interval to <b>every 12 hours</b> (or on app start).',
+      'Wait a minute while the guide loads — it shows up in the TV Guide view.' ],
+    n_tivimate: 'Typing on a remote is slow — the epgtalk.com addresses are the shortest. On a Firestick or older box, pick a <b>Lite</b> guide: it loads about 4× faster.',
+    a_smarters: 'IPTV Smarters', w_smarters: 'Firestick, Android, iPhone, Smart TVs',
+    s_smarters: [
+      'Smarters normally takes the guide from your provider login. Outside guides only work in versions that have an EPG address field.',
+      'Open <b>Settings</b> and look for <b>EPG</b> / <b>EPG URL</b> / <b>External EPG</b> (the name depends on your version).',
+      'Enter the address: {url}',
+      'Save, go back to the home screen and choose <b>Install EPG</b> / <b>Refresh EPG</b>.' ],
+    n_smarters: "If your Smarters version has no EPG address field, it can't use outside guides. TiviMate or OTT Navigator can — and both take the same address.",
+    a_kodi: 'Kodi', w_kodi: 'Windows, Mac, Linux, Android, Firestick, Shield',
+    s_kodi: [
+      'Install <b>PVR IPTV Simple Client</b> if you haven\'t: <b>Settings → Add-ons → Install from repository → PVR clients</b>.',
+      'Go to <b>Settings → Add-ons → My add-ons → PVR clients → PVR IPTV Simple Client → Configure</b> (on Kodi 20+ pick your existing configuration).',
+      'Open the <b>EPG</b> tab and set <b>Location</b> to <b>Remote path (Internet address)</b>.',
+      'In <b>XMLTV URL</b> enter: {url}',
+      'Leave <b>Cache XMLTV at local storage</b> on, press <b>OK</b> and restart Kodi.' ],
+    n_kodi: 'Kodi reads .gz guides directly. If the guide looks empty after a restart, go to <b>Settings → PVR & Live TV → Guide → Clear data</b> once.',
+    a_plex: 'Plex', w_plex: 'Plex Media Server with a tuner (HDHomeRun, Threadfin, xTeVe…) · needs Plex Pass',
+    s_plex: [
+      'In Plex Web go to <b>Settings → Live TV & DVR</b> and start <b>Set up Plex DVR</b> (or edit your existing DVR).',
+      'Pick your tuner and continue to the guide step.',
+      'Click <b>"Have an XMLTV guide on your server? Click here to use it."</b>',
+      'Enter the address: {url}',
+      'Continue, match your channels, and finish.' ],
+    n_plex: 'If Plex says it can\'t read the guide, choose <b>📄 Combined (not zipped)</b> above — some Plex versions don\'t accept .gz addresses. Plex refreshes the guide by itself about once a day.<br><br>Plex asking for <b>one provider or country</b>? That\'s Plex\'s own guide — skip it with the XMLTV link in step 3. To put <b>several guides together</b> (for example US + UK + Latino), see the <b>xTeVe / Threadfin</b> tab.',
+    a_jellyfin: 'Jellyfin', w_jellyfin: 'Jellyfin server with a tuner or M3U',
+    s_jellyfin: [
+      'Open <b>Dashboard → Live TV</b>.',
+      'Under <b>TV Guide Data Providers</b> click <b>+</b> and choose <b>XMLTV</b>.',
+      'In <b>File or URL</b> enter: {url}',
+      'Click <b>Save</b>, then use <b>Map channels</b> on the provider to link any channels that didn\'t match automatically.',
+      'Go to <b>Dashboard → Scheduled Tasks</b> and run <b>Refresh Guide</b> once.' ],
+    n_jellyfin: 'If Jellyfin can\'t read the .gz address, use <b>📄 Combined (not zipped)</b>. Set the Refresh Guide task to every 12 hours.',
+    a_emby: 'Emby', w_emby: 'Emby Server with a tuner or M3U',
+    s_emby: [
+      'Open <b>Manage Emby Server → Live TV</b>.',
+      'Under <b>Guide Data Providers</b> click <b>+ Add</b> and choose <b>XmlTV</b>.',
+      'In the path / URL field enter: {url}',
+      'Save, then <b>Map</b> any channels that didn\'t match automatically.',
+      'Click <b>Refresh Guide Data</b>.' ],
+    n_emby: 'If Emby can\'t read the .gz address, use <b>📄 Combined (not zipped)</b>.',
+    a_channels: 'Channels DVR', w_channels: 'Channels DVR server · Custom Channels (M3U) source',
+    s_channels: [
+      'Open the Channels DVR web admin and go to <b>Settings → Sources</b>.',
+      'Edit your <b>Custom Channels</b> source (or add one with <b>+ Add Source → Custom Channels</b>).',
+      'In <b>XMLTV Guide Data</b> enter: {url}',
+      'Set the refresh to <b>every 12 hours</b> (or 6 hours for Combined / Sports) and save.',
+      'Open the source\'s channel list and fix any channel that shows no guide.' ],
+    n_channels: 'Channels DVR uses the season/episode numbers in the guide to name recordings — EPGTalk now fills in missing numbers from TVmaze.',
+    a_xteve: 'xTeVe / Threadfin', w_xteve: 'On your NAS or server — turns IPTV playlists into a tuner for Plex, Emby and Jellyfin, and puts several guides together',
+    s_xteve: [
+      'Open the xTeVe or Threadfin web page: <b>http://YOUR-SERVER:34400/web</b>.',
+      'Go to <b>XMLTV</b> → <b>New</b>, give it a name and enter the address: {url}',
+      'Add more guides the same way if you like (for example US, UK and Latino) — they all get put together into one.',
+      'In <b>Settings</b>: set <b>EPG Source</b> to <b>XEPG</b>, set the <b>tuner</b> count to how many channels you want to watch or record at once (for example 4), and turn on the <b>stream buffer</b> (xTeVe / Threadfin or FFmpeg). Save.',
+      'Open <b>Mapping</b>: click a channel, pick its <b>XMLTV file</b> and <b>XMLTV channel</b>, tick <b>Active</b> and save.',
+      'In Plex, Emby or Jellyfin, add it as an <b>HDHomeRun</b> tuner at <b>YOUR-SERVER:34400</b>. For the guide, use <b>http://YOUR-SERVER:34400/xmltv/xteve.xml</b> (Threadfin: <b>…/xmltv/threadfin.xml</b>) — one file with all your guides together.' ],
+    n_xteve: 'Plex asking for <b>one provider or country</b>? That\'s Plex\'s own guide. Click <b>"Have an XMLTV guide on your server?"</b> and give it the xteve.xml address instead. Plex takes about <b>480 channels per tuner</b> — for more, run a second xTeVe / Threadfin. xTeVe isn\'t updated anymore; <b>Threadfin</b> is its maintained twin and works the same way.',
+    a_other: 'Other apps', w_other: 'OTT Navigator, Perfect Player, GSE IPTV, Sparkle and any XMLTV app',
+    s_other: [
+      'Open your app\'s <b>Settings</b> and look for <b>EPG</b>, <b>TV Guide</b> or <b>XMLTV</b>.',
+      'Add a new source and enter: {url}',
+      'Set it to update <b>every 12 hours</b>, save, and give it a minute to load.' ],
+    n_other: 'Menu names change between app versions — if something here doesn\'t match your app, look for the closest wording.',
+    tips: [
+      ['📱 Weak device?', 'Firestick, Chromecast HD and older Android boxes choke on big guides. Use a <b>Lite</b> guide — same channels, next 2 days, about 4× smaller.'],
+      ['🔄 How often to refresh', 'Combined and Sports change every 6 hours, Lite guides about every 6 hours, full 7-day guides every 2 days. Refreshing more often than every 6 hours gets you nothing new.'],
+      ['➕ Two guides at once', 'Most apps take more than one EPG source. A popular combo: <b>US Lite + Sports</b>, or <b>Combined + US Local</b>.'],
+      ['🔎 Channel shows no guide?', 'Your playlist and the guide must agree on the channel\'s name or id. See <a href="#no-guide">how to fix it below</a> — or look the channel up in the <a href="channels.html">Channel Finder</a>.'],
+      ['🌐 Two addresses, same file', 'Every guide works from <b>epgtalk.com/…</b> and from GitHub (<a href="index.html#urls">see all URLs</a>). They are always identical — use whichever your app likes.'],
+      ['🛟 Still stuck?', 'Use <b>Report a problem</b> on a channel in the <a href="tvguide.html">TV Guide</a>, or email <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.'],
+    ],
+    footerhtml: 'Still stuck? Tap <b>Report a problem</b> on any channel in the <a href="tvguide.html">TV Guide</a>, or email <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.' },
+  es: { home: 'Inicio', askNav: '🔎 Pregunta', setupNav: 'Configurar', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', tonight: 'Esta noche', channels: 'Canales',
+    h1html: 'Configura tu <span>app</span>', intro: 'Dos elecciones y listo: elige una guía, elige tu app y sigue los pasos. La dirección en los pasos cambia según la guía que elijas.',
+    ngH: '¿Los canales no muestran guía?',
+    ng: `<p class="lead">¿La guía dice que se actualizó pero tus canales están vacíos? Casi siempre es una de estas tres cosas — así sabes cuál.</p>
+<div class="case"><b class="h">1. Los canales no están emparejados con la guía <small>(lo más común)</small></b>
+Tu app tiene los datos de la guía — solo no sabe qué canal de la guía corresponde a cada uno de <i>tus</i> canales. Las apps solo emparejan solas cuando el ID del canal (<code>tvg-id</code>) o el nombre <b>exacto</b> es igual en tu lista y en la guía — y nombres como <code>US| ESPN HD</code> casi nunca coinciden con <code>ESPN US</code>. Lo notas cuando <b>ningún</b> canal (o casi ninguno) muestra programación.
+<ol>
+<li><b>TiviMate (Premium):</b> mantén presionado el canal → <b>Editar</b> → <b>EPG</b> → elige tu fuente EPG → busca el canal (p. ej. <i>ESPN</i>) y selecciónalo. Se llena al instante y queda guardado.</li>
+<li><b>Kodi:</b> el <code>tvg-id</code> de la lista debe coincidir con el id del canal en la guía — o usa el mapeo de "canal EPG" en PVR IPTV Simple Client.</li>
+<li><b>Plex / Jellyfin / Emby / Channels DVR:</b> abre la pantalla de <b>asignar canales</b> y elige el canal correcto de la guía para cada uno.</li>
+</ol>
+¿No sabes cómo se llama el canal en la guía? Búscalo en el <a href="channels.html">Buscador de Canales</a> — muestra los nombres exactos en todas las guías de EPGTalk.</div>
+<div class="case"><b class="h">2. Fecha, hora o zona horaria incorrecta</b>
+Si el reloj o la zona horaria de tu equipo están mal, la guía puede verse vacía o desfasada. Pon fecha y hora en <b>automático</b>, y en TiviMate revisa que <b>Ajustes → EPG → Desfase de EPG</b> esté en <b>0</b>.</div>
+<div class="case"><b class="h">3. La fuente EPG no está conectada a tu lista</b>
+En TiviMate: <b>Ajustes → EPG</b> — asegúrate de que la fuente de EPGTalk esté <b>activada para esa lista</b> y toca <b>Actualizar EPG</b>. Si solo usas la guía de tu servicio, puede que esté caída un rato — agregar una segunda guía independiente como EPGTalk es un buen respaldo.</div>
+<div class="cta">📡 <b>Guía gratis para emparejar:</b> EPGTalk tiene más de 4,000 canales (EE. UU., Reino Unido, Canadá, México, 140+ mercados locales, cada equipo deportivo) — sin registro, sin pagar. Elige una dirección de guía arriba en esta página.</div>`,
+    step1: 'Elige tu guía', step2: 'Elige tu app', tipsH: 'Bueno saber', copy: 'Copiar', copied: 'Copiado ✓', liteTag: 'LITE',
+    g_combined: '🌎 Combinada', gd_combined: 'EE. UU. + Reino Unido + Canadá + México + equipos · próximas 48 h · cada 6 h. La mejor para empezar.',
+    g_uslite: '🇺🇸 EE. UU. Lite', gd_uslite: 'Todos los canales de EE. UU. · próximos 2 días · unas 4× más pequeña. Para Firestick y equipos viejos.',
+    g_us: '🇺🇸 EE. UU. (7 días)', gd_us: 'Todos los canales de EE. UU. · semana completa · archivo grande. Para PC, Shield y servidores Plex/Jellyfin.',
+    g_uklite: '🇬🇧 Reino Unido Lite', gd_uklite: 'Todos los canales del Reino Unido · próximos 2 días · pequeña y rápida.',
+    g_uk: '🇬🇧 Reino Unido (7 días)', gd_uk: 'Todos los canales del Reino Unido · semana completa · archivo grande.',
+    g_latinolite: '🇲🇽 Latino Lite', gd_latinolite: 'Canales en español · próximos 2 días · pequeña y rápida.',
+    g_latino: '🇲🇽 Latino (7 días)', gd_latino: 'Canales en español · semana completa · archivo grande.',
+    g_uslocal: '📡 Locales EE. UU.', gd_uslocal: 'Más de 140 mercados locales (ABC, NBC, CBS, FOX, PBS) · 72 h.',
+    g_sports: '🏆 Deportes', gd_sports: 'Un canal por equipo + UFC, F1, NASCAR, golf, tenis · 7 días.',
+    g_freetv: '🆓 TV Gratis', gd_freetv: 'Más de 1,100 canales gratis de Pluto TV, Samsung TV Plus, Plex y Tubi · 3 días. Para sus apps gratis.',
+    g_plain: '📄 Combinada (sin comprimir)', gd_plain: 'Igual que la Combinada, para apps que no leen archivos .gz.',
+    g_builder: '🧰 La tuya (Guide Builder)', gd_builder: 'La guía que haces con la app gratis <a href="builder/">Guide Builder</a> — solo tus canales, con tus nombres y números.',
+    bUrl: 'http://192.168.1.20:8765/guide.xml.gz', bEx: '← ejemplo. La tuya está en la app: <b>Úsala en tu TV → Copiar la dirección</b>',
+    bNote: '🧰 <b>Tu propia guía:</b> tu computadora debe estar encendida con Guide Builder abierta (puede funcionar en segundo plano e iniciarse con la computadora). Para <b>Plex, Jellyfin y Emby</b>, usa la misma dirección terminada en <b>guide.xml</b> (sin .gz) — la app comparte las dos.',
+    where: 'Dónde: {w}', paste: 'Pega esta dirección:',
+    a_tivimate: 'TiviMate', w_tivimate: 'Android TV, Google TV, Firestick, Shield',
+    s_tivimate: [
+      'Abre TiviMate y ve a <b>Ajustes</b> (el engranaje) → <b>EPG</b>.',
+      'Elige <b>Fuentes de EPG</b> → <b>Agregar fuente de EPG</b>.',
+      'Escribe la dirección: {url}',
+      'Toca <b>Siguiente</b>, ponle un nombre (por ejemplo <i>EPGTalk</i>) y toca <b>Listo</b>.',
+      'En <b>Ajustes → EPG</b>, pon la actualización <b>cada 12 horas</b> (o al iniciar la app).',
+      'Espera un minuto mientras carga — aparece en la vista de Guía.' ],
+    n_tivimate: 'Escribir con el control es lento — las direcciones de epgtalk.com son las más cortas. En un Firestick o equipo viejo elige una guía <b>Lite</b>: carga unas 4× más rápido.',
+    a_smarters: 'IPTV Smarters', w_smarters: 'Firestick, Android, iPhone, Smart TV',
+    s_smarters: [
+      'Smarters normalmente usa la guía de tu proveedor. Las guías externas solo funcionan en versiones con un campo de dirección EPG.',
+      'Abre <b>Ajustes</b> y busca <b>EPG</b> / <b>EPG URL</b> / <b>EPG externa</b> (el nombre depende de tu versión).',
+      'Escribe la dirección: {url}',
+      'Guarda, vuelve al inicio y elige <b>Instalar EPG</b> / <b>Actualizar EPG</b>.' ],
+    n_smarters: 'Si tu versión de Smarters no tiene campo de dirección EPG, no puede usar guías externas. TiviMate u OTT Navigator sí pueden — y usan la misma dirección.',
+    a_kodi: 'Kodi', w_kodi: 'Windows, Mac, Linux, Android, Firestick, Shield',
+    s_kodi: [
+      'Instala <b>PVR IPTV Simple Client</b> si no lo tienes: <b>Ajustes → Add-ons → Instalar desde repositorio → Clientes PVR</b>.',
+      'Ve a <b>Ajustes → Add-ons → Mis add-ons → Clientes PVR → PVR IPTV Simple Client → Configurar</b> (en Kodi 20+ elige tu configuración).',
+      'Abre la pestaña <b>EPG</b> y pon <b>Ubicación</b> en <b>Ruta remota (dirección de Internet)</b>.',
+      'En <b>XMLTV URL</b> escribe: {url}',
+      'Deja activado <b>Guardar XMLTV en caché local</b>, pulsa <b>OK</b> y reinicia Kodi.' ],
+    n_kodi: 'Kodi lee las guías .gz directamente. Si la guía sale vacía tras reiniciar, ve una vez a <b>Ajustes → PVR y TV en directo → Guía → Borrar datos</b>.',
+    a_plex: 'Plex', w_plex: 'Plex Media Server con sintonizador (HDHomeRun, Threadfin, xTeVe…) · requiere Plex Pass',
+    s_plex: [
+      'En Plex Web ve a <b>Ajustes → TV en vivo y DVR</b> e inicia <b>Configurar Plex DVR</b> (o edita tu DVR).',
+      'Elige tu sintonizador y continúa hasta el paso de la guía.',
+      'Haz clic en <b>"¿Tienes una guía XMLTV en tu servidor? Haz clic aquí para usarla."</b>',
+      'Escribe la dirección: {url}',
+      'Continúa, empareja tus canales y termina.' ],
+    n_plex: 'Si Plex dice que no puede leer la guía, elige <b>📄 Combinada (sin comprimir)</b> arriba — algunas versiones de Plex no aceptan direcciones .gz. Plex actualiza la guía solo, más o menos una vez al día.<br><br>¿Plex te pide <b>un solo proveedor o país</b>? Esa es la guía propia de Plex — sáltala con el enlace XMLTV del paso 3. Para <b>juntar varias guías</b> (por ejemplo EE. UU. + Reino Unido + Latino), mira la pestaña <b>xTeVe / Threadfin</b>.',
+    a_jellyfin: 'Jellyfin', w_jellyfin: 'Servidor Jellyfin con sintonizador o M3U',
+    s_jellyfin: [
+      'Abre <b>Panel de control → TV en directo</b>.',
+      'En <b>Proveedores de datos de la guía</b> haz clic en <b>+</b> y elige <b>XMLTV</b>.',
+      'En <b>Archivo o URL</b> escribe: {url}',
+      'Haz clic en <b>Guardar</b> y usa <b>Asignar canales</b> para enlazar los que no coincidieron solos.',
+      'Ve a <b>Panel de control → Tareas programadas</b> y ejecuta <b>Actualizar guía</b> una vez.' ],
+    n_jellyfin: 'Si Jellyfin no lee la dirección .gz, usa <b>📄 Combinada (sin comprimir)</b>. Pon la tarea Actualizar guía cada 12 horas.',
+    a_emby: 'Emby', w_emby: 'Emby Server con sintonizador o M3U',
+    s_emby: [
+      'Abre <b>Administrar servidor Emby → TV en vivo</b>.',
+      'En <b>Proveedores de datos de guía</b> haz clic en <b>+ Agregar</b> y elige <b>XmlTV</b>.',
+      'En el campo de ruta / URL escribe: {url}',
+      'Guarda y <b>Asigna</b> los canales que no coincidieron solos.',
+      'Haz clic en <b>Actualizar datos de la guía</b>.' ],
+    n_emby: 'Si Emby no lee la dirección .gz, usa <b>📄 Combinada (sin comprimir)</b>.',
+    a_channels: 'Channels DVR', w_channels: 'Servidor Channels DVR · fuente Custom Channels (M3U)',
+    s_channels: [
+      'Abre el panel web de Channels DVR y ve a <b>Settings → Sources</b>.',
+      'Edita tu fuente <b>Custom Channels</b> (o agrega una con <b>+ Add Source → Custom Channels</b>).',
+      'En <b>XMLTV Guide Data</b> escribe: {url}',
+      'Pon la actualización <b>cada 12 horas</b> (o 6 horas para Combinada / Deportes) y guarda.',
+      'Abre la lista de canales de la fuente y corrige los que no muestren guía.' ],
+    n_channels: 'Channels DVR usa los números de temporada/episodio de la guía para nombrar las grabaciones — EPGTalk ahora completa los que faltan con TVmaze.',
+    a_xteve: 'xTeVe / Threadfin', w_xteve: 'En tu NAS o servidor — convierte listas IPTV en un sintonizador para Plex, Emby y Jellyfin, y junta varias guías',
+    s_xteve: [
+      'Abre la página web de xTeVe o Threadfin: <b>http://TU-SERVIDOR:34400/web</b>.',
+      'Ve a <b>XMLTV</b> → <b>New</b>, ponle un nombre y escribe la dirección: {url}',
+      'Si quieres, agrega más guías igual (por ejemplo EE. UU., Reino Unido y Latino) — se juntan todas en una.',
+      'En <b>Settings</b>: pon <b>EPG Source</b> en <b>XEPG</b>, el número de <b>tuners</b> en cuántos canales quieres ver o grabar a la vez (por ejemplo 4), y activa el <b>stream buffer</b> (xTeVe / Threadfin o FFmpeg). Guarda.',
+      'Abre <b>Mapping</b>: haz clic en un canal, elige su <b>XMLTV file</b> y <b>XMLTV channel</b>, marca <b>Active</b> y guarda.',
+      'En Plex, Emby o Jellyfin, agrégalo como sintonizador <b>HDHomeRun</b> en <b>TU-SERVIDOR:34400</b>. Para la guía usa <b>http://TU-SERVIDOR:34400/xmltv/xteve.xml</b> (Threadfin: <b>…/xmltv/threadfin.xml</b>) — un solo archivo con todas tus guías juntas.' ],
+    n_xteve: '¿Plex te pide <b>un solo proveedor o país</b>? Esa es la guía propia de Plex. Haz clic en <b>"Have an XMLTV guide on your server?"</b> y dale la dirección xteve.xml. Plex acepta unos <b>480 canales por sintonizador</b> — para más, usa un segundo xTeVe / Threadfin. xTeVe ya no se actualiza; <b>Threadfin</b> es su gemelo al día y funciona igual.',
+    a_other: 'Otras apps', w_other: 'OTT Navigator, Perfect Player, GSE IPTV, Sparkle y cualquier app XMLTV',
+    s_other: [
+      'Abre los <b>Ajustes</b> de tu app y busca <b>EPG</b>, <b>Guía de TV</b> o <b>XMLTV</b>.',
+      'Agrega una fuente nueva y escribe: {url}',
+      'Ponla a actualizar <b>cada 12 horas</b>, guarda y espera un minuto a que cargue.' ],
+    n_other: 'Los nombres de los menús cambian entre versiones — si algo no coincide con tu app, busca lo más parecido.',
+    tips: [
+      ['📱 ¿Equipo lento?', 'Firestick, Chromecast HD y equipos Android viejos se traban con guías grandes. Usa una guía <b>Lite</b> — mismos canales, próximos 2 días, unas 4× más pequeña.'],
+      ['🔄 Cada cuánto actualizar', 'Combinada y Deportes cambian cada 6 horas, las Lite más o menos cada 6 horas y las guías completas de 7 días cada 2 días. Actualizar más seguido que cada 6 horas no trae nada nuevo.'],
+      ['➕ Dos guías a la vez', 'Casi todas las apps aceptan más de una fuente EPG. Combinación popular: <b>EE. UU. Lite + Deportes</b>, o <b>Combinada + Locales EE. UU.</b>'],
+      ['🔎 ¿Un canal sin guía?', 'Tu lista y la guía deben coincidir en el nombre o id del canal. Búscalo en el <a href="channels.html">Buscador de Canales</a> y elígelo a mano en el menú de edición de canal de tu app.'],
+      ['🌐 Dos direcciones, mismo archivo', 'Cada guía funciona desde <b>epgtalk.com/…</b> y desde GitHub (<a href="index.html#urls">ver todas</a>). Siempre son idénticas — usa la que prefiera tu app.'],
+      ['🛟 ¿Sigues atorado?', 'Usa <b>Reportar un problema</b> en un canal de la <a href="tvguide.html">Guía de TV</a>, o escribe a <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.'],
+    ],
+    footerhtml: '¿Sigues atorado? Toca <b>Reportar un problema</b> en cualquier canal de la <a href="tvguide.html">Guía de TV</a>, o escribe a <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => { const x = T[LANG][k] != null ? T[LANG][k] : T.en[k]; return typeof x === 'string' ? x.replace(/\{(\w+)\}/g, (_, n) => (v && v[n] != null ? v[n] : '')) : x; };
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + (LANG === 'es' ? 'Configurar tu app' : 'Player Setup');
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+
+let state = { g: 'guide.xml.gz', a: 'tivimate' };
+try { Object.assign(state, JSON.parse(localStorage.getItem('epgtalk-setup') || '{}')); } catch (e) {}
+const hash = location.hash.slice(1);
+if (APPS.includes(hash)) state.a = hash;
+if (new URLSearchParams(location.search).get('guide') === 'builder') state.g = 'builder';   // from the Guide Builder page
+if (!GUIDES.some(g => g[0] === state.g)) state.g = 'guide.xml.gz';
+function save() { try { localStorage.setItem('epgtalk-setup', JSON.stringify(state)); } catch (e) {} }
+
+function copyBtn(text) {
+  const b = el('button', 'copy', tr('copy')); b.type = 'button';
+  b.onclick = async () => {
+    try { await navigator.clipboard.writeText(text); }
+    catch (e) { const ta = el('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+    b.textContent = tr('copied'); setTimeout(() => { b.textContent = tr('copy'); }, 1600);
+  };
+  return b;
+}
+
+function drawGuides() {
+  const box = $('guides'); box.replaceChildren();
+  for (const [file, lite, key] of GUIDES) {
+    const b = el('button', 'g'); b.type = 'button'; b.setAttribute('aria-pressed', state.g === file ? 'true' : 'false');
+    if (lite) b.appendChild(el('span', 'lite', tr('liteTag')));
+    b.appendChild(el('b', null, tr('g_' + key)));
+    if (key === 'builder') { b.classList.add('mine'); const d = el('small'); d.innerHTML = tr('gd_' + key); b.appendChild(d); }
+    else b.appendChild(el('small', null, tr('gd_' + key)));
+    b.onclick = () => { state.g = file; save(); drawGuides(); drawPanel(); };
+    box.appendChild(b);
+  }
+}
+
+function drawTabs() {
+  const box = $('tabs'); box.replaceChildren();
+  for (const a of APPS) {
+    const b = el('button', 'tab', tr('a_' + a)); b.type = 'button'; b.setAttribute('aria-pressed', state.a === a ? 'true' : 'false');
+    b.onclick = () => { state.a = a; save(); history.replaceState(null, '', '#' + a); drawTabs(); drawPanel(); };
+    box.appendChild(b);
+  }
+}
+
+function drawPanel() {
+  const p = $('panel'); p.replaceChildren();
+  const mine = state.g === 'builder';
+  const url = mine ? tr('bUrl') : BASE + state.g;
+  p.appendChild(el('h3', null, tr('a_' + state.a)));
+  p.appendChild(el('div', 'where', tr('where', { w: tr('w_' + state.a) })));
+  const ol = el('ol', 'steps');
+  for (const s of tr('s_' + state.a)) {
+    const li = el('li');
+    const parts = s.split('{url}');
+    li.innerHTML = parts[0];
+    if (parts.length > 1) {
+      const row = el('div', 'url'); row.appendChild(el('code', null, url));
+      if (mine) { const x = el('span', 'ex'); x.innerHTML = tr('bEx'); row.appendChild(x); } else row.appendChild(copyBtn(url));
+      li.appendChild(row);
+      if (parts[1]) li.insertAdjacentHTML('beforeend', parts[1]);
+    }
+    ol.appendChild(li);
+  }
+  p.appendChild(ol);
+  if (mine) { const m = el('div', 'note mine'); m.innerHTML = tr('bNote'); p.appendChild(m); }
+  const n = el('div', 'note'); n.innerHTML = tr('n_' + state.a); p.appendChild(n);
+}
+
+function drawTips() {
+  const box = $('tips'); box.replaceChildren();
+  for (const [h, x] of tr('tips')) { const d = el('div', 'tip'); d.appendChild(el('b', null, h)); d.insertAdjacentHTML('beforeend', x); box.appendChild(d); }
+}
+
+drawGuides(); drawTabs(); drawPanel(); drawTips();
+$('ng').innerHTML = tr('ng');
+if (location.hash === '#no-guide') setTimeout(() => $('no-guide').scrollIntoView(), 50);
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

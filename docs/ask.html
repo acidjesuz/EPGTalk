@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<title>EPGTalk — Ask</title>
+<meta name="description" content="Ask EPGTalk when and where to watch anything: your team's next game, a show, a movie — across every EPGTalk guide, with the channel, a calendar reminder and free-to-watch options.">
+<link rel="canonical" href="https://epgtalk.com/ask.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Ask">
+<meta property="og:description" content="Ask EPGTalk when and where to watch anything: your team's next game, a show, a movie — across every EPGTalk guide, with the channel, a calendar reminder and free-to-watch options.">
+<meta property="og:url" content="https://epgtalk.com/ask.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 900px; margin: 0 auto; padding: 32px 16px 64px; padding: 32px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.6rem; font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 0 0 6px; text-align: center; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); text-align: center; margin: 0 0 22px; }
+  form { display: flex; gap: 8px; background: var(--bg-card); border: 2px solid var(--border); border-radius: 16px; padding: 8px; }
+  form:focus-within { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(0,191,255,0.15); }
+  #q { flex: 1; min-width: 0; font: inherit; font-size: 1.25rem; color: #fff; background: transparent; border: 0; outline: none; padding: 10px 12px; }
+  .ib { font: inherit; font-size: 1.15rem; border: 0; border-radius: 12px; padding: 0 16px; cursor: pointer; }
+  #go { background: var(--accent); color: var(--bg-deep); font-weight: 700; }
+  #mic { background: rgba(255,255,255,0.07); color: #fff; }
+  #mic.on { background: var(--red); animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: 0.6; } }
+  .ex { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 0; }
+  .ex button { font: inherit; font-size: 0.88rem; color: var(--text); background: rgba(0,191,255,0.06); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  #out { margin-top: 26px; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1rem; margin: 26px 0 10px; }
+  .card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; }
+  .team { display: flex; gap: 14px; align-items: center; margin-bottom: 8px; }
+  .team img { width: 54px; height: 54px; object-fit: contain; flex: none; }
+  .team b { font-size: 1.2rem; display: block; color: #fff; }
+  .team small { color: var(--muted); }
+  .follow { margin-left: auto; font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--amber); background: transparent; border: 1px solid rgba(245,179,1,0.5); border-radius: 999px; padding: 6px 14px; cursor: pointer; white-space: nowrap; }
+  .follow.on { color: var(--bg-deep); background: var(--amber); }
+  .game { border-top: 1px solid rgba(255,255,255,0.06); padding: 10px 0 2px; }
+  .game .when { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+  .game .when.live { color: var(--red); }
+  .game .what { font-size: 1.05rem; margin: 2px 0 4px; }
+  .last { color: var(--muted); font-size: 0.88rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 8px; margin-top: 8px; }
+  .tv { font-size: 0.95rem; color: var(--muted); margin: 4px 0; }
+  .tv b { color: var(--green); font-weight: 600; }
+  .tv a { color: var(--green); font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; }
+  .show h3 { margin: 0 0 6px; font-size: 1.15rem; color: #fff; }
+  .air { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+  .air:first-of-type { border-top: 0; }
+  .air[hidden] { display: none; }
+  .air .also { font: inherit; font-size: 0.85rem; color: var(--accent); background: transparent; border: 0; cursor: pointer; padding: 0; }
+  .air .alsolist { flex-basis: 100%; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+  .air .t { font-weight: 700; color: var(--accent); min-width: 150px; }
+  .air .t.now { color: var(--red); }
+  .air .c { color: #fff; }
+  .air .g { color: var(--muted); font-size: 0.8rem; }
+  .air .s { flex-basis: 100%; color: var(--muted); font-size: 0.88rem; }
+  .bd { font-size: 0.68rem; font-weight: 700; border-radius: 4px; padding: 0 5px; margin-left: 4px; vertical-align: 1px; }
+  .bd.new { background: var(--green); color: var(--bg-deep); } .bd.live { background: var(--red); color: #fff; } .bd.cc { border: 1px solid var(--muted); color: var(--muted); }
+  .acts { display: flex; flex-wrap: wrap; gap: 6px; flex-basis: 100%; }
+  .acts a, .acts button { font: inherit; font-size: 0.82rem; color: var(--text); background: transparent; border: 1px solid var(--border); border-radius: 8px;
+                          padding: 4px 10px; cursor: pointer; text-decoration: none; }
+  .acts .free { background: var(--green); color: var(--bg-deep); border-color: var(--green); font-weight: 700; }
+  .more { font: inherit; font-size: 0.85rem; color: var(--accent); background: transparent; border: 0; cursor: pointer; padding: 6px 0 0; }
+  .cat { display: block; text-align: center; padding: 12px; border-radius: 12px; background: rgba(0,191,255,0.08); color: var(--accent); text-decoration: none; font-weight: 700; margin-bottom: 12px; }
+  .empty, .loading { color: var(--muted); text-align: center; padding: 22px; background: var(--bg-card); border-radius: 14px; line-height: 1.6; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="ask.html" class="on" data-i="askNav">🔎 Ask</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">🔎 Ask <span>EPGTalk</span></h1>
+  <p class="sub" data-i="sub">When and where can I watch… ? Type a team, a show, a movie or a channel.</p>
+  <form id="f" role="search" autocomplete="off">
+    <input id="q" type="search" name="q" enterkeyhint="search" aria-label="Search" placeholder="Lions, Bluey, Champions League…">
+    <button class="ib" id="mic" type="button" hidden aria-label="Speak">🎤</button>
+    <button class="ib" id="go" type="submit" data-i="go">Ask</button>
+  </form>
+  <div class="ex" id="ex"></div>
+  <div id="out"></div>
+</main>
+<footer data-i="foot">Searches every EPGTalk guide (the next 2–3 days) plus live team schedules from ESPN. Times are in your time zone.</footer>
+<script src="watch.js"></script>
+<script src="ask.js"></script>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', askNav: '🔎 Ask', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', tonight: 'Tonight',
+    h1html: '🔎 Ask <span>EPGTalk</span>', sub: 'When and where can I watch… ? Type a team, a show, a movie or a channel.', go: 'Ask',
+    ph: 'Lions, Bluey, Champions League…', examples: ['Lions', 'Bluey', 'Champions League', 'Godfather', 'Yankees', 'Noticias'],
+    foot: 'Searches every EPGTalk guide (the next 2–3 days) plus live team schedules from ESPN. Times are in your time zone.',
+    searching: 'Looking…', teamsH: '🏆 Teams', showsH: '📺 On TV', none: 'Nothing found for “{q}” in the next 2–3 days of listings.',
+    tip: 'Tip: try one word — a team nickname (“Bears”), part of a title (“Godfather”) or a channel name.',
+    nextGame: 'Next game', noGame: 'No games scheduled right now — the season may be over.', last: 'Last:', liveW: 'LIVE', now: 'On now',
+    today: 'Today', tomorrow: 'Tomorrow', tba: 'time TBA', add: '📅 Remind me', open: '📺 Open in TV Guide', espn: 'Team page',
+    watchFree: '▶ Watch free', more: 'Show {n} more', also: '+{n} more channels ▸', alsoOne: '+1 more channel ▸', follow: '☆ Follow', following: '★ Following — Game Day alerts on', on: 'on', NEW: 'NEW', LIVE: 'LIVE',
+    cat_kids: '🧒 See everything for kids on now →', cat_movies: '🍿 See all movies on now →', cat_news: '📰 See all news on now →',
+    cat_sports: '🏆 See all sports on now →', cat_ccF: 'CC — see shows with captions →',
+    g_combined: 'Combined', g_us: 'US', g_uk: 'UK', g_latino: 'Latino', g_uslocal: 'US Local', g_sports: 'Sports', g_freetv: 'Free TV',
+    listen: 'Listening…', title: 'EPGTalk — Ask' },
+  es: { home: 'Inicio', askNav: '🔎 Pregunta', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', tonight: 'Esta noche',
+    h1html: '🔎 Pregúntale a <span>EPGTalk</span>', sub: '¿Cuándo y dónde puedo ver… ? Escribe un equipo, un programa, una película o un canal.', go: 'Buscar',
+    ph: 'América, Bluey, Champions League…', examples: ['América', 'Chivas', 'Bluey', 'Champions League', 'Noticias', 'Películas'],
+    foot: 'Busca en todas las guías de EPGTalk (los próximos 2–3 días) y en los calendarios de equipos de ESPN en vivo. Horarios en tu zona horaria.',
+    searching: 'Buscando…', teamsH: '🏆 Equipos', showsH: '📺 En TV', none: 'No encontramos “{q}” en los próximos 2–3 días de programación.',
+    tip: 'Consejo: prueba una palabra — el nombre de un equipo (“Chivas”), parte de un título (“Padrino”) o un canal.',
+    nextGame: 'Próximo partido', noGame: 'No hay partidos programados por ahora — puede que la temporada haya terminado.', last: 'Último:', liveW: 'EN VIVO', now: 'Ahora',
+    today: 'Hoy', tomorrow: 'Mañana', tba: 'hora por confirmar', add: '📅 Recordarme', open: '📺 Abrir en la Guía', espn: 'Página del equipo',
+    watchFree: '▶ Ver gratis', more: 'Ver {n} más', also: '+{n} canales más ▸', alsoOne: '+1 canal más ▸', follow: '☆ Seguir', following: '★ Siguiendo — avisos de día de partido', on: 'en', NEW: 'NUEVO', LIVE: 'EN VIVO',
+    cat_kids: '🧒 Ver todo lo infantil ahora →', cat_movies: '🍿 Ver todas las películas ahora →', cat_news: '📰 Ver todas las noticias ahora →',
+    cat_sports: '🏆 Ver todos los deportes ahora →', cat_ccF: 'CC — ver programas con subtítulos →',
+    g_combined: 'Combinada', g_us: 'EE.UU.', g_uk: 'Reino Unido', g_latino: 'Latino', g_uslocal: 'Locales', g_sports: 'Deportes', g_freetv: 'TV Gratis',
+    listen: 'Escuchando…', title: 'EPGTalk — Pregunta' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => { const x = T[LANG][k] != null ? T[LANG][k] : T.en[k]; return typeof x === 'string' ? x.replace(/\{(\w+)\}/g, (_, n) => (v && v[n] != null ? v[n] : '')) : x; };
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = tr('title');
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+$('q').placeholder = tr('ph');
+
+const loc = LANG === 'es' ? 'es' : undefined;
+const fT = new Intl.DateTimeFormat(loc, { hour: 'numeric', minute: '2-digit' });
+const fD = new Intl.DateTimeFormat(loc, { weekday: 'short', month: 'short', day: 'numeric' });
+function when(ms, valid) {
+  const d = new Date(ms), n = new Date(), tm = new Date(Date.now() + 86400000);
+  const day = d.toDateString() === n.toDateString() ? tr('today') : d.toDateString() === tm.toDateString() ? tr('tomorrow') : fD.format(d);
+  return day + ', ' + (valid === false ? tr('tba') : fT.format(d));
+}
+
+for (const x of tr('examples')) {
+  const b = el('button', null, x); b.type = 'button';
+  b.onclick = () => { $('q').value = x; run(); };
+  $('ex').appendChild(b);
+}
+
+// voice input where the browser has it (Chrome on Android, Android TV, desktop Chrome/Edge)
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (SR) {
+  const mic = $('mic'); mic.hidden = false;
+  mic.onclick = () => {
+    const r = new SR(); r.lang = LANG === 'es' ? 'es-MX' : 'en-US'; r.interimResults = false; r.maxAlternatives = 1;
+    mic.classList.add('on'); $('q').placeholder = tr('listen');
+    r.onresult = e => { $('q').value = e.results[0][0].transcript; run(); };
+    r.onend = () => { mic.classList.remove('on'); $('q').placeholder = tr('ph'); };
+    try { r.start(); } catch (e) { mic.classList.remove('on'); }
+  };
+}
+
+function guideLink(a) { return 'tvguide.html?ch=' + encodeURIComponent(a.channel) + '&at=' + Math.round(a.start / 60000) + '#' + a.guide; }
+
+function teamCard(t) {
+  const c = el('div', 'card');
+  const h = el('div', 'team');
+  if (t.logo) { const im = el('img'); im.src = t.logo; im.alt = ''; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.remove(); h.appendChild(im); }
+  const n = el('div'); n.appendChild(el('b', null, t.name)); n.appendChild(el('small', null, t.league)); h.appendChild(n);
+  if (t.favKey) {
+    let favs = []; try { favs = JSON.parse(localStorage.getItem('epgtalk-fav-teams') || '[]'); } catch (e) {}
+    const f = el('button', 'follow' + (favs.includes(t.favKey) ? ' on' : ''), favs.includes(t.favKey) ? tr('following') : tr('follow')); f.type = 'button';
+    f.onclick = () => {
+      let list = []; try { list = JSON.parse(localStorage.getItem('epgtalk-fav-teams') || '[]'); } catch (e) {}
+      const on = list.includes(t.favKey);
+      list = on ? list.filter(k => k !== t.favKey) : list.concat(t.favKey);
+      try { localStorage.setItem('epgtalk-fav-teams', JSON.stringify(list)); sessionStorage.removeItem('epgtalk-gd-cache'); } catch (e) {}
+      f.textContent = on ? tr('follow') : tr('following'); f.classList.toggle('on', !on);
+    };
+    h.appendChild(f);
+  }
+  c.appendChild(h);
+  if (!t.next.length) c.appendChild(el('div', 'tv', tr('noGame')));
+  t.next.forEach((g, i) => {
+    const box = el('div', 'game');
+    const live = g.state === 'in';
+    box.appendChild(el('div', 'when' + (live ? ' live' : ''), live ? '● ' + tr('liveW') + ' · ' + g.detail : (i ? '' : tr('nextGame') + ': ') + when(g.start, g.timeValid)));
+    const what = el('div', 'what', g.name);
+    if (live && g.teams.length === 2) what.textContent += '  —  ' + g.teams.map(x => (x.abbr || x.name) + ' ' + x.score).join(', ');
+    box.appendChild(what);
+    if (g.nets.length) box.appendChild(window.EPGWatch ? EPGWatch.line(g.nets, g.start) : el('div', 'tv', '📺 ' + g.nets.join(', ')));
+    const acts = el('div', 'acts');
+    if (!live) { const b = el('button', null, tr('add')); b.type = 'button'; b.onclick = () => EPGAsk.ics(g.name, g.start, g.start + 3 * 3600000, g.nets.join(', ')); acts.appendChild(b); }
+    if (t.espn && i === t.next.length - 1) { const a = el('a', null, tr('espn')); a.href = t.espn; a.target = '_blank'; a.rel = 'noopener'; acts.appendChild(a); }
+    box.appendChild(acts);
+    c.appendChild(box);
+  });
+  if (t.last && t.last.teams.length) {
+    c.appendChild(el('div', 'last', tr('last') + ' ' + t.last.teams.map(x => (x.name || x.abbr) + ' ' + x.score).join(' – ') + ' (' + fD.format(new Date(t.last.start)) + ')'));
+  }
+  return c;
+}
+
+function airRow(a) {
+  const r = el('div', 'air');
+  const now = Date.now(), on = a.start <= now && a.stop > now;
+  r.appendChild(el('span', 't' + (on ? ' now' : ''), on ? '● ' + tr('now') + ' · ' + fT.format(a.start) : when(a.start)));
+  const c = el('span', 'c', a.channel);
+  if (a.flags & 2) c.appendChild(el('span', 'bd live', tr('LIVE'))); else if (a.flags & 1) c.appendChild(el('span', 'bd new', tr('NEW')));
+  if (a.flags & 256) c.appendChild(el('span', 'bd cc', 'CC'));
+  r.appendChild(c);
+  r.appendChild(el('span', 'g', (a.guides || [a.guide]).map(g => tr('g_' + g)).join(' · ')));
+  if (a.also && a.also.length) {
+    const b = el('button', 'also', a.also.length === 1 ? tr('alsoOne') : tr('also', { n: a.also.length })); b.type = 'button';
+    b.onclick = () => {
+      b.replaceWith(el('span', 'alsolist', a.also.map(x => x.channel + ' (' + (x.guides || [x.guide]).map(g => tr('g_' + g)).join(' · ') + ')').join(' · ')));
+    };
+    r.appendChild(b);
+  }
+  if (a.sub || a.ep) r.appendChild(el('span', 's', [a.ep, a.sub].filter(Boolean).join(' · ')));
+  const acts = el('div', 'acts');
+  if (a.watch) { const w = el('a', 'free', tr('watchFree')); w.href = a.watch; w.target = '_blank'; w.rel = 'noopener'; acts.appendChild(w); }
+  const o = el('a', null, tr('open')); o.href = guideLink(a); acts.appendChild(o);
+  if (!on) { const b = el('button', null, tr('add')); b.type = 'button'; b.onclick = () => EPGAsk.ics(a.title, a.start, a.stop, a.channel); acts.appendChild(b); }
+  r.appendChild(acts);
+  return r;
+}
+
+function showCard(g) {
+  const c = el('div', 'card show');
+  c.appendChild(el('h3', null, g.title));
+  const list = el('div');
+  const first = 3;
+  g.airings.forEach((a, i) => { a.title = g.title; const row = airRow(a); if (i >= first) row.hidden = true; list.appendChild(row); });
+  c.appendChild(list);
+  if (g.airings.length > first) {
+    const m = el('button', 'more', tr('more', { n: g.airings.length - first })); m.type = 'button';
+    m.onclick = () => { for (const x of list.children) x.hidden = false; m.remove(); };
+    c.appendChild(m);
+  }
+  return c;
+}
+
+let seq = 0;
+async function run() {
+  const q = $('q').value.trim();
+  const out = $('out');
+  try { history.replaceState(null, '', q ? '?q=' + encodeURIComponent(q) : location.pathname); } catch (e) {}
+  if (!q) { out.replaceChildren(); return; }
+  const my = ++seq;
+  out.replaceChildren(el('div', 'loading', tr('searching')));
+  if (window.EPGWatch) await EPGWatch.load();
+  const res = await EPGAsk.search(q, LANG);
+  if (my !== seq) return;
+  out.replaceChildren();
+  if (res.category) {
+    const a = el('a', 'cat', tr('cat_' + res.category)); a.href = 'tvguide.html?f=' + res.category + '#combined'; out.appendChild(a);
+  }
+  if (res.teams.length) { out.appendChild(el('h2', null, tr('teamsH'))); res.teams.forEach(t => out.appendChild(teamCard(t))); }
+  if (res.shows.length) { out.appendChild(el('h2', null, tr('showsH'))); res.shows.forEach(g => out.appendChild(showCard(g))); }
+  if (!res.teams.length && !res.shows.length) {
+    const e = el('div', 'empty'); e.appendChild(el('div', null, tr('none', { q }))); e.appendChild(el('small', null, tr('tip'))); out.appendChild(e);
+  }
+}
+$('f').onsubmit = e => { e.preventDefault(); $('q').blur(); run(); };
+if (window.EPGWatch) EPGWatch.load();
+const q0 = new URLSearchParams(location.search).get('q');
+if (q0) { $('q').value = q0; run(); } else $('q').focus();
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

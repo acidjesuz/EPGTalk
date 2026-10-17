@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>EPGTalk — Public JSON</title>
+<meta name="description" content="Free JSON for Home Assistant, Kodi skins, dashboards and your own apps: what's on now and next on every EPGTalk channel, plus Tonight's Picks.">
+<link rel="canonical" href="https://epgtalk.com/api.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Public JSON">
+<meta property="og:description" content="Free JSON for Home Assistant, Kodi skins, dashboards and your own apps: what's on now and next on every EPGTalk channel, plus Tonight's Picks.">
+<meta property="og:url" content="https://epgtalk.com/api.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 940px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; line-height: 1.6; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; }
+  h1 span { color: var(--accent); }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1.05rem; margin: 34px 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  a { color: var(--accent); }
+  code { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: rgba(0,191,255,0.08); border-radius: 5px; padding: 1px 5px; }
+  pre { position: relative; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.55; background: #0a0f1f; border: 1px solid var(--border);
+        border-radius: 12px; padding: 14px 16px; overflow-x: auto; color: #cfe7ff; }
+  pre .copy { position: absolute; top: 8px; right: 8px; font: 600 0.75rem 'DM Sans', sans-serif; color: var(--bg-deep); background: var(--accent);
+              border: 0; border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 7px 8px; border-top: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; font-size: 0.78rem; border-top: 0; }
+  .card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px 18px; }
+  .try { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .try select, .try input { font: inherit; color: var(--text); background: var(--bg-mid); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; }
+  .try input { flex: 1 1 220px; }
+  .np { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: baseline; }
+  .np .k { color: var(--muted); font-size: 0.8rem; }
+  .np .now { font-weight: 700; color: #fff; }
+  .note { color: var(--muted); font-size: 0.88rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="ask.html" data-i="askNav">🔎 Ask</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="api.html" class="on">API</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1>Public <span>JSON</span></h1>
+  <p class="sub" data-i="intro">Free, no key, no sign-up: what's on now and next on every EPGTalk channel, plus Tonight's Picks — for Home Assistant, Kodi skins, dashboards, Discord bots and your own apps.</p>
+
+  <h2 data-i="tryH">⚡ Try it</h2>
+  <div class="card">
+    <div class="try">
+      <select id="tg" aria-label="Guide"></select>
+      <input id="tq" list="tl" placeholder="Channel, e.g. ESPN US" aria-label="Channel" autocomplete="off">
+      <datalist id="tl"></datalist>
+    </div>
+    <div class="np" id="np"><span class="note" data-i="tryHint">Pick a channel to see what the JSON says is on.</span></div>
+  </div>
+
+  <h2 data-i="endH">🔗 Endpoints</h2>
+  <table>
+    <tr><th>URL</th><th data-i="whatH">What</th></tr>
+    <tr><td><code>https://epgtalk.com/api/now/combined.json</code></td><td data-i="e1">Every channel in the Combined guide, from 1 hour ago to 10 hours ahead</td></tr>
+    <tr><td><code>…/api/now/us.json</code> · <code>uk.json</code> · <code>latino.json</code> · <code>uslocal.json</code> · <code>sports.json</code> · <code>freetv.json</code></td><td data-i="e2">Same, for each of the other guides</td></tr>
+    <tr><td><code>https://epgtalk.com/api/tonight.json</code></td><td data-i="e3">Tonight's Picks: big games, premieres, new episodes and movies for the next ~36 hours</td></tr>
+    <tr><td><code>https://epgtalk.com/api/index.json</code></td><td data-i="e4">List of all endpoints and when they were last updated</td></tr>
+  </table>
+  <p class="note" data-i="refresh">Files refresh about every 6 hours (full 7-day guides every 2 days). They hold a schedule, not a single "now" value — pick the current show by comparing <code>start</code> / <code>stop</code> (unix seconds, UTC) with your clock. CORS is open, so browsers can fetch them directly.</p>
+
+  <h2 data-i="fieldsH">🧾 Fields</h2>
+<pre><code>{
+  "guide": "Combined", "updated": "2026-10-03T11:57:02-05:00",
+  "from": "2026-10-03T15:57:02Z", "until": "2026-10-04T02:57:02Z",
+  "channels": [
+    { "name": "ESPN US", "number": "206", "logo": "https://…",
+      "programmes": [
+        { "start": 1791043200, "stop": 1791054000, "title": "College Football",
+          "subtitle": "Notre Dame at North Carolina", "episode": "S01E05",
+          "type": "sports",            // sports | movie | news | kids (when known)
+          "new": true, "live": true,   // only present when true
+          "image": "https://…" } ] } ] }</code></pre>
+
+  <h2>🏠 Home Assistant</h2>
+  <p data-i="haIntro">Shows what's on one channel right now. Add to <code>configuration.yaml</code>, change <code>ESPN US</code> to any channel name from the Try it box, and restart.</p>
+<pre><code>rest:
+  - resource: https://epgtalk.com/api/now/combined.json
+    scan_interval: 1800
+    sensor:
+      - name: "EPGTalk ESPN"
+        value_template: "{{ value_json.updated }}"
+        json_attributes_path: "$.channels[?(@.name=='ESPN US')]"
+        json_attributes:
+          - name
+          - logo
+          - programmes
+
+template:
+  - sensor:
+      - name: "On ESPN now"
+        state: &gt;
+          {% set t = now().timestamp() %}
+          {% set p = state_attr('sensor.epgtalk_espn', 'programmes') or [] %}
+          {% set cur = p | selectattr('start', 'le', t) | selectattr('stop', 'gt', t) | list %}
+          {{ (cur[0].title ~ (' — ' ~ cur[0].subtitle if cur[0].subtitle else ''))[:255] if cur else 'Off air' }}
+        attributes:
+          next: &gt;
+            {% set t = now().timestamp() %}
+            {% set p = state_attr('sensor.epgtalk_espn', 'programmes') or [] %}
+            {% set nx = p | selectattr('start', 'gt', t) | list %}
+            {{ nx[0].title if nx else '' }}
+        picture: "{{ state_attr('sensor.epgtalk_espn', 'logo') }}"</code></pre>
+
+  <h2>🎬 Kodi</h2>
+  <p data-i="kodi">Skins and add-ons can read the same files with any web request — for example a widget that shows Tonight's Picks from <code>api/tonight.json</code>. For the TV guide itself, Kodi should keep using the XMLTV guide with PVR IPTV Simple Client (see <a href="setup.html#kodi">Player Setup</a>).</p>
+
+  <h2>💻 JavaScript / Python</h2>
+<pre><code>// what's on every channel whose name contains "ESPN", right now
+const j = await (await fetch('https://epgtalk.com/api/now/combined.json')).json();
+const t = Date.now() / 1000;
+for (const ch of j.channels.filter(c =&gt; c.name.includes('ESPN')))
+  console.log(ch.name, '→', ch.programmes.find(p =&gt; p.start &lt;= t &amp;&amp; p.stop &gt; t)?.title);</code></pre>
+<pre><code>import json, time, urllib.request
+picks = json.load(urllib.request.urlopen("https://epgtalk.com/api/tonight.json"))["picks"]
+for p in picks:
+    if p["type"] == "sports" and p["start"] &gt; time.time():
+        print(p["start_iso"], p["title"], p.get("tv", ""))</code></pre>
+
+  <h2 data-i="fairH">🤝 Fair use</h2>
+  <p class="note" data-i="fair">Free for personal and community projects. Please cache — there's nothing new more often than every 6 hours, so polling every 15–30 minutes is plenty. Season/episode numbers are partly from <a href="https://www.tvmaze.com/" rel="noopener">TVmaze</a> (CC BY-SA). Questions or ideas: <a href="mailto:support@epgtalk.com">support@epgtalk.com</a>.</p>
+</main>
+<footer>EPGTalk · <a href="index.html">epgtalk.com</a></footer>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', askNav: '🔎 Ask', setupNav: 'Setup', tvguide: 'TV Guide', tonight: 'Tonight' },
+  es: { home: 'Inicio', askNav: '🔎 Pregunta', setupNav: 'Configurar', tvguide: 'Guía de TV', tonight: 'Esta noche',
+    intro: 'Gratis, sin clave ni registro: lo que pasa ahora y después en cada canal de EPGTalk, más Lo mejor de esta noche — para Home Assistant, skins de Kodi, paneles, bots de Discord y tus propias apps.',
+    tryH: '⚡ Pruébalo', tryHint: 'Elige un canal para ver lo que dice el JSON.', endH: '🔗 Direcciones', whatH: 'Qué contiene',
+    e1: 'Cada canal de la guía Combinada, desde hace 1 hora hasta 10 horas adelante', e2: 'Lo mismo, para cada una de las otras guías',
+    e3: 'Lo mejor de esta noche: partidos, estrenos, episodios nuevos y películas de las próximas ~36 horas', e4: 'Lista de todas las direcciones y cuándo se actualizaron',
+    refresh: 'Los archivos se actualizan más o menos cada 6 horas (las guías completas de 7 días cada 2 días). Contienen un horario, no un único valor de "ahora" — elige el programa actual comparando start / stop (segundos unix, UTC) con tu reloj. CORS está abierto, así que los navegadores pueden leerlos directamente.',
+    fieldsH: '🧾 Campos', haIntro: 'Muestra lo que pasa ahora en un canal. Agrégalo a configuration.yaml, cambia ESPN US por cualquier nombre de canal del cuadro Pruébalo y reinicia.',
+    kodi: 'Los skins y add-ons pueden leer los mismos archivos con cualquier petición web — por ejemplo un widget con Lo mejor de esta noche desde api/tonight.json. Para la guía de TV en sí, Kodi debe seguir usando la guía XMLTV con PVR IPTV Simple Client (ver Configura tu app).',
+    fairH: '🤝 Uso justo', fair: 'Gratis para proyectos personales y de la comunidad. Por favor guarda en caché — no hay nada nuevo más seguido que cada 6 horas, así que consultar cada 15–30 minutos es suficiente. Los números de temporada/episodio vienen en parte de TVmaze (CC BY-SA). Preguntas o ideas: support@epgtalk.com.',
+    now: 'Ahora', next: 'Después', none: 'Sin datos para este canal ahora.', updated: 'Actualizado' },
+};
+T.en.now = 'Now'; T.en.next = 'Next'; T.en.none = 'Nothing listed for this channel right now.'; T.en.updated = 'Updated';
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = k => T[LANG][k] != null ? T[LANG][k] : T.en[k];
+document.documentElement.lang = LANG;
+if (LANG !== 'en') for (const e of document.querySelectorAll('[data-i]')) { const v = tr(e.dataset.i); if (v != null) e.textContent = v; }
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+
+for (const pre of document.querySelectorAll('pre')) {
+  const b = el('button', 'copy', 'Copy'); b.type = 'button';
+  b.onclick = async () => { try { await navigator.clipboard.writeText(pre.querySelector('code').textContent); b.textContent = '✓'; setTimeout(() => b.textContent = 'Copy', 1400); } catch (e) {} };
+  pre.appendChild(b);
+}
+
+const fmt = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { hour: 'numeric', minute: '2-digit' });
+const GUIDES = [['combined', 'Combined'], ['us', 'US'], ['uk', 'UK'], ['latino', 'Latino'], ['uslocal', 'US Local'], ['sports', 'Sports'], ['freetv', 'Free TV']];
+let data = null;
+for (const [k, l] of GUIDES) $('tg').appendChild(new Option(l, k));
+async function loadGuide() {
+  $('np').replaceChildren(el('span', 'note', '…'));
+  try { data = await (await fetch('api/now/' + $('tg').value + '.json')).json(); } catch (e) { data = { channels: [] }; }
+  const dl = $('tl'); dl.replaceChildren();
+  for (const c of data.channels) dl.appendChild(new Option(c.name));
+  if (!$('tq').value) $('tq').value = (data.channels.find(c => /^ESPN US$/.test(c.name)) || data.channels[0] || {}).name || '';
+  show();
+}
+function show() {
+  const box = $('np'); box.replaceChildren();
+  const ch = data && data.channels.find(c => c.name.toLowerCase() === $('tq').value.trim().toLowerCase());
+  if (!ch) { box.appendChild(el('span', 'note', tr('none'))); return; }
+  const t = Date.now() / 1000;
+  const cur = ch.programmes.find(p => p.start <= t && p.stop > t), nx = ch.programmes.find(p => p.start > t);
+  const line = p => p ? fmt.format(p.start * 1000) + ' – ' + fmt.format(p.stop * 1000) + '  ' + p.title + (p.subtitle ? ' — ' + p.subtitle : '') : tr('none');
+  box.appendChild(el('span', 'k', tr('now'))); box.appendChild(el('span', 'now', line(cur)));
+  box.appendChild(el('span', 'k', tr('next'))); box.appendChild(el('span', null, line(nx)));
+  box.appendChild(el('span', 'k', tr('updated'))); box.appendChild(el('span', 'note', data.updated || ''));
+}
+$('tg').onchange = () => { $('tq').value = ''; loadGuide(); };
+$('tq').oninput = show;
+loadGuide();
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

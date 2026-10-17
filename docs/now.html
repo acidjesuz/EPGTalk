@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Now &amp; Next</title>
+<meta name="description" content="What's on right now and what's next on every channel — made for your phone.">
+<link rel="canonical" href="https://epgtalk.com/now.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Now &amp; Next">
+<meta property="og:description" content="What's on right now and what's next on every channel — made for your phone.">
+<meta property="og:url" content="https://epgtalk.com/now.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e; --purple:#7c3aed;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 3; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 900px; margin: 0 auto; padding: 20px 12px 64px; padding: 20px clamp(12px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.3rem; font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 0 0 4px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 14px; font-size: 0.88rem; }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  select, input[type=search] { font: inherit; font-size: 0.92rem; color: var(--text); background: var(--bg-card);
+          border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; outline: none; }
+  input[type=search] { flex: 1; min-width: 150px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip { font: inherit; font-size: 0.82rem; color: var(--text); background: transparent; border: 1px solid var(--border);
+          border-radius: 999px; padding: 5px 11px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: rgba(0,191,255,0.2); border-color: var(--accent); color: #fff; }
+  .list { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 12px; background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 10px 12px; }
+  .row.fav { border-color: rgba(245,179,1,0.45); }
+  .logo { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .logo img, .logo .badge { width: 48px; height: 34px; object-fit: contain; }
+  .logo .badge { display: flex; align-items: center; justify-content: center; border-radius: 6px; background: rgba(0,191,255,0.08);
+                 color: var(--accent); font-family: 'Orbitron', monospace; font-size: 0.6rem; font-weight: 700; overflow: hidden; }
+  .logo .num { color: var(--muted); font-size: 0.72rem; }
+  .info { min-width: 0; }
+  .chrow { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .chname { font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+  .star { flex: none; background: none; border: 0; color: var(--muted); font-size: 1.05rem; cursor: pointer; padding: 0 2px; line-height: 1; }
+  .star.on { color: var(--amber); }
+  .rep { flex: none; font-size: 0.85rem; text-decoration: none; opacity: 0.55; padding: 0 2px; }
+  .rep:hover { opacity: 1; }
+  .now { display: block; color: var(--text); text-decoration: none; }
+  .now b { font-size: 0.98rem; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .now b .tg { font-size: 0.68rem; font-weight: 700; margin-left: 6px; color: var(--green); }
+  .now b .tg.l { color: var(--red); }
+  .now b .tg.cc { color: var(--muted); border: 1px solid currentColor; border-radius: 3px; padding: 0 2px; font-size: 0.6rem; }
+  .prog { height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px; margin: 6px 0 3px; overflow: hidden; }
+  .prog i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .row.sports .prog i { background: var(--green); } .row.news .prog i { background: var(--amber); }
+  .row.movie .prog i { background: var(--purple); } .row.kids .prog i { background: #ff7ac6; }
+  .meta { font-size: 0.76rem; color: var(--muted); }
+  .next { margin-top: 6px; font-size: 0.82rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .next a { color: var(--text); text-decoration: none; }
+  .more { margin: 12px auto 0; display: block; font: inherit; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  .empty { color: var(--muted); padding: 22px; background: var(--bg-card); border-radius: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="ask.html" data-i="askNav">🔎 Ask</a>
+    <a href="now.html" class="on" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="playlist.html" data-i="checker">Playlist Checker</a>
+    <a href="calendars/" data-i="calendars">Team Calendars</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Now <span>&amp; Next</span></h1>
+  <p class="sub" id="sub"></p>
+  <div class="bar">
+    <select id="guide" aria-label="Guide"></select>
+    <input id="q" type="search" autocomplete="off">
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Filter"></div>
+  <div class="list" id="list"><div class="empty" data-i="loading">Loading…</div></div>
+  <button class="more" id="more" type="button" hidden data-i="more">Show more</button>
+</main>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', askNav: '🔎 Ask', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', setupNav: 'Setup', tonight: 'Tonight', checker: 'Playlist Checker', calendars: 'Team Calendars',
+        h1html: 'Now <span>&amp; Next</span>', sub: "What's on right now · your time zone · updates every minute", loading: 'Loading…',
+        find: 'Find a channel…', all: 'All', mine: '⭐ My channels', sports: 'Sports', news: 'News', movies: 'Movies', kids: 'Kids',
+        left: '{m} min left', leftH: '{h} h {m} min left', next: 'Next', at: 'at', more: 'Show more', none: 'No channels match.',
+        noFav: 'Tap ☆ next to a channel to add it to My channels — they show here first.', fail: 'Sorry — the guide could not be loaded right now.',
+        starAdd: 'Add to my channels', starDel: 'Remove from my channels', NEW: 'NEW', LIVE: 'LIVE',
+        report: 'Report a problem with this channel', repSubj: 'EPGTalk report: {ch}',
+        repBody: 'Guide: {g}\nChannel: {ch}\nOn now: {t}\nTime: {lt} (my time) / {ut} UTC\n\nWhat is wrong (e.g. no guide, wrong times, wrong show):\n\n\n— sent from EPGTalk Now & Next',
+        g_combined: 'Combined', g_us: 'US', g_uk: 'UK', g_latino: 'Latino / Mexico', g_uslocal: 'US Local', g_sports: 'Sports', g_freetv: '🆓 Free TV' },
+  es: { home: 'Inicio', askNav: '🔎 Pregunta', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', setupNav: 'Configurar', tonight: 'Esta noche', checker: 'Revisar Lista', calendars: 'Calendarios',
+        h1html: 'Ahora <span>y después</span>', sub: 'Lo que está en el aire ahora · tu zona horaria · se actualiza cada minuto', loading: 'Cargando…',
+        find: 'Buscar canal…', all: 'Todo', mine: '⭐ Mis canales', sports: 'Deportes', news: 'Noticias', movies: 'Películas', kids: 'Infantil',
+        left: 'quedan {m} min', leftH: 'quedan {h} h {m} min', next: 'Después', at: 'a las', more: 'Mostrar más', none: 'Ningún canal coincide.',
+        noFav: 'Toca ☆ junto a un canal para agregarlo a Mis canales — aparecen aquí primero.', fail: 'Lo sentimos — no se pudo cargar la guía.',
+        starAdd: 'Agregar a mis canales', starDel: 'Quitar de mis canales', NEW: 'NUEVO', LIVE: 'EN VIVO',
+        report: 'Reportar un problema con este canal', repSubj: 'Reporte EPGTalk: {ch}',
+        repBody: 'Guía: {g}\nCanal: {ch}\nAhora: {t}\nHora: {lt} (mi hora) / {ut} UTC\n\nQué está mal (p. ej. sin guía, horario incorrecto, programa equivocado):\n\n\n— enviado desde EPGTalk Ahora y después',
+        g_combined: 'Combinada', g_us: 'EE.UU.', g_uk: 'Reino Unido', g_latino: 'Latino / México', g_uslocal: 'EE.UU. Local', g_sports: 'Deportes', g_freetv: '🆓 TV Gratis' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k] || k).replace(/\{(\w+)\}/g, (_, x) => (v && v[x] != null ? v[x] : ''));
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+const $ = id => document.getElementById(id);
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+$('sub').textContent = tr('sub'); $('q').placeholder = tr('find'); $('q').setAttribute('aria-label', tr('find'));
+document.title = 'EPGTalk — ' + tr('h1html').replace(/<[^>]+>/g, '').replace('&amp;', '&');
+const fmtT = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { hour: 'numeric', minute: '2-digit' });
+const F = { NEW: 1, LIVE: 2, SPORTS: 8, NEWS: 16, MOVIE: 32, KIDS: 64, FILLER: 128, CC: 256 };
+const FILTERS = [['all', 0], ['mine', -1], ['sports', F.SPORTS], ['news', F.NEWS], ['movies', F.MOVIE], ['kids', F.KIDS]];
+let FAV = new Set();
+try { FAV = new Set(JSON.parse(localStorage.getItem('epgtalk-fav-ch') || '[]')); } catch (e) {}
+function saveFav() { try { localStorage.setItem('epgtalk-fav-ch', JSON.stringify([...FAV])); } catch (e) {} }
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+function initials(name) {
+  const w = name.replace(/^[A-Z]{2,3} - /, '').split(/[\s\-:]+/).filter(Boolean);
+  return (w.length > 1 ? w.slice(0, 3).map(x => x[0]).join('') : (w[0] || '?').slice(0, 4)).toUpperCase();
+}
+async function getJSON(u) { const r = await fetch(u, { cache: 'no-cache' }); if (!r.ok) throw new Error(u); return r.json(); }
+
+let IDX = null, G = null, filter = 0, shown = 80;
+try { filter = FAV.size ? -1 : 0; } catch (e) {}
+
+async function loadGuide(key) {
+  $('list').replaceChildren(el('div', 'empty', tr('loading')));
+  const g = IDX.guides.find(x => x.key === key);
+  const [chans, ...days] = await Promise.all([getJSON(`tvguide/${key}/channels.json`), ...g.days.map(d => getJSON(`tvguide/${key}/${d}.json`))]);
+  const rows = chans.map(() => []), seen = new Set();
+  g.days.forEach((d, i) => {
+    const base = Date.parse(d + 'T00:00:00Z') / 60000;
+    for (const p of days[i]) {
+      const s = base + p[1], k = p[0] + ':' + s;
+      if (seen.has(k)) continue; seen.add(k);
+      rows[p[0]].push({ s, e: s + p[2], t: p[3], sub: p[4], f: p[5] });
+    }
+  });
+  rows.forEach(r => r.sort((a, b) => a.s - b.s));
+  G = { key, chans, rows };
+  try { localStorage.setItem('epgtalk-now-guide', key); } catch (e) {}
+  render();
+}
+
+function render() {
+  if (!G) return;
+  const now = Date.now() / 60000, q = $('q').value.trim().toLowerCase();
+  const items = [];
+  G.chans.forEach((c, i) => {
+    if (q && !(c[0].toLowerCase().includes(q) || c[1] === q)) return;
+    if (filter === -1 && !FAV.has(c[0])) return;
+    const r = G.rows[i]; let k = r.findIndex(p => p.e > now);
+    if (k < 0 || r[k].s > now) return;                       // nothing on right now
+    const cur = r[k], nxt = r[k + 1];
+    if (filter > 0 && !(cur.f & filter) && !(nxt && nxt.f & filter)) return;
+    items.push([c, cur, nxt]);
+  });
+  items.sort((a, b) => (FAV.has(b[0][0]) - FAV.has(a[0][0])));     // stable: favourites first
+  const list = $('list'); list.replaceChildren();
+  if (!items.length) list.appendChild(el('div', 'empty', filter === -1 && !FAV.size ? tr('noFav') : tr('none')));
+  for (const [c, cur, nxt] of items.slice(0, shown)) list.appendChild(row(c, cur, nxt, now));
+  $('more').hidden = items.length <= shown;
+}
+
+function row(c, cur, nxt, now) {
+  const fav = FAV.has(c[0]);
+  const cls = cur.f & F.SPORTS ? ' sports' : cur.f & F.NEWS ? ' news' : cur.f & F.MOVIE ? ' movie' : cur.f & F.KIDS ? ' kids' : '';
+  const r = el('div', 'row' + cls + (fav ? ' fav' : ''));
+  const lg = el('div', 'logo');
+  if (c[2]) { const im = el('img'); im.src = c[2]; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.replaceWith(el('div', 'badge', initials(c[0]))); lg.appendChild(im); }
+  else lg.appendChild(el('div', 'badge', initials(c[0])));
+  if (c[1]) lg.appendChild(el('div', 'num', c[1]));
+  r.appendChild(lg);
+  const info = el('div', 'info');
+  const chrow = el('div', 'chrow'); chrow.appendChild(el('span', 'chname', c[0]));
+  const st = el('button', 'star' + (fav ? ' on' : ''), fav ? '★' : '☆'); st.type = 'button';
+  st.title = fav ? tr('starDel') : tr('starAdd'); st.setAttribute('aria-label', st.title + ': ' + c[0]); st.setAttribute('aria-pressed', fav ? 'true' : 'false');
+  st.onclick = () => { if (FAV.has(c[0])) FAV.delete(c[0]); else FAV.add(c[0]); saveFav(); render(); };
+  const chName = (c[1] ? c[1] + ' ' : '') + c[0];
+  const rp = el('a', 'rep', '⚠️'); rp.title = tr('report'); rp.setAttribute('aria-label', tr('report') + ': ' + c[0]);
+  rp.href = 'mailto:support@epgtalk.com?subject=' + encodeURIComponent(tr('repSubj', { ch: chName })) + '&body=' + encodeURIComponent(tr('repBody', {
+    g: tr('g_' + G.key), ch: chName, t: cur.t, lt: fmtT.format(new Date(cur.s * 60000)) + '–' + fmtT.format(new Date(cur.e * 60000)),
+    ut: new Date(cur.s * 60000).toISOString().slice(0, 16).replace('T', ' ') }).replace(/\n/g, '\r\n'));
+  chrow.appendChild(rp); chrow.appendChild(st); info.appendChild(chrow);
+  const a = el('a', 'now'); a.href = 'tvguide.html?show=' + encodeURIComponent(searchable(cur.t));
+  const b = el('b', null, cur.t);
+  if (cur.f & F.LIVE) b.appendChild(el('span', 'tg l', tr('LIVE'))); else if (cur.f & F.NEW) b.appendChild(el('span', 'tg', tr('NEW')));
+  if (cur.f & F.CC) { const c = el('span', 'tg cc', 'CC'); c.title = 'Closed captions'; b.appendChild(c); }
+  a.appendChild(b);
+  const pct = Math.max(2, Math.min(100, (now - cur.s) / (cur.e - cur.s) * 100));
+  const pr = el('div', 'prog'); const fill = el('i'); fill.style.width = pct.toFixed(0) + '%'; pr.appendChild(fill); a.appendChild(pr);
+  const left = Math.max(1, Math.round(cur.e - now));
+  a.appendChild(el('div', 'meta', fmtT.format(new Date(cur.s * 60000)) + ' – ' + fmtT.format(new Date(cur.e * 60000)) + ' · ' +
+      (left >= 60 ? tr('leftH', { h: Math.floor(left / 60), m: left % 60 }) : tr('left', { m: left })) + (cur.sub ? ' · ' + cur.sub : '')));
+  info.appendChild(a);
+  if (nxt) {
+    const n = el('div', 'next'); n.append(tr('next') + ' ' + fmtT.format(new Date(nxt.s * 60000)) + ': ');
+    const na = el('a', null, nxt.t); na.href = 'tvguide.html?show=' + encodeURIComponent(searchable(nxt.t)); n.appendChild(na);
+    info.appendChild(n);
+  }
+  r.appendChild(info);
+  return r;
+}
+function searchable(t) { return t.replace(/[^\p{L}\p{N}' ]+/gu, ' ').replace(/\s+/g, ' ').trim().split(' ').slice(0, 5).join(' '); }
+
+function chips() {
+  const box = $('chips'); box.replaceChildren();
+  for (const [k, v] of FILTERS) {
+    const b = el('button', 'chip', tr(k)); b.type = 'button'; b.setAttribute('aria-pressed', filter === v ? 'true' : 'false');
+    b.onclick = () => { filter = v; shown = 80; chips(); render(); }; box.appendChild(b);
+  }
+}
+
+(async () => {
+  try {
+    IDX = await getJSON('tvguide/index.json');
+    const sel = $('guide');
+    for (const g of IDX.guides) sel.appendChild(new Option(tr('g_' + g.key), g.key));
+    let want = location.hash.slice(1);
+    try { want = want || localStorage.getItem('epgtalk-now-guide') || ''; } catch (e) {}
+    sel.value = IDX.guides.some(g => g.key === want) ? want : IDX.guides[0].key;
+    sel.onchange = () => { location.hash = sel.value; shown = 80; loadGuide(sel.value); };
+    chips();
+    await loadGuide(sel.value);
+  } catch (e) { $('list').replaceChildren(el('div', 'empty', tr('fail'))); }
+})();
+let qT; $('q').addEventListener('input', () => { clearTimeout(qT); qT = setTimeout(() => { shown = 80; render(); }, 150); });
+$('more').onclick = () => { shown += 80; render(); };
+setInterval(() => { if (!document.hidden) render(); }, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>
