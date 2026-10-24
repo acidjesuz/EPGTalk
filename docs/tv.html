@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<title>EPGTalk — TV Mode</title>
+<meta name="description" content="EPGTalk on the big screen: what's on now, tonight's picks and live sports — made for the TV remote (Firestick, Google TV, Shield, smart TV browsers).">
+<link rel="canonical" href="https://epgtalk.com/tv.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — TV Mode">
+<meta property="og:description" content="EPGTalk on the big screen: what's on now, tonight's picks and live sports — made for the TV remote (Firestick, Google TV, Shield, smart TV browsers).">
+<meta property="og:url" content="https://epgtalk.com/tv.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#060918; --card:#111827; --card2:#172036; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e; --purple:#a78bfa;
+          --text:#e2e8f0; --muted:#8fa0b3; --u: min(1vw, 1.8vh); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; overflow: hidden; }
+  body { font-size: calc(var(--u) * 1.6); }
+  header { display: flex; align-items: center; gap: calc(var(--u) * 2); padding: calc(var(--u) * 1.6) calc(var(--u) * 3.2) calc(var(--u) * 1); }
+  .logo { font-family: 'Orbitron', monospace; font-weight: 900; font-size: calc(var(--u) * 2.4); white-space: nowrap; }
+  .logo span { color: var(--accent); }
+  .tabs { display: flex; gap: calc(var(--u) * 1); flex: 1; flex-wrap: wrap; }
+  .tab, .chip, .btn { font: inherit; color: var(--text); background: rgba(255,255,255,0.06); border: 2px solid transparent; border-radius: 999px;
+         padding: calc(var(--u) * 0.6) calc(var(--u) * 1.6); cursor: pointer; white-space: nowrap; outline: none; }
+  .tab.on, .chip.on { background: rgba(0,191,255,0.22); color: #fff; }
+  .clock { font-family: 'Orbitron', monospace; font-size: calc(var(--u) * 2.2); color: var(--muted); }
+  .bar { display: flex; gap: calc(var(--u) * 0.8); flex-wrap: wrap; padding: 0 calc(var(--u) * 3.2) calc(var(--u) * 1); align-items: center; }
+  .askq { font: inherit; font-size: calc(var(--u) * 2); color: #fff; background: rgba(255,255,255,0.08); border: 3px solid transparent; border-radius: 999px; padding: calc(var(--u) * 0.6) calc(var(--u) * 2); width: calc(var(--u) * 50); outline: none; }
+  .askq:focus { border-color: var(--accent); }
+  .bar .hint { color: var(--muted); font-size: calc(var(--u) * 1.25); margin-left: auto; }
+  #view { position: absolute; left: 0; right: 0; bottom: 0; overflow-y: auto; padding: calc(var(--u) * 0.8) calc(var(--u) * 3.2) calc(var(--u) * 6); scroll-behavior: smooth; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--u) * 26), 1fr)); gap: calc(var(--u) * 1.4); }
+  .card { position: relative; display: flex; gap: calc(var(--u) * 1.2); background: var(--card); border: 3px solid transparent; border-radius: calc(var(--u) * 1.2);
+          padding: calc(var(--u) * 1.2); min-height: calc(var(--u) * 11); outline: none; transition: transform .12s, border-color .12s, box-shadow .12s; cursor: pointer; }
+  [data-f]:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 4px rgba(0,191,255,0.25), 0 10px 30px rgba(0,0,0,0.5); transform: scale(1.04); z-index: 1; background-color: var(--card2); }
+  .tab[data-f]:focus, .chip[data-f]:focus, .btn[data-f]:focus { transform: scale(1.08); }
+  .logo-box { flex: none; width: calc(var(--u) * 7); height: calc(var(--u) * 7); border-radius: calc(var(--u) * 0.8); background: rgba(255,255,255,0.05);
+              display: grid; place-items: center; overflow: hidden; font-weight: 700; color: var(--accent); font-size: calc(var(--u) * 1.6); }
+  .logo-box img { width: 90%; height: 90%; object-fit: contain; }
+  .poster { flex: none; width: calc(var(--u) * 8); height: calc(var(--u) * 11.5); border-radius: calc(var(--u) * 0.8); object-fit: cover; background: rgba(255,255,255,0.05); }
+  .info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: calc(var(--u) * 0.3); }
+  .ch { color: var(--muted); font-size: calc(var(--u) * 1.25); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ch b { color: var(--accent); margin-right: calc(var(--u) * 0.5); }
+  .ti { font-weight: 700; font-size: calc(var(--u) * 1.8); line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .sb { color: var(--muted); font-size: calc(var(--u) * 1.3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .prog { height: calc(var(--u) * 0.5); border-radius: 99px; background: rgba(255,255,255,0.08); overflow: hidden; margin-top: auto; }
+  .prog i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); }
+  .nx { color: var(--muted); font-size: calc(var(--u) * 1.2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tag { display: inline-block; font-size: calc(var(--u) * 1); font-weight: 700; border-radius: 6px; padding: 0 calc(var(--u) * 0.5); margin-right: calc(var(--u) * 0.4); vertical-align: middle; }
+  .tag.live { background: var(--red); color: #fff; } .tag.new { background: var(--green); color: var(--bg); } .tag.fav { background: var(--amber); color: var(--bg); } .tag.cc { background: transparent; color: var(--muted); border: 1px solid var(--muted); }
+  .when { color: var(--accent); font-weight: 700; font-size: calc(var(--u) * 1.3); }
+  .when.now { color: var(--red); }
+  .score { display: grid; grid-template-columns: calc(var(--u) * 3.2) 1fr auto; gap: calc(var(--u) * 0.4) calc(var(--u) * 0.8); align-items: center; font-size: calc(var(--u) * 1.6); }
+  .score img { width: calc(var(--u) * 3); height: calc(var(--u) * 3); object-fit: contain; }
+  .score .s { font-weight: 900; font-family: 'Orbitron', monospace; }
+  h2 { font-family: 'Orbitron', monospace; font-size: calc(var(--u) * 1.8); margin: calc(var(--u) * 2) 0 calc(var(--u) * 1); }
+  .msg { color: var(--muted); padding: calc(var(--u) * 4); text-align: center; font-size: calc(var(--u) * 1.8); }
+  #ov { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(3,5,14,0.88); display: none; align-items: center; justify-content: center; z-index: 5; }
+  #ov.open { display: flex; }
+  .ov { width: min(90vw, calc(var(--u) * 90)); background: var(--card); border-radius: calc(var(--u) * 1.6); padding: calc(var(--u) * 3); border: 2px solid rgba(0,191,255,0.3); }
+  .ov h3 { margin: 0 0 calc(var(--u) * 0.6); font-size: calc(var(--u) * 2.6); }
+  .ov .row { display: flex; gap: calc(var(--u) * 2); padding: calc(var(--u) * 0.8) 0; border-top: 1px solid rgba(255,255,255,0.07); font-size: calc(var(--u) * 1.6); }
+  .ov .row span:first-child { color: var(--accent); min-width: calc(var(--u) * 14); font-weight: 700; }
+  .ov .acts { display: flex; gap: calc(var(--u) * 1); margin-top: calc(var(--u) * 2); }
+</style>
+</head>
+<body data-no-news>
+<header>
+  <div class="logo">📡 EPG<span>Talk</span></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="clock" id="clock"></div>
+</header>
+<div class="bar" id="bar"></div>
+<div id="view"></div>
+<div id="ov"><div class="ov" id="ovBody"></div></div>
+<script>
+(function () {
+// older TV browsers without CSS min(): work out the size unit in JavaScript instead
+if (document.documentElement.className.indexOf('no-cssmath') >= 0) {
+  var fixU = function () { document.documentElement.style.setProperty('--u', Math.min(window.innerWidth / 100, window.innerHeight * 0.018) + 'px'); };
+  fixU(); window.addEventListener('resize', fixU);
+}
+var T = {
+  en: { now: '📺 On Now', tonight: '🌙 Tonight', sports: '🏆 Live Sports', all: 'All', mine: '⭐ My channels', sp: 'Sports', mv: 'Movies', nw: 'News', kd: 'Kids',
+        hint: '◀ ▶ ▲ ▼ move · OK select · Back close', next: 'Next', loading: 'Loading…', none: 'Nothing to show here right now.',
+        more: 'Show more ({n} left)', live: 'LIVE', newT: 'NEW', fav: '★', addFav: '☆ Add to my channels', delFav: '★ Remove from my channels', close: 'Close',
+        guide: 'Guide', inN: 'in {n} min', exit: '⬅ Website', lang: 'Español', noFav: 'No favourite channels yet — open a channel and choose "Add to my channels".',
+        later: 'Later today', liveNow: 'Live now', final: 'Final', ota: 'Free with antenna', watch: '▶ Watch free on {s}', ask: '🔎 Ask', askPh: 'Team, show or movie…', askGo: 'Search', today: 'Today', tomorrow: 'Tomorrow',
+        askHint: 'Type or say a team, show or movie — then press OK.', askNone: 'Nothing found for “{q}”.' },
+  es: { now: '📺 Ahora', tonight: '🌙 Esta noche', sports: '🏆 Deportes en vivo', all: 'Todo', mine: '⭐ Mis canales', sp: 'Deportes', mv: 'Películas', nw: 'Noticias', kd: 'Niños',
+        hint: '◀ ▶ ▲ ▼ mover · OK elegir · Atrás cerrar', next: 'Después', loading: 'Cargando…', none: 'No hay nada aquí por ahora.',
+        more: 'Ver más ({n} restantes)', live: 'EN VIVO', newT: 'NUEVO', fav: '★', addFav: '☆ Agregar a mis canales', delFav: '★ Quitar de mis canales', close: 'Cerrar',
+        guide: 'Guía', inN: 'en {n} min', exit: '⬅ Sitio web', lang: 'English', noFav: 'Aún no tienes canales favoritos — abre un canal y elige "Agregar a mis canales".',
+        later: 'Más tarde hoy', liveNow: 'En vivo ahora', final: 'Final', ota: 'Gratis con antena', watch: '▶ Ver gratis en {s}', ask: '🔎 Pregunta', askPh: 'Equipo, programa o película…', askGo: 'Buscar', today: 'Hoy', tomorrow: 'Mañana',
+        askHint: 'Escribe o di un equipo, programa o película — y presiona OK.', askNone: 'No encontramos “{q}”.' },
+};
+var LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+function tr(k, v) { var s = (T[LANG][k] != null ? T[LANG][k] : T.en[k]) || k; return v ? s.replace(/\{(\w+)\}/g, function (_, x) { return v[x] != null ? v[x] : ''; }) : s; }
+document.documentElement.lang = LANG;
+function $(id) { return document.getElementById(id); }
+function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+var fmt = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { hour: 'numeric', minute: '2-digit' });
+
+var FAV = [];
+try { FAV = JSON.parse(store('epgtalk-fav-ch') || '[]'); } catch (e) {}
+function isFav(n) { return FAV.indexOf(n) >= 0; }
+function toggleFav(n) { var i = FAV.indexOf(n); if (i >= 0) FAV.splice(i, 1); else FAV.push(n); store('epgtalk-fav-ch', JSON.stringify(FAV)); }
+
+var GUIDES = [['combined', 'Combined'], ['us', 'US'], ['uk', 'UK'], ['latino', 'Latino'], ['uslocal', 'US Local'], ['sports', 'Sports'], ['freetv', '🆓 Free TV']];
+var S = { tab: store('epgtalk-tv-tab') || 'now', guide: store('epgtalk-tv-guide') || 'combined', filter: 'all', shown: 48, data: {}, picks: null, games: null };
+
+// ── layout ──────────────────────────────────────────────────────────────────
+function sizeView() { var h = document.querySelector('header').offsetHeight + $('bar').offsetHeight; $('view').style.top = h + 'px'; }
+function tabs() {
+  var box = $('tabs'); box.innerHTML = '';
+  [['now', tr('now')], ['tonight', tr('tonight')], ['sports', tr('sports')], ['ask', tr('ask')]].forEach(function (t) {
+    var b = el('button', 'tab' + (S.tab === t[0] ? ' on' : ''), t[1]); b.setAttribute('data-f', ''); b.setAttribute('data-tab', t[0]);
+    b.onclick = function () { S.tab = t[0]; store('epgtalk-tv-tab', t[0]); S.shown = 48; draw(true); };
+    box.appendChild(b);
+  });
+  var lb = el('button', 'tab', tr('lang')); lb.setAttribute('data-f', ''); lb.className += ' notranslate'; lb.setAttribute('translate', 'no');
+  lb.onclick = function () { store('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); location.reload(); };
+  box.appendChild(lb);
+  var ex = el('button', 'tab', tr('exit')); ex.setAttribute('data-f', ''); ex.onclick = function () { location.href = 'index.html'; };
+  box.appendChild(ex);
+}
+function bar() {
+  var box = $('bar'); box.innerHTML = '';
+  if (S.tab === 'ask') {
+    var inp = el('input', 'askq'); inp.type = 'search'; inp.id = 'askq'; inp.setAttribute('data-f', ''); inp.placeholder = tr('askPh');
+    inp.setAttribute('enterkeyhint', 'search'); inp.value = S.askQ || '';
+    var go = el('button', 'chip', tr('askGo')); go.setAttribute('data-f', ''); go.onclick = function () { S.askQ = inp.value; drawAsk($('view')); };
+    box.appendChild(inp); box.appendChild(go);
+  }
+  if (S.tab === 'now') {
+    GUIDES.forEach(function (g) {
+      var b = el('button', 'chip' + (S.guide === g[0] ? ' on' : ''), g[1]); b.setAttribute('data-f', '');
+      b.onclick = function () { S.guide = g[0]; store('epgtalk-tv-guide', g[0]); S.shown = 48; draw(); };
+      box.appendChild(b);
+    });
+    box.appendChild(el('span', null, '·'));
+    [['all', tr('all')], ['mine', tr('mine')], ['sports', tr('sp')], ['movie', tr('mv')], ['news', tr('nw')], ['kids', tr('kd')]].forEach(function (f) {
+      var b = el('button', 'chip' + (S.filter === f[0] ? ' on' : ''), f[1]); b.setAttribute('data-f', '');
+      b.onclick = function () { S.filter = f[0]; S.shown = 48; draw(); };
+      box.appendChild(b);
+    });
+  }
+  box.appendChild(el('span', 'hint', tr('hint')));
+  sizeView();
+}
+
+// ── data ────────────────────────────────────────────────────────────────────
+function getJSON(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+function nowData() {
+  if (S.data[S.guide]) return Promise.resolve(S.data[S.guide]);
+  return getJSON('api/now/' + S.guide + '.json').then(function (j) { S.data[S.guide] = j; return j; });
+}
+
+// ── views ───────────────────────────────────────────────────────────────────
+function logoBox(name, logo) {
+  var b = el('div', 'logo-box');
+  if (logo) { var im = el('img'); im.src = logo; im.alt = ''; im.referrerPolicy = 'no-referrer'; im.onerror = function () { b.textContent = initials(name); }; b.appendChild(im); }
+  else b.textContent = initials(name);
+  return b;
+}
+function initials(n) { return String(n).replace(/[^A-Za-z0-9 ]/g, '').split(' ').filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase() || '·'; }
+function cur(ch, t) { for (var i = 0; i < ch.programmes.length; i++) { var p = ch.programmes[i]; if (p.start <= t && p.stop > t) return [p, ch.programmes[i + 1]]; } var n = ch.programmes.filter(function (p) { return p.start > t; })[0]; return [null, n]; }
+
+function drawNow(view) {
+  view.appendChild(el('div', 'msg', tr('loading')));
+  nowData().then(function (j) {
+    var t = Date.now() / 1000, list = [];
+    j.channels.forEach(function (ch) {
+      var cn = cur(ch, t), p = cn[0];
+      if (!p && !cn[1]) return;
+      if (S.filter === 'mine' && !isFav(ch.name)) return;
+      if (['sports', 'movie', 'news', 'kids'].indexOf(S.filter) >= 0 && !(p && p.type === S.filter)) return;
+      list.push([ch, p, cn[1]]);
+    });
+    list.sort(function (a, b) { return isFav(b[0].name) - isFav(a[0].name); });
+    view.innerHTML = '';
+    if (!list.length) { view.appendChild(el('div', 'msg', S.filter === 'mine' ? tr('noFav') : tr('none'))); return; }
+    var grid = el('div', 'grid');
+    list.slice(0, S.shown).forEach(function (x) {
+      var ch = x[0], p = x[1], n = x[2];
+      var c = el('div', 'card'); c.setAttribute('data-f', ''); c.tabIndex = 0;
+      c.appendChild(logoBox(ch.name, ch.logo));
+      var info = el('div', 'info');
+      var h = el('div', 'ch'); if (ch.number) h.appendChild(el('b', null, ch.number)); h.append((isFav(ch.name) ? '★ ' : '') + ch.name); info.appendChild(h);
+      var ti = el('div', 'ti');
+      if (p && p.live) ti.appendChild(el('span', 'tag live', tr('live'))); else if (p && p.new) ti.appendChild(el('span', 'tag new', tr('newT')));
+      if (p && p.cc) ti.appendChild(el('span', 'tag cc', 'CC'));
+      ti.append(p ? p.title : '—'); info.appendChild(ti);
+      if (p && p.subtitle) info.appendChild(el('div', 'sb', p.subtitle));
+      if (p) { var pr = el('div', 'prog'), i = el('i'); i.style.width = Math.min(100, Math.max(2, (t - p.start) / (p.stop - p.start) * 100)) + '%'; pr.appendChild(i); info.appendChild(pr); }
+      if (n) info.appendChild(el('div', 'nx', tr('next') + ' ' + fmt.format(n.start * 1000) + ' · ' + n.title));
+      c.appendChild(info);
+      c.onclick = function () { detail(ch); };
+      grid.appendChild(c);
+    });
+    view.appendChild(grid);
+    if (list.length > S.shown) {
+      var m = el('button', 'btn', tr('more', { n: list.length - S.shown })); m.setAttribute('data-f', ''); m.style.marginTop = '2vh';
+      m.onclick = function () { S.shown += 48; var y = $('view').scrollTop; draw(); $('view').scrollTop = y; focusNth(S.shown - 48); };
+      view.appendChild(m);
+    }
+    restoreFocus();
+  }).catch(function () { view.innerHTML = ''; view.appendChild(el('div', 'msg', tr('none'))); });
+}
+
+function detail(ch) {
+  var o = $('ovBody'); o.innerHTML = '';
+  o.appendChild(el('h3', null, ch.name));
+  var t = Date.now() / 1000;
+  ch.programmes.filter(function (p) { return p.stop > t; }).slice(0, 6).forEach(function (p) {
+    var r = el('div', 'row'); r.appendChild(el('span', null, fmt.format(p.start * 1000) + ' – ' + fmt.format(p.stop * 1000)));
+    r.appendChild(el('span', null, p.title + (p.subtitle ? ' — ' + p.subtitle : '') + (p.episode ? ' (' + p.episode + ')' : ''))); o.appendChild(r);
+  });
+  var a = el('div', 'acts');
+  var f = el('button', 'btn', isFav(ch.name) ? tr('delFav') : tr('addFav')); f.setAttribute('data-f', '');
+  f.onclick = function () { toggleFav(ch.name); closeOv(); draw(); };
+  var c = el('button', 'btn', tr('close')); c.setAttribute('data-f', ''); c.onclick = closeOv;
+  a.appendChild(f);
+  if (ch.watch) {                                           // Free TV: open the service's own free player
+    var svc = (ch.name.match(/\(([^)]+)\)$/) || [])[1] || '';
+    var w = el('button', 'btn', tr('watch', { s: svc })); w.setAttribute('data-f', ''); w.onclick = function () { location.href = ch.watch; };
+    a.appendChild(w);
+  }
+  a.appendChild(c); o.appendChild(a);
+  S.lastFocus = document.activeElement;
+  $('ov').className = 'open'; f.focus();
+}
+function closeOv() { $('ov').className = ''; if (S.lastFocus && document.body.contains(S.lastFocus)) S.lastFocus.focus(); }
+
+function drawTonight(view) {
+  view.appendChild(el('div', 'msg', tr('loading')));
+  (S.picks ? Promise.resolve(S.picks) : getJSON('api/tonight.json').then(function (j) { S.picks = j.picks; return j.picks; })).then(function (picks) {
+    var t = Date.now() / 1000;
+    view.innerHTML = '';
+    var groups = [['sports', '🏆'], ['premiere', '🎬'], ['new_episode', '🆕'], ['movie', '🍿']];
+    var any = false;
+    groups.forEach(function (g) {
+      var L = picks.filter(function (p) { return p.type === g[0] && p.stop > t && p.start < t + 14 * 3600; }).slice(0, g[0] === 'sports' ? 24 : 16);
+      if (!L.length) return;
+      any = true;
+      view.appendChild(el('h2', null, g[1]));
+      var grid = el('div', 'grid');
+      L.forEach(function (p) {
+        var c = el('div', 'card'); c.setAttribute('data-f', ''); c.tabIndex = 0;
+        if (p.image) { var im = el('img', 'poster'); im.src = p.image; im.alt = ''; im.referrerPolicy = 'no-referrer'; im.onerror = function () { im.remove(); }; c.appendChild(im); }
+        var info = el('div', 'info');
+        var live = p.start <= t;
+        info.appendChild(el('div', 'when' + (live ? ' now' : ''), live ? '● ' + tr('live') : fmt.format(p.start * 1000) + ' · ' + tr('inN', { n: Math.round((p.start - t) / 60) })));
+        info.appendChild(el('div', 'ti', p.title));
+        if (p.subtitle) info.appendChild(el('div', 'sb', p.subtitle));
+        var where = p.tv || (p.channels || []).join(', ');
+        if (where) info.appendChild(el('div', 'nx', '📺 ' + where));
+        c.appendChild(info);
+        grid.appendChild(c);
+      });
+      view.appendChild(grid);
+    });
+    if (!any) view.appendChild(el('div', 'msg', tr('none')));
+    restoreFocus();
+  }).catch(function () { view.innerHTML = ''; view.appendChild(el('div', 'msg', tr('none'))); });
+}
+
+var SPORTS = [['football/nfl', 'NFL'], ['basketball/nba', 'NBA'], ['baseball/mlb', 'MLB'], ['hockey/nhl', 'NHL'], ['basketball/wnba', 'WNBA'],
+              ['football/college-football', 'NCAAF', 'groups=80'], ['soccer/usa.1', 'MLS'], ['soccer/eng.1', 'Premier League'], ['soccer/esp.1', 'LaLiga'],
+              ['soccer/mex.1', 'Liga MX'], ['soccer/uefa.champions', 'Champions League']];
+function ymd(d) { return d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2); }
+function drawSports(view) {
+  view.appendChild(el('div', 'msg', tr('loading')));
+  var q = '?dates=' + ymd(new Date()) + '&limit=200' + (LANG === 'es' ? '&lang=es&region=us' : '');
+  Promise.all(SPORTS.map(function (s) {
+    return getJSON('https://site.api.espn.com/apis/site/v2/sports/' + s[0] + '/scoreboard' + q + (s[2] ? '&' + s[2] : ''))
+      .then(function (j) { return (j.events || []).map(function (e) { return [s[1], e]; }); }).catch(function () { return []; });
+  })).then(function (all) {
+    var evs = [].concat.apply([], all);
+    view.innerHTML = '';
+    var live = [], later = [], fin = [];
+    evs.forEach(function (x) { var st = (((x[1].competitions || [{}])[0].status || {}).type || {}).state; (st === 'in' ? live : st === 'pre' ? later : fin).push(x); });
+    var by = function (a, b) { return new Date(a[1].date) - new Date(b[1].date); };
+    [[tr('liveNow'), live.sort(by)], [tr('later'), later.sort(by)], [tr('final'), fin.sort(by).reverse().slice(0, 12)]].forEach(function (sec) {
+      if (!sec[1].length) return;
+      view.appendChild(el('h2', null, sec[0]));
+      var grid = el('div', 'grid');
+      sec[1].forEach(function (x) {
+        var e = x[1], c0 = (e.competitions || [{}])[0], st = (c0.status || {}).type || {};
+        var c = el('div', 'card'); c.setAttribute('data-f', ''); c.tabIndex = 0;
+        var info = el('div', 'info');
+        info.appendChild(el('div', 'when' + (st.state === 'in' ? ' now' : ''), x[0] + ' · ' + (st.state === 'pre' ? fmt.format(new Date(c0.date || e.date)) : (st.shortDetail || ''))));
+        var sc = el('div', 'score');
+        var cs = c0.competitors || [];
+        var order = /MLS|League|Liga/.test(x[0]) ? cs : cs.slice().sort(function (a, b) { return a.homeAway === 'away' ? -1 : 1; });
+        order.forEach(function (k) {
+          var tm = k.team || {};
+          var im = el('img'); im.src = tm.logo || ''; im.alt = ''; im.referrerPolicy = 'no-referrer'; im.onerror = function () { im.style.visibility = 'hidden'; };
+          sc.appendChild(im); sc.appendChild(el('span', null, tm.shortDisplayName || tm.displayName || '?'));
+          sc.appendChild(el('span', 's', st.state === 'pre' ? '' : (k.score != null ? (typeof k.score === 'object' ? k.score.displayValue : k.score) : '')));
+        });
+        info.appendChild(sc);
+        var nets = []; (c0.broadcasts || []).forEach(function (b) { (b.names || []).forEach(function (n) { if (nets.indexOf(n) < 0) nets.push(n); }); });
+        if (nets.length) info.appendChild(el('div', 'nx', '📺 ' + nets.slice(0, 3).join(', ') + (nets.some(function (n) { return /^(abc|cbs|fox|nbc|cw|pbs|univision|unimas|telemundo|ion)$/i.test(n); }) ? '  ·  📡 ' + tr('ota') : '')));
+        c.appendChild(info); grid.appendChild(c);
+      });
+      view.appendChild(grid);
+    });
+    if (!evs.length) view.appendChild(el('div', 'msg', tr('none')));
+    restoreFocus();
+  });
+}
+
+// ── Ask EPGTalk (search with the remote's keyboard or mic) ──────────────────
+function whenTxt(ms) {
+  var d = new Date(ms), n = new Date();
+  var day = d.toDateString() === n.toDateString() ? tr('today') : d.toDateString() === new Date(Date.now() + 86400000).toDateString() ? tr('tomorrow') : d.toLocaleDateString(LANG === 'es' ? 'es' : undefined, { weekday: 'short' });
+  return day + ' ' + fmt.format(d);
+}
+function drawAsk(view) {
+  view.innerHTML = '';
+  var q = (S.askQ || '').trim();
+  if (!q) { view.appendChild(el('div', 'msg', tr('askHint'))); setTimeout(function () { var i = $('askq'); if (i) i.focus(); }, 50); return; }
+  view.appendChild(el('div', 'msg', tr('loading')));
+  window.EPGAsk.search(q, LANG).then(function (r) {
+    view.innerHTML = '';
+    var grid = el('div', 'grid'), n = 0;
+    r.teams.forEach(function (t) {
+      t.next.slice(0, 1).forEach(function (g) {
+        var c = el('div', 'card'); c.setAttribute('data-f', ''); c.tabIndex = 0;
+        if (t.logo) { var im = el('img', 'poster'); im.src = t.logo; im.alt = ''; im.style.objectFit = 'contain'; im.referrerPolicy = 'no-referrer'; c.appendChild(im); }
+        var info = el('div', 'info');
+        info.appendChild(el('div', 'when' + (g.state === 'in' ? ' now' : ''), g.state === 'in' ? '● ' + tr('live') + ' · ' + g.detail : whenTxt(g.start)));
+        info.appendChild(el('div', 'ti', g.name));
+        info.appendChild(el('div', 'sb', t.name + ' · ' + t.league));
+        if (g.nets.length) info.appendChild(el('div', 'nx', '📺 ' + g.nets.join(', ') + (g.nets.some(function (x) { return /^(abc|cbs|fox|nbc|cw|pbs|univision|unimas|telemundo|ion)$/i.test(x); }) ? '  ·  📡 ' + tr('ota') : '')));
+        c.appendChild(info); grid.appendChild(c); n++;
+      });
+    });
+    r.shows.slice(0, 18).forEach(function (g) {
+      var a = g.airings[0], on = a.start <= Date.now();
+      var c = el('div', 'card'); c.setAttribute('data-f', ''); c.tabIndex = 0;
+      var info = el('div', 'info');
+      info.appendChild(el('div', 'when' + (on ? ' now' : ''), on ? '● ' + tr('live') : whenTxt(a.start)));
+      var ti = el('div', 'ti'); ti.append(g.title); if (a.flags & 256) ti.appendChild(el('span', 'tag cc', 'CC')); info.appendChild(ti);
+      if (a.sub) info.appendChild(el('div', 'sb', a.sub));
+      info.appendChild(el('div', 'nx', '📺 ' + a.channel + (g.airings.length > 1 ? '  ·  +' + (g.airings.length - 1) : '')));
+      c.appendChild(info);
+      c.onclick = function () {
+        var o = $('ovBody'); o.innerHTML = ''; o.appendChild(el('h3', null, g.title));
+        g.airings.slice(0, 8).forEach(function (x) { var row = el('div', 'row'); row.appendChild(el('span', null, whenTxt(x.start))); row.appendChild(el('span', null, x.channel + (x.sub ? ' — ' + x.sub : ''))); o.appendChild(row); });
+        var acts = el('div', 'acts');
+        if (a.watch) { var w = el('button', 'btn', tr('watch', { s: (a.channel.match(/\(([^)]+)\)$/) || [])[1] || '' })); w.setAttribute('data-f', ''); w.onclick = function () { location.href = a.watch; }; acts.appendChild(w); }
+        var cl = el('button', 'btn', tr('close')); cl.setAttribute('data-f', ''); cl.onclick = closeOv; acts.appendChild(cl);
+        o.appendChild(acts); S.lastFocus = c; $('ov').className = 'open'; acts.firstChild.focus();
+      };
+      grid.appendChild(c); n++;
+    });
+    view.appendChild(n ? grid : el('div', 'msg', tr('askNone', { q: q })));
+  });
+}
+
+function draw(focusTab) {
+  tabs(); bar();
+  var view = $('view'); view.innerHTML = ''; view.scrollTop = 0;
+  S.wantFocus = focusTab ? 'tab' : 'first';
+  if (S.tab === 'tonight') drawTonight(view); else if (S.tab === 'sports') drawSports(view); else if (S.tab === 'ask') drawAsk(view); else drawNow(view);
+}
+function restoreFocus() {
+  if (document.activeElement && document.activeElement !== document.body && document.body.contains(document.activeElement)) return;
+  var t = S.wantFocus === 'tab' ? document.querySelector('.tab.on') : document.querySelector('#view [data-f]') || document.querySelector('.tab.on');
+  if (t) t.focus({ preventScroll: true });
+}
+function focusNth(n) { var c = document.querySelectorAll('#view .card'); if (c[n]) c[n].focus(); }
+
+// ── remote control: arrow keys move to the nearest item in that direction ──
+function focusables() {
+  var scope = $('ov').className === 'open' ? $('ov') : document;
+  return [].slice.call(scope.querySelectorAll('[data-f]')).filter(function (e) { return e.offsetParent !== null; });
+}
+function move(dir) {
+  var all = focusables(), a = document.activeElement;
+  if (all.indexOf(a) < 0) { if (all[0]) all[0].focus(); return; }
+  var r = a.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2, best = null, bd = Infinity;
+  all.forEach(function (e) {
+    if (e === a) return;
+    var b = e.getBoundingClientRect(), x = b.left + b.width / 2, y = b.top + b.height / 2, dx = x - cx, dy = y - cy;
+    var ok = dir === 'left' ? dx < -4 : dir === 'right' ? dx > 4 : dir === 'up' ? dy < -4 : dy > 4;
+    if (!ok) return;
+    var main = dir === 'left' || dir === 'right' ? Math.abs(dx) : Math.abs(dy), side = dir === 'left' || dir === 'right' ? Math.abs(dy) : Math.abs(dx);
+    var d = main + side * 2.5;
+    if (d < bd) { bd = d; best = e; }
+  });
+  if (best) { best.focus({ preventScroll: true }); best.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+}
+document.addEventListener('keydown', function (e) {
+  var k = e.key, c = e.keyCode;
+  var dir = k === 'ArrowLeft' || c === 37 ? 'left' : k === 'ArrowRight' || c === 39 ? 'right' : k === 'ArrowUp' || c === 38 ? 'up' : k === 'ArrowDown' || c === 40 ? 'down' : null;
+  var inAsk = document.activeElement && document.activeElement.id === 'askq';
+  if (dir && inAsk && (dir === 'left' || dir === 'right')) return;     // let ◀ ▶ move the text cursor
+  if (dir) { e.preventDefault(); move(dir); return; }
+  if ((k === 'Enter' || c === 13 || c === 23) && document.activeElement && document.activeElement.id === 'askq') { e.preventDefault(); S.askQ = document.activeElement.value; drawAsk($('view')); return; }
+  if (k === 'Enter' || c === 13 || c === 23) { if (document.activeElement && document.activeElement.click) { e.preventDefault(); document.activeElement.click(); } return; }
+  if (k === 'Escape' || k === 'Backspace' || k === 'GoBack' || k === 'BrowserBack' || c === 4 || c === 461 || c === 10009) {
+    if ($('ov').className === 'open') { e.preventDefault(); closeOv(); }
+  }
+});
+$('ov').addEventListener('click', function (e) { if (e.target === $('ov')) closeOv(); });
+
+function clock() { $('clock').textContent = fmt.format(new Date()); }
+clock(); setInterval(clock, 15000);
+setInterval(function () { if (!document.hidden && $('ov').className !== 'open' && S.tab !== 'tonight') { var f = document.activeElement, i = [].indexOf.call(document.querySelectorAll('#view [data-f]'), f); draw(); if (i >= 0) setTimeout(function () { focusNth(i); }, 1500); } }, 120000);
+window.addEventListener('resize', sizeView);
+draw(true);
+})();
+</script>
+<script src="ask.js"></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

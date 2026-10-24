@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>EPGTalk — Halloween, Christmas & Holiday Movies on TV</title>
+<meta name="description" content="Halloween, Christmas, New Year and Valentine's on TV: every themed movie and special airing this week across all EPGTalk guides — with reminders and free-to-watch options.">
+<link rel="canonical" href="https://epgtalk.com/season.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Halloween, Christmas &amp; Holiday Movies on TV">
+<meta property="og:description" content="Halloween, Christmas, New Year and Valentine's on TV: every themed movie and special airing this week across all EPGTalk guides — with reminders and free-to-watch options.">
+<meta property="og:url" content="https://epgtalk.com/season.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=Creepster&family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); --s1:#00BFFF; --s2:#7c3aed; --hero-font:'Orbitron', monospace; }
+  body.halloween { --s1:#ff7a18; --s2:#8b5cf6; --hero-font:'Creepster', 'Orbitron', cursive; }
+  body.christmas { --s1:#ef4444; --s2:#22c55e; --hero-font:'Mountains of Christmas', 'Orbitron', cursive; }
+  body.newyear { --s1:#fbbf24; --s2:#a78bfa; }
+  body.valentines { --s1:#f472b6; --s2:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 3; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  .hero { text-align: center; padding: 42px 16px 26px; background: radial-gradient(ellipse at top, color-mix(in srgb, var(--s1) 28%, transparent), transparent 70%); }
+  .hero h1 { font-family: var(--hero-font); font-size: 2.4rem; font-size: clamp(2.4rem, 7vw, 4.4rem); margin: 0; color: var(--s1); letter-spacing: 0.02em;
+             text-shadow: 0 0 24px color-mix(in srgb, var(--s1) 55%, transparent); line-height: 1.1; }
+  .hero p { color: var(--muted); margin: 10px 0 0; }
+  .count { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--s1); border: 1px solid var(--s1); border-radius: 999px; padding: 4px 14px; }
+  main { max-width: 1200px; margin: 0 auto; padding: 8px 16px 64px; padding: 8px clamp(16px, 4vw, 32px) 64px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 4px 0 10px; }
+  .jump a { color: var(--text); text-decoration: none; border: 1px solid color-mix(in srgb, var(--s1) 45%, transparent); border-radius: 999px; padding: 6px 14px; font-size: 0.9rem; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1.05rem; margin: 34px 0 12px; color: #fff; scroll-margin-top: 80px; }
+  h2 small { color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .card { display: flex; gap: 12px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-left: 3px solid var(--s1); border-radius: 12px; padding: 12px; }
+  .card img, .card .ph { width: 76px; height: 108px; object-fit: cover; border-radius: 8px; flex: none; background: color-mix(in srgb, var(--s2) 18%, transparent); }
+  .card .ph { display: grid; place-items: center; font-size: 1.8rem; }
+  .info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+  .when { color: var(--s1); font-size: 0.82rem; font-weight: 700; }
+  .when.now { color: var(--red); }
+  .ti { font-weight: 700; line-height: 1.25; color: #fff; }
+  .ti small { color: var(--muted); font-weight: 400; }
+  .ch { color: var(--green); font-size: 0.82rem; }
+  .ds { color: var(--muted); font-size: 0.8rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .also { color: var(--muted); font-size: 0.76rem; }
+  .acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .acts a, .acts button { font: inherit; font-size: 0.76rem; color: var(--text); background: transparent; border: 1px solid var(--border); border-radius: 7px; padding: 4px 8px; cursor: pointer; text-decoration: none; }
+  .acts .free { background: var(--green); color: var(--bg-deep); border-color: var(--green); font-weight: 700; }
+  .more { display: block; margin: 12px auto 0; font: inherit; color: var(--s1); background: transparent; border: 1px solid var(--s1); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+  .off { text-align: center; padding: 40px 16px; color: var(--muted); line-height: 1.7; }
+  .off b { color: #fff; font-size: 1.3rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<div class="hero"><h1 id="h1">EPGTalk</h1><p id="sub"></p><span class="count" id="count" hidden></span></div>
+<main><div class="jump" id="jump"></div><div id="out"><p class="off">…</p></div></main>
+<footer id="foot"></footer>
+<script src="ask.js"></script>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', sub: 'Every themed movie and special on TV in the next 7 days — across all EPGTalk guides.', titles: '{n} titles this week',
+        tonight: '🌙 On tonight', now: 'On now', today: 'Today', tomorrow: 'Tomorrow', remind: '📅 Remind me', open: '📺 TV Guide', free: '▶ Watch free',
+        also: 'Also: {x}', more: 'Show all {n}', off: 'No holiday on TV right now.', next: 'Next up: {t} — from {d}', fail: 'Sorry — the seasonal list could not be loaded.',
+        foot: 'Updated a few times a day from the EPGTalk guides. Times are in your time zone.' },
+  es: { home: 'Inicio', sub: 'Todas las películas y especiales de temporada en la TV de los próximos 7 días — en todas las guías de EPGTalk.', titles: '{n} títulos esta semana',
+        tonight: '🌙 Esta noche', now: 'Ahora', today: 'Hoy', tomorrow: 'Mañana', remind: '📅 Recordarme', open: '📺 Guía de TV', free: '▶ Ver gratis',
+        also: 'También: {x}', more: 'Ver los {n}', off: 'No hay temporada especial en la TV por ahora.', next: 'Próximamente: {t} — desde el {d}', fail: 'Lo sentimos — no se pudo cargar la lista.',
+        foot: 'Se actualiza varias veces al día con las guías de EPGTalk. Horarios en tu zona horaria.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => (T[LANG][k] || T.en[k]).replace(/\{(\w+)\}/g, (_, n) => (v && v[n] != null ? v[n] : ''));
+document.documentElement.lang = LANG;
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+for (const e of document.querySelectorAll('[data-i]')) e.textContent = tr(e.dataset.i);
+$('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+$('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+$('foot').textContent = tr('foot');
+const loc = LANG === 'es' ? 'es' : undefined;
+const fT = new Intl.DateTimeFormat(loc, { hour: 'numeric', minute: '2-digit' });
+const fD = new Intl.DateTimeFormat(loc, { weekday: 'short', month: 'short', day: 'numeric' });
+const fLong = new Intl.DateTimeFormat(loc, { month: 'long', day: 'numeric' });
+const EMO = { halloween: '🎃', christmas: '🎄', newyear: '🎆', valentines: '💘' };
+function when(ms) {
+  const d = new Date(ms), n = new Date();
+  const day = d.toDateString() === n.toDateString() ? tr('today') : d.toDateString() === new Date(Date.now() + 86400000).toDateString() ? tr('tomorrow') : fD.format(d);
+  return day + ', ' + fT.format(d);
+}
+
+function card(e, emo) {
+  const now = Date.now() / 1000;
+  const a = e.a.find(x => x[1] > now) || e.a[0];
+  const c = el('div', 'card');
+  if (e.p) { const im = el('img'); im.src = e.p; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.replaceWith(el('div', 'ph', emo)); c.appendChild(im); }
+  else c.appendChild(el('div', 'ph', emo));
+  const i = el('div', 'info');
+  const on = a[0] <= now && a[1] > now;
+  i.appendChild(el('div', 'when' + (on ? ' now' : ''), on ? '● ' + tr('now') + ' · ' + fT.format(a[0] * 1000) : when(a[0] * 1000)));
+  const ti = el('div', 'ti', e.t); if (e.y) ti.appendChild(el('small', null, ' (' + e.y + ')')); i.appendChild(ti);
+  if (e.sub) i.appendChild(el('div', 'ds', e.sub));
+  i.appendChild(el('div', 'ch', '📺 ' + a[2] + (e.r ? '  ·  ' + e.r : '')));
+  if (e.d && !e.sub) i.appendChild(el('div', 'ds', e.d));
+  const others = e.a.filter(x => x !== a && x[1] > now).slice(0, 3);
+  if (others.length) i.appendChild(el('div', 'also', tr('also', { x: others.map(x => fD.format(new Date(x[0] * 1000)) + ' ' + fT.format(new Date(x[0] * 1000)) + ' ' + x[2]).join(' · ') })));
+  const acts = el('div', 'acts');
+  if (a[4]) { const w = el('a', 'free', tr('free')); w.href = a[4]; w.target = '_blank'; w.rel = 'noopener'; acts.appendChild(w); }
+  if (!on) { const b = el('button', null, tr('remind')); b.type = 'button'; b.onclick = () => window.EPGAsk && EPGAsk.ics(e.t, a[0] * 1000, a[1] * 1000, a[2]); acts.appendChild(b); }
+  const o = el('a', null, tr('open')); o.href = 'tvguide.html?ch=' + encodeURIComponent(a[2]) + '&at=' + Math.round(a[0] / 60) + '#' + a[3]; acts.appendChild(o);
+  i.appendChild(acts);
+  c.appendChild(i);
+  return c;
+}
+
+function section(id, title, items, emo) {
+  const out = $('out');
+  const h = el('h2', null, title + ' '); h.id = id; h.appendChild(el('small', null, '(' + items.length + ')')); out.appendChild(h);
+  const g = el('div', 'grid'); const first = 12;
+  items.forEach((e, k) => { const c = card(e, emo); if (k >= first) c.hidden = true; g.appendChild(c); });
+  out.appendChild(g);
+  if (items.length > first) { const m = el('button', 'more', tr('more', { n: items.length })); m.type = 'button'; m.onclick = () => { for (const x of g.children) x.hidden = false; m.remove(); }; out.appendChild(m); }
+  const j = el('a', null, title); j.href = '#' + id; $('jump').appendChild(j);
+}
+
+fetch('tvguide/season.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
+  const out = $('out'); out.replaceChildren();
+  if (!d.season) {
+    $('h1').textContent = '📺 EPGTalk';
+    const o = el('div', 'off'); o.appendChild(el('div', null, tr('off')));
+    if (d.next) { o.appendChild(el('br')); o.appendChild(el('b', null, tr('next', { t: LANG === 'es' ? d.next.title_es : d.next.title, d: fLong.format(new Date(d.next.starts + 'T12:00:00')) }))); }
+    out.appendChild(o); return;
+  }
+  document.body.classList.add(d.season);
+  const title = LANG === 'es' ? d.title_es : d.title, emo = EMO[d.season] || '📺';
+  $('h1').textContent = title; document.title = 'EPGTalk — ' + title.replace(/^\S+\s/, '');
+  $('sub').textContent = tr('sub');
+  const now = Date.now() / 1000, midnight = new Date(); midnight.setHours(23, 59, 59, 0);
+  const all = []; let n = 0;
+  for (const s of d.sections) { n += s.items.length; for (const e of s.items) all.push(e); }
+  $('count').textContent = emo + ' ' + tr('titles', { n }); $('count').hidden = false;
+  // tonight: anything starting from now until midnight, soonest first
+  const tonight = all.filter(e => e.a.some(x => x[1] > now && x[0] < midnight / 1000)).sort((x, y) => x.a.find(a => a[1] > now)[0] - y.a.find(a => a[1] > now)[0]);
+  if (tonight.length) section('tonight', tr('tonight'), tonight, emo);
+  for (const s of d.sections) if (s.items.length) section(s.id, LANG === 'es' ? s.title_es : s.title, s.items, emo);
+}).catch(() => { $('out').replaceChildren(el('p', 'off', tr('fail'))); });
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

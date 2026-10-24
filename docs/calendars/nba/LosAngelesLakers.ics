@@ -1,0 +1,796 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Los Angeles Lakers (NBA)
+X-WR-CALDESC:Los Angeles Lakers schedule from EPGTalk. Updates automaticall
+ y.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-nba-401909092@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261022T020000Z
+DTEND:20261022T043000Z
+SUMMARY:🏀 Golden State Warriors at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ESPN\nFinal: Warriors 105 - Lakers 127\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909851@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261024T020000Z
+DTEND:20261024T043000Z
+SUMMARY:🏀 LA Clippers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA League Pass\, Spectrum Sports Net\, Spectrum Sport
+ s Net +\, ClipperVision\nFinal: Clippers 117 - Lakers 125\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909861@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261025T210000Z
+DTEND:20261025T233000Z
+SUMMARY:🏀 Los Angeles Lakers at Utah Jazz
+LOCATION:Delta Center\, Salt Lake City\, UT
+DESCRIPTION:NBA\nTV: NBA League Pass\, Spectrum Sports Net\, Spectrum Sport
+ s Net +\, KJZZ-TV\, Jazz+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909880@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261028T030000Z
+DTEND:20261028T053000Z
+SUMMARY:🏀 Portland Trail Blazers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Peacock\, NBC\, Spectrum Sports Net\, Spectrum Sports 
+ Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909892@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261029T023000Z
+DTEND:20261029T050000Z
+SUMMARY:🏀 Los Angeles Lakers at LA Clippers
+LOCATION:Intuit Dome\, Inglewood\, CA
+DESCRIPTION:NBA\nTV: NBA League Pass\, Spectrum Sports Net\, Spectrum Sport
+ s Net +\, KTLA\, ClipperVision\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909285@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261031T020000Z
+DTEND:20261031T043000Z
+SUMMARY:🏀 Los Angeles Lakers at Golden State Warriors
+LOCATION:Chase Center\, San Francisco\, CA
+DESCRIPTION:NBA · NBA Cup - Group Play\nTV: Prime Video\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909906@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261102T020000Z
+DTEND:20261102T043000Z
+SUMMARY:🏀 Toronto Raptors at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA League Pass\, Spectrum Sports Net\, Spectrum Sport
+ s Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909921@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261103T030000Z
+DTEND:20261103T053000Z
+SUMMARY:🏀 Miami Heat at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA League Pass\, Spectrum Sports Net\, Spectrum Sport
+ s Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909934@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261105T030000Z
+DTEND:20261105T053000Z
+SUMMARY:🏀 Los Angeles Lakers at Sacramento Kings
+LOCATION:Golden 1 Center\, Sacramento\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909294@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261107T030000Z
+DTEND:20261107T053000Z
+SUMMARY:🏀 Portland Trail Blazers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA · NBA Cup - Group Play\nTV: Prime Video\, Spectrum Sports 
+ Net\, Spectrum Sports Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909946@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261108T230000Z
+DTEND:20261109T013000Z
+SUMMARY:🏀 Los Angeles Lakers at Detroit Pistons
+LOCATION:Little Caesars Arena\, Detroit\, MI
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\n
+ From EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909952@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261110T000000Z
+DTEND:20261110T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Atlanta Hawks
+LOCATION:State Farm Arena\, Atlanta\, GA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909971@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261112T010000Z
+DTEND:20261112T033000Z
+SUMMARY:🏀 Los Angeles Lakers at Milwaukee Bucks
+LOCATION:Fiserv Forum\, Milwaukee\, WI
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, MyMi\, B
+ ucks App\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909986@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261115T210000Z
+DTEND:20261115T233000Z
+SUMMARY:🏀 Los Angeles Lakers at Phoenix Suns
+LOCATION:Mortgage Matchup Center\, Phoenix\, AZ
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, Arizona'
+ s Family 3TV\, Suns Live\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910005@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261118T030000Z
+DTEND:20261118T053000Z
+SUMMARY:🏀 Charlotte Hornets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910017@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261119T030000Z
+DTEND:20261119T053000Z
+SUMMARY:🏀 Utah Jazz at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, KJZZ-TV\
+ , Jazz+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909313@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261121T030000Z
+DTEND:20261121T053000Z
+SUMMARY:🏀 Sacramento Kings at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA · NBA Cup - Group Play\nTV: Spectrum Sports Net\, Spectrum
+  Sports Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910044@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261124T030000Z
+DTEND:20261124T053000Z
+SUMMARY:🏀 Utah Jazz at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\,
+  KJZZ-TV\, Jazz+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909333@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261128T023000Z
+DTEND:20261128T050000Z
+SUMMARY:🏀 Los Angeles Lakers at San Antonio Spurs
+LOCATION:Frost Bank Center\, San Antonio\, TX
+DESCRIPTION:NBA · NBA Cup - Group Play\nTV: Prime Video\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910051@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261129T210000Z
+DTEND:20261129T233000Z
+SUMMARY:🏀 Los Angeles Lakers at Memphis Grizzlies
+LOCATION:FedExForum\, Memphis\, TN
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN MEM
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910064@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261201T003000Z
+DTEND:20261201T030000Z
+SUMMARY:🏀 Los Angeles Lakers at Houston Rockets
+LOCATION:Toyota Center (Houston)\, Houston\, TX
+DESCRIPTION:NBA\nTV: NBCSN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910081@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261203T010000Z
+DTEND:20261203T033000Z
+SUMMARY:🏀 Los Angeles Lakers at New Orleans Pelicans
+LOCATION:Smoothie King Center\, New Orleans\, LA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, GCSEN\, 
+ Pelicans.com\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910114@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261215T030000Z
+DTEND:20261215T053000Z
+SUMMARY:🏀 New Orleans Pelicans at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\,
+  GCSEN\, Pelicans.com\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910129@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261217T023000Z
+DTEND:20261217T050000Z
+SUMMARY:🏀 Los Angeles Lakers at Minnesota Timberwolves
+LOCATION:Target Center\, Minneapolis\, MN
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\, D
+ AZN MIN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910142@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261219T010000Z
+DTEND:20261219T033000Z
+SUMMARY:🏀 Los Angeles Lakers at Minnesota Timberwolves
+LOCATION:Target Center\, Minneapolis\, MN
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910148@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261220T020000Z
+DTEND:20261220T043000Z
+SUMMARY:🏀 Los Angeles Lakers at Denver Nuggets
+LOCATION:Ball Arena\, Denver\, CO
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\n
+ From EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910167@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261222T030000Z
+DTEND:20261222T053000Z
+SUMMARY:🏀 Indiana Pacers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\,
+  DAZN IND\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910184@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261224T030000Z
+DTEND:20261224T053000Z
+SUMMARY:🏀 Denver Nuggets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Prime Video\, Spectrum Sports Net\, Spectrum Sports Ne
+ t +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401909099@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261225T220000Z
+DTEND:20261226T003000Z
+SUMMARY:🏀 Philadelphia 76ers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ABC\, ESPN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910206@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261228T020000Z
+DTEND:20261228T043000Z
+SUMMARY:🏀 Memphis Grizzlies at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN MEM
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910219@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261230T033000Z
+DTEND:20261230T060000Z
+SUMMARY:🏀 Houston Rockets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBC\, Spectrum Sports Net\, Spectrum Sports Net +\nFro
+ m EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910232@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270101T010000Z
+DTEND:20270101T033000Z
+SUMMARY:🏀 Los Angeles Lakers at New Orleans Pelicans
+LOCATION:Smoothie King Center\, New Orleans\, LA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, GCSEN\, 
+ Pelicans.com\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910246@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270103T010000Z
+DTEND:20270103T033000Z
+SUMMARY:🏀 Los Angeles Lakers at Chicago Bulls
+LOCATION:United Center\, Chicago\, IL
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910254@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270104T000000Z
+DTEND:20270104T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Toronto Raptors
+LOCATION:Scotiabank Arena\, Toronto\, ON
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910268@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270106T000000Z
+DTEND:20270106T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Washington Wizards
+LOCATION:Capital One Arena\, Washington\, DC
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910289@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270108T030000Z
+DTEND:20270108T053000Z
+SUMMARY:🏀 Boston Celtics at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Prime Video\, Spectrum Sports Net\, Spectrum Sports Ne
+ t +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910297@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270109T030000Z
+DTEND:20270109T053000Z
+SUMMARY:🏀 Detroit Pistons at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910318@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270112T030000Z
+DTEND:20270112T053000Z
+SUMMARY:🏀 Los Angeles Lakers at LA Clippers
+LOCATION:Intuit Dome\, Inglewood\, CA
+DESCRIPTION:NBA\nTV: NBCSN\, Spectrum Sports Net\, Spectrum Sports Net +\, 
+ ClipperVision\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910333@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270114T030000Z
+DTEND:20270114T053000Z
+SUMMARY:🏀 Los Angeles Lakers at Portland Trail Blazers
+LOCATION:Moda Center\, Portland\, OR
+DESCRIPTION:NBA\nTV: KUNP 16\, Spectrum Sports Net\, BlazerVision\, Spectru
+ m Sports Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910341@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270115T030000Z
+DTEND:20270115T053000Z
+SUMMARY:🏀 Orlando Magic at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBA TV\, Spectrum Sports Net\, Spectrum Sports Net +\n
+ From EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910364@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270118T020000Z
+DTEND:20270118T043000Z
+SUMMARY:🏀 Milwaukee Bucks at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, MyMi\, B
+ ucks App\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910374@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270120T030000Z
+DTEND:20270120T053000Z
+SUMMARY:🏀 Los Angeles Lakers at Sacramento Kings
+LOCATION:Golden 1 Center\, Sacramento\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910388@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270122T030000Z
+DTEND:20270122T053000Z
+SUMMARY:🏀 Los Angeles Lakers at Golden State Warriors
+LOCATION:Chase Center\, San Francisco\, CA
+DESCRIPTION:NBA\nTV: Prime Video\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910398@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270123T030000Z
+DTEND:20270123T053000Z
+SUMMARY:🏀 Sacramento Kings at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910408@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270124T210000Z
+DTEND:20270124T233000Z
+SUMMARY:🏀 Washington Wizards at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910427@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270127T040000Z
+DTEND:20270127T063000Z
+SUMMARY:🏀 Oklahoma City Thunder at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBC\, Spectrum Sports Net\, KSBI\, Spectrum Sports Net
+  +\, Thunder App\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910437@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270129T000000Z
+DTEND:20270129T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Indiana Pacers
+LOCATION:Gainbridge Fieldhouse\, Indianapolis\, IN
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN IND
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910457@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270131T013000Z
+DTEND:20270131T040000Z
+SUMMARY:🏀 Los Angeles Lakers at New York Knicks
+LOCATION:Madison Square Garden\, New York\, NY
+DESCRIPTION:NBA\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910464@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270201T000000Z
+DTEND:20270201T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Charlotte Hornets
+LOCATION:Spectrum Center\, Charlotte\, NC
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN CHA
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910477@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270203T010000Z
+DTEND:20270203T033000Z
+SUMMARY:🏀 Los Angeles Lakers at Boston Celtics
+LOCATION:TD Garden\, Boston\, MA
+DESCRIPTION:NBA\nTV: NBC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910489@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270205T003000Z
+DTEND:20270205T030000Z
+SUMMARY:🏀 Los Angeles Lakers at Brooklyn Nets
+LOCATION:Barclays Center\, Brooklyn\, NY
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN (YE
+ S)\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910511@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270207T013000Z
+DTEND:20270207T040000Z
+SUMMARY:🏀 Los Angeles Lakers at San Antonio Spurs
+LOCATION:Frost Bank Center\, San Antonio\, TX
+DESCRIPTION:NBA\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910527@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270209T023000Z
+DTEND:20270209T050000Z
+SUMMARY:🏀 Los Angeles Lakers at Phoenix Suns
+LOCATION:Mortgage Matchup Center\, Phoenix\, AZ
+DESCRIPTION:NBA\nTV: NBCSN\, Spectrum Sports Net\, Spectrum Sports Net +\nF
+ rom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910544@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270211T030000Z
+DTEND:20270211T053000Z
+SUMMARY:🏀 LA Clippers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\, K
+ TLA\, ClipperVision\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910559@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270213T033000Z
+DTEND:20270213T060000Z
+SUMMARY:🏀 Denver Nuggets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\nFr
+ om EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910580@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270217T030000Z
+DTEND:20270217T053000Z
+SUMMARY:🏀 Chicago Bulls at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910598@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270219T030000Z
+DTEND:20270219T053000Z
+SUMMARY:🏀 Houston Rockets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Prime Video\, Spectrum Sports Net\, Spectrum Sports Ne
+ t +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910615@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270227T030000Z
+DTEND:20270227T053000Z
+SUMMARY:🏀 Los Angeles Lakers at Denver Nuggets
+LOCATION:Ball Arena\, Denver\, CO
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\nFr
+ om EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910624@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270228T203000Z
+DTEND:20270228T230000Z
+SUMMARY:🏀 Los Angeles Lakers at Dallas Mavericks
+LOCATION:American Airlines Center\, Dallas\, TX
+DESCRIPTION:NBA\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910639@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270303T000000Z
+DTEND:20270303T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Orlando Magic
+LOCATION:Kia Center\, Orlando\, FL
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910656@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270305T000000Z
+DTEND:20270305T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Philadelphia 76ers
+LOCATION:Xfinity Mobile Arena\, Philadelphia\, PA
+DESCRIPTION:NBA\nTV: Prime Video\, Spectrum Sports Net\, Spectrum Sports Ne
+ t +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910673@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270307T013000Z
+DTEND:20270307T040000Z
+SUMMARY:🏀 Oklahoma City Thunder at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910680@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270308T033000Z
+DTEND:20270308T060000Z
+SUMMARY:🏀 Brooklyn Nets at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN (YE
+ S)\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910711@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270312T030000Z
+DTEND:20270312T053000Z
+SUMMARY:🏀 New York Knicks at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Prime Video\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910718@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270313T030000Z
+DTEND:20270313T053000Z
+SUMMARY:🏀 Cleveland Cavaliers at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN CLE
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910733@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270315T020000Z
+DTEND:20270315T043000Z
+SUMMARY:🏀 Golden State Warriors at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910747@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270317T020000Z
+DTEND:20270317T043000Z
+SUMMARY:🏀 Los Angeles Lakers at Portland Trail Blazers
+LOCATION:Moda Center\, Portland\, OR
+DESCRIPTION:NBA\nTV: KUNP 16\, Spectrum Sports Net\, BlazerVision\, Spectru
+ m Sports Net +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910755@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270318T020000Z
+DTEND:20270318T043000Z
+SUMMARY:🏀 Phoenix Suns at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\, A
+ rizona's Family 3TV\, Suns Live\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910770@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270320T020000Z
+DTEND:20270320T043000Z
+SUMMARY:🏀 Atlanta Hawks at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910785@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270322T020000Z
+DTEND:20270322T043000Z
+SUMMARY:🏀 Dallas Mavericks at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910796@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270324T000000Z
+DTEND:20270324T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Miami Heat
+LOCATION:Kaseya Center\, Miami\, FL
+DESCRIPTION:NBA\nTV: NBC\, Spectrum Sports Net\, Spectrum Sports Net +\nFro
+ m EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910811@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270325T230000Z
+DTEND:20270326T013000Z
+SUMMARY:🏀 Los Angeles Lakers at Cleveland Cavaliers
+LOCATION:Rocket Arena\, Cleveland\, OH
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN CLE
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910833@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270328T190000Z
+DTEND:20270328T213000Z
+SUMMARY:🏀 Los Angeles Lakers at Houston Rockets
+LOCATION:Toyota Center (Houston)\, Houston\, TX
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\nFr
+ om EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910851@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270331T000000Z
+DTEND:20270331T023000Z
+SUMMARY:🏀 Los Angeles Lakers at Memphis Grizzlies
+LOCATION:FedExForum\, Memphis\, TN
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, DAZN MEM
+ \nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910867@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270402T013000Z
+DTEND:20270402T040000Z
+SUMMARY:🏀 Los Angeles Lakers at Oklahoma City Thunder
+LOCATION:Paycom Center\, Oklahoma City\, OK
+DESCRIPTION:NBA\nTV: Prime Video\, Spectrum Sports Net\, Spectrum Sports Ne
+ t +\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910894@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270405T020000Z
+DTEND:20270405T043000Z
+SUMMARY:🏀 San Antonio Spurs at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: NBC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910906@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270407T020000Z
+DTEND:20270407T043000Z
+SUMMARY:🏀 Dallas Mavericks at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, KFAA-TV\
+ , MavsTV\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910916@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270408T020000Z
+DTEND:20270408T043000Z
+SUMMARY:🏀 Minnesota Timberwolves at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: ESPN\, Spectrum Sports Net\, Spectrum Sports Net +\, D
+ AZN MIN\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910934@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270410T020000Z
+DTEND:20270410T043000Z
+SUMMARY:🏀 Minnesota Timberwolves at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\nFrom EPGT
+ alk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-nba-401910951@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20270412T003000Z
+DTEND:20270412T030000Z
+SUMMARY:🏀 Phoenix Suns at Los Angeles Lakers
+LOCATION:crypto.com Arena\, Los Angeles\, CA
+DESCRIPTION:NBA\nTV: Spectrum Sports Net\, Spectrum Sports Net +\, Suns Liv
+ e\, Arizona's Family 3TV\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

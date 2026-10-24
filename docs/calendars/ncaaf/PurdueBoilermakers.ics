@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Purdue Boilermakers (NCAAF)
+X-WR-CALDESC:Purdue Boilermakers schedule from EPGTalk. Updates automatical
+ ly.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858472@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261003T201500Z
+DTEND:20261003T234500Z
+SUMMARY:🏈 Purdue Boilermakers at Illinois Fighting Illini
+LOCATION:Gies Memorial Stadium\, Champaign\, IL
+DESCRIPTION:NCAAF\nTV: BTN\nFinal: Purdue 24 - Illinois 17\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858486@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261011T000000Z
+DTEND:20261011T033000Z
+SUMMARY:🏈 Minnesota Golden Gophers at Purdue Boilermakers
+LOCATION:Ross-Ade Stadium\, West Lafayette\, IN
+DESCRIPTION:NCAAF\nTV: BTN\nFinal: Minnesota 13 - Purdue 41\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858493@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261017T000000Z
+DTEND:20261017T033000Z
+SUMMARY:🏈 Washington Huskies at Purdue Boilermakers
+LOCATION:Ross-Ade Stadium\, West Lafayette\, IN
+DESCRIPTION:NCAAF\nTV: Fox\nFinal: Washington 38 - Purdue 26\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858506@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:🏈 Purdue Boilermakers at Penn State Nittany Lions
+LOCATION:Beaver Stadium\, University Park\, PA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858515@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Maryland Terrapins at Purdue Boilermakers
+LOCATION:Ross-Ade Stadium\, West Lafayette\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858519@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Purdue Boilermakers at Iowa Hawkeyes
+LOCATION:Kinnick Stadium\, Iowa City\, IA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858533@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Wisconsin Badgers at Purdue Boilermakers
+LOCATION:Ross-Ade Stadium\, West Lafayette\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858538@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Purdue Boilermakers at Indiana Hoosiers
+LOCATION:Memorial Stadium (Bloomington\, IN)\, Bloomington\, IN
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

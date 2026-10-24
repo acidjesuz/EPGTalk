@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="compat.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EPGTalk">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>EPGTalk — Big Events</title>
+<meta name="description" content="Playoff brackets, series, standings and where to watch — the hubs switch on by themselves for the NFL playoffs and Super Bowl, March Madness, the Champions League knockouts, the World Series and more.">
+<link rel="canonical" href="https://epgtalk.com/events.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPGTalk">
+<meta property="og:title" content="EPGTalk — Big Events">
+<meta property="og:description" content="Playoff brackets, series, standings and where to watch — the hubs switch on by themselves for the NFL playoffs and Super Bowl, March Madness, the Champions League knockouts, the World Series and more.">
+<meta property="og:url" content="https://epgtalk.com/events.html">
+<meta property="og:image" content="https://epgtalk.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EPGTalk — the community's free TV guide">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg-deep:#060918; --bg-mid:#0d1225; --bg-card:#111827; --accent:#00BFFF; --green:#2ECC71; --amber:#f5b301; --red:#ff4d5e;
+          --text:#e2e8f0; --muted:#8899aa; --border:rgba(0,191,255,0.15); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 14px 16px; padding: 14px clamp(16px, 4vw, 48px); background: rgba(6,9,24,0.9); border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 3; backdrop-filter: blur(8px); }
+  .nav-logo { font-family: 'Orbitron', monospace; font-weight: 900; color: var(--text); text-decoration: none; font-size: 1.15rem; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; }
+  .nav-links a:hover, .nav-links a.on { color: var(--accent); }
+  .lang { font: inherit; font-size: 0.8rem; color: var(--accent); background: transparent; border: 1px solid var(--border);
+          border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+  main { max-width: 1280px; margin: 0 auto; padding: 28px 16px 64px; padding: 28px clamp(16px, 4vw, 32px) 64px; }
+  h1 { font-family: 'Orbitron', monospace; font-size: 1.4rem; font-size: clamp(1.4rem, 4vw, 2rem); margin: 0 0 6px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 18px; line-height: 1.5; }
+  h2 { font-family: 'Orbitron', monospace; font-size: 1.05rem; margin: 34px 0 12px; }
+  .hub { background: linear-gradient(135deg, rgba(0,191,255,0.08), rgba(124,58,237,0.06)); border: 1px solid var(--border);
+         border-radius: 16px; padding: 18px 14px; padding: 18px clamp(14px, 3vw, 22px); margin-bottom: 18px; }
+  .hub-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 14px; }
+  .hub-title { font-family: 'Orbitron', monospace; font-size: 1.05rem; font-size: clamp(1.05rem, 3vw, 1.35rem); font-weight: 900; }
+  .badge { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--bg-deep); background: var(--red); border-radius: 6px; padding: 2px 8px; }
+  .badge.soon { background: var(--amber); }
+  .next { flex: 1 1 320px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 0.92rem; }
+  .next .lbl { color: var(--muted); }
+  .count { font-family: 'Orbitron', monospace; color: var(--amber); font-weight: 700; }
+  .bracket { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
+  .round { flex: 0 0 270px; scroll-snap-align: start; }
+  .round h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .series { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; }
+  .series.live { border-color: rgba(255,77,94,0.6); }
+  .series .region { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
+  .tm { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+  .tm img, .tm .ph { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .tm .ph { border-radius: 6px; background: rgba(0,191,255,0.08); }
+  .tm .nm { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tm .nm small { color: var(--muted); margin-right: 4px; }
+  .tm .w { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 1.5ch; text-align: right; }
+  .tm.lead .nm, .tm.lead .w { color: #fff; font-weight: 700; }
+  .tm.out { opacity: 0.5; }
+  .summary { font-size: 0.8rem; color: var(--amber); margin: 4px 0 2px; }
+  .games { list-style: none; margin: 6px 0 0; padding: 0; font-size: 0.78rem; color: var(--muted); }
+  .games li { display: flex; flex-wrap: wrap; gap: 4px 8px; padding: 3px 0; border-top: 1px dashed rgba(255,255,255,0.06); }
+  .games li.now { color: var(--red); font-weight: 700; }
+  .games .tv { margin: 0; }
+  .tv { font-size: 0.78rem; color: var(--muted); }
+  .tv b { color: var(--green); font-weight: 500; }
+  .tv a { color: var(--green); font-weight: 700; text-decoration: underline dotted; text-underline-offset: 3px; }
+  .empty, .loading { color: var(--muted); padding: 18px; background: var(--bg-card); border-radius: 12px; text-align: center; line-height: 1.6; }
+  .soon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+  .soon-card { background: var(--bg-card); border-radius: 12px; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; line-height: 1.45; }
+  .soon-card b { display: block; margin-bottom: 2px; }
+  .soon-card span { color: var(--muted); font-size: 0.82rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .chip { font: inherit; font-size: 0.85rem; color: var(--text); background: rgba(0,191,255,0.05); border: 1px solid var(--border);
+          border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: rgba(0,191,255,0.2); border-color: var(--accent); color: #fff; }
+  .tables { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 14px; }
+  .tbl { background: var(--bg-card); border-radius: 12px; padding: 10px 12px; overflow-x: auto; }
+  .tbl h3 { margin: 2px 0 8px; font-size: 0.95rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  th { text-align: right; color: var(--muted); font-weight: 500; padding: 4px 6px; font-size: 0.75rem; }
+  th:nth-child(2) { text-align: left; }
+  td { text-align: right; padding: 5px 6px; border-top: 1px solid rgba(255,255,255,0.05); white-space: nowrap; }
+  td.rk { color: var(--muted); width: 2ch; border-left: 3px solid transparent; }
+  td.team { text-align: left; display: flex; align-items: center; gap: 8px; max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+  td.team img { width: 20px; height: 20px; object-fit: contain; flex: none; }
+  tr.fav td { background: rgba(245,179,1,0.08); }
+  td.pts { font-weight: 700; color: #fff; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-size: 0.75rem; color: var(--muted); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 24px; line-height: 1.6; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">📡 EPG<span>Talk</span></a>
+  <div class="nav-links">
+    <a href="index.html" data-i="home">Home</a>
+    <a href="ask.html" data-i="askNav">🔎 Ask</a>
+    <a href="now.html" data-i="nowNav">Now</a>
+    <a href="tvguide.html" data-i="tvguide">TV Guide</a>
+    <a href="live.html" data-i="live">Live Sports</a>
+    <a href="events.html" class="on" data-i="events">Big Events</a>
+    <a href="tonight.html" data-i="tonight">Tonight</a>
+    <a href="calendars/" data-i="calendars">Team Calendars</a>
+    <a href="setup.html" data-i="setupNav">Setup</a>
+    <button class="lang notranslate" id="lang" type="button" translate="no" aria-label="Language / Idioma">Español</button>
+  </div>
+</nav>
+<main>
+  <h1 data-i="h1html">Big <span>Events</span></h1>
+  <p class="sub" data-i="intro">Playoff hubs switch on by themselves when the postseason starts — brackets, series, countdowns and where to watch. Tap a channel to jump to it in the TV Guide.</p>
+  <div id="hubs"><div class="loading" data-i="checking">Checking which playoffs are on…</div></div>
+  <h2 data-i="soonH">📅 Coming up</h2>
+  <div class="soon-grid" id="soon"></div>
+  <h2 data-i="standH">📊 Standings</h2>
+  <div class="chips" id="schips" role="group" aria-label="League"></div>
+  <div id="standings"></div>
+</main>
+<script src="watch.js"></script>
+<footer data-i="footerhtml">Scores, brackets and standings come live from ESPN and update every minute while games are on. Times are in your time zone.<br>
+  Follow a team with ☆ on <a href="live.html">Live Sports</a> — it is highlighted here too · add its games to your phone with <a href="calendars/">Team Calendars</a>.</footer>
+<script>
+(() => {
+const T = {
+  en: { home: 'Home', askNav: '🔎 Ask', nowNav: 'Now', tvguide: 'TV Guide', live: 'Live Sports', events: 'Big Events', tonight: 'Tonight', calendars: 'Team Calendars', setupNav: 'Setup',
+    h1html: 'Big <span>Events</span>', intro: 'Playoff hubs switch on by themselves when the postseason starts — brackets, series, countdowns and where to watch. Tap a channel to jump to it in the TV Guide.',
+    checking: 'Checking which playoffs are on…', soonH: '📅 Coming up', standH: '📊 Standings',
+    liveBadge: 'ON NOW', next: 'Next:', inT: 'in {t}', noHubs: 'No playoffs running right now. The hubs below switch on by themselves when they start.',
+    champ: '🏆 {t} — champions!', liveWord: 'LIVE', tba: 'Time TBA', final: 'Final', game: 'G{n}', days: '{n}d', hours: '{n}h', mins: '{n}m',
+    hubs: { nfl: 'NFL Playoffs & Super Bowl', mlb: 'MLB Postseason & World Series', nba: 'NBA Playoffs', nhl: 'Stanley Cup Playoffs', wnba: 'WNBA Playoffs',
+            ncaam: "March Madness — Men's", ncaaw: "March Madness — Women's", ncaaf: 'College Football Playoff', mls: 'MLS Cup Playoffs',
+            ligamx: 'Liga MX Liguilla', ucl: 'Champions League Knockouts', uel: 'Europa League Knockouts' },
+    when: { nfl: 'January – February', mlb: 'October', nba: 'April – June', nhl: 'April – June', wnba: 'September – October', ncaam: 'March – April',
+            ncaaw: 'March – April', ncaaf: 'December – January', mls: 'October – December', ligamx: 'November – December & April – May',
+            ucl: 'February – May', uel: 'February – May' },
+    sbIn: 'NFL playoffs start in {d} days · Super Bowl week {w}', sbOn: 'Super Bowl week: {w}',
+    gp: 'GP', w: 'W', l: 'L', t: 'T', d: 'D', otl: 'OTL', pct: 'PCT', gb: 'GB', gd: 'GD', pts: 'PTS', strk: 'STRK',
+    standFail: 'Standings are not available right now.', loadingSt: 'Loading standings…',
+    footerhtml: 'Scores, brackets and standings come live from ESPN and update every minute while games are on. Times are in your time zone.<br>Follow a team with ☆ on <a href="live.html">Live Sports</a> — it is highlighted here too · add its games to your phone with <a href="calendars/">Team Calendars</a>.' },
+  es: { home: 'Inicio', askNav: '🔎 Pregunta', nowNav: 'Ahora', tvguide: 'Guía de TV', live: 'Deportes en Vivo', events: 'Grandes Eventos', tonight: 'Esta noche', calendars: 'Calendarios', setupNav: 'Configurar',
+    h1html: 'Grandes <span>Eventos</span>', intro: 'Las secciones de playoffs se activan solas cuando empieza la postemporada — llaves, series, cuentas regresivas y dónde verlo. Toca un canal para ir a él en la Guía de TV.',
+    checking: 'Revisando qué playoffs hay…', soonH: '📅 Próximamente', standH: '📊 Tablas de posiciones',
+    liveBadge: 'EN CURSO', next: 'Próximo:', inT: 'en {t}', noHubs: 'No hay playoffs en este momento. Las secciones de abajo se activan solas cuando empiezan.',
+    champ: '🏆 {t} — ¡campeones!', liveWord: 'EN VIVO', tba: 'Hora por confirmar', final: 'Final', game: 'J{n}', days: '{n}d', hours: '{n}h', mins: '{n}m',
+    hubs: { nfl: 'Playoffs NFL y Super Bowl', mlb: 'Postemporada MLB y Serie Mundial', nba: 'Playoffs NBA', nhl: 'Playoffs Copa Stanley', wnba: 'Playoffs WNBA',
+            ncaam: 'March Madness — Varonil', ncaaw: 'March Madness — Femenil', ncaaf: 'Playoff Fútbol Americano Colegial', mls: 'Playoffs Copa MLS',
+            ligamx: 'Liguilla Liga MX', ucl: 'Champions League — Eliminatorias', uel: 'Europa League — Eliminatorias' },
+    when: { nfl: 'enero – febrero', mlb: 'octubre', nba: 'abril – junio', nhl: 'abril – junio', wnba: 'septiembre – octubre', ncaam: 'marzo – abril',
+            ncaaw: 'marzo – abril', ncaaf: 'diciembre – enero', mls: 'octubre – diciembre', ligamx: 'noviembre – diciembre y abril – mayo',
+            ucl: 'febrero – mayo', uel: 'febrero – mayo' },
+    sbIn: 'Los playoffs NFL empiezan en {d} días · semana del Super Bowl {w}', sbOn: 'Semana del Super Bowl: {w}',
+    gp: 'PJ', w: 'G', l: 'P', t: 'E', d: 'E', otl: 'PTE', pct: 'PCT', gb: 'JD', gd: 'DG', pts: 'PTS', strk: 'RACHA',
+    standFail: 'Las tablas no están disponibles en este momento.', loadingSt: 'Cargando tablas…',
+    footerhtml: 'Marcadores, llaves y tablas llegan en vivo de ESPN y se actualizan cada minuto durante los partidos. Horarios en tu zona horaria.<br>Sigue a un equipo con ☆ en <a href="live.html">Deportes en Vivo</a> — aquí también se resalta · agrega sus partidos a tu teléfono con los <a href="calendars/">Calendarios</a>.' },
+};
+let LANG = 'en';
+try { LANG = localStorage.getItem('epgtalk-lang') || ''; } catch (e) {}
+if (!T[LANG]) LANG = (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
+const tr = (k, v) => { const x = T[LANG][k] != null ? T[LANG][k] : T.en[k]; return typeof x === 'string' ? x.replace(/\{(\w+)\}/g, (_, n) => (v && v[n] != null ? v[n] : '')) : x; };
+document.documentElement.lang = LANG;
+for (const e of document.querySelectorAll('[data-i]')) { const k = e.dataset.i; if (k.endsWith('html')) e.innerHTML = tr(k); else e.textContent = tr(k); }
+document.getElementById('lang').textContent = LANG === 'es' ? 'English' : 'Español';
+document.getElementById('lang').onclick = () => { try { localStorage.setItem('epgtalk-lang', LANG === 'es' ? 'en' : 'es'); } catch (e) {} location.reload(); };
+document.title = 'EPGTalk — ' + tr('events');
+
+const API = 'https://site.api.espn.com/apis/site/v2/sports/', API2 = 'https://site.api.espn.com/apis/v2/sports/';
+const LQ = LANG === 'es' ? '&lang=es&region=us' : '';
+// key, ESPN path, emoji, extra query, kind (us = season type 3 is the postseason; cup = knockout rounds by slug)
+const HUBS = [
+  ['nfl', 'football/nfl', '🏈', '', 'nfl'], ['mlb', 'baseball/mlb', '⚾', '', 'us'], ['nba', 'basketball/nba', '🏀', '', 'us'],
+  ['nhl', 'hockey/nhl', '🏒', '', 'us'], ['wnba', 'basketball/wnba', '🏀', '', 'us'],
+  ['ncaam', 'basketball/mens-college-basketball', '🏀', 'groups=100', 'us'], ['ncaaw', 'basketball/womens-college-basketball', '🏀', 'groups=100', 'us'],
+  ['ncaaf', 'football/college-football', '🏈', 'groups=80', 'us'], ['mls', 'soccer/usa.1', '⚽', '', 'cup'], ['ligamx', 'soccer/mex.1', '⚽', '', 'cup'],
+  ['ucl', 'soccer/uefa.champions', '⚽', '', 'cup'], ['uel', 'soccer/uefa.europa', '⚽', '', 'cup'],
+];
+const KNOCK = /post-season|playoff|knockout|round-of|quarter|semi|final|liguilla|reclasif|round-one|conference/i;
+const NOT_KNOCK = /league-phase|regular|group|qualif|torneo-apertura$|torneo-clausura$|preseason/i;
+let FAVT = new Set();
+try { FAVT = new Set(JSON.parse(localStorage.getItem('epgtalk-fav-teams') || '[]')); } catch (e) {}
+const $ = id => document.getElementById(id);
+function el(t, c, x) { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+const fmtWhen = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+const fmtDay = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { month: 'short', day: 'numeric' });
+// ESPN marks games whose start time isn't set yet with timeValid:false and a placeholder of
+// midnight Eastern (04:00/05:00 UTC). Show the real date + "Time TBA", never a fake 11 PM.
+const fmtTbdDay = new Intl.DateTimeFormat(LANG === 'es' ? 'es' : undefined, { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+const tbd = c => (c || {}).timeValid === false;
+const whenText = (c, g) => tbd(c) ? fmtTbdDay.format(new Date(c.date || g.date)) + ' · ' + tr('tba') : fmtWhen.format(new Date(c.date || g.date));
+async function get(url) { const r = await fetch(url, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); return r.json(); }
+const ym = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0');
+function until(ms) {
+  const m = Math.max(0, Math.round((ms - Date.now()) / 60000)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60);
+  return d ? tr('days', { n: d }) + ' ' + tr('hours', { n: h }) : h ? tr('hours', { n: h }) + ' ' + tr('mins', { n: m % 60 }) : tr('mins', { n: m });
+}
+
+// ── hubs ─────────────────────────────────────────────────────────────────────
+const nflCal = { v: null };
+async function detect(h) {
+  const [key, path, , extra, kind] = h;
+  const j = await get(API + path + '/scoreboard?' + (extra ? extra + '&' : '') + 'limit=100' + LQ);
+  const L = (j.leagues || [])[0] || {};
+  if (key === 'nfl') nflCal.v = L;
+  const st = ((L.season || {}).type || {}).type;
+  if (kind === 'us' || kind === 'nfl') return st === 3 ? { L } : null;
+  const slugs = (j.events || []).map(e => (e.season || {}).slug || '');
+  return slugs.some(s => KNOCK.test(s) && !NOT_KNOCK.test(s)) ? { L } : null;
+}
+
+async function events(h, info) {
+  const [key, path, , extra, kind] = h;
+  const urls = [];
+  if (kind === 'nfl') {
+    const yr = (info.L.season || {}).year || new Date().getFullYear();
+    for (let w = 1; w <= 5; w++) urls.push(API + path + '/scoreboard?seasontype=3&week=' + w + '&dates=' + yr + LQ);
+  } else {
+    const now = new Date();
+    for (const k of [-1, 0, 1]) urls.push(API + path + '/scoreboard?dates=' + ym(new Date(now.getFullYear(), now.getMonth() + k, 1)) + '&limit=1000' + (extra ? '&' + extra : '') + LQ);
+  }
+  const all = new Map();
+  for (const j of await Promise.all(urls.map(u => get(u).catch(() => ({ events: [] })))))
+    for (const e of (j.events || [])) all.set(e.id, e);
+  return [...all.values()].filter(e => {
+    const s = e.season || {};
+    return kind === 'cup' ? (KNOCK.test(s.slug || '') && !NOT_KNOCK.test(s.slug || '')) : (s.type === 3 || s.slug === 'post-season');
+  }).sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+function roundOf(e) {
+  const c = (e.competitions || [])[0] || {};
+  let hl = (((c.notes || [])[0] || {}).headline) || '';
+  hl = hl.replace(/\s*-\s*Game \d+.*$/i, '').replace(/^(Men's|Women's) Basketball Championship\s*-\s*/i, '').replace(/\s*-?\s*(1st|2nd) Leg$/i, '').trim();
+  let region = '';
+  const parts = hl.split(/\s+-\s+/);
+  if (parts.length > 1) { region = parts.slice(0, -1).join(' · '); hl = parts[parts.length - 1]; }
+  if (!hl || /^leg$/i.test(hl)) hl = ((e.season || {}).slug || '').replace(/-/g, ' ').replace(/\b\w/g, m => m.toUpperCase());
+  return { round: hl || 'Playoffs', region };
+}
+function tm(c) { return (c && (c.team || c.athlete)) || {}; }
+
+function buildSeries(list) {
+  const rounds = new Map();                      // round -> Map(seriesKey -> {games, region})
+  for (const e of list) {
+    const c = (e.competitions || [])[0] || {};
+    const cs = c.competitors || [];
+    if (cs.length !== 2) continue;
+    const { round, region } = roundOf(e);
+    const ids = cs.map(x => tm(x).id || tm(x).displayName).sort();
+    if (!rounds.has(round)) rounds.set(round, { first: new Date(e.date), series: new Map() });
+    const R = rounds.get(round);
+    const k = ids.join('|') + '|' + region;
+    if (!R.series.has(k)) R.series.set(k, { region, games: [] });
+    R.series.get(k).games.push(e);
+  }
+  return [...rounds.entries()].sort((a, b) => a[1].first - b[1].first);
+}
+
+function seriesCard(h, s) {
+  const games = s.games, last = games[games.length - 1], c0 = (last.competitions || [])[0] || {};
+  const ser = c0.series || null;
+  const cs = c0.competitors || [];
+  const live = games.some(g => (((g.competitions || [{}])[0].status || {}).type || {}).state === 'in');
+  const box = el('div', 'series' + (live ? ' live' : ''));
+  if (s.region) box.appendChild(el('div', 'region', s.region));
+  const wins = {};
+  if (ser && ser.competitors) for (const x of ser.competitors) wins[x.id] = x.wins;
+  const done = ser ? ser.completed : (((c0.status || {}).type || {}).state === 'post');
+  const order = h[0] === 'mls' || h[4] === 'cup' ? cs : [cs.find(x => x.homeAway === 'away') || cs[0], cs.find(x => x.homeAway === 'home') || cs[1]];
+  const aggregate = {};
+  if (h[4] === 'cup') for (const g of games) for (const x of (((g.competitions || [])[0] || {}).competitors || [])) {
+    const id = tm(x).id; const sc = +(typeof x.score === 'object' ? (x.score || {}).value : x.score);
+    if (!isNaN(sc) && (((g.competitions || [])[0].status || {}).type || {}).state !== 'pre') aggregate[id] = (aggregate[id] || 0) + sc;
+  }
+  for (const x of order) {
+    if (!x) continue;
+    const t = tm(x), id = t.id;
+    const val = ser ? (wins[id] != null ? wins[id] : '') : h[4] === 'cup' ? (aggregate[id] != null ? aggregate[id] : '')
+      : ((((c0.status || {}).type || {}).state !== 'pre') ? (typeof x.score === 'object' ? (x.score || {}).displayValue : x.score) : '');
+    const other = order.find(y => y && y !== x);
+    const oval = other ? (ser ? wins[tm(other).id] : h[4] === 'cup' ? aggregate[tm(other).id] : null) : null;
+    const lead = done ? x.winner || (ser && wins[id] > (oval || 0)) : false;
+    const row = el('div', 'tm' + (lead ? ' lead' : done && !lead ? ' out' : ''));
+    const logo = t.logo || (t.logos && t.logos[0] && t.logos[0].href);
+    if (logo) { const im = el('img'); im.src = logo; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; im.onerror = () => im.replaceWith(el('div', 'ph')); row.appendChild(im); }
+    else row.appendChild(el('div', 'ph'));
+    const nm = el('div', 'nm');
+    const seed = x.curatedRank && x.curatedRank.current && x.curatedRank.current < 99 ? x.curatedRank.current : (x.seed || '');
+    if (seed) nm.appendChild(el('small', null, seed));
+    nm.append((FAVT.has(h[0] + ':' + id) ? '⭐ ' : '') + (t.shortDisplayName || t.displayName || '?'));
+    row.appendChild(nm);
+    row.appendChild(el('div', 'w', val === undefined ? '' : val));
+    box.appendChild(row);
+  }
+  // ESPN writes 'CHW lead series' but 'TB leads series' - always use 'leads' / 'wins'
+  const summ = ser && ser.summary ? ser.summary.replace(/^(\S+) (lead|win) series\b/, '$1 $2s series') : '';
+  if (summ) box.appendChild(el('div', 'summary', summ));
+  const ul = el('ul', 'games');
+  games.forEach((g, i) => {
+    const c = (g.competitions || [])[0] || {}, st = (c.status || {}).type || {};
+    const li = el('li', st.state === 'in' ? 'now' : '');
+    const n = (((c.notes || [])[0] || {}).headline || '').match(/Game (\d+)/i);
+    li.appendChild(el('span', null, (n ? tr('game', { n: n[1] }) : '') + (n ? ' · ' : '') +
+      (st.state === 'in' ? tr('liveWord') + ' ' + (st.shortDetail || '') :
+       st.state === 'post' ? (c.competitors || []).map(x => (tm(x).abbreviation || '') + ' ' + (typeof x.score === 'object' ? (x.score || {}).displayValue : x.score)).join(' – ') :
+       whenText(c, g))));
+    if (st.state !== 'post') {
+      const nets = [];
+      for (const b of (c.broadcasts || [])) for (const nm of (b.names || [])) if (nm && !nets.includes(nm)) nets.push(nm);
+      if (nets.length) li.appendChild(EPGWatch.line(nets.slice(0, 3), new Date(c.date || g.date).getTime()));
+    }
+    ul.appendChild(li);
+  });
+  box.appendChild(ul);
+  return box;
+}
+
+function hubBox(h, list) {
+  const box = el('section', 'hub'); box.id = 'hub-' + h[0];
+  const head = el('div', 'hub-head');
+  head.appendChild(el('div', 'hub-title', h[2] + ' ' + tr('hubs')[h[0]]));
+  const upcoming = list.filter(e => (((e.competitions || [{}])[0].status || {}).type || {}).state !== 'post');
+  const liveNow = upcoming.some(e => (((e.competitions || [{}])[0].status || {}).type || {}).state === 'in');
+  if (liveNow) head.appendChild(el('span', 'badge', tr('liveBadge')));
+  const nx = upcoming.find(e => (((e.competitions || [{}])[0].status || {}).type || {}).state === 'pre');
+  if (nx) {
+    const c = nx.competitions[0], t = new Date(c.date || nx.date);
+    const nxt = el('div', 'next');
+    nxt.appendChild(el('span', 'lbl', tr('next')));
+    nxt.appendChild(el('b', null, nx.shortName || nx.name));
+    nxt.appendChild(el('span', null, whenText(c, nx)));
+    if (!tbd(c)) { const cd = el('span', 'count', tr('inT', { t: until(t.getTime()) })); cd.dataset.t = t.getTime(); nxt.appendChild(cd); }
+    const nets = []; for (const b of (c.broadcasts || [])) for (const nm of (b.names || [])) if (nm && !nets.includes(nm)) nets.push(nm);
+    if (nets.length) nxt.appendChild(EPGWatch.line(nets.slice(0, 3), t.getTime()));
+    head.appendChild(nxt);
+  } else if (list.length) {
+    const last = list[list.length - 1], c = (last.competitions || [])[0] || {};
+    const w = (c.competitors || []).find(x => x.winner);
+    if (w && (((c.status || {}).type || {}).state === 'post')) head.appendChild(el('div', 'next', tr('champ', { t: tm(w).displayName || '' })));
+  }
+  box.appendChild(head);
+  const br = el('div', 'bracket');
+  for (const [round, R] of buildSeries(list)) {
+    const col = el('div', 'round'); col.appendChild(el('h3', null, round));
+    for (const s of R.series.values()) col.appendChild(seriesCard(h, s));
+    br.appendChild(col);
+  }
+  box.appendChild(br);
+  requestAnimationFrame(() => {                    // start the bracket at the current round
+    const cols = [...br.children], cur = cols.findIndex(c => c.querySelector('.series.live') || [...c.querySelectorAll('.games li')].some(li => !/–/.test(li.textContent)));
+    if (cur > 0) br.scrollLeft = cols[cur].offsetLeft - br.offsetLeft;
+  });
+  return box;
+}
+
+async function drawHubs() {
+  const found = await Promise.all(HUBS.map(h => detect(h).then(i => i && [h, i]).catch(() => null)));
+  const active = found.filter(Boolean);
+  const boxes = await Promise.all(active.map(async ([h, info]) => {
+    const list = await events(h, info).catch(() => []);
+    if (!list.length) return null;
+    const lastT = new Date(list[list.length - 1].date).getTime();
+    if (Date.now() - lastT > 10 * 86400000) return null;          // finished more than 10 days ago
+    return [h[0], hubBox(h, list)];
+  }));
+  const hubs = $('hubs'); hubs.replaceChildren();
+  const ok = boxes.filter(Boolean);
+  if (!ok.length) hubs.appendChild(el('div', 'empty', tr('noHubs')));
+  ok.forEach(b => hubs.appendChild(b[1]));
+  drawSoon(new Set(ok.map(b => b[0])));
+  return ok.length;
+}
+
+function drawSoon(activeKeys) {
+  const box = $('soon'); box.replaceChildren();
+  const L = nflCal.v;
+  for (const h of HUBS) {
+    if (activeKeys.has(h[0])) continue;
+    const card = el('div', 'soon-card');
+    card.appendChild(el('b', null, h[2] + ' ' + tr('hubs')[h[0]]));
+    let extra = '';
+    if (h[0] === 'nfl' && L && L.calendar) {
+      const post = L.calendar.find(c => String(c.value) === '3');
+      const sb = post && (post.entries || []).find(e => /super bowl/i.test(e.label || ''));
+      if (post && sb) {
+        const d = Math.ceil((new Date(post.startDate) - Date.now()) / 86400000);
+        extra = d > 0 ? tr('sbIn', { d, w: sb.detail || fmtDay.format(new Date(sb.startDate)) }) : tr('sbOn', { w: sb.detail || '' });
+      }
+    }
+    card.appendChild(el('span', null, extra || tr('when')[h[0]]));
+    box.appendChild(card);
+  }
+}
+
+// ── standings ───────────────────────────────────────────────────────────────
+const STAND = [
+  ['nfl', 'football/nfl', 'NFL', 'nfl'], ['nba', 'basketball/nba', 'NBA', 'pct'], ['nhl', 'hockey/nhl', 'NHL', 'nhl'],
+  ['mlb', 'baseball/mlb', 'MLB', 'pct'], ['wnba', 'basketball/wnba', 'WNBA', 'pct'], ['mls', 'soccer/usa.1', 'MLS', 'soc'],
+  ['epl', 'soccer/eng.1', 'Premier League', 'soc'], ['laliga', 'soccer/esp.1', 'LaLiga', 'soc'], ['ligamx', 'soccer/mex.1', 'Liga MX', 'soc'],
+  ['bundesliga', 'soccer/ger.1', 'Bundesliga', 'soc'], ['seriea', 'soccer/ita.1', 'Serie A', 'soc'], ['ligue1', 'soccer/fra.1', 'Ligue 1', 'soc'],
+];
+const COLS = {
+  nfl: [['w', 'wins'], ['l', 'losses'], ['t', 'ties'], ['pct', 'winPercent'], ['strk', 'streak']],
+  pct: [['w', 'wins'], ['l', 'losses'], ['pct', 'winPercent'], ['gb', 'gamesBehind'], ['strk', 'streak']],
+  nhl: [['gp', 'gamesPlayed'], ['w', 'wins'], ['l', 'losses'], ['otl', 'otLosses'], ['pts', 'points']],
+  soc: [['gp', 'gamesPlayed'], ['w', 'wins'], ['d', 'ties'], ['l', 'losses'], ['gd', 'pointDifferential'], ['pts', 'points']],
+};
+let stLeague = 'nfl';
+try { stLeague = localStorage.getItem('epgtalk-standings') || (new Date().getMonth() >= 8 || new Date().getMonth() <= 0 ? 'nfl' : 'epl'); } catch (e) {}
+if (!STAND.some(s => s[0] === stLeague)) stLeague = 'nfl';
+
+function chips() {
+  const box = $('schips'); box.replaceChildren();
+  for (const s of STAND) {
+    const b = el('button', 'chip', s[2]); b.type = 'button'; b.setAttribute('aria-pressed', s[0] === stLeague ? 'true' : 'false');
+    b.onclick = () => { stLeague = s[0]; try { localStorage.setItem('epgtalk-standings', stLeague); } catch (e) {} chips(); drawStandings(); };
+    box.appendChild(b);
+  }
+}
+function stat(e, name) { const s = (e.stats || []).find(x => x.name === name); return s ? (s.displayValue != null ? s.displayValue : s.value) : ''; }
+function num(e, name) { const s = (e.stats || []).find(x => x.name === name); return s ? +s.value || 0 : 0; }
+async function drawStandings() {
+  const s = STAND.find(x => x[0] === stLeague), box = $('standings');
+  box.replaceChildren(el('div', 'loading', tr('loadingSt')));
+  try {
+    const j = await get(API2 + s[1] + '/standings' + (LQ ? '?' + LQ.slice(1) : ''));
+    const groups = [];
+    (function walk(n) { if (n.standings && n.standings.entries) groups.push(n); (n.children || []).forEach(walk); })(j);
+    const wrap = el('div', 'tables'), notes = new Map();
+    for (const g of groups) {
+      const es = g.standings.entries.slice();
+      if (s[3] === 'soc' || s[3] === 'nhl') es.sort((a, b) => num(b, 'points') - num(a, 'points') || num(b, 'pointDifferential') - num(a, 'pointDifferential'));
+      else es.sort((a, b) => num(b, 'winPercent') - num(a, 'winPercent') || num(b, 'wins') - num(a, 'wins'));
+      const t = el('div', 'tbl'); t.appendChild(el('h3', null, g.name || g.abbreviation || ''));
+      const tb = el('table'), hr = el('tr');
+      hr.appendChild(el('th', null, '#')); hr.appendChild(el('th', null, ''));
+      for (const [k] of COLS[s[3]]) hr.appendChild(el('th', null, tr(k)));
+      tb.appendChild(hr);
+      es.forEach((e, i) => {
+        const team = e.team || {}, tr_ = el('tr', FAVT.has(s[0] + ':' + team.id) ? 'fav' : '');
+        const rk = el('td', 'rk', String(i + 1));
+        if (e.note && e.note.color) { rk.style.borderLeftColor = e.note.color; notes.set(e.note.description, e.note.color); }
+        tr_.appendChild(rk);
+        const td = el('td', 'team');
+        const lg = team.logos && team.logos[0] && team.logos[0].href;
+        if (lg) { const im = el('img'); im.src = lg; im.alt = ''; im.loading = 'lazy'; im.referrerPolicy = 'no-referrer'; td.appendChild(im); }
+        td.append((FAVT.has(s[0] + ':' + team.id) ? '⭐ ' : '') + (team.shortDisplayName || team.displayName || '?'));
+        tr_.appendChild(td);
+        for (const [k, name] of COLS[s[3]]) tr_.appendChild(el('td', k === 'pts' ? 'pts' : '', stat(e, name)));
+        tb.appendChild(tr_);
+      });
+      t.appendChild(tb); wrap.appendChild(t);
+    }
+    box.replaceChildren(wrap);
+    if (notes.size) {
+      const lg = el('div', 'legend');
+      for (const [d, c] of notes) { const sp = el('span'); const i = el('i'); i.style.background = c; sp.appendChild(i); sp.append(d); lg.appendChild(sp); }
+      box.appendChild(lg);
+    }
+    if (!groups.length) box.replaceChildren(el('div', 'empty', tr('standFail')));
+  } catch (e) { box.replaceChildren(el('div', 'empty', tr('standFail'))); }
+}
+
+// ── start ────────────────────────────────────────────────────────────────────
+chips(); drawStandings();
+EPGWatch.load().then(drawHubs);
+setInterval(() => { for (const c of document.querySelectorAll('.count[data-t]')) c.textContent = tr('inT', { t: until(+c.dataset.t) }); }, 30000);
+setInterval(() => { if (!document.hidden && document.querySelector('.hub .badge')) drawHubs(); }, 60000);   // refresh while games are live
+})();
+</script>
+<script src="nav.js" data-base=""></script>
+<script src="app.js" data-base=""></script>
+</body>
+</html>

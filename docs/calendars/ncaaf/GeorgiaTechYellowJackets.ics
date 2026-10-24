@@ -1,0 +1,86 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Georgia Tech Yellow Jackets (NCAAF)
+X-WR-CALDESC:Georgia Tech Yellow Jackets schedule from EPGTalk. Updates aut
+ omatically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858255@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261010T193000Z
+DTEND:20261010T230000Z
+SUMMARY:🏈 Duke Blue Devils at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nTV: ESPN2\nFinal: Duke 25 - Georgia Tech 28\nFrom EPGTal
+ k
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858264@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261017T193000Z
+DTEND:20261017T230000Z
+SUMMARY:🏈 Georgia Tech Yellow Jackets at Virginia Tech Hokies
+LOCATION:Lane Stadium\, Blacksburg\, VA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Georgia Tech 24 - Virginia Tech 
+ 34\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858273@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261024T193000Z
+DTEND:20261024T230000Z
+SUMMARY:🏈 Boston College Eagles at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858281@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART:20261031T233000Z
+DTEND:20261101T030000Z
+SUMMARY:🏈 Georgia Tech Yellow Jackets at Pittsburgh Panthers
+LOCATION:Acrisure Stadium\, Pittsburgh\, PA
+DESCRIPTION:NCAAF\nTV: ESPN2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858287@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:🏈 Louisville Cardinals at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858297@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:🏈 Georgia Tech Yellow Jackets at Clemson Tigers
+LOCATION:Memorial Stadium (Clemson\, SC)\, Clemson\, SC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858310@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:🏈 Wake Forest Demon Deacons at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856760@epgtalk
+DTSTAMP:20261024T164018Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 Georgia Tech Yellow Jackets at Georgia Bulldogs
+LOCATION:Sanford Stadium\, Athens\, GA
+DESCRIPTION:NCAAF · FLEX: 3:30 - 4:30pm OR 6 - 8pm ET start\nStart time to
+  be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR
