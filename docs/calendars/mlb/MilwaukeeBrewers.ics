@@ -1,0 +1,101 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Milwaukee Brewers (MLB)
+X-WR-CALDESC:Milwaukee Brewers schedule from EPGTalk. Updates automatically
+ .
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-mlb-401908030@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261012T000000Z
+DTEND:20261012T030000Z
+SUMMARY:⚾ Los Angeles Dodgers at Milwaukee Brewers
+LOCATION:American Family Field\, Milwaukee\, Wisconsin
+DESCRIPTION:MLB · NLCS - Game 1\nTV: Fox\, ERADM\nFinal: Dodgers 1 - Brewe
+ rs 2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908031@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261012T210000Z
+DTEND:20261013T000000Z
+SUMMARY:⚾ Los Angeles Dodgers at Milwaukee Brewers
+LOCATION:American Family Field\, Milwaukee\, Wisconsin
+DESCRIPTION:MLB · NLCS - Game 2\nTV: Fox\, FS1\, ERADM\nFinal: Dodgers 4 -
+  Brewers 7\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908032@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261015T000000Z
+DTEND:20261015T030000Z
+SUMMARY:⚾ Milwaukee Brewers at Los Angeles Dodgers
+LOCATION:Dodger Stadium\, Los Angeles\, California
+DESCRIPTION:MLB · NLCS - Game 3\nTV: FS1\, ERADM\nFinal: Brewers 6 - Dodge
+ rs 2\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908033@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261016T000000Z
+DTEND:20261016T030000Z
+SUMMARY:⚾ Milwaukee Brewers at Los Angeles Dodgers
+LOCATION:Dodger Stadium\, Los Angeles\, California
+DESCRIPTION:MLB · NLCS - Game 4\nTV: FS1\, ERADM\nFinal: Brewers 6 - Dodge
+ rs 4\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908042@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261024T000000Z
+DTEND:20261024T030000Z
+SUMMARY:⚾ Tampa Bay Rays at Milwaukee Brewers
+LOCATION:American Family Field\, Milwaukee\, Wisconsin
+DESCRIPTION:MLB · World Series - Game 1\nTV: Fox\, ERADM\nFinal: Rays 2 - 
+ Brewers 3\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908043@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261025T000000Z
+DTEND:20261025T030000Z
+SUMMARY:⚾ Tampa Bay Rays at Milwaukee Brewers
+LOCATION:American Family Field\, Milwaukee\, Wisconsin
+DESCRIPTION:MLB · World Series - Game 2\nTV: Fox\, ERADM\nFinal: Rays 4 - 
+ Brewers 5\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908044@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261027T000000Z
+DTEND:20261027T030000Z
+SUMMARY:⚾ Milwaukee Brewers at Tampa Bay Rays
+LOCATION:Tropicana Field\, St. Petersburg\, Florida
+DESCRIPTION:MLB · World Series - Game 3\nTV: Fox\, ERADM\nFinal: Brewers 1
+ 0 - Rays 1\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908045@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261028T000000Z
+DTEND:20261028T030000Z
+SUMMARY:⚾ Milwaukee Brewers at Tampa Bay Rays
+LOCATION:Tropicana Field\, St. Petersburg\, Florida
+DESCRIPTION:MLB · World Series - Game 4\nTV: Fox\, ERADM\nFinal: Brewers 3
+  - Rays 4\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-mlb-401908046@epgtalk
+DTSTAMP:20261031T164029Z
+DTSTART:20261029T000000Z
+DTEND:20261029T030000Z
+SUMMARY:⚾ Milwaukee Brewers at Tampa Bay Rays
+LOCATION:Tropicana Field\, St. Petersburg\, Florida
+DESCRIPTION:MLB · World Series - Game 5\nTV: Fox\, ERADM\nFinal: Brewers 4
+  - Rays 1\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR
