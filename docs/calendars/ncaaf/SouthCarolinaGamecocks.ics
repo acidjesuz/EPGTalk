@@ -1,0 +1,68 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:South Carolina Gamecocks (NCAAF)
+X-WR-CALDESC:South Carolina Gamecocks schedule from EPGTalk. Updates automa
+ tically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401856731@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART:20261024T193000Z
+DTEND:20261024T230000Z
+SUMMARY:🏈 Tennessee Volunteers at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF\nTV: ESPN\, Disney+\nFinal: Tennessee 24 - South Carolina
+  27\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856736@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART:20261031T201500Z
+DTEND:20261031T234500Z
+SUMMARY:🏈 South Carolina Gamecocks at Oklahoma Sooners
+LOCATION:Memorial Stadium (Norman\, OK)\, Norman\, OK
+DESCRIPTION:NCAAF\nTV: SEC Network\nFinal: South Carolina 42 - Oklahoma 25\
+ nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856744@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART:20261107T200000Z
+DTEND:20261107T233000Z
+SUMMARY:🏈 Texas A&M Aggies at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Texas A&M 9 - South Carolina 17\nFrom E
+ PGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856882@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART:20261115T004500Z
+DTEND:20261115T041500Z
+SUMMARY:🏈 South Carolina Gamecocks at Arkansas Razorbacks
+LOCATION:Donald W. Reynolds Razorback Stadium\, Fayetteville\, AR
+DESCRIPTION:NCAAF\nTV: SEC Network\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856753@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART:20261122T003000Z
+DTEND:20261122T040000Z
+SUMMARY:🏈 Georgia Bulldogs at South Carolina Gamecocks
+LOCATION:Williams-Brice Stadium\, Columbia\, SC
+DESCRIPTION:NCAAF\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401856764@epgtalk
+DTSTAMP:20261114T114020Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:🏈 South Carolina Gamecocks at Clemson Tigers
+LOCATION:Memorial Stadium (Clemson\, SC)\, Clemson\, SC
+DESCRIPTION:NCAAF\nStart time to be announced\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

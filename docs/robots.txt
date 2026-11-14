@@ -1,0 +1,8 @@
+# EPGTalk — everyone is welcome (search engines and AI assistants included).
+# The guide data folders are machine files, not pages, so crawlers can skip them.
+User-agent: *
+Allow: /
+Disallow: /tvguide/
+Disallow: /api/
+
+Sitemap: https://epgtalk.com/sitemap.xml
