@@ -1,0 +1,22 @@
+{
+ "version": "1.4.2",
+ "notes": "Your daily update now runs on battery and catches up after the computer was asleep or off, and Home warns you when your guide is getting old. New: Help → Check for updates.",
+ "notes_es": "La actualización diaria ahora funciona con batería y se pone al día si la computadora estaba dormida o apagada, e Inicio te avisa cuando tu guía se está quedando vieja. Nuevo: Ayuda → Buscar actualizaciones.",
+ "page": "https://epgtalk.com/builder/#whatsnew",
+ "windows": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Setup.exe"
+ },
+ "win_setup": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/EPGTalk-Builder-Setup.exe",
+  "sha256": "57860a13ebeb139616c6bfb54923546652696747a44bf27473945a3fc974ee1e"
+ },
+ "linux": {
+  "url": "https://raw.githubusercontent.com/acidjesuz/EPGTalk/builder-downloads/epgtalk-builder_1.4.2_all.deb",
+  "sha256": "31009b4ccc0056523b4d3d687baaa8444882f70dfd83685c0e7ce0429335b822"
+ },
+ "windows_mb": 23,
+ "nas": {
+  "version": "2.1.0",
+  "image": "ghcr.io/acidjesuz/epgtalk-builder"
+ }
+}
