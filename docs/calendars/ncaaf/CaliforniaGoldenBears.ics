@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:California Golden Bears (NCAAF)
+X-WR-CALDESC:California Golden Bears schedule from EPGTalk. Updates automat
+ ically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858295@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261114T203000Z
+DTEND:20261115T000000Z
+SUMMARY:🏈 California Golden Bears at Virginia Cavaliers
+LOCATION:Scott Stadium\, Charlottesville\, VA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: California 7 - Virginia 36\nFrom
+  EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858308@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261122T003000Z
+DTEND:20261122T040000Z
+SUMMARY:🏈 Stanford Cardinal at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Stanford 44 - California 28\nFro
+ m EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858315@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261129T003000Z
+DTEND:20261129T040000Z
+SUMMARY:🏈 Pittsburgh Panthers at California Golden Bears
+LOCATION:California Memorial Stadium\, Berkeley\, CA
+DESCRIPTION:NCAAF\nTV: ACC Network\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR

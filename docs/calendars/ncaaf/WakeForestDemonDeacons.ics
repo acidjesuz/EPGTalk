@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//EPGTalk//Team Calendars//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Wake Forest Demon Deacons (NCAAF)
+X-WR-CALDESC:Wake Forest Demon Deacons schedule from EPGTalk. Updates autom
+ atically.
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:espn-ncaaf-401858290@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261107T203000Z
+DTEND:20261108T000000Z
+SUMMARY:🏈 Merrimack Warriors at Wake Forest Demon Deacons
+LOCATION:Allegacy Federal Credit Union Stadium\, Winston-Salem\, NC
+DESCRIPTION:NCAAF\nTV: ACC Network\nFinal: Merrimack 0 - Wake Forest 77\nFr
+ om EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858301@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261114T170000Z
+DTEND:20261114T203000Z
+SUMMARY:🏈 Wake Forest Demon Deacons at SMU Mustangs
+LOCATION:Gerald J. Ford Stadium\, Dallas\, TX
+DESCRIPTION:NCAAF\nTV: ESPN\, Disney+\, ERADM\nFinal: Wake Forest 49 - SMU 
+ 7\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858310@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261121T170000Z
+DTEND:20261121T203000Z
+SUMMARY:🏈 Wake Forest Demon Deacons at Georgia Tech Yellow Jackets
+LOCATION:Bobby Dodd Stadium\, Atlanta\, GA
+DESCRIPTION:NCAAF\nTV: ESPN\nFinal: Wake Forest 50 - Georgia Tech 29\nFrom 
+ EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858312@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261128T203000Z
+DTEND:20261129T000000Z
+SUMMARY:🏈 Duke Blue Devils at Wake Forest Demon Deacons
+LOCATION:Allegacy Federal Credit Union Stadium\, Winston-Salem\, NC
+DESCRIPTION:NCAAF\nTV: ESPN\, Disney+\nFrom EPGTalk
+END:VEVENT
+BEGIN:VEVENT
+UID:espn-ncaaf-401858318@epgtalk
+DTSTAMP:20261128T174035Z
+DTSTART:20261205T170000Z
+DTEND:20261205T203000Z
+SUMMARY:🏈 Wake Forest Demon Deacons at Miami Hurricanes
+LOCATION:Bank of America Stadium\, Charlotte\, NC
+DESCRIPTION:NCAAF · ACC Championship\nTV: ABC\nFrom EPGTalk
+END:VEVENT
+END:VCALENDAR
